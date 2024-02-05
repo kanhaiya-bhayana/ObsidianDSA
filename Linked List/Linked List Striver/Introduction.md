@@ -553,3 +553,156 @@ public Node reverseIterate(Node head)
     }  
 }
 ```
+##### Odd & Even Linked List
+- You have to group the odd and even index data and return the head of the list
+https://leetcode.com/problems/odd-even-linked-list/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode oddEvenList(ListNode head) {
+        
+        if (head == null || head.next == null) return head;
+        ListNode odd = head;
+        ListNode even = head.next;
+        ListNode evenHead = head.next;
+
+        while (even != null && even.next != null){
+            odd.next = odd.next.next;
+            even.next = even.next.next;
+
+            odd = odd.next;
+            even = even.next;
+        }
+        odd.next = evenHead;
+        return head;
+    }
+}
+```
+
+##### Sort a LinkedList of 0's, 1's and 2's | Multiple Approaches
+https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1
+
+```java
+/*
+class Node
+{
+    int data;
+    Node next;
+    Node(int data)
+    {
+        this.data = data;
+        next = null;
+    }
+}
+*/
+class Solution
+{
+    //Function to sort a linked list of 0s, 1s and 2s.
+    static Node segregate(Node head)
+    {
+        
+        if (head == null || head.next == null) return head;
+        // add your code here
+        Node zeroHead = new Node(-1);
+        Node oneHead = new Node(-1);
+        Node twoHead = new Node(-1);
+        
+        Node zero = zeroHead;
+        Node one = oneHead;
+        Node two = twoHead;
+        
+        Node temp = head;
+        
+        while (temp != null){
+            if (temp.data == 0){
+                zero.next = temp;
+                zero=temp;
+            }
+            
+            else if (temp.data == 1){
+                one.next = temp;
+                one = temp;
+            }
+            else{
+                two.next = temp;
+                two = temp;
+            }
+            temp = temp.next;
+        }
+        
+        zero.next = (oneHead.next != null) ? oneHead.next : twoHead.next;
+        one.next = twoHead.next;
+        two.next = null;
+        
+        return zeroHead.next;
+        
+    }
+}
+```
+##### Nth node from end of linked list
+https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
+
+```java
+/* Structure of node
+
+class Node
+{
+    int data;
+    Node next;
+    Node(int d) {data = d; next = null; }
+}
+*/
+
+class Solution
+{
+    //Function to find the data of nth node from the end of a linked list.
+    int getNthFromLast(Node head, int n)
+    {
+    	// Your code here	
+    	
+    	Node fastP = head;
+    	Node slowP = head;
+    	int cnt = 0;
+    	Node temp = head;
+    	while (temp != null){
+    	    temp = temp.next;
+    	    cnt++;
+    	}
+    	
+    	if (cnt < n) return -1;
+    	else if (n == cnt) return head.data;
+    	
+    	for (int i = 0; i< n ; i++){
+    	    fastP = fastP.next;
+    	}
+    	
+    	if (fastP == null){
+    	    return head.next.data;
+    	}
+    	
+    	while (fastP.next != null){
+    	    slowP = slowP.next;
+    	    fastP = fastP.next;
+    	}
+    	
+    	
+    	
+    	Node delNode = slowP.next;
+    	slowP.next = slowP.next.next;
+    	int res = delNode.data;
+    	delNode = null;
+    	
+    	return res;
+    }
+}
+```
