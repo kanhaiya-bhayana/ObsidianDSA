@@ -229,7 +229,20 @@ public class SinglyLinkedList {
         return head;
     }
 
-
+	public void reverseIterate(){
+        if (head == null || head.next == null){
+            return;
+        }
+        Node curr = head;
+        Node prev = null;
+        while (curr != null) {
+            Node next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+        head = prev;
+    }
 
     public static void main(String[] args) {
         SinglyLinkedList ll = new SinglyLinkedList();
@@ -703,6 +716,297 @@ class Solution
     	delNode = null;
     	
     	return res;
+    }
+}
+```
+##### Reverse Using Recursion
+https://leetcode.com/problems/reverse-linked-list/description/
+```java
+private ListNode recursiveReverse(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode newNode = recursiveReverse(head.next);
+        ListNode front = head.next;
+        front.next = head;
+        head.next = null;
+        return newNode;
+    }
+```
+##### LinkedList is Palindrome or not
+https://leetcode.com/problems/palindrome-linked-list/description/
+```java
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        return checkPalindrome(head);
+    }
+    boolean checkPalindrome(ListNode head){   
+
+        // 3 step 
+        // 1 - find middle
+        // 2 - reverse the 2nd half
+        // 3 - compare
+
+        // 1- find middle using TURTOISE algo - slow and fast pointers
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // 2- reverse the 2nd half
+        ListNode newHead = reverseRecursive(slow.next);
+
+        ListNode first = head;
+        ListNode second = newHead;
+
+        // 3 compare the first half and second half
+        while (second != null) {
+            if (first.val != second.val){
+                reverseRecursive(newHead); // important after checking make everything to the original
+                return false;
+            }
+            first = first.next;
+            second = second.next;
+        }
+        reverseRecursive(newHead); // important after checking make everything to the original 
+        return true;
+    }
+
+    private ListNode reverseRecursive(ListNode head){
+        // base case
+        if (head == null || head.next == null) return head;
+
+        ListNode newHead = reverseRecursive(head.next);
+        ListNode front = head.next;
+        front.next = head;
+        head.next = null;
+
+        return newHead;
+    }
+}
+```
+##### Add 1 to a number represented as linked list
+https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1
+
+```java
+/*
+class Node{
+    int data;
+    Node next;
+    
+    Node(int x){
+        data = x;
+        next = null;
+    }
+} 
+*/
+
+class Solution
+{
+    public static Node addOne(Node head) 
+    { 
+        //code here.
+        return solve(head);
+        
+    }
+    
+    public static Node solve(Node head){
+        int carry = helper(head);
+        
+        if (carry == 1){
+            Node newNode = new Node(1);
+            newNode.next = head;
+            return newNode;
+        }
+        
+        return head;
+    }
+    
+    public static int helper(Node temp){
+        if (temp == null){
+            return 1;
+        }
+        int carry = helper(temp.next);
+        temp.data = temp.data + carry;
+        
+        if (temp.data < 10) return 0;
+        
+        temp.data = 0;
+        return 1;
+    }
+}
+```
+
+##### Intersection of Two Linked Lists 
+https://leetcode.com/problems/intersection-of-two-linked-lists/description/
+
+```java
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        
+        ListNode t1 = headA;
+        ListNode t2 = headB;
+
+        if (t1 == null || t2 == null) return null;
+
+        while (t1 != t2){
+
+            t1 = t1.next;
+            t2 = t2.next;
+
+            if (t1 == t2) return t1;
+
+            if (t1 == null) t1 = headB;
+            if (t2 == null) t2 = headA;
+        }
+        return t1;
+    }
+}
+```
+
+
+
+
+##### Find the Middle element of the Linked List
+
+	(n/2) + 1
+	
+	https://leetcode.com/problems/middle-of-the-linked-list/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode middleNode(ListNode head) {
+
+        if (head == null || head.next == null) return head;
+
+        // tortoise algorithm
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
+##### Detect a loop or cycle in the Linked List
+	Tortoise & Hare algorithm
+	
+	https://leetcode.com/problems/linked-list-cycle/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) {
+ *         val = x;
+ *         next = null;
+ *     }
+ * }
+ */
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) return false;
+
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) return true;
+        }
+        return false;
+
+    }
+}
+```
+
+
+
+##### Find the length of the Loop in LinkedList
+https://www.geeksforgeeks.org/problems/find-length-of-loop/1
+
+```java
+/*
+class Node
+{
+    int data;
+    Node next;
+    Node(int d) {data = d; next = null; }
+}
+*/
+//Function should return the length of the loop in LL.
+class Solution
+{
+    //Function to find the length of a loop in the linked list.
+    static int countNodesinLoop(Node head)
+    {
+        //Add your code here.
+        if (head == null || head.next == null) return 0;
+
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) return lengthLoop(slow, fast);
+        }
+        return 0;
+    }
+    
+    private static int lengthLoop(Node slow, Node fast){
+        int cnt = 1;
+        fast = fast.next;
+        
+        while (slow != fast){
+            cnt++;
+            fast = fast.next;
+        }
+        return cnt;
     }
 }
 ```
