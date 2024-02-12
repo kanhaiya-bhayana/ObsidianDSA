@@ -1085,3 +1085,297 @@ public class Solution {
     }
 }
 ```
+##### Delete all occurrences of a key in DLL
+https://www.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1
+
+```java
+/* Structure of Doubly Linked List
+class Node
+{
+	int data;
+	Node next;
+	Node prev;
+	Node(int data)
+	{
+	    this.data = data;
+	    next = prev = null;
+	}
+}*/
+class Solution {
+    static Node deleteAllOccurOfX(Node head, int x) {
+        // Write your code here
+        Node temp = head;
+        
+        while (temp != null){
+            
+            if (temp.data == x){
+                // if this is the head of the LL, then post deletion the head will be updated
+                if (temp == head){
+                    head = temp.next;
+                }
+                
+                Node nextNode = temp.next;
+                Node prevNode = temp.prev;
+                
+                if (nextNode != null) nextNode.prev = prevNode;
+                if (prevNode != null) prevNode.next = nextNode;
+                
+                temp = nextNode;
+            }
+            else temp = temp.next;
+        }
+        
+        return head;
+    }
+}
+```
+##### Delete all occurrences of a key in LL
+https://leetcode.com/problems/remove-linked-list-elements/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode removeElements(ListNode head, int val) {
+        
+        // your code here
+
+        if (head == null) return head;
+        ListNode dummy = new ListNode();
+        dummy.next = head;
+        ListNode temp = dummy;
+
+
+        while (temp.next != null){
+            if (temp.next.val == val){                
+                temp.next = temp.next.next;
+            }
+            else{
+                temp = temp.next;
+            }
+        }
+        return dummy.next;
+    }
+}
+```
+##### Find all Pairs with given Sum in DLL
+https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1
+
+```java
+/*
+
+Definition for singly Link List Node
+class Node
+{
+    int data;
+    Node next,prev;
+    
+    Node(int x){
+        data = x;
+        next = null;
+        prev = null;
+    }
+}
+
+You can also use the following for printing the link list.
+Node.printList(Node node);
+*/
+
+class Solution {
+    public static ArrayList<ArrayList<Integer>> findPairsWithGivenSum(int target, Node head) {
+        // code here
+        
+        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+        
+        Node left = head;
+        Node right = findTail(head);
+        
+        while (left.data < right.data){
+            
+            if (left.data + right.data == target){
+                ArrayList<Integer> temp = new ArrayList<>();
+                temp.add(left.data);
+                temp.add(right.data);
+                res.add(temp);
+                left = left.next;
+                right = right.prev;
+            }
+            else if (left.data + right.data < target){
+                left = left.next;
+            }
+            else right = right.prev;
+        }
+        return res;
+    }
+    
+    private static Node findTail(Node head){
+        Node tail = head;
+        
+        while (tail.next != null) tail = tail.next;
+        
+        return tail;
+    }
+}
+```
+##### Remove duplicates from sorted LL
+https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode deleteDuplicates(ListNode head) {
+        
+        if (head == null || head.next == null) return head;
+
+        ListNode temp = head;
+
+        while (temp != null && temp.next != null){
+            ListNode nextNode = temp.next;
+
+            while (nextNode != null && nextNode.val == temp.val){
+                nextNode = nextNode.next;
+            }
+            temp.next = nextNode;
+            temp = temp.next;
+        }
+
+        return head;
+    }
+}
+```
+##### Remove duplicates from sorted DLL
+```java
+/********************************************************
+
+    Following is the class structure of the Node class:
+    
+    Definition of doubly linked list:
+ * class Node {
+ * public:
+ *      int data;
+ *      Node *prev;
+ *      Node *next;
+ *      Node() {
+ *          this->data = 0;
+ *          this->prev = NULL;
+ *          this->next = NULL;
+ *      }
+ *      Node(int data) {
+ *          this->data = data;
+ *          this->prev = NULL;
+ *          this->next = NULL;
+ *      }
+ *      Node (int data, Node *next, Node *prev) {
+ *          this->data = data;
+ *          this->prev = prev;
+ *          this->next = next;
+ *      }
+ * };
+
+********************************************************/
+
+public class Solution {
+    public static Node uniqueSortedList(Node head) {
+        // Write your code here.
+        // Write your code here.
+        if (head == null || head.next == null) return head;
+
+        Node temp = head;
+
+        while (temp != null && temp.next != null){
+            Node nextNode = temp.next;
+
+            while (nextNode != null && nextNode.val == temp.val){
+                nextNode = nextNode.next;
+            }
+            temp.next = nextNode;
+            if (nextNode != null) nextNode.prev = temp;
+            temp = temp.next;
+        }
+
+        return head;
+    }
+}
+```
+
+
+##### Reverse Nodes in K Group Size of LinkedList
+https://leetcode.com/problems/reverse-nodes-in-k-group/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        
+        ListNode temp = head;
+        ListNode prevLast = null;
+
+        while (temp != null){
+
+            ListNode kthNode = getKthNode (temp,k);
+            if (kthNode == null){
+                if (prevLast != null) prevLast.next = temp;
+                break;
+            }
+
+            ListNode nextNode = kthNode.next;
+            kthNode.next = null; // break the list here ...
+            reverseLinkedList(temp);
+
+            if (temp == head) head = kthNode; // update the head ... reverseList
+            else prevLast.next = kthNode; // connect to the next of the List ...
+
+            prevLast = temp; 
+            temp = nextNode;
+        }
+        return head;
+    }
+
+    private ListNode getKthNode(ListNode temp, int k){
+
+        k = k-1;
+        while (temp != null && k > 0){
+            k--;
+            temp = temp.next;
+        }
+        return temp;
+    }
+
+    private ListNode reverseLinkedList(ListNode head){
+        if (head == null || head.next == null){
+            return head;
+        }
+        ListNode newNode = reverseLinkedList(head.next);
+        ListNode front = head.next;
+        front.next = head;
+        head.next = null;
+        return newNode;
+    }
+}
+```
