@@ -1379,3 +1379,112 @@ class Solution {
     }
 }
 ```
+##### Rotate a LinkedList
+	if k == lenght | not do anything
+	if k is multiple of length then also not do anything
+	if (k % length == 0) return head;
+	
+	if k is larger then turn it down into smaller value by | k % length
+
+https://leetcode.com/problems/rotate-list/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+        
+        // base case
+        if (head == null || k == 0) return head;
+
+        ListNode tail = head;
+        int len = 1;
+        while (tail.next != null){
+            tail = tail.next;
+            len++;
+        }
+
+        if (k % len == 0) return head;
+
+        // make the k smaller
+        k = k % len;
+
+        // attach the tail to the head node
+        tail.next = head;
+
+        // find the nth node and update that next to the null but
+        // before that point their next to the head
+        ListNode newLastNode = findNthNode(head, len - k);
+        head = newLastNode.next;
+        newLastNode.next = null;
+
+        return head;
+    }
+
+    private ListNode findNthNode(ListNode temp, int k){
+
+        int cnt = 1;
+        while (temp != null){
+            if (cnt == k){
+                return temp;
+            }
+            cnt++;
+            temp = temp.next;
+        }
+        return temp;
+    }
+}
+```
+##### Merge two Sorted Linked Lists
+https://leetcode.com/problems/merge-two-sorted-lists/description/
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        
+        if (list1 == null) return list2;
+        else if (list2 == null) return list1;
+
+        ListNode t1 = list1;
+        ListNode t2 = list2;
+
+        ListNode dummyNode = new ListNode(-1);
+        ListNode temp = dummyNode;
+
+        while (t1 != null && t2 != null){
+
+            if (t1.val < t2.val){
+                temp.next = t1;
+                temp = t1;
+                t1 = t1.next;
+            }
+            else{
+                temp.next = t2;
+                temp = t2;
+                t2 = t2.next;
+            }
+        }
+        if (t1 != null) temp.next = t1;
+        else temp.next = t2;
+
+        return dummyNode.next;
+    }
+}
+```
