@@ -1488,3 +1488,106 @@ class Solution {
     }
 }
 ```
+##### Flatten a Linked List
+	Put all them into the array and sort the array and then convert an array to LL
+	TC ~ O(2NM)
+	
+	https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1
+
+```java
+/*Node class  used in the program
+class Node
+{
+	int data;
+	Node next;
+	Node bottom;
+	
+	Node(int d)
+	{
+		data = d;
+		next = null;
+		bottom = null;
+	}
+}
+*/
+/*  Function which returns the  root of 
+    the flattened linked list. */
+class GfG
+{
+    Node flatten(Node root)
+    {
+	// Your code here
+	return flattenList(root);
+    }
+    
+    public static Node flattenList(Node head){
+        
+        if (head == null || head.next == null){
+            return head;
+        }
+        
+        Node mergeHead = flattenList(head.next);
+        return mergeList(head, mergeHead);
+    }
+    
+    public static Node mergeList(Node list1, Node list2){
+        
+        Node dummyNode = new Node(-1);
+        Node res = dummyNode;
+        
+        while (list1 != null && list2 != null){
+            if (list1.data < list2.data){
+                res.bottom = list1;
+                res = list1;
+                list1 = list1.bottom;
+            }
+            else{
+                res.bottom = list2;
+                res = list2;
+                list2 = list2.bottom;
+            }
+            res.next = null;
+        }
+        if (list1 != null) res.bottom = list1;
+        else res.bottom = list2;
+        
+        return dummyNode.bottom;
+    }
+}
+```
+##### Merge K Sorted Lists
+	implement using min-heap PriorityQueue
+	https://leetcode.com/problems/merge-k-sorted-lists/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ * int val;
+ * ListNode next;
+ * ListNode() {}
+ * ListNode(int val) { this.val = val; }
+ * ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        Queue<ListNode> pq = new PriorityQueue<>((a, b) -> a.val - b.val);
+        for (ListNode list : lists)
+            if (list != null)
+                pq.offer(list);
+        while (!pq.isEmpty()) {
+            ListNode temp = pq.poll();
+            if (temp.next != null)
+                pq.offer(temp.next);
+            cur.next = temp;
+            cur = cur.next;
+        }
+        return dummy.next;
+
+    }
+}
+```
