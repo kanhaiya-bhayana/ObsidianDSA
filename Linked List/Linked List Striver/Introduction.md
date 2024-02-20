@@ -1,4 +1,4 @@
-##### Linked List Bootcamp
+#### Linked List Bootcamp
 
 What is Linked List?
 	A linked list is a linear data structure, in which the elements are not stored at contiguous memory locations. The elements in a linked list are linked using pointers as shown in the below image:
@@ -19,13 +19,13 @@ class Node{
 	}
 }
 ```
-##### Important terms
+#### Important terms
 - Traversal in LL - O(n)
 - Length of LL - O(n)
 - Search an element in LL - O(n)
 - Delete a node in LL - O(n)
 - Insert a node in a LL - O(n)
-##### Convert an Array to Linked List
+#### Convert an Array to Linked List
 ```java
 import org.w3c.dom.Node;
 
@@ -266,12 +266,12 @@ public class SinglyLinkedList {
 ```
 
 
-##### Doubly Linked List
+#### Doubly Linked List
 - A **doubly linked list** (DLL) is a special type of linked list in which each node contains a pointer to the previous node as well as the next node of the linked list.
 
 ![[DLL1.png]]
 
-##### DLL Node Structure
+#### DLL Node Structure
 ```
 class Node{
 	int data;
@@ -291,7 +291,7 @@ class Node{
 ```
 
 
-##### Doubly Linked List Implementation
+#### Doubly Linked List Implementation
 ```java
 /**  
  * DLL */public class DLL {  
@@ -500,7 +500,7 @@ class Node{
 ```
 
 
-##### Reverse a DLL
+#### Reverse a DLL
 ```java
 // Reverse Doubly LL  
 public Node reverseIterate(Node head)
@@ -520,7 +520,7 @@ public Node reverseIterate(Node head)
     return prev.back;  
 }
 ```
-##### Add Two Numbers
+#### Add Two Numbers
 
 [Add Two Numbers](https://leetcode.com/problems/add-two-numbers/)
 	
@@ -566,7 +566,7 @@ public Node reverseIterate(Node head)
     }  
 }
 ```
-##### Odd & Even Linked List
+#### Odd & Even Linked List
 - You have to group the odd and even index data and return the head of the list
 https://leetcode.com/problems/odd-even-linked-list/description/
 
@@ -602,7 +602,7 @@ class Solution {
 }
 ```
 
-##### Sort a LinkedList of 0's, 1's and 2's | Multiple Approaches
+#### Sort a LinkedList of 0's, 1's and 2's | Multiple Approaches
 https://www.geeksforgeeks.org/problems/given-a-linked-list-of-0s-1s-and-2s-sort-it/1
 
 ```java
@@ -662,7 +662,7 @@ class Solution
     }
 }
 ```
-##### Nth node from end of linked list
+#### Nth node from end of linked list
 https://www.geeksforgeeks.org/problems/nth-node-from-end-of-linked-list/1
 
 ```java
@@ -719,7 +719,7 @@ class Solution
     }
 }
 ```
-##### Reverse Using Recursion
+#### Reverse Using Recursion
 https://leetcode.com/problems/reverse-linked-list/description/
 ```java
 private ListNode recursiveReverse(ListNode head){
@@ -733,7 +733,7 @@ private ListNode recursiveReverse(ListNode head){
         return newNode;
     }
 ```
-##### LinkedList is Palindrome or not
+#### LinkedList is Palindrome or not
 https://leetcode.com/problems/palindrome-linked-list/description/
 ```java
 ```java
@@ -799,7 +799,7 @@ class Solution {
     }
 }
 ```
-##### Add 1 to a number represented as linked list
+#### Add 1 to a number represented as linked list
 https://www.geeksforgeeks.org/problems/add-1-to-a-number-represented-as-linked-list/1
 
 ```java
@@ -851,7 +851,7 @@ class Solution
 }
 ```
 
-##### Intersection of Two Linked Lists 
+#### Intersection of Two Linked Lists 
 https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 
 ```java
@@ -893,7 +893,7 @@ public class Solution {
 
 
 
-##### Find the Middle element of the Linked List
+#### Find the Middle element of the Linked List
 
 	(n/2) + 1
 	
@@ -927,7 +927,7 @@ class Solution {
     }
 }
 ```
-##### Detect a loop or cycle in the Linked List
+#### Detect a loop or cycle in the Linked List
 	Tortoise & Hare algorithm
 	
 	https://leetcode.com/problems/linked-list-cycle/description/
@@ -965,7 +965,7 @@ public class Solution {
 
 
 
-##### Find the length of the Loop in LinkedList
+#### Find the length of the Loop in LinkedList
 https://www.geeksforgeeks.org/problems/find-length-of-loop/1
 
 ```java
@@ -1010,7 +1010,7 @@ class Solution
     }
 }
 ```
-##### Delete the middle node of the Linked List
+#### Delete the middle node of the Linked List
 	Tortoise algo variation
 	https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/description/
 	
@@ -1043,7 +1043,7 @@ class Solution {
     }
 }
 ```
-##### Find the starting point of the Loop/Cycle in LinkedList
+#### Find the starting point of the Loop/Cycle in LinkedList
 	Tortoise & Hare algorith
 https://leetcode.com/problems/linked-list-cycle-ii/description/
 
@@ -1085,7 +1085,7 @@ public class Solution {
     }
 }
 ```
-##### Delete all occurrences of a key in DLL
+#### Delete all occurrences of a key in DLL
 https://www.geeksforgeeks.org/problems/delete-all-occurrences-of-a-given-key-in-a-doubly-linked-list/1
 
 ```java
@@ -1129,7 +1129,7 @@ class Solution {
     }
 }
 ```
-##### Delete all occurrences of a key in LL
+#### Delete all occurrences of a key in LL
 https://leetcode.com/problems/remove-linked-list-elements/
 
 ```java
@@ -1166,7 +1166,7 @@ class Solution {
     }
 }
 ```
-##### Find all Pairs with given Sum in DLL
+#### Find all Pairs with given Sum in DLL
 https://www.geeksforgeeks.org/problems/find-pairs-with-given-sum-in-doubly-linked-list/1
 
 ```java
@@ -1225,7 +1225,7 @@ class Solution {
     }
 }
 ```
-##### Remove duplicates from sorted LL
+#### Remove duplicates from sorted LL
 https://leetcode.com/problems/remove-duplicates-from-sorted-list/description/
 
 ```java
@@ -1260,7 +1260,7 @@ class Solution {
     }
 }
 ```
-##### Remove duplicates from sorted DLL
+#### Remove duplicates from sorted DLL
 ```java
 /********************************************************
 
@@ -1316,7 +1316,7 @@ public class Solution {
 ```
 
 
-##### Reverse Nodes in K Group Size of LinkedList
+#### Reverse Nodes in K Group Size of LinkedList
 https://leetcode.com/problems/reverse-nodes-in-k-group/description/
 
 ```java
@@ -1379,7 +1379,7 @@ class Solution {
     }
 }
 ```
-##### Rotate a LinkedList
+#### Rotate a LinkedList
 	if k == lenght | not do anything
 	if k is multiple of length then also not do anything
 	if (k % length == 0) return head;
@@ -1443,7 +1443,7 @@ class Solution {
     }
 }
 ```
-##### Merge two Sorted Linked Lists
+#### Merge two Sorted Linked Lists
 https://leetcode.com/problems/merge-two-sorted-lists/description/
 ```java
 /**
@@ -1488,7 +1488,7 @@ class Solution {
     }
 }
 ```
-##### Flatten a Linked List
+#### Flatten a Linked List
 	Put all them into the array and sort the array and then convert an array to LL
 	TC ~ O(2NM)
 	
@@ -1555,7 +1555,7 @@ class GfG
     }
 }
 ```
-##### Merge K Sorted Lists
+#### Merge K Sorted Lists
 	implement using min-heap PriorityQueue
 	https://leetcode.com/problems/merge-k-sorted-lists/description/
 
@@ -1590,4 +1590,220 @@ class Solution {
 
     }
 }
+```
+#### Sort a Linked List
+1. Brute Force
+	1. Put all the elements into the array
+	2. Sort the array
+	3. Put back all elements into the LL
+2. Use Merge Sort
+	1. ![[Pasted image 20240215101152.png]]
+
+https://leetcode.com/problems/sort-list/description/
+
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode sortList(ListNode head) {
+        
+        // base case 
+        if (head == null || head.next == null) return head;
+
+        ListNode middle = findMiddle(head);
+        ListNode leftHead = head;
+        ListNode rightHead = middle.next;
+        middle.next = null;
+
+        leftHead = sortList(leftHead);
+        rightHead = sortList(rightHead);
+
+        return mergeTwoLists(leftHead, rightHead);
+    }
+
+    private ListNode mergeTwoLists(ListNode list1, ListNode list2){
+        ListNode dummyNode = new ListNode(-1);
+        ListNode temp = dummyNode;
+
+        while (list1 != null && list2 != null){
+            if (list1.val < list2.val){
+                temp.next = list1;
+                temp = list1;
+                list1 = list1.next;
+            }
+            else{
+                temp.next = list2;
+                temp = list2;
+                list2 = list2.next;
+            }
+        }
+        if (list1 != null) temp.next = list1;
+        else temp.next = list2;
+
+        return dummyNode.next;
+    }
+
+    private ListNode findMiddle(ListNode head){
+        ListNode temp = head;
+
+        ListNode slow = head;
+        ListNode fast = head.next; // in Tortoise we initialize the fast with the head but here we update
+
+        while (fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+}
+```
+
+#### Clone a LL with Next & Random Pointers
+	1. Insert copy nodes in b/w
+	2. Connecnt random pointers
+	3. Connect next pointers 
+
+![[Pasted image 20240216110333.png]]
+
+```java
+/*
+// Definition for a Node.
+class Node {
+    int val;
+    Node next;
+    Node random;
+
+    public Node(int val) {
+        this.val = val;
+        this.next = null;
+        this.random = null;
+    }
+}
+*/
+
+class Solution {
+    public Node copyRandomList(Node head) {
+        
+        insertCopyInBetween(head);
+        connectRandomPointers(head);
+        return getDeepCopyList(head);
+    }
+
+    private void insertCopyInBetween(Node head){
+
+        // Node dummyNode = new Node(-1);
+        Node temp = head;
+        while (temp != null){
+            Node copyNode = new Node(temp.val);
+            Node nextEle = temp.next;
+            copyNode.next = nextEle;
+            temp.next = copyNode;
+            temp = nextEle;
+        }
+    }
+
+    private void connectRandomPointers(Node head){
+        
+        Node temp = head;
+        while (temp != null){
+            Node copyNode = temp.next;
+
+            if (temp.random != null){
+                copyNode.random = temp.random.next; // for reference go to image ...
+            }
+            else copyNode.random = null;
+            temp = temp.next.next;
+        }
+    }
+
+    private Node getDeepCopyList(Node head){
+
+        Node temp = head;
+        Node dummyNode = new Node(-1);
+        Node res = dummyNode;
+
+        while (temp != null){
+
+            // creating new list
+            res.next = temp.next;
+            res = res.next;
+
+            // disconnecting and going back to 
+            // initial state o the LL
+            temp.next = temp.next.next;
+            temp = temp.next;
+        }
+
+        return dummyNode.next;
+    }   
+}
+```
+
+#### Design a Browser History Linked List implementation
+https://leetcode.com/problems/design-browser-history/description/
+```java
+class BrowserHistory {
+
+    public class Node{
+        String data;
+        Node next, back;
+        public Node(String url) {
+            this.data = url;
+            next = null;
+            back = null;
+        }
+    }
+
+    Node currPage;
+
+    public BrowserHistory(String homepage) {
+        currPage = new Node(homepage);
+    }
+    
+    public void visit(String url) {
+        Node newNode = new Node(url);
+        currPage.next = newNode;
+        newNode.back = currPage;
+        currPage = newNode;
+    }
+    
+    public String back(int steps) {
+        
+        while (steps != 0){
+            if (currPage.back != null){
+                currPage = currPage.back;
+            }
+            else break;
+            steps--;
+        }
+        return currPage.data;
+    }
+    
+    public String forward(int steps) {
+        
+        while (steps != 0){
+            if (currPage.next != null){
+                currPage = currPage.next;
+            }
+            else break;
+            steps--;
+        }
+        return currPage.data;    }
+}
+
+/**
+ * Your BrowserHistory object will be instantiated and called as such:
+ * BrowserHistory obj = new BrowserHistory(homepage);
+ * obj.visit(url);
+ * String param_2 = obj.back(steps);
+ * String param_3 = obj.forward(steps);
+ */
 ```
