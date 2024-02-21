@@ -212,3 +212,80 @@ class Solution {
     }
 }
 ```
+#### Maximum Depth of Binary Tree 
+https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int maxDepth(TreeNode root) {
+        
+        return maxDepthUtil(root);
+    }
+
+    private int maxDepthUtil(TreeNode root){
+
+        // base case
+        if (root == null) return 0;
+
+        int leftHeight = maxDepthUtil(root.left);
+        int rightHeight = maxDepthUtil(root.right);
+
+        return 1 + Math.max(leftHeight, rightHeight);
+    }
+}
+```
+#### Balanced Binary Tree
+https://leetcode.com/problems/balanced-binary-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isBalanced(TreeNode root) {
+        
+        return dfsHeight(root) != -1;
+    }
+
+    private int dfsHeight(TreeNode root){
+
+        // base case
+        if (root == null) return 0;
+
+        int leftHeight = dfsHeight(root.left);
+        if (leftHeight == -1) return -1;
+
+        int rightHeight = dfsHeight(root.right);
+        if (rightHeight == -1) return -1;
+        
+        if (Math.abs(rightHeight - leftHeight) > 1) return -1;
+
+        return 1 + Math.max(leftHeight, rightHeight);
+    }
+}
+```
