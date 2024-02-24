@@ -289,3 +289,173 @@ class Solution {
     }
 }
 ```
+#### Diameter of a Binary Tree
+https://leetcode.com/problems/diameter-of-binary-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int maxi;
+    public int diameterOfBinaryTree(TreeNode root) {
+        
+        maxi = Integer.MIN_VALUE;
+        findHeight(root);
+        return maxi;
+    }
+
+    private int findHeight(TreeNode root){
+        if (root == null){
+            return 0;
+        } 
+        int leftHeight = findHeight(root.left);
+        int rightHeight = findHeight(root.right);
+        maxi = Math.max(maxi,leftHeight + rightHeight);
+        return 1 + Math.max(leftHeight,rightHeight);
+    }
+}
+```
+#### Maximum Path Sum in Binary Tree
+
+https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int maxi;
+    public int maxPathSum(TreeNode root) {
+        maxi = Integer.MIN_VALUE;
+        findMaxPathSum(root);
+        return maxi;
+    }
+
+    private int findMaxPathSum(TreeNode root){
+        // base case
+        if (root == null){
+            return 0;
+        }
+        int left = Math.max(0,findMaxPathSum(root.left));
+        int right = Math.max(0,findMaxPathSum(root.right));
+        maxi = Math.max(maxi, left + right + root.val);
+
+        return root.val + Math.max(left, right);
+    }
+}
+```
+
+#### Check if two Trees are identical or Not
+	Do any traversal, if you get the same output, then true else false.
+
+https://leetcode.com/problems/same-tree/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+        return isSameTreeUtil(p,q);
+    }
+
+    private boolean isSameTreeUtil(TreeNode p, TreeNode q){
+        if (p == null || q == null){
+            return (p == q);
+        }
+
+        boolean left = isSameTreeUtil(p.left,q.left);
+        boolean right = isSameTreeUtil(p.right,q.right);
+
+        return (p.val == q.val) && left && right;
+
+    }
+}
+```
+#### Binary Tree Zigzag Level Order Traversal 
+https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        
+        Queue<TreeNode> q = new LinkedList<>();
+        List<List<Integer>> wrapList = new ArrayList<>();
+
+        if (root == null) return wrapList;
+
+        q.offer(root);
+        boolean leftToRight = true;
+
+        while (!q.isEmpty()){
+            int levelNum = q.size();
+            List<Integer> subList = new ArrayList<>();
+            for (int i = 0; i< levelNum; i++){
+                if (q.peek().left != null) q.offer(q.peek().left);
+                if (q.peek().right != null) q.offer(q.peek().right);
+                
+                subList.add(q.poll().val);
+            }
+            if (!leftToRight){
+                Collections.reverse(subList);
+            }
+            wrapList.add(subList);
+            leftToRight = !leftToRight;
+        }
+
+        return wrapList;
+
+    }
+}
+```
