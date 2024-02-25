@@ -459,3 +459,218 @@ class Solution {
     }
 }
 ```
+#### Boundary Traversal in Binary Tree (Anti-Clock wise)
+	1. Add left boundary exclusive leaf nodes
+	2. Add leaf nodes
+	3. Add right boundary in reverse order exclusive leaf nodes
+
+https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
+
+```java
+//User function Template for Java
+
+// class Node  
+// { 
+//     int data; 
+//     Node left, right; 
+   
+//     public Node(int d)  
+//     { 
+//         data = d; 
+//         left = right = null; 
+//     } 
+// }
+
+class Solution
+{
+	ArrayList <Integer> boundary(Node root)
+	{
+	    ArrayList<Integer> res = new ArrayList<>();
+	    
+	    if (root == null) return res;
+	    
+	    if (isLeaf(root) == false) res.add(root.data);
+	    
+	    addLeftBoundaryUtil(root,res);
+	    addLeavesUtil(root,res);
+	    addRightBoundaryUtil(root,res);
+	    
+	    return res;
+	}
+	
+	private void addLeftBoundaryUtil(Node root, ArrayList<Integer> res){
+	    Node curr = root.left;
+	    while (curr != null){
+	        if (isLeaf(curr) == false) res.add(curr.data);
+	        if (curr.left != null) curr = curr.left;
+	        else curr = curr.right;
+	    }
+	}
+	
+	private void addLeavesUtil(Node root, ArrayList<Integer> res){
+	    if (isLeaf(root)){
+	        res.add(root.data);
+	        return;
+	    }
+	    if (root.left != null) addLeavesUtil(root.left, res);
+	    if (root.right != null) addLeavesUtil(root.right, res);
+	}
+	
+	private void addRightBoundaryUtil(Node root, ArrayList<Integer> res){
+	    Node curr = root.right;
+	    ArrayList<Integer> tmp = new ArrayList<>();
+	    while (curr != null){
+	        if (isLeaf(curr) == false) tmp.add(curr.data);
+	        if (curr.right != null) curr = curr.right;
+	        else curr = curr.left;
+	    }
+	    for (int i = tmp.size()-1; i >=0; i--){
+	        res.add(tmp.get(i));
+	    }
+	}
+	
+	private boolean isLeaf(Node root){
+	    if (root.left == null && root.right == null) return true;
+	    else return false;
+	}
+}
+```
+#### Vertical Order Traversal of Binary Tree
+	- If 2 nodes are overlaping then write in the sort order
+- https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+ class Tuple{
+     TreeNode node;
+     int row;
+     int col;
+     public Tuple(TreeNode _node, int _row, int _col){
+         node = _node;
+         row = _row;
+         col = _col;
+     }
+ }
+class Solution {
+    public List<List<Integer>> verticalTraversal(TreeNode root) {
+        
+        TreeMap<Integer,TreeMap<Integer,PriorityQueue<Integer>>> map = new TreeMap<>();
+        Queue<Tuple> q = new LinkedList<>();
+        q.offer(new Tuple(root, 0, 0));
+
+        while (!q.isEmpty()){
+            Tuple tuple = q.poll();
+            TreeNode node = tuple.node;
+            int x = tuple.row;
+            int y = tuple.col;
+
+            if (!map.containsKey(x)){
+                map.put(x, new TreeMap<>());
+            }
+
+            if (!map.get(x).containsKey(y)){
+                map.get(x).put(y, new PriorityQueue<>());
+            }
+
+            map.get(x).get(y).offer(node.val);
+
+            if (node.left != null){
+                q.offer(new Tuple(node.left, x-1, y+1));
+            }
+            if (node.right != null){
+                q.offer(new Tuple(node.right, x+1, y+1));
+            }
+        }
+
+        List<List<Integer>> list = new ArrayList<>();
+        for (TreeMap<Integer, PriorityQueue<Integer>> ys : map.values()){
+            list.add(new ArrayList<>());
+            for (PriorityQueue<Integer> nodes : ys.values()){
+                while (!nodes.isEmpty()){
+                    list.get(list.size()-1).add(nodes.poll());
+                }
+            }
+        }
+
+        return list;
+    }
+}
+```
+
+#### Top View of Binary Tree
+
+https://www.geeksforgeeks.org/problems/top-view-of-binary-tree/1
+
+```java
+
+/*
+class Node{
+    int data;
+    Node left;
+    Node right;
+    Node(int data){
+        this.data = data;
+        left=null;
+        right=null;
+    }
+}
+*/
+class Pair{
+    Node node;
+    int hd;
+    public Pair(Node _node, int _hd){
+        node = _node;
+        hd = _hd;
+    }
+}
+
+class Solution
+{
+    //Function to return a list of nodes visible from the top view 
+    //from left to right in Binary Tree.
+    static ArrayList<Integer> topView(Node root)
+    {
+        // add your code
+        ArrayList<Integer> ans = new ArrayList<>();
+        if (root == null) return ans;
+        
+        Map<Integer, Integer> map = new TreeMap<>();
+        Queue<Pair> q =new LinkedList<Pair>();
+        q.add(new Pair(root,0));
+        
+        while (!q.isEmpty()){
+            Pair it = q.remove();
+            int hd = it.hd;
+            Node temp = it.node;
+            
+            if (map.get(hd)==null) map.put(hd,temp.data);
+            if (temp.left != null){
+                q.add(new Pair(temp.left,hd-1));
+            }
+            
+            if (temp.right != null){
+                q.add(new Pair(temp.right, hd+1));
+            }
+        } 
+        
+        for (Map.Entry<Integer,Integer> entry : map.entrySet()){
+            ans.add(entry.getValue());
+        }
+        return ans;
+    }
+}
+```
