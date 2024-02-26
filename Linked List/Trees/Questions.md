@@ -674,3 +674,178 @@ class Solution
     }
 }
 ```
+#### Bottom View of the Binary Tree
+	1. If there are two nodes at the same place then always take the right one
+	2. Print the last node of vertical order tarversal
+
+https://www.geeksforgeeks.org/problems/bottom-view-of-binary-tree/1
+
+```java
+//User function Template for Java
+
+
+class Solution
+{
+    //Function to return a list containing the bottom view of the given tree.
+    public ArrayList <Integer> bottomView(Node root)
+    {
+        // Code here
+        ArrayList<Integer> res = new ArrayList<>();
+        
+        if (root == null) return res;
+        
+        Map<Integer,Integer> map = new TreeMap<>();
+        Queue<Node> q = new LinkedList<>();
+        root.hd = 0; // horizontal distance of the node;
+        
+        q.add(root);
+        while (!q.isEmpty()){
+            Node temp = q.remove();
+            int hd = temp.hd;
+            map.put(hd,temp.data);
+            
+            if (temp.left != null){
+                temp.left.hd = hd-1;
+                q.add(temp.left);
+            }
+            if (temp.right != null){
+                temp.right.hd = hd + 1;
+                q.add(temp.right);
+            }
+        }
+        
+        for (Map.Entry<Integer,Integer> it : map.entrySet()){
+            res.add(it.getValue());
+        }
+        
+        return res;
+        
+    }
+}
+```
+
+#### Right/Left View of a Binary Tree
+
+###### Right Side View
+https://leetcode.com/problems/binary-tree-right-side-view/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<Integer> res;
+    public List<Integer> rightSideView(TreeNode root) {
+        res = new ArrayList<>();
+        rightSideViewUtil(root, 0);
+        return res;
+    }
+
+    private void rightSideViewUtil(TreeNode root, int level){
+
+        // base case
+        if (root == null){
+            return;
+        }
+
+        if (level == res.size()){
+            res.add(root.val);
+        }
+        rightSideViewUtil(root.right, level+1);
+        rightSideViewUtil(root.left, level+1);
+    }
+}
+```
+###### Left Side View
+https://www.geeksforgeeks.org/problems/left-view-of-binary-tree/1
+```java
+//User function Template for Java
+
+/* A Binary Tree node
+class Node
+{
+    int data;
+    Node left, right;
+
+    Node(int item)
+    {
+        data = item;
+        left = right = null;
+    }
+}*/
+class Tree
+{
+    public ArrayList<Integer> res;
+    //Function to return list containing elements of left view of binary tree.
+    ArrayList<Integer> leftView(Node root)
+    {
+      // Your code here
+      res = new ArrayList<>();
+      leftSideViewUtil(root, 0);
+      return res;
+    }
+    
+    private void leftSideViewUtil(Node root, int level){
+        
+        // base case
+        if (root == null){
+            return;
+        }
+        
+        if (res.size() == level){
+            res.add(root.data);
+        }
+        
+        leftSideViewUtil(root.left, level + 1);
+        leftSideViewUtil(root.right, level + 1);
+    }
+}
+```
+#### Check for Symmetrical Binary Trees
+https://leetcode.com/problems/symmetric-tree/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return root == null || isSymmetricUtil(root.left, root.right);
+    }
+
+    private boolean isSymmetricUtil(TreeNode left, TreeNode right){
+
+        // base case
+        if (left == null || right == null){
+            return left == right;
+        }
+
+        if (left.val != right.val) return false;
+
+        return isSymmetricUtil(left.left, right.right) && isSymmetricUtil(left.right, right.left);
+    }
+}
+```
