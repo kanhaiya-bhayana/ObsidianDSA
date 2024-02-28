@@ -849,3 +849,237 @@ class Solution {
     }
 }
 ```
+
+#### Print Root to Node Path in Binary Tree
+
+https://leetcode.com/problems/binary-tree-paths/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    List<String> res;
+    List<Integer> res1;
+    public List<String> binaryTreePaths(TreeNode root) {
+        res = new ArrayList<>();
+        res1 = new ArrayList<>();
+        if (root != null){
+            binaryTreePathsUtil(root, "");
+        }
+        return res;
+    }
+
+    private void binaryTreePathsUtil(TreeNode root, String s){
+        // base case
+        if (root == null) return;
+
+        if (s.isEmpty()){
+            s += root.val;
+        }
+        else s += ("->"+root.val);
+
+        if (root.left != null || root.right != null){
+            binaryTreePathsUtil(root.left, s);
+            binaryTreePathsUtil(root.right, s);
+        }
+        
+        else{
+            res.add(s);
+        }
+    }
+
+    private boolean getPath(TreeNode root, int ele){
+        
+        // base case
+        if (root == null) return false;
+
+        res1.add(root.val);
+
+        if (root.val == ele) return true;
+
+        if (getPath(root.left, ele) || getPath(root.right, ele)) return true;
+
+        // if not found on this path then remove the last added value and return false
+        res1.remove(res1.size()-1);
+
+        return false;
+    }
+}
+```
+#### Lowest Common Ancestor of a Binary Tree 
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        
+        return lowestCommonAncestorUtil(root, p, q);
+    }
+
+    private TreeNode lowestCommonAncestorUtil(TreeNode root, TreeNode p, TreeNode q){
+
+        // base case
+        if (root == null || root == p || root ==q) return root;
+
+        TreeNode left = lowestCommonAncestorUtil(root.left, p, q);
+        TreeNode right = lowestCommonAncestorUtil(root.right, p, q);
+
+        if (left == null) return right;
+
+        else if (right == null) return left;
+
+        else { // both left and right are not null , we found are result
+            return root;
+        }
+    }
+}
+```
+
+
+#### Maximum Width of a Binary Tree
+https://leetcode.com/problems/maximum-width-of-binary-tree/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+ class Pair{
+     TreeNode node;
+     int num;
+     Pair(TreeNode _node, int _num){
+        node = _node;
+        num = _num;
+     }
+ }
+class Solution {
+    public int widthOfBinaryTree(TreeNode root) {
+        
+        if (root == null) return 0;
+
+        int ans = 0;
+        Queue<Pair> q = new LinkedList<>();
+        q.offer(new Pair(root,0));
+        while (!q.isEmpty()){
+            int size = q.size();
+            int mmin = q.peek().num; // to make the id starting from Zero
+            int first = 0;
+            int last = 0;
+            for (int i =0; i < size; i++){
+                int cur_id = q.peek().num - mmin;
+                TreeNode node = q.peek().node;
+                q.poll();
+                if (i == 0){
+                    first = cur_id;
+                }
+                if (i == size-1){
+                    last = cur_id;
+                }
+                if (node.left != null){
+                    q.offer(new Pair(node.left, cur_id*2+1));
+                }
+                if (node.right != null){
+                    q.offer(new Pair(node.right, cur_id*2+2));
+                }
+            }
+            ans = Math.max(ans, last-first+1);
+        }
+        return ans;
+    }
+}
+```
+
+#### Check for Children Sum Property in a Binary Tree
+https://www.geeksforgeeks.org/problems/children-sum-parent/1
+```sh
+//User function Template for Java
+
+
+/*Complete the function below
+Node is as follows:
+class Node{
+	int data;
+	Node left,right;
+	
+	Node(int key)
+	{
+	    data = key;
+	    left = right = null;
+	}
+}
+
+*/
+class Solution
+{
+    //Function to check whether all nodes of a tree have the value 
+    //equal to the sum of their child nodes.
+    public static int isSumProperty(Node root)
+    {
+        // add your code here
+        if (root == null) return 0;
+        return isSumPropertyUtil(root);
+    }
+    
+    private static int isSumPropertyUtil(Node root){
+        
+        
+        int leftValue = 0;
+        int rightValue = 0;
+        
+        if (root == null
+            || (root.left == null && root.right == null))
+            return 1;
+        
+        else{
+            if (root.left != null){
+                leftValue = root.left.data;
+            }
+            if (root.right != null){
+                rightValue = root.right.data;
+            }
+            
+            if (root.data == leftValue + rightValue 
+                    && isSumPropertyUtil(root.left) != 0 
+                    && isSumPropertyUtil(root.right) != 0)
+                
+                return 1;
+                
+            else return 0;
+        }
+    }
+}
+```
+
