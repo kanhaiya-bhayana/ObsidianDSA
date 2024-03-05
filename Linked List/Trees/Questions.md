@@ -1598,3 +1598,175 @@ class Solution {
     }
 }
 ```
+
+## Binary Search Tree
+
+#### Search in a BST
+
+https://leetcode.com/problems/search-in-a-binary-search-tree/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        
+        return searchBSTUtil(root,val);
+    }
+
+    private TreeNode searchBSTUtil(TreeNode root, int val){
+
+        while (root != null && root.val != val){
+            if (val < root.val){
+                root = root.left;
+            }
+            else{
+                root = root.right;
+            }
+        }
+
+        return root;
+    }
+}
+```
+#### Ciel in a Binary Search Tree
+
+https://www.geeksforgeeks.org/problems/implementing-ceil-in-bst/1
+
+```java
+// User function Template for Java
+
+class Tree {
+    // Function to return the ceil of given number in BST.
+    int findCeil(Node root, int key) {
+        if (root == null) return -1;
+        // Code here
+        return findCeilUtil(root,key);
+    }
+    
+    int findCeilUtil(Node root, int val){
+        int ceil = -1;
+        while (root != null){
+            if (root.data == val){
+                ceil = root.data;
+                return ceil;
+            }
+            
+            else if (val > root.data){
+                root = root.right;
+            }
+            else{
+                ceil = root.data;
+                root = root.left;
+            }
+        }
+
+        return ceil;
+    }
+}
+```
+
+
+#### Floor in a BST
+https://www.geeksforgeeks.org/problems/floor-in-bst/1
+```java
+// User function Template for Java
+
+class Solution {
+    public static int floor(Node root, int x) {
+        // Code here
+        return findFloorUtil(root,x);
+    }
+    
+    static int findFloorUtil(Node root, int val){
+        int floor = -1;
+        while (root != null){
+            if (root.data == val){
+                floor = root.data;
+                return floor;
+            }
+            
+            else if (val > root.data){
+                floor = root.data;
+                root = root.right;
+            }
+            else{
+                root = root.left;
+            }
+        }
+
+        return floor;
+    }
+}
+```
+#### Insert a given node in BST
+https://leetcode.com/problems/insert-into-a-binary-search-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode insertIntoBST(TreeNode root, int val) {
+        
+        return insertIntoBSTUtil(root, val);
+    }
+
+    private TreeNode insertIntoBSTUtil(TreeNode root, int val){
+
+        // base case
+        if (root == null){
+            return new TreeNode(val);
+        }
+
+        // keep the track of root
+        TreeNode curr = root;
+
+        while (true){
+            if (curr.val <= val){
+                if (curr.right != null){
+                    curr = curr.right;
+                }
+                else{
+                    curr.right = new TreeNode(val);
+                    break;
+                }
+            }
+            else{
+                if (curr.left != null){
+                    curr = curr.left;
+                }
+                else{
+                    curr.left = new TreeNode(val);
+                    break;
+                }
+            }
+        }
+        return root;
+    }
+}
+```
