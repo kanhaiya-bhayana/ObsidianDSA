@@ -1599,8 +1599,11 @@ class Solution {
 }
 ```
 
-## Binary Search Tree
 
+---
+##                                                                                            Binary Search Tree
+
+---
 #### Search in a BST
 
 https://leetcode.com/problems/search-in-a-binary-search-tree/
@@ -1768,5 +1771,552 @@ class Solution {
         }
         return root;
     }
+}
+```
+
+#### Delete a node in BST
+https://leetcode.com/problems/delete-node-in-a-bst/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+        
+        return deleteNodeUtil(root, key);
+    }
+
+    private TreeNode deleteNodeUtil(TreeNode root, int key){
+
+        // base case
+        if (root == null){
+            return null;
+        }
+
+        if (root.val == key){
+            return helperDeleteUtil(root);
+        }
+
+        TreeNode dummy = root;
+        while (root != null){
+            // if key is smaller than root
+            if (root.val > key){
+                if (root.left != null && root.left.val == key){
+                    root.left = helperDeleteUtil(root.left);
+                    break;
+                }
+                else{
+                    root = root.left;
+                }
+            } 
+            // key is greater than root
+            else{
+                if (root.right != null && root.right.val == key){
+                    root.right = helperDeleteUtil(root.right);
+                    break;
+                }
+                else{
+                    root = root.right;
+                }
+            }
+        }
+        return dummy;
+    }
+
+    private TreeNode helperDeleteUtil(TreeNode root){
+        
+        if (root.left == null){
+            return root.right;
+        }
+
+        else if (root.right == null){
+            return root.left;
+        }
+
+        TreeNode rightChild = root.right;
+        TreeNode lastRight = findLastRightUtil(root.left); // this method will return the last right child from the left subtree
+        lastRight.right = rightChild;
+        return root.left;
+    }
+
+    private TreeNode findLastRightUtil(TreeNode root){
+        if (root.right == null){
+            return root;
+        }
+
+        return findLastRightUtil(root.right);
+    }
+}
+```
+
+#### Kth Smallest Element in BST
+https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int cnt = 0;
+    int res = -1;
+    public int kthSmallest(TreeNode root, int k) {
+        
+        recursiveInorderTraversalUtil(root,k);
+        return res;
+    }
+
+    private void recursiveInorderTraversalUtil(TreeNode root, int k){
+
+        // base case 
+        if (root == null){
+            return;
+        }
+        recursiveInorderTraversalUtil(root.left, k);
+        cnt++;
+        if (cnt == k){
+            res = root.val;
+            return;
+        }
+        
+        recursiveInorderTraversalUtil(root.right, k);
+    }
+
+}
+```
+
+#### Check if a Tree is BST | Validate a BST
+
+https://leetcode.com/problems/validate-binary-search-tree/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        
+        return isValidBST(root, Long.MIN_VALUE, Long.MAX_VALUE);
+    }
+
+    private boolean isValidBST(TreeNode root, long minVal, long maxVal){
+
+        if (root == null) return true;
+        if (root.val >= maxVal || root.val <= minVal) return false;
+
+        return isValidBST(root.left, minVal, root.val) && isValidBST(root.right, root.val, maxVal);
+    }
+}
+```
+#### Find Longest Common Ancestor in BST 
+https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/description/
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        
+        return lowestCommonAncestorUtil(root, p, q);
+    }
+
+    private TreeNode lowestCommonAncestorUtil (TreeNode root, TreeNode p, TreeNode q){
+
+        if (root == null) return null;
+
+        int curr = root.val;
+        if (curr < p.val && curr < q.val){
+            return lowestCommonAncestorUtil(root.right, p, q);
+        }
+        if (curr > p.val && curr > q.val){
+            return lowestCommonAncestorUtil(root.left, p, q);
+        }
+        return root;
+    }
+}
+```
+#### Construct a BST from Preorder Traversal
+
+https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/description/
+
+
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    int nodeIndex;
+    public TreeNode bstFromPreorder(int[] preorder) {
+        
+        nodeIndex = 0;
+        int start = Integer.MIN_VALUE;
+        int end = Integer.MAX_VALUE;
+        return bstFromPreorderUtil(preorder, nodeIndex, end);
+    }
+
+    private TreeNode bstFromPreorderUtil(int []preOrder, int start, int end){
+
+        if (nodeIndex == preOrder.length || preOrder[nodeIndex] < start || preOrder[nodeIndex] > end) {
+            return null;
+        }
+
+        int val = preOrder[nodeIndex++];
+        TreeNode root = new TreeNode(val);
+        root.left = bstFromPreorderUtil(preOrder, start, val);
+        root.right = bstFromPreorderUtil(preOrder, val, end);
+        return root;
+    }
+}
+```
+#### Inorder Successor in BST
+https://www.geeksforgeeks.org/problems/inorder-successor-in-bst/1
+```java
+//User function Template for Java
+
+/*Complete the function below
+Node is as follows:
+class Node{
+	int data;
+	Node left,right;
+	Node(int d){
+		data=d;
+		left=right=null;
+	}
+}
+*/
+class Solution
+{
+    // returns the inorder successor of the Node x in BST (rooted at 'root')
+	public Node inorderSuccessor(Node root,Node x)
+         {
+          //add code here.
+          return inorderSuccessorUtil(root, x);
+         }
+         
+        private Node inorderSuccessorUtil(Node root, Node x){
+            
+            Node successor = null;
+            
+            while (root != null){
+                if (x.data >= root.data){
+                    root = root.right;
+                }
+                else{
+                    successor = root;
+                    root = root.left;    
+                }
+            }
+            
+            return successor;
+        }
+}
+```
+#### BST Iterator
+https://leetcode.com/problems/binary-search-tree-iterator/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class BSTIterator {
+
+    private Stack<TreeNode> st = new Stack<>();
+
+    public BSTIterator(TreeNode root) {
+        pushAll(root);
+    }
+    
+    public int next() {
+        
+        TreeNode tempNode = st.pop();
+        pushAll(tempNode.right);
+        return tempNode.val;
+    }
+    
+    public boolean hasNext() {
+        
+        return (!st.isEmpty());
+    }
+
+    private void pushAll(TreeNode root){
+        
+        while (root != null){
+            st.push(root);
+            root = root.left;
+        }
+    }
+}
+```
+#### Two Sum in BST
+https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+ class BSTIterator {
+
+    private Stack<TreeNode> st = new Stack<>();
+    boolean reverse = true;
+
+    public BSTIterator(TreeNode root, boolean isReverse) {
+        reverse = isReverse;
+        pushAll(root);
+    }
+    
+    public int next() {
+        
+        TreeNode tempNode = st.pop();
+        if (reverse == false){
+            pushAll(tempNode.right);
+        }
+        else pushAll(tempNode.left);
+        return tempNode.val;
+    }
+    
+    public boolean hasNext() {
+        
+        return (!st.isEmpty());
+    }
+
+    private void pushAll(TreeNode root){
+        
+        while (root != null){
+            st.push(root);
+            if (reverse == true){
+                root = root.right;
+            }
+            else {
+                root = root.left;
+            }
+        }
+    }
+}
+
+class Solution {
+    public boolean findTarget(TreeNode root, int k) {
+        BSTIterator left = new BSTIterator(root, false);
+        BSTIterator right = new BSTIterator(root, true);
+
+        int i = left.next();
+        int j = right.next();
+
+        while (i < j){
+            if (i + j == k){
+                return true;
+            }
+            else if (i + j < k){
+                i = left.next();
+            }
+            else{
+                j = right.next();
+            }
+        }
+        return false;
+    }
+}
+```
+
+#### Recover BST
+https://leetcode.com/problems/recover-binary-search-tree/description/
+```java
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    
+    private TreeNode first;
+    private TreeNode prev;
+    private TreeNode middle;
+    private TreeNode last;
+    public void recoverTree(TreeNode root) {
+        
+        first = middle = last = null;
+        prev = new TreeNode(Integer.MIN_VALUE);
+        inorder(root);
+
+        // if find two violations
+        if (first != null && last != null){
+            // swap 'first' and 'last'
+            swapUtil(first,last);
+        }
+        // if find one violation
+        else if (first != null && middle != null){
+            swapUtil(first, middle);
+        }
+    }
+
+    private void inorder(TreeNode root){
+        if (root == null){
+            return;
+        }
+        inorder(root.left);
+
+        if (prev != null && (root.val < prev.val)){
+            // if this is first violation, mark these two nodes as
+            // 'first' and 'middle'
+            if (first == null){
+                first = prev;
+                middle = root;
+            }
+            // If this is second violation, mark this node as last
+            else{
+                last = root;
+            }
+        }
+         // Mark this node as previous
+            prev = root;
+            inorder(root.right);
+    }
+
+    private void swapUtil(TreeNode node1, TreeNode node2){
+        int temp = node1.val;
+        node1.val = node2.val;
+        node2.val = temp;
+    }
+}
+```
+
+---
+#### Largest BST in Binary Tree
+https://www.geeksforgeeks.org/problems/largest-bst/1
+```java
+class NodeValue{
+    public int maxNode, minNode, maxSize;
+    
+    NodeValue(int minNode, int maxNode, int maxSize){
+        this.maxNode = maxNode;
+        this.minNode = minNode;
+        this.maxSize = maxSize;
+    }
+};
+
+class Solution{
+    
+    // Return the size of the largest sub-tree which is also a BST
+    static int largestBst(Node root)
+    {
+        // Write your code here
+        return largestBstHelper(root).maxSize;
+        
+    }
+    
+    private static NodeValue largestBstHelper(Node root){
+        
+        // An empty tree is a BST of size 0
+        if (root == null){
+            return new NodeValue(Integer.MAX_VALUE, Integer.MIN_VALUE, 0);
+        }
+        
+        // Get values from left and right subtree of current tree
+        NodeValue left = largestBstHelper(root.left);
+        NodeValue right = largestBstHelper(root.right);
+        
+        // Current node is greater than max in left AND smaller than min in right, 
+        if (left.maxNode < root.data && root.data < right.minNode){
+            // It is a BST
+            int min = Math.min(root.data, left.minNode);
+            int max = Math.max(root.data, right.maxNode);
+            int size = left.maxSize + right.maxSize + 1;
+            
+            return new NodeValue(min, max, size);
+        }
+        
+        // Otherwise, return [-inf, inf] so that parent can't be valid BST
+        int min = Integer.MIN_VALUE;
+        int max = Integer.MAX_VALUE;
+        int size = Math.max(left.maxSize, right.maxSize);
+        
+        return new NodeValue(min, max, size);
+    }
+    
 }
 ```
