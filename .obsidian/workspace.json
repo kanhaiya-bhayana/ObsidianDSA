@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linked List/Linked List Striver/Introduction.md",
+                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linked List/Linked List Striver/Introduction.md",
+                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linked List/Linked List Striver/Introduction.md",
+                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linked List/Linked List Striver/Introduction.md"
+                "file": "Linked List/Linked List Striver/Convert Stack to LL.md"
               }
             }
           }
@@ -150,15 +150,34 @@
   },
   "active": "3f1dff06d6e882d1",
   "lastOpenFiles": [
+    "Linked List/Linked List Striver/Array to LL.md",
+    "Linked List/Linked List Striver/Convert Stack to LL.md",
+    "Linked List/Linked List Striver/Introduction.md",
+    "Linked List/Linked List Striver/DLL1.png",
+    "Recursion & Backtracking/Questions/Subset Sum.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
+    "Recursion & Backtracking/Questions/Combination Sum.md",
+    "Recursion & Backtracking/Sorting Algorithms/Quick Sort.md",
+    "Recursion & Backtracking/Sorting Algorithms/Merge Sort.md",
+    "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
+    "Recursion & Backtracking/Sorting Algorithms",
+    "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
+    "Recursion & Backtracking/Subsequence/Structure.md",
+    "Recursion & Backtracking/DFS Structure.md",
+    "Recursion & Backtracking/Questions/Recursion/Subsets II.md",
+    "Recursion & Backtracking/Questions/Recursion",
+    "Recursion & Backtracking/Questions",
+    "Recursion & Backtracking/Subsequence",
+    "Linked List/Trees/Questions.md",
+    "Recursion & Backtracking",
+    "Linked List/Trees/Introduction.md",
     "Pasted image 20240216110333.png",
     "Pasted image 20240216110318.png",
-    "Linked List/Linked List Striver/Introduction.md",
     "Excalidraw/Drawing 2024-02-15 09.40.26.excalidraw.md",
     "Pasted image 20240215101152.png",
     "Pasted image 20240215101145.png",
     "Pasted image 20240215101119.png",
     "Excalidraw",
-    "Linked List/Linked List Striver/DLL1.png",
     "Linked-List-Data-Structure.png",
     "Linked List/Linked List Striver/Linked-List-Data-Structure 1.png",
     "Linked List/Linked List Striver/Intro.md",
