@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
+                "file": "Java/RobEdwards/Comparable Generics.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
+                "file": "Java/RobEdwards/Comparable Generics.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Linked List/Linked List Striver/Convert Stack to LL.md",
+                "file": "Java/RobEdwards/Comparable Generics.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Linked List/Linked List Striver/Convert Stack to LL.md"
+                "file": "Java/RobEdwards/Comparable Generics.md"
               }
             }
           }
@@ -150,11 +150,21 @@
   },
   "active": "3f1dff06d6e882d1",
   "lastOpenFiles": [
+    "Java/RobEdwards/Object Oriented Programming.md",
+    "Java/RobEdwards/Comparable Generics.md",
+    "Recursion & Backtracking/Questions/Subset Sum II.md",
+    "Java/RobEdwards",
+    "Java",
+    "Recursion & Backtracking/Questions/Subset Sum.md",
+    "Cheatsheet/Array to List.md",
     "Linked List/Linked List Striver/Array to LL.md",
+    "Cheatsheet",
+    "Linked List/Treedatastructure.png",
+    "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
+    "Linked List/Trees/Questions.md",
     "Linked List/Linked List Striver/Convert Stack to LL.md",
     "Linked List/Linked List Striver/Introduction.md",
     "Linked List/Linked List Striver/DLL1.png",
-    "Recursion & Backtracking/Questions/Subset Sum.md",
     "Recursion & Backtracking/Questions/Combination Sum II.md",
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "Recursion & Backtracking/Sorting Algorithms/Quick Sort.md",
@@ -168,7 +178,6 @@
     "Recursion & Backtracking/Questions/Recursion",
     "Recursion & Backtracking/Questions",
     "Recursion & Backtracking/Subsequence",
-    "Linked List/Trees/Questions.md",
     "Recursion & Backtracking",
     "Linked List/Trees/Introduction.md",
     "Pasted image 20240216110333.png",
@@ -183,7 +192,6 @@
     "Linked List/Linked List Striver/Intro.md",
     "2024-02-01.md",
     "Untitled.canvas",
-    "Linked List",
-    "Linked List/Linked List Striver"
+    "Linked List"
   ]
 }
