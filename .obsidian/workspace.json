@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6049b5236bc651e9",
+        "id": "a448bd3761a585fc",
         "type": "tabs",
         "children": [
           {
-            "id": "3f1dff06d6e882d1",
+            "id": "fcd529df4d3b6b25",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/RobEdwards/Parameterized Types.md",
+                "file": "Azure/App Service/ACI VS Azure App Service.md",
                 "mode": "source",
                 "source": false
               }
@@ -70,7 +70,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 304.5
   },
   "right": {
     "id": "c231a689cb5533c0",
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/RobEdwards/Parameterized Types.md",
+                "file": "Azure/App Service/ACI VS Azure App Service.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java/RobEdwards/Parameterized Types.md",
+                "file": "Azure/App Service/ACI VS Azure App Service.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/RobEdwards/Parameterized Types.md"
+                "file": "Azure/App Service/ACI VS Azure App Service.md"
               }
             }
           }
@@ -148,52 +148,54 @@
       "obsidian-excalidraw-plugin:Create new drawing": false
     }
   },
-  "active": "3f1dff06d6e882d1",
+  "active": "fcd529df4d3b6b25",
   "lastOpenFiles": [
-    "Java/RobEdwards/Generic Programming.md",
-    "Java/RobEdwards/Parameterized Types.md",
-    "Java/RobEdwards/Comparable Generics.md",
-    "Java/RobEdwards/Object Oriented Programming.md",
+    "Azure/App Service/Generic.md",
+    "Azure/App Service/ACI VS Azure App Service.md",
+    "Azure/App Service/Log storage and monitoring options in Azure Container Apps.md",
+    "Azure/App Service/Retrieve application log files.md",
+    "SQL Questions/LeetCode/Sorting and Grouping/Questions.md",
+    "Azure/App Service",
+    "Azure",
+    "SQL Questions/LeetCode/Aggregate/Questions.md",
+    "SQL Questions/LeetCode/Joins/Questions.md",
+    "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
+    "Recursion & Backtracking/Sorting Algorithms/Quick Sort.md",
     "Recursion & Backtracking/Questions/Subset Sum II.md",
-    "Java/RobEdwards",
-    "Java",
     "Recursion & Backtracking/Questions/Subset Sum.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
     "Cheatsheet/Array to List.md",
-    "Linked List/Linked List Striver/Array to LL.md",
-    "Cheatsheet",
+    "Recursion & Backtracking/Questions/Combination Sum.md",
+    "Recursion & Backtracking/Questions/Palindrome Partitioning.md",
+    "Recursion & Backtracking/Questions/M-coloring Problem.md",
+    "Recursion & Backtracking/DFS Structure.md",
+    "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
+    "Recursion & Backtracking/Questions/Recursion/Subsets II.md",
+    "SQL Questions/LeetCode/Sorting and Grouping",
+    "SQL Questions/LeetCode/Select/Questions.md",
+    "SQL Questions/LeetCode/Aggregate",
+    "Recursion & Backtracking/Subsequence/Structure.md",
+    "Java/RobEdwards/8. Hashing/3. Hashes Collisions.md",
+    "chaining.webp",
+    "Java/RobEdwards/7. Stack & Queues Using arrays.md",
+    "Java/RobEdwards/6. Exception.md",
+    "Java/RobEdwards/5. Autoboxing.md",
+    "Java/RobEdwards/4. Parameterized Types.md",
+    "hash-functions.webp",
+    "Java/RobEdwards/8. Hashing",
+    "SQL Questions/LeetCode/Joins",
+    "SQL Questions/LeetCode/Select",
+    "SQL Questions/LeetCode",
+    "SQL Questions",
+    "Java/RobEdwards",
     "Linked List/Treedatastructure.png",
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
-    "Linked List/Trees/Questions.md",
-    "Linked List/Linked List Striver/Convert Stack to LL.md",
-    "Linked List/Linked List Striver/Introduction.md",
     "Linked List/Linked List Striver/DLL1.png",
-    "Recursion & Backtracking/Questions/Combination Sum II.md",
-    "Recursion & Backtracking/Questions/Combination Sum.md",
-    "Recursion & Backtracking/Sorting Algorithms/Quick Sort.md",
-    "Recursion & Backtracking/Sorting Algorithms/Merge Sort.md",
-    "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
-    "Recursion & Backtracking/Sorting Algorithms",
-    "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
-    "Recursion & Backtracking/Subsequence/Structure.md",
-    "Recursion & Backtracking/DFS Structure.md",
-    "Recursion & Backtracking/Questions/Recursion/Subsets II.md",
-    "Recursion & Backtracking/Questions/Recursion",
-    "Recursion & Backtracking/Questions",
-    "Recursion & Backtracking/Subsequence",
-    "Recursion & Backtracking",
-    "Linked List/Trees/Introduction.md",
     "Pasted image 20240216110333.png",
     "Pasted image 20240216110318.png",
-    "Excalidraw/Drawing 2024-02-15 09.40.26.excalidraw.md",
     "Pasted image 20240215101152.png",
     "Pasted image 20240215101145.png",
     "Pasted image 20240215101119.png",
-    "Excalidraw",
-    "Linked-List-Data-Structure.png",
-    "Linked List/Linked List Striver/Linked-List-Data-Structure 1.png",
-    "Linked List/Linked List Striver/Intro.md",
-    "2024-02-01.md",
-    "Untitled.canvas",
-    "Linked List"
+    "Untitled.canvas"
   ]
 }
