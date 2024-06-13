@@ -52,3 +52,43 @@ FROM Courses
 GROUP BY class
 HAVING COUNT(student) >= 5;
 ```
+
+## 5. [Find Followers Count](https://leetcode.com/problems/find-followers-count/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+
+SELECT      user_id, COUNT(follower_id) as followers_count
+FROM        Followers
+GROUP BY    user_id
+ORDER BY    user_id;
+```
+
+
+
+## 6. [Biggest Single Number](https://leetcode.com/problems/biggest-single-number/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+WITH SingleNumberCTE AS(
+    SELECT      num
+    FROM        MyNumbers
+    GROUP BY    num
+    HAVING      COUNT(*) = 1
+)
+SELECT  MAX(num) AS num
+FROM    SingleNumberCTE;
+```
+
+## 7. [Customers Who Bought All Products](https://leetcode.com/problems/customers-who-bought-all-products/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+SELECT customer_id
+FROM Customer
+GROUP BY customer_id
+HAVING COUNT(DISTINCT product_key) = (SELECT COUNT(*) FROM Product);
+```
