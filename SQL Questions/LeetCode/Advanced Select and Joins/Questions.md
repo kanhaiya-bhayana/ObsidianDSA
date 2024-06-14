@@ -39,3 +39,18 @@ WHERE employee_id IN (
 );
 ```
 
+## 3. [Triangle Judgement](https://leetcode.com/problems/triangle-judgement/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+SELECT      X,Y,Z,
+CASE        WHEN (X + Y > Z) 
+            AND  (X + Z > Y)
+            AND  (Y + Z > X)
+            THEN 'Yes'
+            ELSE 'No'
+END
+            AS triangle
+FROM        Triangle;
+```
