@@ -8,5 +8,9 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "readableLineLength": false
+  "readableLineLength": false,
+  "strictLineBreaks": false,
+  "showLineNumber": true,
+  "rightToLeft": false,
+  "vimMode": false
 }

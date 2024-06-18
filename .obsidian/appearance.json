@@ -1,5 +1,7 @@
 {
-  "accentColor": "",
+  "accentColor": "#2d6acd",
   "theme": "system",
-  "cssTheme": "Things"
+  "cssTheme": "Things",
+  "baseFontSizeAction": false,
+  "nativeMenus": true
 }
