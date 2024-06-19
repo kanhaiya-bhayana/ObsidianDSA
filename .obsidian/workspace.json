@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md"
+                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md"
               }
             }
           }
@@ -150,9 +150,27 @@
   },
   "active": "6af4010127c2d989",
   "lastOpenFiles": [
+    "Design Patterns/SOLID/Open for Extension Closed for Modification.md",
+    "Design Patterns/Overview.md",
+    "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
+    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
+    "Sorting Algorithms/Count Sort.md",
+    "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
+    "SQL Server/Kudvenket/7. Joins",
+    "SQL Server/Kudvenket/5. Select Statement.md",
+    "SQL Server/Kudvenket/4. Identity Column.md",
+    "SQL Server/Kudvenket/3. Cascading referential integrity.md",
+    "SQL Server/Kudvenket/2. Creating and working with tables.md",
+    "SQL Server/Kudvenket",
+    "SQL Server",
+    "Design Patterns/SOLID/SOLID.md",
+    "Design Patterns/SOLID/Single Responsibility Principle.md",
+    "Design Patterns/SOLID/Liskov Substitution Principle.md",
+    "Design Patterns/SOLID",
+    "Design Patterns",
+    "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
     "Recursion & Backtracking/Questions/K-th Permutation Sequence.md",
-    "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
     "Recursion & Backtracking/Questions/Rat in a Maze Problem - I.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/Default Order of Execution.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/Rate Limiter Pattern.md",
@@ -164,32 +182,14 @@
     "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
     "Recursion & Backtracking/Questions/Subset Sum.md",
     "Recursion & Backtracking/Questions/M-coloring Problem.md",
-    "Recursion & Backtracking/Questions/Recursion/Subsets II.md",
-    "Recursion & Backtracking/DFS Structure.md",
-    "Sorting Algorithms/Count Sort.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/Circuit Breaker Pattern.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/Retry Pattern.md",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
-    "Microservices/Eazy Bytes/Routing, Cross Cutting Concerns in Microservices.md",
-    "Azure/App Service/ACI VS Azure App Service.md",
-    "Microservices/Eazy Bytes/Spring Cloud Gateway.md",
     "SQL Questions/LeetCode/Advanced Select and Joins",
-    "SQL Questions/LeetCode/Sorting and Grouping/Questions.md",
     "Sorting Algorithms",
     "Pasted image 20240608141216.png",
     "Microservices/Eazy Bytes",
     "Microservices",
-    "Azure/App Service/Generic.md",
-    "Azure/App Service/Log storage and monitoring options in Azure Container Apps.md",
-    "Azure/App Service/Retrieve application log files.md",
-    "Azure/App Service",
-    "Azure",
-    "SQL Questions/LeetCode/Joins/Questions.md",
-    "SQL Questions/LeetCode/Sorting and Grouping",
-    "SQL Questions/LeetCode/Aggregate",
     "chaining.webp",
     "hash-functions.webp",
-    "Java/RobEdwards/8. Hashing",
     "Linked List/Treedatastructure.png",
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
     "Linked List/Linked List Striver/DLL1.png",
