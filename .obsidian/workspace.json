@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design Patterns/SOLID/Liskov Substitution Principle.md"
+                "file": "Design Patterns/SOLID/Interface Segregation.md"
               }
             }
           }
@@ -150,6 +150,10 @@
   },
   "active": "6af4010127c2d989",
   "lastOpenFiles": [
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
+    "Design Patterns/SOLID/Interface Segregation.md",
+    "Design Patterns/SOLID/Liskov Substitution Principle.md",
+    "SQL Questions/LeetCode/Subqueries",
     "Design Patterns/SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/Overview.md",
     "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
@@ -165,7 +169,6 @@
     "SQL Server",
     "Design Patterns/SOLID/SOLID.md",
     "Design Patterns/SOLID/Single Responsibility Principle.md",
-    "Design Patterns/SOLID/Liskov Substitution Principle.md",
     "Design Patterns/SOLID",
     "Design Patterns",
     "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
@@ -180,14 +183,11 @@
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
     "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
-    "Recursion & Backtracking/Questions/Subset Sum.md",
-    "Recursion & Backtracking/Questions/M-coloring Problem.md",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "SQL Questions/LeetCode/Advanced Select and Joins",
     "Sorting Algorithms",
     "Pasted image 20240608141216.png",
     "Microservices/Eazy Bytes",
-    "Microservices",
     "chaining.webp",
     "hash-functions.webp",
     "Linked List/Treedatastructure.png",
