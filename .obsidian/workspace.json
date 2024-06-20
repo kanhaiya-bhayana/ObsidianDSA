@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+                "file": "Design Patterns/SOLID/Interface Segregation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md"
+                "file": "Design Patterns/SOLID/Interface Segregation.md"
               }
             }
           }
@@ -148,6 +148,7 @@
   },
   "active": "59945408013e79f6",
   "lastOpenFiles": [
+<<<<<<< HEAD
     "Linked List/Trees/Introduction.md",
     "Linked List/Trees/Questions.md",
     "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
@@ -158,5 +159,54 @@
     "Recursion & Backtracking/Questions/Combination Sum II.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
     "Recursion & Backtracking/Questions/K-th Permutation Sequence.md"
+=======
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
+    "Design Patterns/SOLID/Interface Segregation.md",
+    "Design Patterns/SOLID/Liskov Substitution Principle.md",
+    "SQL Questions/LeetCode/Subqueries",
+    "Design Patterns/SOLID/Open for Extension Closed for Modification.md",
+    "Design Patterns/Overview.md",
+    "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
+    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
+    "Sorting Algorithms/Count Sort.md",
+    "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
+    "SQL Server/Kudvenket/7. Joins",
+    "SQL Server/Kudvenket/5. Select Statement.md",
+    "SQL Server/Kudvenket/4. Identity Column.md",
+    "SQL Server/Kudvenket/3. Cascading referential integrity.md",
+    "SQL Server/Kudvenket/2. Creating and working with tables.md",
+    "SQL Server/Kudvenket",
+    "SQL Server",
+    "Design Patterns/SOLID/SOLID.md",
+    "Design Patterns/SOLID/Single Responsibility Principle.md",
+    "Design Patterns/SOLID",
+    "Design Patterns",
+    "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
+    "Recursion & Backtracking/Questions/K-th Permutation Sequence.md",
+    "Recursion & Backtracking/Questions/Rat in a Maze Problem - I.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns/Default Order of Execution.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns/Rate Limiter Pattern.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns",
+    "SQL Questions/LeetCode/Aggregate/Questions.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
+    "Recursion & Backtracking/Questions/Combination Sum.md",
+    "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
+    "Recursion & Backtracking/Questions/Recursion/Subset Sums.md",
+    "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
+    "SQL Questions/LeetCode/Advanced Select and Joins",
+    "Sorting Algorithms",
+    "Pasted image 20240608141216.png",
+    "Microservices/Eazy Bytes",
+    "chaining.webp",
+    "hash-functions.webp",
+    "Linked List/Treedatastructure.png",
+    "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
+    "Linked List/Linked List Striver/DLL1.png",
+    "Pasted image 20240216110333.png",
+    "Pasted image 20240216110318.png",
+    "Pasted image 20240215101152.png",
+    "Untitled.canvas"
+>>>>>>> 711e217615833e804f77b324429adaa6b6885707
   ]
 }
