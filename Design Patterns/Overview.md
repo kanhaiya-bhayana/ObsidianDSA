@@ -2,6 +2,7 @@
 Design Patterns are common architectural approaches.
 
 
+##### Design Patterns are typically split into three categories and that is called Gamma Categorization
 
 1. Creational
 2. Structural
@@ -20,6 +21,8 @@ Design Patterns are common architectural approaches.
 - Prototype
 - Singleton
 
+1. Deal with creation (construction) of objects.
+2. Explicit (constructor) vs. implicit (DI, reflection, etc.)
 
 ## Structural
 
@@ -31,6 +34,9 @@ Design Patterns are common architectural approaches.
 - Flyweight
 - Proxy
 
+1. Concerned with the structure (e.g., class members)
+2. Many patterns are wrappers that mimic the underlying class interface
+3. Stress the importance of good API design
 
 ## Behavioral
 
@@ -46,3 +52,4 @@ Design Patterns are common architectural approaches.
 - Template Method
 - Visitor
 
+1. They are all different; no central theme
