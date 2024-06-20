@@ -1,5 +1,5 @@
 
-## 1. [The Number of Employees Which Report to Each Employee](https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/)
+#### 1. [The Number of Employees Which Report to Each Employee](https://leetcode.com/problems/the-number-of-employees-which-report-to-each-employee/)
 ```sql
 /* Write your T-SQL query statement below */
 
@@ -19,7 +19,7 @@ ORDER BY
 ```
 
 
-## 2. [Primary Department for Each Employee](https://leetcode.com/problems/primary-department-for-each-employee/)
+#### 2. [Primary Department for Each Employee](https://leetcode.com/problems/primary-department-for-each-employee/)
 
 ```sql
 /* Write your T-SQL query statement below */
@@ -38,7 +38,7 @@ WHERE employee_id IN (
 );
 ```
 
-## 3. [Triangle Judgement](https://leetcode.com/problems/triangle-judgement/)
+#### 3. [Triangle Judgement](https://leetcode.com/problems/triangle-judgement/)
 
 ```sql
 /* Write your T-SQL query statement below */
@@ -54,7 +54,7 @@ END
 FROM        Triangle;
 ```
 
-## 4. [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)
+#### 4. [Consecutive Numbers](https://leetcode.com/problems/consecutive-numbers/)
 
 ```sql
 /* Write your T-SQL query statement below */
@@ -70,7 +70,7 @@ WHERE       l1.num = l2.num
             l2.num = l3.num;
 ```
 
-## 5. [Product Price at a Given Date](https://leetcode.com/problems/product-price-at-a-given-date/)
+#### 5. [Product Price at a Given Date](https://leetcode.com/problems/product-price-at-a-given-date/)
 
 ```sql
 /* Write your T-SQL query statement below */
@@ -90,7 +90,7 @@ FROM
     products a
 ```
 
-## 6. [Last Person to Fit in the Bus](https://leetcode.com/problems/last-person-to-fit-in-the-bus/)
+#### 6. [Last Person to Fit in the Bus](https://leetcode.com/problems/last-person-to-fit-in-the-bus/)
 
 ```sql
 /* Write your T-SQL query statement below */
@@ -221,3 +221,8 @@ SELECT 'High Salary' AS category,
        COUNT(CASE WHEN income > 50000 THEN 1 END) AS accounts_count
 FROM Accounts;
 ```
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4

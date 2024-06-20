@@ -1,7 +1,4 @@
 {
-  "accentColor": "#2d6acd",
-  "theme": "system",
-  "cssTheme": "Things",
-  "baseFontSizeAction": false,
-  "nativeMenus": true
+  "cssTheme": "GitHub Theme",
+  "theme": "obsidian"
 }
