@@ -8,12 +8,30 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3c029fb4013f7c2b",
+            "id": "d00c0b81ac995a30",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "9664638fd5809c58",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f45e2ea052b4c64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,7 +87,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 381.5,
+    "collapsed": true
   },
   "right": {
     "id": "23ce613527336eb1",
@@ -85,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Questions/LeetCode/Subqueries/Questions.md"
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md"
               }
             }
           }
@@ -146,8 +165,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "3c029fb4013f7c2b",
+  "active": "d00c0b81ac995a30",
   "lastOpenFiles": [
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
+    "Sorting Algorithms/Count Sort.md",
+    "Linked List/Trees/Questions.md",
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
     "Design Patterns/SOLID/Single Responsibility Principle.md"
   ]
 }
