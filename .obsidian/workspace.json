@@ -13,24 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Patterns/2. Builder/Overview.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6af4010127c2d989",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
                 "file": "Design Patterns/Overview.md",
                 "mode": "source",
                 "source": false
-              },
-              "pinned": true
+              }
             }
           }
         ],
@@ -100,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design Patterns/2. Builder/Overview.md",
+                "file": "Design Patterns/Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design Patterns/2. Builder/Overview.md",
+                "file": "Design Patterns/Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design Patterns/2. Builder/Overview.md"
+                "file": "Design Patterns/Overview.md"
               }
             }
           }
@@ -161,13 +147,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9aa00a0b69c83324",
+  "active": "7d96b44b4d817549",
   "lastOpenFiles": [
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
+    "Recursion & Backtracking/Questions/Combination Sum.md",
     "Design Patterns/Overview.md",
+    "SQL Questions/LeetCode/Joins/Questions.md",
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
+    "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
+    "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+    "SQL Server/One Liners.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
     "Design Patterns/2. Builder/Overview.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/2. Builder",
     "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
@@ -175,8 +167,6 @@
     "Design Patterns/1. SOLID/Interface Segregation.md",
     "Design Patterns/1. SOLID/SOLID.md",
     "SQL Questions/LeetCode/Select/Questions.md",
-    "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
-    "SQL Questions/LeetCode/Subqueries/Questions.md",
     "Sorting Algorithms/Count Sort.md",
     "SQL Questions/LeetCode/Subqueries",
     "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
@@ -193,10 +183,6 @@
     "Design Patterns",
     "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
-    "Recursion & Backtracking/Questions/K-th Permutation Sequence.md",
-    "Recursion & Backtracking/Questions/Rat in a Maze Problem - I.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/Default Order of Execution.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/Rate Limiter Pattern.md",
     "Microservices/Eazy Bytes/Resiliency Patterns",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "SQL Questions/LeetCode/Advanced Select and Joins",

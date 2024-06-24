@@ -40,6 +40,7 @@ GROUP BY    v.customer_id;
 
 ## 4. [Rising Temperature](https://leetcode.com/problems/rising-temperature/)
 
+Postgres
 ```sql
 -- Write your PostgreSQL query statement below
 
@@ -49,7 +50,17 @@ CROSS JOIN  Weather ww
 WHERE       w.recordDate = ww.recordDate+1 AND w.temperature > ww.temperature;
 ```
 
+SQL Server
+```sql
+/* Write your T-SQL query statement below */
 
+SELECT      w1.id
+FROM        Weather w1
+cross JOIN  Weather w2
+WHERE       w1.recordDate = DATEADD(day,1,w2.recordDate) 
+            AND 
+            w1.temperature > w2.temperature;
+```
 ## 5. [Average Time of Process per Machine](https://leetcode.com/problems/average-time-of-process-per-machine/)
 
 ```sql
