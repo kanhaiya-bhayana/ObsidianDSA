@@ -25,3 +25,27 @@
 3. **Optimize your microservices:** By monitoring your microservices, you can identify areas where you can optimize your microservices to improve performance and reliability.
 
 > Monitoring and observability can be considered as two sides of the same coin. Both rely of the same types of telemetry data to enable insight into software distributed systems. Those data types - metrics, traces, and logs - are often referred to as the three pillars of observability. 
+
+
+## Monitoring vs Observability
+
+
+| **Feature** | **Monitoring**                     | **Observability**                             |
+| ----------- | ---------------------------------- | --------------------------------------------- |
+| Purpose     | Identify and troubleshoot problems | Understand the internal state of a system     |
+| Data        | Metrics, traces, and logs          | Metrics, traces, logs, and other data sources |
+| Goal        | Identify problems                  | Understand how a system works                 |
+| Approach    | Reactive                           | Proactive                                     |
+
+#### So what is reactive approach?
+
+When I say reactive, we are going to react when a problem occurs. For example, your operations team can react when a particular microservice is facing some network problems or some performance issues. Without seeing those events. Your operations team cannot react to them. That's why inside the monitoring the approach will always be reactive
+
+#### So what is proactive approach?
+
+For example, your microservice might be throwing some NullPointerExceptions. Maybe it is not throwing for each and every request for some random scenario or for some rare scenario. A particular microservice is throwing a RuntimeException or NullPointerException. So as a developer you will try to proactively identify the issues so that you can provide a fix in the future release. So this is a proactive approach.
+
+> In other words, monitoring is about collecting data and observability is about understanding data.
+> 
+> Monitoring is reactive to problems while observability is fixing them in real time.
+

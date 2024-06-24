@@ -167,13 +167,24 @@
   },
   "active": "d00c0b81ac995a30",
   "lastOpenFiles": [
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
+    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
+    "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+    "Design Patterns/2. Builder/Overview.md",
+    "Design Patterns/2. Builder",
+    "Design Patterns/1. SOLID/Single Responsibility Principle.md",
+    "Design Patterns/1. SOLID/SOLID.md",
+    "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
+    "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
+    "Design Patterns/1. SOLID/Interface Segregation.md",
+    "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
+    "Design Patterns/1. SOLID",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
     "Sorting Algorithms/Count Sort.md",
     "Linked List/Trees/Questions.md",
-    "SQL Questions/LeetCode/Subqueries/Questions.md",
     "Design Patterns/SOLID/Single Responsibility Principle.md"
   ]
 }
