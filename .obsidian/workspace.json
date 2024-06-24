@@ -161,8 +161,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7d96b44b4d817549",
+  "active": "9aa00a0b69c83324",
   "lastOpenFiles": [
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
     "Design Patterns/Overview.md",
     "Design Patterns/2. Builder/Overview.md",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
@@ -195,11 +198,8 @@
     "Microservices/Eazy Bytes/Resiliency Patterns/Default Order of Execution.md",
     "Microservices/Eazy Bytes/Resiliency Patterns/Rate Limiter Pattern.md",
     "Microservices/Eazy Bytes/Resiliency Patterns",
-    "SQL Questions/LeetCode/Aggregate/Questions.md",
-    "Recursion & Backtracking/Questions/Combination Sum II.md",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "SQL Questions/LeetCode/Advanced Select and Joins",
-    "Sorting Algorithms",
     "Pasted image 20240608141216.png",
     "chaining.webp",
     "hash-functions.webp",
