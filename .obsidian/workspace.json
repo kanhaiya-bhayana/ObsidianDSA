@@ -149,6 +149,12 @@
   },
   "active": "7d96b44b4d817549",
   "lastOpenFiles": [
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/4. Managing Logs with Grafana, Loki & Promtail.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/3. Centralized Logging or Log Aggregation.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/2. Observability & Monitoring.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/1. Overview.md",
+    "Loki-flow-diagram.png",
+    "Grafana-loki-promtail.png",
     "Design Patterns/Overview.md",
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "SQL Questions/LeetCode/Joins/Questions.md",
@@ -175,14 +181,10 @@
     "SQL Server/Kudvenket/5. Select Statement.md",
     "SQL Server/Kudvenket/4. Identity Column.md",
     "SQL Server/Kudvenket/3. Cascading referential integrity.md",
-    "SQL Server/Kudvenket/2. Creating and working with tables.md",
     "SQL Server/Kudvenket",
     "SQL Server",
-    "Design Patterns/1. SOLID/Single Responsibility Principle.md",
     "Design Patterns/1. SOLID",
     "Design Patterns",
-    "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
     "Microservices/Eazy Bytes/Resiliency Patterns",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "SQL Questions/LeetCode/Advanced Select and Joins",
@@ -193,8 +195,6 @@
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
     "Linked List/Linked List Striver/DLL1.png",
     "Pasted image 20240216110333.png",
-    "Pasted image 20240216110318.png",
-    "Pasted image 20240215101152.png",
     "Untitled.canvas"
   ]
 }
