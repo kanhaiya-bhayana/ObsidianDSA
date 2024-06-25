@@ -1,57 +1,40 @@
 {
   "main": {
-    "id": "606a8ceea4dc4c06",
+    "id": "1f92d190fc2fcef9",
     "type": "split",
     "children": [
       {
-        "id": "2cdd27a4aea085db",
+        "id": "5bb99e6b0bbc150f",
         "type": "tabs",
         "children": [
           {
-            "id": "d00c0b81ac995a30",
+            "id": "7d96b44b4d817549",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Design Patterns/Overview.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
-      },
-      {
-        "id": "9664638fd5809c58",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "5f45e2ea052b4c64",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "193af5e290a50d7e",
+    "id": "076fc76dcb2fe5b5",
     "type": "split",
     "children": [
       {
-        "id": "6838858cfe12862a",
+        "id": "09ffd385c4d0b271",
         "type": "tabs",
         "children": [
           {
-            "id": "cff90383daebf8fc",
+            "id": "9aa00a0b69c83324",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -61,7 +44,7 @@
             }
           },
           {
-            "id": "5eef36fc0e62b072",
+            "id": "ff51855e65f8ade2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -76,7 +59,7 @@
             }
           },
           {
-            "id": "f0ce6f6003907ccc",
+            "id": "53ff6279f3c85161",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -87,24 +70,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 381.5,
-    "collapsed": true
+    "width": 350.5
   },
   "right": {
-    "id": "23ce613527336eb1",
+    "id": "c231a689cb5533c0",
     "type": "split",
     "children": [
       {
-        "id": "a8713b7fb767a056",
+        "id": "633132af884f5a70",
         "type": "tabs",
         "children": [
           {
-            "id": "35cef7e1243fb2d5",
+            "id": "0425d7621aec538e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Design Patterns/Overview.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,19 +98,19 @@
             }
           },
           {
-            "id": "ceba9b71c0d5f79a",
+            "id": "af7f887d0964ad16",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Design Patterns/Overview.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "f0c3cfef1e443d4b",
+            "id": "a59303e77ab349b6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -139,12 +121,12 @@
             }
           },
           {
-            "id": "4db7ad7786ba329d",
+            "id": "18cde7e43ef9998f",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md"
+                "file": "Design Patterns/Overview.md"
               }
             }
           }
@@ -165,26 +147,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "d00c0b81ac995a30",
+  "active": "7d96b44b4d817549",
   "lastOpenFiles": [
+    "Recursion & Backtracking/Questions/Combination Sum.md",
+    "Design Patterns/Overview.md",
+    "SQL Questions/LeetCode/Joins/Questions.md",
     "SQL Questions/LeetCode/Subqueries/Questions.md",
-    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
     "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
+    "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+    "SQL Server/One Liners.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
     "Design Patterns/2. Builder/Overview.md",
-    "Design Patterns/2. Builder",
-    "Design Patterns/1. SOLID/Single Responsibility Principle.md",
-    "Design Patterns/1. SOLID/SOLID.md",
-    "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
-    "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
-    "Design Patterns/1. SOLID/Interface Segregation.md",
-    "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
-    "Design Patterns/1. SOLID",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Overview.md",
-    "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice",
+    "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
+    "Design Patterns/2. Builder",
+    "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
+    "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
+    "Design Patterns/1. SOLID/Interface Segregation.md",
+    "Design Patterns/1. SOLID/SOLID.md",
+    "SQL Questions/LeetCode/Select/Questions.md",
     "Sorting Algorithms/Count Sort.md",
-    "Linked List/Trees/Questions.md",
-    "Design Patterns/SOLID/Single Responsibility Principle.md"
+    "SQL Questions/LeetCode/Subqueries",
+    "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
+    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
+    "SQL Server/Kudvenket/7. Joins",
+    "SQL Server/Kudvenket/5. Select Statement.md",
+    "SQL Server/Kudvenket/4. Identity Column.md",
+    "SQL Server/Kudvenket/3. Cascading referential integrity.md",
+    "SQL Server/Kudvenket/2. Creating and working with tables.md",
+    "SQL Server/Kudvenket",
+    "SQL Server",
+    "Design Patterns/1. SOLID/Single Responsibility Principle.md",
+    "Design Patterns/1. SOLID",
+    "Design Patterns",
+    "SQL Questions/LeetCode/Advanced Select and Joins/Questions.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns/BulkHead Pattern.md",
+    "Microservices/Eazy Bytes/Resiliency Patterns",
+    "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
+    "SQL Questions/LeetCode/Advanced Select and Joins",
+    "Pasted image 20240608141216.png",
+    "chaining.webp",
+    "hash-functions.webp",
+    "Linked List/Treedatastructure.png",
+    "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
+    "Linked List/Linked List Striver/DLL1.png",
+    "Pasted image 20240216110333.png",
+    "Pasted image 20240216110318.png",
+    "Pasted image 20240215101152.png",
+    "Untitled.canvas"
   ]
 }
