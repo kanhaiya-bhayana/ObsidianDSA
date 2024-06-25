@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Linked List/Trees/Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -87,8 +87,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 381.5,
-    "collapsed": true
+    "width": 381.5
   },
   "right": {
     "id": "23ce613527336eb1",
@@ -104,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Linked List/Trees/Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
+                "file": "Linked List/Trees/Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md"
+                "file": "Linked List/Trees/Questions.md"
               }
             }
           }
@@ -167,10 +166,11 @@
   },
   "active": "d00c0b81ac995a30",
   "lastOpenFiles": [
+    "Linked List/Trees/Introduction.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
     "SQL Questions/LeetCode/Subqueries/Questions.md",
     "SQL Server/Kudvenket/6. Group by in SQL Server.md",
     "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
     "Design Patterns/2. Builder/Overview.md",
     "Design Patterns/2. Builder",
     "Design Patterns/1. SOLID/Single Responsibility Principle.md",
