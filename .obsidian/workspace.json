@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Patterns/Overview.md",
+                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Design Patterns/Overview.md",
+                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Design Patterns/Overview.md",
+                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Design Patterns/Overview.md"
+                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md"
               }
             }
           }
@@ -149,8 +149,8 @@
   },
   "active": "7d96b44b4d817549",
   "lastOpenFiles": [
-    "Recursion & Backtracking/Questions/Combination Sum.md",
     "Design Patterns/Overview.md",
+    "Recursion & Backtracking/Questions/Combination Sum.md",
     "SQL Questions/LeetCode/Joins/Questions.md",
     "SQL Questions/LeetCode/Subqueries/Questions.md",
     "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
