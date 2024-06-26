@@ -86,3 +86,49 @@ UNION ALL
 SELECT title AS results
 FROM MovieRatings;
 ```
+
+
+## 4. [Restaurant Growth](https://leetcode.com/problems/restaurant-growth/)
+
+```sql
+WITH temp AS (
+    SELECT
+        visited_on,
+        SUM(amount) AS amount
+    FROM
+        Customer
+    GROUP BY
+        visited_on
+)
+SELECT
+    visited_on,
+    SUM(amount) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS amount,
+    ROUND(AVG(amount * 1.00) OVER (ORDER BY visited_on ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS average_amount
+FROM
+    temp
+ORDER BY
+    visited_on
+OFFSET 6 ROWS;
+
+```
+
+## 5. [Friend Requests II: Who Has the Most Friends](https://leetcode.com/problems/friend-requests-ii-who-has-the-most-friends/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+SELECT TOP 1 
+    id, 
+    COUNT(*) as num
+FROM    
+    (
+        SELECT requester_id as id FROM RequestAccepted 
+        UNION ALL
+        SELECT accepter_id FROM RequestAccepted 
+    ) friend_request
+GROUP BY    
+    id
+ORDER BY 
+    num DESC;
+```
+

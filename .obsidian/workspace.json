@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "7d96b44b4d817549",
+            "id": "bfc12673d0fedd2d",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md"
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md"
               }
             }
           }
@@ -147,20 +147,23 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7d96b44b4d817549",
+  "active": "bfc12673d0fedd2d",
   "lastOpenFiles": [
+    "Linked List/Trees/Questions.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/2. Observability & Monitoring.md",
+    "Linked List/Trees/Introduction.md",
+    "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
+    "SQL Server/Kudvenket/8. Replace NULL Values in Sql Server.md",
+    "SQL Questions/LeetCode/Subqueries/Questions.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/4. Managing Logs with Grafana, Loki & Promtail.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/3. Centralized Logging or Log Aggregation.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/2. Observability & Monitoring.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/1. Overview.md",
     "Loki-flow-diagram.png",
     "Grafana-loki-promtail.png",
     "Design Patterns/Overview.md",
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "SQL Questions/LeetCode/Joins/Questions.md",
-    "SQL Questions/LeetCode/Subqueries/Questions.md",
     "SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
-    "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
     "SQL Server/One Liners.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Observability & Monitoring.md",
     "Design Patterns/2. Builder/Overview.md",
@@ -178,9 +181,6 @@
     "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
     "SQL Server/Kudvenket/6. Group by in SQL Server.md",
     "SQL Server/Kudvenket/7. Joins",
-    "SQL Server/Kudvenket/5. Select Statement.md",
-    "SQL Server/Kudvenket/4. Identity Column.md",
-    "SQL Server/Kudvenket/3. Cascading referential integrity.md",
     "SQL Server/Kudvenket",
     "SQL Server",
     "Design Patterns/1. SOLID",
