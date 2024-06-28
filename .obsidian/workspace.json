@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Recursion & Backtracking/Questions/Combination Sum II.md",
+                "file": "Graph/Striver/Implementation.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Recursion & Backtracking/Questions/Combination Sum II.md",
+                "file": "Graph/Striver/Implementation.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Recursion & Backtracking/Questions/Combination Sum II.md",
+                "file": "Graph/Striver/Implementation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Recursion & Backtracking/Questions/Combination Sum II.md"
+                "file": "Graph/Striver/Implementation.md"
               }
             }
           }
@@ -149,6 +149,12 @@
   },
   "active": "bfc12673d0fedd2d",
   "lastOpenFiles": [
+    "Graph/Striver/Introduction.md",
+    "Graph/Striver/Weighted Graph.md",
+    "Graph/Striver/Implementation.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
+    "Graph/Striver",
+    "Graph",
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "SQL Questions/LeetCode/Subqueries/Questions.md",
     "SQL Server/Kudvenket/9. Union and Union All.md",
@@ -175,19 +181,13 @@
     "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
     "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
     "Design Patterns/1. SOLID/Interface Segregation.md",
-    "Design Patterns/1. SOLID/SOLID.md",
-    "SQL Questions/LeetCode/Select/Questions.md",
-    "Sorting Algorithms/Count Sort.md",
     "SQL Questions/LeetCode/Subqueries",
-    "SQL Server/Kudvenket/1. Creating, Altering and Dropping Database.md",
     "SQL Server/Kudvenket/7. Joins",
     "SQL Server/Kudvenket",
     "SQL Server",
     "Design Patterns/1. SOLID",
     "Design Patterns",
-    "Microservices/Eazy Bytes/Resiliency Patterns",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
-    "SQL Questions/LeetCode/Advanced Select and Joins",
     "Pasted image 20240608141216.png",
     "chaining.webp",
     "hash-functions.webp",
