@@ -162,3 +162,32 @@ AND
         HAVING COUNT(*) = 1
     );
 ```
+
+## 7. [Department Top Three Salaries](https://leetcode.com/problems/department-top-three-salaries/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+SELECT 
+    d.name AS Department, 
+    e.name AS Employee, 
+    e.salary AS Salary
+FROM 
+    Employee e
+JOIN 
+    Department d ON e.departmentId = d.id
+WHERE 
+    e.salary IN (
+        SELECT TOP 3 sub.salary
+        FROM 
+            Employee sub
+        WHERE 
+            sub.departmentId = e.departmentId
+        GROUP BY 
+            sub.salary
+        ORDER BY 
+            sub.salary DESC
+    )
+ORDER BY 
+    Department, Salary DESC;
+```

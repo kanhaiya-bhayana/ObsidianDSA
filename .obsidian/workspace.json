@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph/Striver/Implementation.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph/Striver/Implementation.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graph/Striver/Implementation.md",
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graph/Striver/Implementation.md"
+                "file": "SQL Questions/LeetCode/Subqueries/Questions.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "bfc12673d0fedd2d",
   "lastOpenFiles": [
+    "Graph/Striver/Implementation.md",
     "Graph/Striver/Introduction.md",
     "Graph/Striver/Weighted Graph.md",
-    "Graph/Striver/Implementation.md",
     "Recursion & Backtracking/Questions/Combination Sum II.md",
     "Graph/Striver",
     "Graph",
