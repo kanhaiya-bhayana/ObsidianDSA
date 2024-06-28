@@ -132,3 +132,33 @@ ORDER BY
     num DESC;
 ```
 
+
+
+## 6. [Investments in 2016](https://leetcode.com/problems/investments-in-2016/)
+
+```sql
+/* Write your T-SQL query statement below */
+SELECT      
+    ROUND(SUM(tiv_2016),2) as tiv_2016
+FROM
+    Insurance AS i1
+WHERE       
+    tiv_2015 IN (
+        SELECT 
+            tiv_2015
+        FROM
+            Insurance
+        GROUP BY
+            tiv_2015
+        HAVING 
+            COUNT(tiv_2015) > 1
+    )
+AND
+    EXISTS (
+        SELECT 1
+        FROM Insurance AS i2
+        WHERE i1.lat = i2.lat AND i1.lon = i2.lon
+        GROUP BY lat, lon
+        HAVING COUNT(*) = 1
+    );
+```
