@@ -122,7 +122,7 @@ HAVING      COUNT(*) >=5;
 ```
 
 ## 9. [Confirmation Rate](https://leetcode.com/problems/confirmation-rate/)
-
+SQL
 ```sql
 # Write your MySQL query statement below
 
@@ -139,4 +139,26 @@ ON          s.user_id = c.user_id
 AND         c.action = 'confirmed'
 LEFT JOIN   req r ON s.user_id = r.user_id
 GROUP BY    s.user_id, r.requested;
+```
+
+SQL Server
+```sql
+/* Write your T-SQL query statement below */
+WITH ConfirmationCounts AS (
+    SELECT
+        user_id,
+        COUNT(*) AS total_requests,
+        SUM(CASE WHEN action = 'confirmed' THEN 1 ELSE 0 END) AS confirmed_requests
+    FROM Confirmations
+    GROUP BY user_id
+)
+SELECT
+    s.user_id,
+    ROUND(
+        COALESCE(cc.confirmed_requests, 0.0) / COALESCE(NULLIF(cc.total_requests, 0), 1),
+        2
+    ) AS confirmation_rate
+FROM
+    Signups s
+    LEFT JOIN ConfirmationCounts cc ON s.user_id = cc.user_id;
 ```
