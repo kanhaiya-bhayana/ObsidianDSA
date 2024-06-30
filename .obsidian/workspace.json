@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md"
               }
             }
           }
@@ -148,8 +148,11 @@
   },
   "active": "486c7055621019e8",
   "lastOpenFiles": [
-    "DSA/DP/CodeStoryWithMIK/1. Overview.md",
+    "Distributed-tracing.png",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
     "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "DSA/DP/CodeStoryWithMIK/1. Overview.md",
     "DSA/DP/CodeStoryWithMIK",
     "DSA/DP",
     "SQL Server/Kudvenket/5. Select Statement.md",
@@ -168,7 +171,6 @@
     "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/4. Managing Logs with Grafana, Loki & Promtail.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/3. Centralized Logging or Log Aggregation.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/2. Observability & Monitoring.md",
@@ -176,7 +178,6 @@
     "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
     "SQL Questions/LeetCode/6. Subqueries/Questions.md",
     "SQL Server/Kudvenket/9. Union and Union All.md",
-    "SQL Server/Kudvenket/8. Replace NULL Values in Sql Server.md",
     "Graph/Striver",
     "Graph",
     "Loki-flow-diagram.png",
