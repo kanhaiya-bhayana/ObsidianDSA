@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "56f39e7c859e4461",
+        "id": "5ac6e50934a5177a",
         "type": "tabs",
         "children": [
           {
-            "id": "0966180da6ece4ca",
+            "id": "486c7055621019e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Java/RobEdwards/2. Comparable Generics.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Java/RobEdwards/2. Comparable Generics.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Java/RobEdwards/2. Comparable Generics.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Java/RobEdwards/2. Comparable Generics.md"
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
               }
             }
           }
@@ -146,8 +146,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0966180da6ece4ca",
+  "active": "486c7055621019e8",
   "lastOpenFiles": [
+    "DSA/DP/CodeStoryWithMIK/1. Overview.md",
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "DSA/DP/CodeStoryWithMIK",
+    "DSA/DP",
+    "SQL Server/Kudvenket/5. Select Statement.md",
+    "DSA",
+    "SQL Server/Kudvenket/6. Group by in SQL Server.md",
+    "Java/RobEdwards/2. Comparable Generics.md",
     "Java/RobEdwards/8. Hashing/3. Hashes Collisions.md",
     "Java/RobEdwards/8. Hashing/2. Hash Function.md",
     "Java/RobEdwards/8. Hashing/1. Hashing.md",
