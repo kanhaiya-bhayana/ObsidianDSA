@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md"
+                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md"
               }
             }
           }
@@ -148,9 +148,11 @@
   },
   "active": "486c7055621019e8",
   "lastOpenFiles": [
-    "Distributed-tracing.png",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Common.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
+    "Distributed-tracing.png",
     "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "DSA/DP/CodeStoryWithMIK/1. Overview.md",
     "DSA/DP/CodeStoryWithMIK",
@@ -177,7 +179,6 @@
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/1. Overview.md",
     "SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
     "SQL Questions/LeetCode/6. Subqueries/Questions.md",
-    "SQL Server/Kudvenket/9. Union and Union All.md",
     "Graph/Striver",
     "Graph",
     "Loki-flow-diagram.png",
