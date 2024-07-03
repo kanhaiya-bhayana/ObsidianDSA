@@ -38,3 +38,33 @@ FROM
 WHERE
     p1.email = p2.email AND p1.id > p2.id;
 ```
+
+## 4. [Second Highest Salary](https://leetcode.com/problems/second-highest-salary/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+SELECT MAX(salary) AS SecondHighestSalary
+FROM Employee
+WHERE salary <> (SELECT MAX(salary) FROM Employee);
+```
+
+## 5. [Group Sold Products By The Date](https://leetcode.com/problems/group-sold-products-by-the-date/)
+
+```sql
+/* Write your T-SQL query statement below */
+
+WITH t AS (
+    SELECT DISTINCT *
+    FROM Activities
+)
+
+SELECT 
+    t.sell_date,
+    COUNT(t.product) AS num_sold,
+    STRING_AGG(t.product, ',') WITHIN GROUP (ORDER BY t.product) AS products
+FROM t
+GROUP BY t.sell_date
+ORDER BY t.sell_date;
+```
+
