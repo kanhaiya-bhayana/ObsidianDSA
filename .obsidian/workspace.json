@@ -69,7 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 487.5
+    "width": 268.5
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -146,11 +146,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce01d6c1c449340f",
+  "active": "486c7055621019e8",
   "lastOpenFiles": [
+    "SQL Server/Kudvenket/5. Select Statement.md",
+    "SQL Questions/LeetCode/1. Select/Questions.md",
+    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
     "SQL Server/Kudvenket/10. Stored Procedure.md",
     "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
-    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "Graph/Striver/Graph Traversals",
     "Graph/CodeStoryWithMIK/Traversals/DFS (Depth-First Search).md",
@@ -159,7 +162,6 @@
     "Graph/CodeStoryWithMIK/1. Overview.md",
     "Graph/CodeStoryWithMIK",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Common.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
     "Distributed-tracing.png",
@@ -167,7 +169,6 @@
     "DSA/DP/CodeStoryWithMIK/1. Overview.md",
     "DSA/DP/CodeStoryWithMIK",
     "DSA/DP",
-    "SQL Server/Kudvenket/5. Select Statement.md",
     "DSA",
     "SQL Server/Kudvenket/6. Group by in SQL Server.md",
     "Java/RobEdwards/2. Comparable Generics.md",
@@ -180,7 +181,6 @@
     "Graph/Striver/1. Introduction.md",
     "Graph/Striver/Weighted Graph.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
-    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "Graph/Striver",
     "Graph",
