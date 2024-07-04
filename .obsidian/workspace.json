@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
+                "file": "Graph/Question.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
+                "file": "Graph/Question.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
+                "file": "Graph/Question.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md"
+                "file": "Graph/Question.md"
               }
             }
           }
@@ -146,13 +146,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce01d6c1c449340f",
+  "active": "486c7055621019e8",
   "lastOpenFiles": [
+    "Graph/Striver/2. Implementation.md",
+    "Cheatsheet/Graph Java.md",
+    "Cheatsheet/Array to List.md",
+    "Graph/Striver/4. Number of Provinces.md",
     "Graph/Question.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
     "SQL Server/Kudvenket/5. Select Statement.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
     "SQL Server/Kudvenket/10. Stored Procedure.md",
     "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
@@ -177,10 +181,6 @@
     "Java/RobEdwards/8. Hashing/2. Hash Function.md",
     "Java/RobEdwards/8. Hashing/1. Hashing.md",
     "Java/RobEdwards/7. Stack & Queues Using arrays.md",
-    "Graph/Striver/3. Connected Components.md",
-    "Graph/Striver/2. Implementation.md",
-    "Graph/Striver/1. Introduction.md",
-    "Graph/Striver/Weighted Graph.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "Graph/Striver",
     "Graph",
