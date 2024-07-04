@@ -146,8 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "486c7055621019e8",
+  "active": "ce01d6c1c449340f",
   "lastOpenFiles": [
+    "Graph/Question.md",
     "SQL Server/Kudvenket/5. Select Statement.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
@@ -180,7 +181,6 @@
     "Graph/Striver/2. Implementation.md",
     "Graph/Striver/1. Introduction.md",
     "Graph/Striver/Weighted Graph.md",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "Graph/Striver",
     "Graph",
