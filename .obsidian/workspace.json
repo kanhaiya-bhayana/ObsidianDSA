@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graph/Question.md"
+                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md"
               }
             }
           }
@@ -149,8 +149,10 @@
   },
   "active": "bfc12673d0fedd2d",
   "lastOpenFiles": [
-    "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
+    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
+    "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Question.md",
+    "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
@@ -178,9 +180,7 @@
     "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
     "SQL Questions/LeetCode/4. Sorting and Grouping",
     "SQL Questions/LeetCode/3. Basic Aggregate Functions",
-    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/2. Basic Joins",
-    "SQL Questions/LeetCode/1. Select/Questions.md",
     "SQL Questions/LeetCode/1. Select",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
     "Distributed-tracing.png",
