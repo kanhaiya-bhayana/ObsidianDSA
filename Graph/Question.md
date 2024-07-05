@@ -1,5 +1,4 @@
-
-## BFS of graph
+## 1. BFS of graph
 https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1
 
 ```java
@@ -45,7 +44,7 @@ class Solution {
 }
 ```
 
-## DFS of Graph
+## 2. DFS of Graph
 https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1
 
 ```java
@@ -75,6 +74,119 @@ class Solution {
                 DFS(n, visited);
             }
         }
+    }
+}
+```
+
+## 3. [Number of Provinces](https://leetcode.com/problems/number-of-provinces/)
+
+```java
+class Solution {
+    List<List<Integer>> adj;
+    public int findCircleNum(int[][] isConnected) {
+        constructAdjList(isConnected);
+        return solve(adj.size());
+    }
+
+    private int solve(int V)
+    {
+        boolean[] visited = new boolean[V];
+        int cnt = 0;
+        for (int i = 0; i < V; i++)
+        {
+            if (!visited[i])
+            {
+                cnt++;
+                dfs(i, visited);
+            }
+        }
+        return cnt;
+    }
+
+    private void dfs(int v, boolean[] visited)
+    {
+        visited[v] = true;
+
+        for (int n : adj.get(v))
+        {
+            if (!visited[n])
+            {
+                visited[n] = true;
+                dfs(n, visited);
+            }
+        }
+    }
+
+    private void constructAdjList(int[][] arr)
+    {
+        int V = arr.length;
+        adj = new ArrayList<>();
+
+        for (int i = 0; i < V; i++)
+        {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int i = 0; i < V; i++) {
+            for (int j = 0; j < V; j++) {
+                if (arr[i][j] == 1 && i != j)
+                {
+                    adj.get(i).add(j);
+                    adj.get(j).add(i);
+                }
+            }
+        }
+    }
+}
+```
+
+
+## 4. [Number of Islands](https://leetcode.com/problems/number-of-islands/)
+
+```java
+class Solution {
+    int rows;
+    int cols;
+    public int numIslands(char[][] grid) {
+        
+        rows = grid.length;
+        cols = grid[0].length;
+        return numIslandsUtil(grid);
+    }
+
+    private int numIslandsUtil(char [][]grid){
+
+        if (grid == null || grid.length == 0){
+            return 0;
+        }
+        int numIslands = 0;
+        
+        for (int i = 0; i < rows; i++){
+            for (int j = 0; j < cols; j++){
+                if (grid[i][j] == '1'){
+                    numIslands++;
+                    dfs(grid, i, j);
+                }
+            }
+        }
+        return numIslands;
+    }
+
+
+    private void dfs(char [][]grid, int i, int j){
+
+        if (i < 0 || i >= rows 
+         || j < 0 || j >= cols
+         || grid[i][j] != '1')
+         {
+            return;
+         }
+
+         grid[i][j] = '0'; // mark as visited ...
+         dfs(grid, i + 1, j); // down ...
+         dfs(grid, i - 1, j); // up ...
+         dfs(grid, i, j + 1); // right ...
+         dfs(grid, i, j - 1); // left ...
     }
 }
 ```

@@ -147,8 +147,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bfc12673d0fedd2d",
+  "active": "9aa00a0b69c83324",
   "lastOpenFiles": [
+    "Graph/Striver/4. Number of Provinces.md",
+    "Cheatsheet/Graph Java.md",
     "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Question.md",
@@ -184,8 +186,6 @@
     "SQL Questions/LeetCode/1. Select",
     "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
     "Distributed-tracing.png",
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
-    "DSA/DP/CodeStoryWithMIK/1. Overview.md",
     "Loki-flow-diagram.png",
     "Grafana-loki-promtail.png",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
