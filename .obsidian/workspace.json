@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md"
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
               }
             }
           }
@@ -147,13 +147,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9aa00a0b69c83324",
+  "active": "bfc12673d0fedd2d",
   "lastOpenFiles": [
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "Graph/Question.md",
+    "Linked List/Linked List Striver/Introduction.md",
+    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Graph/Striver/4. Number of Provinces.md",
     "Cheatsheet/Graph Java.md",
     "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
-    "Graph/Question.md",
     "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
@@ -172,19 +175,16 @@
     "Graph/CodeStoryWithMIK",
     "SQL Server/Kudvenket/9. Union and Union All.md",
     "Graph/Striver/3. Connected Components.md",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "SQL Questions/LeetCode/Subqueries/Questions.md",
     "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "SQL Questions/LeetCode/6. Subqueries/Questions.md",
     "SQL Questions/LeetCode/6. Subqueries",
     "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
     "SQL Questions/LeetCode/5. Advanced Select and Joins",
-    "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
     "SQL Questions/LeetCode/4. Sorting and Grouping",
     "SQL Questions/LeetCode/3. Basic Aggregate Functions",
     "SQL Questions/LeetCode/2. Basic Joins",
     "SQL Questions/LeetCode/1. Select",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
     "Distributed-tracing.png",
     "Loki-flow-diagram.png",
     "Grafana-loki-promtail.png",
