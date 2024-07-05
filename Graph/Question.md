@@ -190,3 +190,46 @@ class Solution {
     }
 }
 ```
+
+## 5. [Flood Fill](https://leetcode.com/problems/flood-fill/)
+
+```java
+class Solution {
+    int rows;
+    int cols;
+    int clr;
+    int originalColor;
+
+    public int[][] floodFill(int[][] image, int sr, int sc, int color) {
+        // Initialize rows, cols, new color, and original color
+        rows = image.length;
+        cols = image[0].length;
+        clr = color;
+        originalColor = image[sr][sc];
+
+        // Only perform flood fill if the new color is different from the original color
+        if (originalColor != clr) {
+            dfs(image, sr, sc);
+        }
+
+        // Return the modified image
+        return image;
+    }
+
+    private void dfs(int[][] grid, int i, int j) {
+        // Check for out of bounds or if the current cell is not of the original color
+        if (i < 0 || i >= rows || j < 0 || j >= cols || grid[i][j] != originalColor) {
+            return;
+        }
+
+        // Fill the current cell with the new color
+        grid[i][j] = clr;
+
+        // Recursively call dfs on the neighboring cells (up, down, left, right)
+        dfs(grid, i + 1, j); // Down
+        dfs(grid, i - 1, j); // Up
+        dfs(grid, i, j + 1); // Right
+        dfs(grid, i, j - 1); // Left
+    }
+}
+```
