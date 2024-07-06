@@ -1,40 +1,39 @@
 {
   "main": {
-    "id": "1f92d190fc2fcef9",
+    "id": "3fb92f0e43726f2c",
     "type": "split",
     "children": [
       {
-        "id": "5bb99e6b0bbc150f",
+        "id": "5ac6e50934a5177a",
         "type": "tabs",
         "children": [
           {
-            "id": "bfc12673d0fedd2d",
+            "id": "486c7055621019e8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "stacked": true
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "076fc76dcb2fe5b5",
+    "id": "7c8235dc591c784d",
     "type": "split",
     "children": [
       {
-        "id": "09ffd385c4d0b271",
+        "id": "d0760b9dc6776a3c",
         "type": "tabs",
         "children": [
           {
-            "id": "9aa00a0b69c83324",
+            "id": "ce01d6c1c449340f",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +43,7 @@
             }
           },
           {
-            "id": "ff51855e65f8ade2",
+            "id": "c7539f1fbaa5e4ea",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -59,7 +58,7 @@
             }
           },
           {
-            "id": "53ff6279f3c85161",
+            "id": "3da080f71a20d852",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -70,23 +69,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 350.5
+    "width": 669.5
   },
   "right": {
-    "id": "c231a689cb5533c0",
+    "id": "ef1c67bb5b04dc0e",
     "type": "split",
     "children": [
       {
-        "id": "633132af884f5a70",
+        "id": "e212ebace3e00c38",
         "type": "tabs",
         "children": [
           {
-            "id": "0425d7621aec538e",
+            "id": "7ae2cfd60dda9913",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -98,19 +97,19 @@
             }
           },
           {
-            "id": "af7f887d0964ad16",
+            "id": "293e69ca92fca48e",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "a59303e77ab349b6",
+            "id": "350a01964239df65",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -121,12 +120,12 @@
             }
           },
           {
-            "id": "18cde7e43ef9998f",
+            "id": "35df9227e52b3677",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
+                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md"
               }
             }
           }
@@ -147,54 +146,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "bfc12673d0fedd2d",
+  "active": "486c7055621019e8",
   "lastOpenFiles": [
+    "Client-credential-grant-type-flow-in-OAuth2.png",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/3. OAuth2 Jargons or Terminologies or Roles.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/4. OPENID Connect & Why It Is Important.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/2. Problem THAT OAUTH2 SOLVES.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/5. Intro to IAM Products & Why KeyCloak.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
+    "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
     "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "Microservices/Eazy Bytes/Microservices Security",
     "Graph/Question.md",
-    "Linked List/Linked List Striver/Introduction.md",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
-    "Graph/Striver/4. Number of Provinces.md",
+    "Graph/Striver/2. Implementation.md",
     "Cheatsheet/Graph Java.md",
-    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
+    "Cheatsheet/Array to List.md",
+    "Graph/Striver/4. Number of Provinces.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
+    "SQL Server/Kudvenket/5. Select Statement.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
+    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
+    "SQL Server/Kudvenket/10. Stored Procedure.md",
     "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/6. Distributed Tracing in Microservices.md",
-    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Common.md",
-    "Graph/CodeStoryWithMIK/Traversals/DFS (Depth-First Search).md",
     "Graph/Striver/Graph Traversals",
+    "Graph/CodeStoryWithMIK/Traversals/DFS (Depth-First Search).md",
     "Graph/CodeStoryWithMIK/Traversals",
-    "Graph/Striver/1. Introduction.md",
-    "Graph/Striver/2. Implementation.md",
     "Graph/CodeStoryWithMIK/2. Graph Representations.md",
     "Graph/CodeStoryWithMIK/1. Overview.md",
-    "SQL Server/Kudvenket/10. Stored Procedure.md",
     "Graph/CodeStoryWithMIK",
-    "SQL Server/Kudvenket/9. Union and Union All.md",
-    "Graph/Striver/3. Connected Components.md",
-    "SQL Questions/LeetCode/Subqueries/Questions.md",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
-    "SQL Questions/LeetCode/6. Subqueries/Questions.md",
-    "SQL Questions/LeetCode/6. Subqueries",
-    "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
-    "SQL Questions/LeetCode/5. Advanced Select and Joins",
-    "SQL Questions/LeetCode/4. Sorting and Grouping",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions",
-    "SQL Questions/LeetCode/2. Basic Joins",
-    "SQL Questions/LeetCode/1. Select",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
+    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Common.md",
     "Distributed-tracing.png",
+    "DSA/DP/CodeStoryWithMIK",
+    "DSA/DP",
+    "DSA",
+    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
+    "Graph/Striver",
     "Loki-flow-diagram.png",
     "Grafana-loki-promtail.png",
-    "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
-    "Pasted image 20240608141216.png",
-    "chaining.webp",
-    "hash-functions.webp",
-    "Linked List/Treedatastructure.png",
-    "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
-    "Linked List/Linked List Striver/DLL1.png",
-    "Untitled.canvas"
+    "Pasted image 20240215101152.png"
   ]
 }
