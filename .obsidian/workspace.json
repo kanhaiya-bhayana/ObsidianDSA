@@ -4,18 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "5ac6e50934a5177a",
+        "id": "1a82892f4ce89954",
         "type": "tabs",
         "children": [
           {
-            "id": "486c7055621019e8",
+            "id": "cd2b04a41bccdf64",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
-                "mode": "source",
-                "source": false
+                "file": "Spring-cloud-functions.png"
               }
             }
           }
@@ -69,7 +67,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 669.5
+    "width": 377.5
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -85,7 +83,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
+                "file": "Spring-cloud-functions.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +100,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
+                "file": "Spring-cloud-functions.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +123,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md"
+                "file": "Spring-cloud-functions.png"
               }
             }
           }
@@ -146,14 +144,32 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "486c7055621019e8",
+  "active": "ce01d6c1c449340f",
   "lastOpenFiles": [
-    "Client-credential-grant-type-flow-in-OAuth2.png",
+    "Microservices/Eazy Bytes/Event-driven Microservices/5. Why to use Spring Cloud Function.md",
+    "Spring-cloud-functions.png",
+    "RabbitMQ-2.png",
+    "pub-sub-model.png",
+    "Microservices/Eazy Bytes/Event-driven Microservices/4. Using RabbitMQ.md",
+    "RabbitMQ-1.png",
+    "Microservices/Eazy Bytes/Event-driven Microservices/3. pub-sub model.md",
+    "pub-sub model.png",
+    "Microservices/Eazy Bytes/Event-driven Microservices/2. Event-driven Models.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/9. Deep dive of Authorization Code grant type flow.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices",
+    "Authorization-code-grant-type-flow-in-Oauth2-3.png",
+    "Authorization-code-grant-type-flow-in-Oauth2-2.png",
+    "Authorization-code-grant-type-flow-in-Oauth2-1.png",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/7. Securing Gateway server using Client Credential grant type flow.md",
+    "Client-credential-grant-type-flow-3.png",
+    "Client-credential-grant-type-flow-2.png",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/3. OAuth2 Jargons or Terminologies or Roles.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/4. OPENID Connect & Why It Is Important.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/2. Problem THAT OAUTH2 SOLVES.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/5. Intro to IAM Products & Why KeyCloak.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
     "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
@@ -168,25 +184,12 @@
     "SQL Server/Kudvenket/5. Select Statement.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
-    "SQL Server/Kudvenket/10. Stored Procedure.md",
-    "Graph/Striver/Graph Traversals/DFS (Depth-First Search).md",
-    "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "Graph/Striver/Graph Traversals",
-    "Graph/CodeStoryWithMIK/Traversals/DFS (Depth-First Search).md",
     "Graph/CodeStoryWithMIK/Traversals",
-    "Graph/CodeStoryWithMIK/2. Graph Representations.md",
-    "Graph/CodeStoryWithMIK/1. Overview.md",
     "Graph/CodeStoryWithMIK",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/5. Metrics & Monitoring with Spring Boot Actuator, Micrometer, Prometheus & Grafana.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/Common.md",
-    "Distributed-tracing.png",
     "DSA/DP/CodeStoryWithMIK",
     "DSA/DP",
     "DSA",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
-    "Graph/Striver",
-    "Loki-flow-diagram.png",
-    "Grafana-loki-promtail.png",
-    "Pasted image 20240215101152.png"
+    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause"
   ]
 }
