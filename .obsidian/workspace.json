@@ -1,37 +1,40 @@
 {
   "main": {
-    "id": "3fb92f0e43726f2c",
+    "id": "1f92d190fc2fcef9",
     "type": "split",
     "children": [
       {
-        "id": "1a82892f4ce89954",
+        "id": "f536c4637a9dcf40",
         "type": "tabs",
         "children": [
           {
-            "id": "cd2b04a41bccdf64",
+            "id": "c0aa91dbadb43976",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Spring-cloud-functions.png"
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "7c8235dc591c784d",
+    "id": "076fc76dcb2fe5b5",
     "type": "split",
     "children": [
       {
-        "id": "d0760b9dc6776a3c",
+        "id": "09ffd385c4d0b271",
         "type": "tabs",
         "children": [
           {
-            "id": "ce01d6c1c449340f",
+            "id": "9aa00a0b69c83324",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -41,7 +44,7 @@
             }
           },
           {
-            "id": "c7539f1fbaa5e4ea",
+            "id": "ff51855e65f8ade2",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -56,7 +59,7 @@
             }
           },
           {
-            "id": "3da080f71a20d852",
+            "id": "53ff6279f3c85161",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -67,23 +70,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 377.5
+    "width": 350.5
   },
   "right": {
-    "id": "ef1c67bb5b04dc0e",
+    "id": "c231a689cb5533c0",
     "type": "split",
     "children": [
       {
-        "id": "e212ebace3e00c38",
+        "id": "633132af884f5a70",
         "type": "tabs",
         "children": [
           {
-            "id": "7ae2cfd60dda9913",
+            "id": "0425d7621aec538e",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Spring-cloud-functions.png",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,19 +98,19 @@
             }
           },
           {
-            "id": "293e69ca92fca48e",
+            "id": "af7f887d0964ad16",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Spring-cloud-functions.png",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "350a01964239df65",
+            "id": "a59303e77ab349b6",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -118,12 +121,12 @@
             }
           },
           {
-            "id": "35df9227e52b3677",
+            "id": "18cde7e43ef9998f",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Spring-cloud-functions.png"
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
               }
             }
           }
@@ -144,52 +147,54 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ce01d6c1c449340f",
+  "active": "c0aa91dbadb43976",
   "lastOpenFiles": [
-    "Microservices/Eazy Bytes/Event-driven Microservices/5. Why to use Spring Cloud Function.md",
+    "Graph/Question.md",
+    "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
+    "Graph/Striver/2. Implementation.md",
+    "Microservices/Eazy Bytes/Routing, Cross Cutting Concerns in Microservices.md",
+    "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "pub-sub-model.png",
     "Spring-cloud-functions.png",
     "RabbitMQ-2.png",
-    "pub-sub-model.png",
-    "Microservices/Eazy Bytes/Event-driven Microservices/4. Using RabbitMQ.md",
     "RabbitMQ-1.png",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/9. Deep dive of Authorization Code grant type flow.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/7. Securing Gateway server using Client Credential grant type flow.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/5. Intro to IAM Products & Why KeyCloak.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/4. OPENID Connect & Why It Is Important.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/3. OAuth2 Jargons or Terminologies or Roles.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/2. Problem THAT OAUTH2 SOLVES.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
+    "Microservices/Eazy Bytes/Microservices Security",
+    "Microservices/Eazy Bytes/Event-driven Microservices/5. Why to use Spring Cloud Function.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices/4. Using RabbitMQ.md",
     "Microservices/Eazy Bytes/Event-driven Microservices/3. pub-sub model.md",
-    "pub-sub model.png",
     "Microservices/Eazy Bytes/Event-driven Microservices/2. Event-driven Models.md",
     "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/9. Deep dive of Authorization Code grant type flow.md",
     "Microservices/Eazy Bytes/Event-driven Microservices",
-    "Authorization-code-grant-type-flow-in-Oauth2-3.png",
-    "Authorization-code-grant-type-flow-in-Oauth2-2.png",
-    "Authorization-code-grant-type-flow-in-Oauth2-1.png",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/7. Securing Gateway server using Client Credential grant type flow.md",
+    "Client-credential-grant-type-flow-in-OAuth2.png",
     "Client-credential-grant-type-flow-3.png",
     "Client-credential-grant-type-flow-2.png",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/3. OAuth2 Jargons or Terminologies or Roles.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/4. OPENID Connect & Why It Is Important.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/2. Problem THAT OAUTH2 SOLVES.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/5. Intro to IAM Products & Why KeyCloak.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
-    "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
-    "Microservices/Eazy Bytes/Microservices Security",
-    "Graph/Question.md",
-    "Graph/Striver/2. Implementation.md",
-    "Cheatsheet/Graph Java.md",
-    "Cheatsheet/Array to List.md",
+    "Client-credential-grant-type-flow-1.png",
+    "Authorization-code-grant-type-flow-in-Oauth2-3.png",
+    "Authorization-code-grant-type-flow-in-Oauth2-2.png",
+    "Linked List/Linked List Striver/Introduction.md",
+    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Graph/Striver/4. Number of Provinces.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
-    "SQL Server/Kudvenket/5. Select Statement.md",
+    "Cheatsheet/Graph Java.md",
+    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
     "SQL Questions/LeetCode/1. Select/Questions.md",
-    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
     "Graph/Striver/Graph Traversals",
     "Graph/CodeStoryWithMIK/Traversals",
     "Graph/CodeStoryWithMIK",
-    "DSA/DP/CodeStoryWithMIK",
-    "DSA/DP",
-    "DSA",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause"
+    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
+    "SQL Questions/LeetCode/6. Subqueries",
+    "SQL Questions/LeetCode/5. Advanced Select and Joins",
+    "SQL Questions/LeetCode/4. Sorting and Grouping",
+    "Untitled.canvas"
   ]
 }
