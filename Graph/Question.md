@@ -376,5 +376,638 @@ class Solution {
         }
     }
 }
+```
 
+###### Using DFS
+```java
+class Solution {
+    ArrayList<ArrayList<Integer>> adj;
+
+    // Function to detect cycle in an undirected graph.
+    public boolean isCycle(int V, ArrayList<ArrayList<Integer>> adjList) {
+        // Initialize the adjacency list for the graph.
+        adj = adjList;
+
+        // Array to keep track of visited nodes.
+        boolean[] visited = new boolean[V];
+
+        // Iterate over all vertices.
+        for (int i = 0; i < V; i++) {
+            // If the vertex is not visited, perform DFS.
+            if (!visited[i]) {
+                // Check if a cycle is found starting from this vertex.
+                if (dfs(i, -1, visited)) {
+                    return true; // Cycle found.
+                }
+            }
+        }
+        return false; // No cycle found in the graph.
+    }
+    
+    // Helper function for DFS traversal.
+    boolean dfs(int node, int parent, boolean[] visited) {
+        // Mark the current node as visited.
+        visited[node] = true;
+
+        // Iterate over all the adjacent nodes.
+        for (int it : adj.get(node)) {
+            // If the adjacent node is not visited, perform DFS on it.
+            if (!visited[it]) {
+                // Recursive DFS call.
+                if (dfs(it, node, visited)) {
+                    return true; // Cycle found.
+                }
+            }
+            // If the adjacent node is visited and is not the parent of the current node, a cycle is found.
+            else if (it != parent) {
+                return true; // Cycle found.
+            }
+        }
+        return false; // No cycle found from the current node.
+    }
+}
+```
+
+## 8. Distance of nearest cell having 1
+https://www.geeksforgeeks.org/problems/distance-of-nearest-cell-having-1-1587115620/1
+```java
+class Solution
+{
+    // Inner class to represent a node with row, column, and distance
+    class Node
+    {
+        int first;  // Row index
+        int second; // Column index
+        int third;  // Distance from the nearest 1
+
+        Node(int f, int s, int t)
+        {
+            first = f;
+            second = s;
+            third = t;
+        }
+    }
+
+    // Function to find the distance of the nearest 1 in the grid for each cell.
+    public int[][] nearest(int[][] grid)
+    {
+        // Start BFS to calculate distances
+        return BFS(grid);
+    }
+    
+    // BFS function to calculate the shortest distance to the nearest 1 for each cell
+    private int[][] BFS(int[][] grid)
+    {
+        int n = grid.length; // Number of rows in the grid
+        int m = grid[0].length; // Number of columns in the grid
+        
+        int[][] dist = new int[n][m]; // Resultant distance matrix
+        boolean[][] visited = new boolean[n][m]; // Visited array to keep track of visited cells
+        Queue<Node> q = new LinkedList<>(); // Queue for BFS
+        
+        // Initialize the queue with all cells containing 1 and mark them as visited
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                if (grid[i][j] == 1)
+                {
+                    q.offer(new Node(i, j, 0)); // Enqueue cells with 1 and distance 0
+                    visited[i][j] = true; // Mark these cells as visited
+                }
+            }
+        }
+        
+        // Directions for moving up, right, down, and left
+        int[] delRow = {-1, 0, +1, 0};
+        int[] delCol = {0, +1, 0, -1};
+        
+        // BFS traversal
+        while(!q.isEmpty())
+        {
+            // Get the current node's row, column, and distance
+            int row = q.peek().first;
+            int col = q.peek().second;
+            int steps = q.peek().third;
+            q.poll(); // Remove the current node from the queue
+            dist[row][col] = steps; // Set the distance for the current cell
+            
+            // Explore all four possible directions
+            for (int i = 0; i < 4; i++)
+            {
+                int nrow = row + delRow[i]; // New row index
+                int ncol = col + delCol[i]; // New column index
+                
+                // Check if the new cell is within bounds and not visited
+                if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !visited[nrow][ncol])
+                {
+                    visited[nrow][ncol] = true; // Mark the new cell as visited
+                    q.offer(new Node(nrow, ncol, steps + 1)); // Add the new cell to the queue with incremented distance
+                }
+            }
+        }
+        return dist; // Return the resultant distance matrix
+    }
+}
+
+```
+
+## 9. [01 Matrix](https://leetcode.com/problems/01-matrix/)
+
+```java
+class Solution {
+    class Node{
+        int first;
+        int second;
+        int third;
+        
+        Node(int f, int s, int t)
+        {
+            first = f;
+            second = s;
+            third = t;
+        }
+    }
+    public int[][] updateMatrix(int[][] mat) {
+        return BFS(mat);
+    }
+
+    private int[][] BFS(int[][] grid)
+    {
+        int n = grid.length;
+        int m = grid[0].length;
+        
+        int[][] dist = new int[n][m];
+        boolean[][] visited = new boolean[n][m];
+        
+        Queue<Node> q = new LinkedList<>();
+        
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                if (grid[i][j] == 0)
+                {
+                    visited[i][j] = true;
+                    q.offer(new Node(i,j,0));
+                }
+            }
+        }
+        
+        int[] delRow = {-1, 0, +1, 0};
+        int[] delCol = {0, +1, 0, -1};
+        
+        while (!q.isEmpty())
+        {
+            int row = q.peek().first;
+            int col = q.peek().second;
+            int steps = q.peek().third;
+            
+            q.poll();
+            dist[row][col] = steps;
+            
+            for(int i = 0; i < 4; i++)
+            {
+                int nrow = row + delRow[i];
+                int ncol = col + delCol[i];
+                
+                if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !visited[nrow][ncol])
+                {
+                    visited[nrow][ncol] = true;
+                    q.offer(new Node(nrow,ncol, steps+1));
+                }
+            }
+        }
+        return dist;
+    }
+}
+```
+
+## 10. [Surrounded Regions](https://leetcode.com/problems/surrounded-regions/)
+
+```java
+class Solution {
+
+    public void solve(char[][] board) {
+        solve2(board);
+    }
+
+    private void solve2(char[][] mat)
+    {
+        int n = mat.length;
+        int m = mat[0].length;
+        boolean[][] visited = new boolean[n][m];
+
+        // traverse first row and last row
+        for (int j = 0; j < m; j++)
+        {
+            // first row
+            if (!visited[0][j] && mat[0][j] == 'O')
+            {
+                dfs(0,j,visited,mat,n,m);
+            }
+
+            // last row 
+            if (!visited[n-1][j] && mat[n-1][j] == 'O')
+            {
+                dfs(n-1,j,visited,mat,n,m);
+            }
+        }
+
+        // traverse first col and last col
+        for (int i = 0; i < n; i++)
+        {
+            // first row
+            if (!visited[i][0] && mat[i][0] == 'O')
+            {
+                dfs(i,0,visited,mat,n,m);
+            }
+
+            // last row 
+            if (!visited[i][m-1] && mat[i][m-1] == 'O')
+            {
+                dfs(i,m-1,visited,mat,n,m);
+            }
+        }
+        // traverse entire stuff
+        for (int i = 0; i<n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                if (!visited[i][j] && mat[i][j] == 'O')
+                {
+                    mat[i][j] = 'X';
+                }
+            }
+        }
+    }
+
+
+    private void dfs(int row, int col, boolean[][] vis, char[][] mat, int n, int m)
+    {
+        // check for top, right, bottom, left
+        vis[row][col] = true;
+        int[] delRow = {-1, 0, +1, 0};
+        int[] delCol = {0, +1, 0, -1};
+
+        for (int i = 0; i< 4; i++)
+        {
+            int nrow = row + delRow[i];
+            int ncol = col + delCol[i];
+
+            if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !vis[nrow][ncol] && mat[nrow][ncol] == 'O')
+            {
+                dfs(nrow, ncol, vis, mat, n, m);
+            }
+        }
+    }
+}
+```
+
+## 11. [Number of Enclaves](https://leetcode.com/problems/number-of-enclaves/)
+
+```java
+class Solution {
+    // Helper class to represent a cell in the grid with its row and column indices
+    class Pair {
+        int first;
+        int second;
+        Pair(int f, int s) {
+            first = f;
+            second = s;
+        }
+    }
+
+    // Main function to find the number of enclaves
+    public int numEnclaves(int[][] grid) {
+        return solve(grid);
+    }
+
+    // Helper function to perform the core logic
+    private int solve(int[][] grid) {
+        int n = grid.length; // Number of rows in the grid
+        int m = grid[0].length; // Number of columns in the grid
+        Queue<Pair> q = new LinkedList<>(); // Queue for BFS
+        boolean[][] vis = new boolean[n][m]; // Visited array to keep track of visited cells
+
+        // Mark boundary land cells and add them to the queue
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (i == 0 || j == 0 || i == n-1 || j == m-1) {
+                    if (grid[i][j] == 1) {
+                        q.offer(new Pair(i, j));
+                        vis[i][j] = true; // Mark the cell as visited
+                    }
+                }
+            }
+        }
+
+        // Direction arrays to move up, right, down, and left
+        int[] delRow = {-1, 0, +1, 0};
+        int[] delCol = {0, +1, 0, -1};
+
+        // Perform BFS to mark all reachable land cells from the boundary
+        while (!q.isEmpty()) {
+            int row = q.peek().first;
+            int col = q.peek().second;
+            q.poll();
+
+            // Explore all 4 possible directions
+            for (int i = 0; i < 4; i++) {
+                int nrow = row + delRow[i];
+                int ncol = col + delCol[i];
+
+                // If the new cell is within bounds, is land, and not visited
+                if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !vis[nrow][ncol] && grid[nrow][ncol] == 1) {
+                    q.offer(new Pair(nrow, ncol)); // Add the new cell to the queue
+                    vis[nrow][ncol] = true; // Mark the new cell as visited
+                }
+            }
+        }
+
+        int cnt = 0; // Counter for enclaved land cells
+        // Count the number of land cells that are not visited (i.e., enclaved)
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (!vis[i][j] && grid[i][j] == 1) {
+                    cnt++;
+                }
+            }
+        }
+        return cnt; // Return the count of enclaved land cells
+    }
+}
+```
+
+## 12. Number of Distinct Islands
+https://www.geeksforgeeks.org/problems/number-of-distinct-islands/1
+```java
+// User function Template for Java
+
+class Solution {
+
+    int n; // Number of rows in the grid
+    int m; // Number of columns in the grid
+    
+    // Helper class to store coordinates
+    class Pair {
+        int first; // Row coordinate
+        int second; // Column coordinate
+        
+        Pair(int f, int s) {
+            first = f;
+            second = s;
+        }
+    }
+    
+    // Function to count distinct islands
+    int countDistinctIslands(int[][] grid) {
+        return solve(grid);
+    }
+    
+    // Main function to solve the problem
+    private int solve(int[][] grid) {
+        n = grid.length; // Get number of rows
+        m = grid[0].length; // Get number of columns
+        
+        boolean[][] vis = new boolean[n][m]; // Visited array to track visited cells
+        Set<String> set = new HashSet<>(); // Set to store unique island shapes
+        
+        // Iterate through each cell in the grid
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // If cell is not visited and is part of an island
+                if (!vis[i][j] && grid[i][j] == 1) {
+                    List<Pair> lst = new ArrayList<>(); // List to store the shape of the current island
+                    dfs(i, j, vis, grid, lst, i, j); // Perform DFS to explore the island
+                    
+                    // Convert island shape to a string
+                    String s = "";
+                    for (Pair p : lst) {
+                        s += p.first + "," + p.second + "+";
+                    }
+                    set.add(s); // Add island shape to the set
+                }
+            }
+        }
+        return set.size(); // Return the number of unique island shapes
+    }
+    
+    // DFS function to explore the island
+    private void dfs(int row, int col, boolean[][] vis, int[][] grid, List<Pair> lst, int baseRow, int baseCol) {
+        vis[row][col] = true; // Mark the current cell as visited
+        lst.add(new Pair(row - baseRow, col - baseCol)); // Add the relative position to the list
+        
+        // Arrays to explore the 4 possible directions (up, right, down, left)
+        int[] delRow = {-1, 0, +1, 0};
+        int[] delCol = {0, +1, 0, -1};
+        
+        // Explore all 4 directions
+        for (int i = 0; i < 4; i++) {
+            int nrow = row + delRow[i];
+            int ncol = col + delCol[i];
+            
+            // Check if the new position is within bounds and is part of the island
+            if (nrow >= 0 && nrow < n && ncol >= 0 && ncol < m && !vis[nrow][ncol] && grid[nrow][ncol] == 1) {
+                dfs(nrow, ncol, vis, grid, lst, baseRow, baseCol); // Recursively explore the new position
+            }
+        }
+    }
+}
+```
+
+
+---
+## Bipartite Graph
+---
+
+two adjacent nodes cannot have the same color. 
+
+> Linear Graphs with no cycle are always Bipartite
+> Any Graph with even length cycle are always Bipartite
+> Any Graph with odd length cycle can never be a Bipartite
+
+## 13. [Is Graph Bipartite?](https://leetcode.com/problems/is-graph-bipartite/)
+
+###### Using BFS
+ ```java
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int V = graph.length;
+        int[] color = new int[V];
+        Arrays.fill(color, -1);
+
+        for (int i = 0; i < V; i++) {
+            if (color[i] == -1) {
+                if (!BFS(i, graph, color)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    private boolean BFS(int start, int[][] graph, int[] color) {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(start);
+        color[start] = 0;
+
+        while (!q.isEmpty()) {
+            int node = q.poll();
+
+            for (int neighbor : graph[node]) {
+                if (color[neighbor] == -1) {
+                    color[neighbor] = 1 - color[node];
+                    q.offer(neighbor);
+                } else if (color[neighbor] == color[node]) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+###### GFG - Bipartite Graph
+https://www.geeksforgeeks.org/problems/bipartite-graph/1
+```java
+
+
+class Solution
+{
+    public boolean isBipartite(int V, ArrayList<ArrayList<Integer>>adj)
+    {
+        // Code here
+        int[] color = new int[V];
+        for (int i = 0; i < V; i++)
+        {
+            color[i] = -1;
+        }
+        
+        for (int i = 0; i< V; i++)
+        {
+            if (color[i] == -1)
+            {
+                if (BFS(i,V,adj,color) == false)
+                {
+                    return false;
+                }   
+            }
+        }
+        return true;
+    }
+    
+    
+    private boolean BFS(int start, int V, ArrayList<ArrayList<Integer>>adj, int[] color)
+    {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(start);
+        color[start] = 0;
+        
+        while (!q.isEmpty())
+        {
+            int node = q.peek();
+            q.poll();
+            
+            for (int it : adj.get(node))
+            {
+                if (color[it] == -1)
+                {
+                    color[it] = (1 - color[node]);
+                    q.offer(it);
+                }
+                else if (color[it] == color[node])
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+}
+```
+### USING DFS
+https://leetcode.com/problems/is-graph-bipartite/description/
+```java
+class Solution {
+    public boolean isBipartite(int[][] graph) {
+        int V = graph.length;
+        int[] color = new int[V];
+        Arrays.fill(color, -1);
+
+        for (int i = 0; i < V; i++) {
+            if (color[i] == -1) {
+                if (!DFS(i,0, graph, color)) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    private boolean DFS(int node, int col, int[][] graph, int[] color)
+    {
+        color[node] = col;
+        
+        for (int n : graph[node])
+        {
+            if (color[n] == -1)
+            {
+                // color[n] = 1 - color[start];
+                if (DFS(n,1-col,graph,color) == false){
+                    return false;
+                }
+            }
+            else if (color[n] == col){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+```
+
+https://www.geeksforgeeks.org/problems/bipartite-graph/1
+```java
+class Solution
+{
+    public boolean isBipartite(int V, ArrayList<ArrayList<Integer>>adj)
+    {
+        // Code here
+        int[] color = new int[V];
+        for (int i = 0; i < V; i++)
+        {
+            color[i] = -1;
+        }
+        for (int i = 0; i< V; i++)
+        {
+            if (color[i] == -1)
+            {
+                if (DFS(i,0,adj,color) == false)
+                {
+                    return false;
+                }   
+            }
+        }
+        return true;
+    }
+    private boolean DFS(int node, int col, ArrayList<ArrayList<Integer>>adj, int[] color)
+    {
+        color[node] = col;
+        
+        for (int n : adj.get(node))
+        {
+            if (color[n] == -1)
+            {
+                // color[n] = 1 - color[start];
+                if (DFS(n,1-col,adj,color) == false){
+                    return false;
+                }
+            }
+            else if (color[n] == col){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 ```
