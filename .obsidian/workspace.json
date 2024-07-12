@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Graph/Question.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Graph/Question.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+                "file": "Graph/Question.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
+                "file": "Graph/Question.md"
               }
             }
           }
@@ -149,13 +149,16 @@
   },
   "active": "c0aa91dbadb43976",
   "lastOpenFiles": [
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "Graph/Question.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
+    "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
+    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "Graph/Striver/2. Implementation.md",
     "Microservices/Eazy Bytes/Routing, Cross Cutting Concerns in Microservices.md",
     "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "pub-sub-model.png",
     "Spring-cloud-functions.png",
     "RabbitMQ-2.png",
@@ -174,7 +177,6 @@
     "Microservices/Eazy Bytes/Event-driven Microservices/4. Using RabbitMQ.md",
     "Microservices/Eazy Bytes/Event-driven Microservices/3. pub-sub model.md",
     "Microservices/Eazy Bytes/Event-driven Microservices/2. Event-driven Models.md",
-    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
     "Microservices/Eazy Bytes/Event-driven Microservices",
     "Client-credential-grant-type-flow-in-OAuth2.png",
     "Client-credential-grant-type-flow-3.png",
@@ -183,11 +185,9 @@
     "Authorization-code-grant-type-flow-in-Oauth2-3.png",
     "Authorization-code-grant-type-flow-in-Oauth2-2.png",
     "Linked List/Linked List Striver/Introduction.md",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Graph/Striver/4. Number of Provinces.md",
     "Cheatsheet/Graph Java.md",
     "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
-    "SQL Questions/LeetCode/1. Select/Questions.md",
     "Graph/Striver/Graph Traversals",
     "Graph/CodeStoryWithMIK/Traversals",
     "Graph/CodeStoryWithMIK",
