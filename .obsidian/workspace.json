@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graph/Question.md"
+                "file": "DSA/DP/CodeStoryWithMIK/2. Questions.md"
               }
             }
           }
@@ -149,10 +149,10 @@
   },
   "active": "c0aa91dbadb43976",
   "lastOpenFiles": [
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
-    "Graph/Question.md",
-    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
     "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
+    "Graph/Question.md",
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
     "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "Graph/Striver/2. Implementation.md",
