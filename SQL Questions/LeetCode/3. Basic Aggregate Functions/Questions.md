@@ -107,12 +107,12 @@ SQLServer
 /* Write your T-SQL query statement below */
 
 SELECT 
-    FORMAT(trans_date, 'yyyy-MM') AS month, 
-    country, 
-    COUNT(*) AS trans_count,
-    SUM(CASE WHEN state = 'approved' THEN 1 ELSE 0 END) AS approved_count, 
-    SUM(amount) AS trans_total_amount, 
-    SUM(CASE WHEN state = 'approved' THEN amount ELSE 0 END) AS approved_total_amount
+    FORMAT(trans_date, 'yyyy-MM') AS month
+    , country
+    , COUNT(*) AS trans_count
+    , SUM(CASE WHEN state = 'approved' THEN 1 ELSE 0 END) AS approved_count
+    , SUM(amount) AS trans_total_amount
+    , SUM(CASE WHEN state = 'approved' THEN amount ELSE 0 END) AS approved_total_amount
 FROM 
     Transactions 
 GROUP BY 
@@ -136,7 +136,7 @@ WITH cte AS (
         d.customer_id
 )
 SELECT 
-    ROUND(CONVERT(NUMERIC(10,2), SUM(CASE WHEN fir = pref THEN 1 ELSE 0 END)) / COUNT(*) * 100, 2) AS immediate_percentage
+    ROUND(SUM(CASE WHEN fir = pref THEN 1 ELSE 0 END)*100.0 / COUNT(*), 2) AS immediate_percentage
 FROM 
     cte;
 ```
@@ -174,7 +174,7 @@ NextDayLogin AS (
     ON f.player_id = a.player_id
     WHERE a.event_date = DATEADD(day, 1, f.first_login_date)
 )
-SELECT ROUND(CAST(COUNT(DISTINCT n.player_id) AS float) / CAST(COUNT(DISTINCT f.player_id) AS float), 2) AS fraction
+SELECT ROUND(COUNT(DISTINCT n.player_id)*1.0 /COUNT(DISTINCT f.player_id), 2) AS fraction
 FROM FirstLogin f
 LEFT JOIN NextDayLogin n
 ON f.player_id = n.player_id;
