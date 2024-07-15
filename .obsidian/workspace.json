@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Architectures.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Architectures.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Architectures.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graph/Question.md"
+                "file": "Microservices/brew-aspnetcore-microservices/Architectures.md"
               }
             }
           }
@@ -148,24 +148,16 @@
   },
   "active": "ee7770f24384d466",
   "lastOpenFiles": [
-<<<<<<< HEAD
-    "Microservices/Eazy Bytes/Event-driven Microservices/6. Why to use Spring Cloud Stream.md",
-=======
-    "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
     "Graph/Question.md",
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
-    "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
-    "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
-    "Graph/Striver/2. Implementation.md",
-    "Microservices/Eazy Bytes/Routing, Cross Cutting Concerns in Microservices.md",
-    "Microservices/Eazy Bytes/Microservices Security/1. Introduction.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
-    "pub-sub-model.png",
->>>>>>> 92aaa8b9d18563486e0cf036da8a0c185f2845fc
+    "Microservices/brew-aspnetcore-microservices/Architectures.md",
+    "Microservices/Eazy Bytes/Apache Kafka/1. Introduction.md",
+    "Microservices/brew-aspnetcore-microservices",
+    "Microservices/Eazy Bytes/Event-driven Microservices/7, Apache Kafka Vs RabbitMQ.md",
+    "Microservices/Eazy Bytes/Apache Kafka",
+    "Graph/Striver/Weighted Graph.md",
+    "Microservices/Eazy Bytes/Event-driven Microservices/6. Why to use Spring Cloud Stream.md",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
-    "Graph/Question.md",
     "Microservices/Eazy Bytes/Event-driven Microservices/5. Why to use Spring Cloud Function.md",
     "RabbitMQ-2.png",
     "pub-sub-model.png",
@@ -174,15 +166,11 @@
     "Microservices/Eazy Bytes/Event-driven Microservices/3. pub-sub model.md",
     "pub-sub model.png",
     "Microservices/Eazy Bytes/Event-driven Microservices/2. Event-driven Models.md",
-<<<<<<< HEAD
     "Microservices/Eazy Bytes/Event-driven Microservices/1. Overview.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/9. Deep dive of Authorization Code grant type flow.md",
-=======
->>>>>>> 92aaa8b9d18563486e0cf036da8a0c185f2845fc
     "Microservices/Eazy Bytes/Event-driven Microservices",
     "Authorization-code-grant-type-flow-in-Oauth2-3.png",
     "Authorization-code-grant-type-flow-in-Oauth2-2.png",
-<<<<<<< HEAD
     "Authorization-code-grant-type-flow-in-Oauth2-1.png",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
@@ -201,21 +189,10 @@
     "Cheatsheet/Graph Java.md",
     "Cheatsheet/Array to List.md",
     "Graph/Striver/4. Number of Provinces.md",
-    "Microservices/Eazy Bytes/Observability & Monitoring of Microservice/7. Introduction to OpenTelemetry.md",
-    "SQL Server/Kudvenket/5. Select Statement.md",
-    "SQL Questions/LeetCode/1. Select/Questions.md",
-=======
-    "Linked List/Linked List Striver/Introduction.md",
-    "Graph/Striver/4. Number of Provinces.md",
-    "Cheatsheet/Graph Java.md",
-    "SQL Questions/LeetCode/2. Basic Joins/Questions.md",
->>>>>>> 92aaa8b9d18563486e0cf036da8a0c185f2845fc
     "Graph/Striver/Graph Traversals",
     "Graph/CodeStoryWithMIK/Traversals",
     "Graph/CodeStoryWithMIK",
     "DSA/DP/CodeStoryWithMIK",
-    "DSA/DP",
-    "DSA",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause"
+    "DSA/DP"
   ]
 }
