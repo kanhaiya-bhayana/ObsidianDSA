@@ -1011,3 +1011,131 @@ class Solution
     }
 }
 ```
+
+## 14.  Directed Graph Cycle
+https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+```java
+/*Complete the function below*/
+
+class Solution {
+    // Function to detect a cycle in a directed graph.
+    public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+        // Array to keep track of visited nodes
+        boolean[] vis = new boolean[V];
+        // Array to keep track of nodes in the current DFS path
+        boolean[] visPath = new boolean[V];
+        
+        // Iterate through all nodes
+        for (int i = 0; i < V; i++) {
+            // If the node is not visited, perform DFS
+            if (!vis[i]) {
+                // If a cycle is detected during DFS, return true
+                if (dfs(i, adj, vis, visPath)) {
+                    return true;
+                }
+            }
+        }
+        // If no cycle is detected, return false
+        return false;
+    }
+    
+    // Helper function to perform DFS and detect cycles
+    private boolean dfs(int start, ArrayList<ArrayList<Integer>> adj, boolean[] vis, boolean[] visPath) {
+        // Mark the current node as visited
+        vis[start] = true;
+        // Mark the current node as part of the current DFS path
+        visPath[start] = true;
+        
+        // Iterate through all adjacent nodes
+        for (int it : adj.get(start)) {
+            // If the adjacent node is not visited, perform DFS on it
+            if (!vis[it]) {
+                // If a cycle is detected, return true
+                if (dfs(it, adj, vis, visPath)) {
+                    return true;
+                }
+            }
+            // If the adjacent node is visited and is part of the current DFS path, a cycle is detected
+            else if (visPath[it]) {
+                return true;
+            }
+        }
+        // Unmark the current node as part of the current DFS path before returning
+        visPath[start] = false;
+        return false;
+    }
+}
+```
+
+## Eventual Safe States
+https://www.geeksforgeeks.org/problems/eventual-safe-states/1
+```java
+class Solution {
+
+    // Function to find all eventual safe nodes in a directed graph.
+    List<Integer> eventualSafeNodes(int V, List<List<Integer>> adj) {
+
+        // Array to keep track of visited nodes
+        boolean[] vis = new boolean[V];
+        // Array to keep track of nodes in the current DFS path
+        boolean[] visPath = new boolean[V];
+        // Array to mark nodes that are safe
+        boolean[] check = new boolean[V];
+        // List to store the result of safe nodes
+        List<Integer> res = new ArrayList<>();
+        
+        // Iterate through all nodes
+        for (int i = 0; i < V; i++) {
+            // If the node is not visited, perform DFS
+            if (!vis[i]) {
+                // Perform DFS to check for cycles
+                dfs(i, adj, vis, visPath, check);
+            }
+        }
+        
+        // Collect all safe nodes
+        for (int i = 0; i < V; i++) {
+            if (check[i]) {
+                res.add(i);
+            }
+        }
+        
+        // Return the list of safe nodes
+        return res;
+    }
+    
+    // Helper function to perform DFS and detect cycles
+    private boolean dfs(int start, List<List<Integer>> adj, boolean[] vis, boolean[] visPath, boolean[] check) {
+        // Mark the current node as visited
+        vis[start] = true;
+        // Mark the current node as part of the current DFS path
+        visPath[start] = true;
+        // Initially mark the current node as unsafe
+        check[start] = false;
+        
+        // Iterate through all adjacent nodes
+        for (int it : adj.get(start)) {
+            // If the adjacent node is not visited, perform DFS on it
+            if (!vis[it]) {
+                // If a cycle is detected, mark the node as unsafe and return true
+                if (dfs(it, adj, vis, visPath, check)) {
+                    check[start] = false;
+                    return true;
+                }
+            }
+            // If the adjacent node is visited and is part of the current DFS path, a cycle is detected
+            else if (visPath[it]) {
+                check[start] = false;
+                return true;
+            }
+        }
+        
+        // Mark the current node as safe if no cycle is detected
+        check[start] = true;
+        // Unmark the current node as part of the current DFS path before returning
+        visPath[start] = false;
+        return false;
+    }
+}
+```
+
