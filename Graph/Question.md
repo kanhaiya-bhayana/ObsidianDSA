@@ -1067,7 +1067,7 @@ class Solution {
 }
 ```
 
-## Eventual Safe States
+## 15. Eventual Safe States
 https://www.geeksforgeeks.org/problems/eventual-safe-states/1
 ```java
 class Solution {
