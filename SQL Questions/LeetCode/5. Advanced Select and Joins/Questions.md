@@ -24,18 +24,21 @@ ORDER BY
 ```sql
 /* Write your T-SQL query statement below */
 
-SELECT employee_id, department_id
-FROM Employee
-WHERE primary_flag = 'Y'
-UNION
-SELECT employee_id, department_id
-FROM Employee
-WHERE employee_id IN (
-    SELECT employee_id
-    FROM Employee
-    GROUP BY employee_id
-    HAVING COUNT(*) = 1
-);
+SELECT
+    employee_id
+    , department_id
+FROM
+    Employee
+WHERE
+    employee_id in (
+        SELECT
+            employee_id
+        FROM
+            Employee
+        GROUP BY employee_id HAVING COUNT(*) = 1
+    )
+OR
+    primary_flag = 'Y';
 ```
 
 #### 3. [Triangle Judgement](https://leetcode.com/problems/triangle-judgement/)
