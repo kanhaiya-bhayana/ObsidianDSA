@@ -9,7 +9,7 @@
 - CQRS
 - Mediator, Proxy, Decorator, Options
 - Pub/Sub, Caching
-- Api Gateway
+- API Gateway
 ###### Databases
 - Transactional Document DB
 - Postgres
