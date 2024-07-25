@@ -158,8 +158,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "cdbb29c4f8dd9c9f",
+  "active": "9aa00a0b69c83324",
   "lastOpenFiles": [
+    "SQL Server/Overall.md",
+    "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
+    "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
+    "Microservices/brew-aspnetcore-microservices/Minimal APIs.md",
+    "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
+    "Microservices/brew-aspnetcore-microservices/Database/The Database-per-Service Pattern.md",
+    "Microservices/brew-aspnetcore-microservices/Database",
+    "Cheatsheet/Conversions.md",
     "Microservices/brew-aspnetcore-microservices/Architectures.md",
     "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
     "Linked List/Trees/Questions.md",
@@ -189,12 +197,8 @@
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/7. Securing Gateway server using Client Credential grant type flow.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/5. Intro to IAM Products & Why KeyCloak.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/4. OPENID Connect & Why It Is Important.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/3. OAuth2 Jargons or Terminologies or Roles.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/2. Problem THAT OAUTH2 SOLVES.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
     "Microservices/Eazy Bytes/Microservices Security",
-    "Microservices/Eazy Bytes/Event-driven Microservices/5. Why to use Spring Cloud Function.md",
     "Microservices/Eazy Bytes/Event-driven Microservices",
     "Client-credential-grant-type-flow-in-OAuth2.png",
     "Client-credential-grant-type-flow-3.png",
@@ -202,10 +206,6 @@
     "Client-credential-grant-type-flow-1.png",
     "Authorization-code-grant-type-flow-in-Oauth2-3.png",
     "Graph/Striver/Graph Traversals",
-    "Graph/CodeStoryWithMIK/Traversals",
-    "Graph/CodeStoryWithMIK",
-    "SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
-    "SQL Questions/LeetCode/6. Subqueries",
     "Untitled.canvas"
   ]
 }
