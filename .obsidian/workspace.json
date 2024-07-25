@@ -13,13 +13,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Introduction.md",
                 "mode": "source",
                 "source": false
               }
             }
+          },
+          {
+            "id": "cdbb29c4f8dd9c9f",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
           }
         ],
+        "currentTab": 1,
         "stacked": true
       }
     ],
@@ -86,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Introduction.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
+                "file": "Microservices/brew-aspnetcore-microservices/Introduction.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md"
+                "file": "Microservices/brew-aspnetcore-microservices/Introduction.md"
               }
             }
           }
@@ -147,15 +158,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c0aa91dbadb43976",
+  "active": "cdbb29c4f8dd9c9f",
   "lastOpenFiles": [
+    "Microservices/brew-aspnetcore-microservices/Architectures.md",
+    "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
     "Linked List/Trees/Questions.md",
     "Microservices/brew-aspnetcore-microservices/Introduction.md",
     "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "Graph/Question.md",
-    "SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
     "SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
-    "Microservices/brew-aspnetcore-microservices/Architectures.md",
     "Spring Cloud Stream.png",
     "Microservices/brew-aspnetcore-microservices",
     "Microservices/Eazy Bytes/Event-driven Microservices/7, Apache Kafka Vs RabbitMQ.md",
