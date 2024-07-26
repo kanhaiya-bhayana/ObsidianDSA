@@ -1069,6 +1069,13 @@ class Solution {
 
 ## 15. Eventual Safe States
 https://www.geeksforgeeks.org/problems/eventual-safe-states/1
+
+
+###### Notes
+- **Safe Node:**
+- **Terminal Node:** The nodes who does not have any outgoing edge or the node having the outdegree is zero(0).
+- Anyone who is a part of a cycle is not a safe node.
+- Anyone who leads to a cycle is not a safe node.
 ```java
 class Solution {
 
@@ -1139,3 +1146,76 @@ class Solution {
 }
 ```
 
+## 16 Topological Sort Algorithm (DFS)
+- Only exist on DAG (Directed Acyclic Graph)
+- **Definition:** Linear ordering of vertices such that if there is an edge between u and v, u appears before v in that orderring.
+
+```java
+	
+
+/*Complete the function below*/
+
+
+class Solution
+{
+    // Function to return list containing vertices in Topological order.
+    static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) 
+    {
+        // Calling the helper function to get the topological sort order.
+        return solve(V, adj);
+    }
+    
+    // Helper function to perform topological sort.
+    private static int[] solve(int V, ArrayList<ArrayList<Integer>> adj)
+    {
+        // Boolean array to keep track of visited nodes.
+        boolean[] vis = new boolean[V];
+        // Stack to store the nodes in topological order.
+        Stack<Integer> st = new Stack<>();
+        
+        // Iterate over all nodes.
+        for (int i = 0; i < V; i++)
+        {
+            // If the node is not visited, perform DFS from that node.
+            if (!vis[i])
+            {
+                dfs(i, adj, st, vis);
+            }
+        }
+
+        // Array to store the result of topological sort.
+        int[] res = new int[V];
+        int i = 0;
+
+        // Pop elements from the stack to get the topological order.
+        while (!st.isEmpty())
+        {
+            res[i] = st.peek();
+            i++;
+            st.pop();
+        }
+
+        return res;
+    }
+    
+    // Helper function to perform Depth-First Search.
+    private static void dfs(int node, ArrayList<ArrayList<Integer>> adj, Stack<Integer> st, boolean[] vis)
+    {
+        // Mark the current node as visited.
+        vis[node] = true;
+
+        // Recur for all the vertices adjacent to this vertex.
+        for (int nbs : adj.get(node))
+        {
+            // If an adjacent node has not been visited, then recur for that adjacent node.
+            if (!vis[nbs])
+            {
+                dfs(nbs, adj, st, vis);
+            }
+        }
+
+        // Push the current node to stack which stores the result.
+        st.push(node);
+    }
+}
+```
