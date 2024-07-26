@@ -1219,3 +1219,89 @@ class Solution
     }
 }
 ```
+
+## 17 Topological Sort | Khan's Algorithm  (BFS)
+###### Steps for Topological Sort Algorithm
+
+1. **Initialization**:
+    
+    - Create a queue to store vertices with indegree 0.
+    - Create an array `topo` to store the topological order of vertices.
+    - Create an array `indegree` to store the indegree of each vertex.
+2. **Calculate Indegrees**:
+    
+    - Traverse the adjacency list of the graph to calculate the indegree of each vertex.
+    - For each vertex `u`, increase the indegree of its adjacent vertices `v`.
+3. **Enqueue Vertices with Indegree 0**:
+    
+    - Traverse the `indegree` array.
+    - Add all vertices with indegree 0 to the queue.
+4. **Process the Queue**:
+    
+    - Initialize an index variable to 0.
+    - While the queue is not empty:
+        - Dequeue a vertex `node` from the front of the queue.
+        - Add `node` to the `topo` array at the current index.
+        - Increment the index.
+        - For each adjacent vertex `neighbor` of `node`:
+            - Decrease the indegree of `neighbor` by 1.
+            - If the indegree of `neighbor` becomes 0, enqueue `neighbor`.
+5. **Return the Result**:
+    
+    - Return the `topo` array containing the vertices in topological order.
+
+```java
+
+
+/*Complete the function below*/
+
+
+class Solution {
+    // Function to return a list containing vertices in Topological order
+    static int[] topoSort(int V, ArrayList<ArrayList<Integer>> adj) {
+        Queue<Integer> queue = new LinkedList<>();
+        int[] topo = new int[V];
+        
+        // Calculate the indegrees of all vertices
+        int[] indegree = getIndegrees(adj, V);
+        
+        // Add all vertices with indegree 0 to the queue
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+        
+        int index = 0; // Index to maintain the position in topo array
+        while (!queue.isEmpty()) {
+            int node = queue.poll();
+            topo[index++] = node; // Add the node to the topological order
+            
+            // Decrease the indegree of adjacent vertices
+            for (int neighbor : adj.get(node)) {
+                indegree[neighbor]--;
+                // If indegree becomes 0, add it to the queue
+                if (indegree[neighbor] == 0) {
+                    queue.offer(neighbor);
+                }
+            }
+        }
+        
+        return topo; // Return the topological order
+    }
+    
+    // Function to calculate the indegrees of all vertices
+    private static int[] getIndegrees(ArrayList<ArrayList<Integer>> adj, int V) {
+        int[] indegree = new int[V];
+        
+        // Traverse the adjacency list to calculate the indegree of each vertex
+        for (int i = 0; i < V; i++) {
+            for (int neighbor : adj.get(i)) {
+                indegree[neighbor]++;
+            }
+        }
+        
+        return indegree; // Return the indegree array
+    }
+}
+```
