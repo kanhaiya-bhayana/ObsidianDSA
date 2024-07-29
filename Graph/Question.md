@@ -1147,6 +1147,7 @@ class Solution {
 ```
 
 ## 16 Topological Sort Algorithm (DFS)
+
 - Only exist on DAG (Directed Acyclic Graph)
 - **Definition:** Linear ordering of vertices such that if there is an edge between u and v, u appears before v in that orderring.
 
