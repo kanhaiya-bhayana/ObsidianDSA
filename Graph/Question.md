@@ -1922,3 +1922,80 @@ class Solution {
 }
 ```
 
+
+## 22 Shortest path in Undirected Graph
+https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1
+###### Steps:
+1. **Create Adjacency List**: Convert the edge list to an adjacency list for efficient graph representation.
+2. **Initialize Distance Array**: Set the initial distances to infinity (represented by `Integer.MAX_VALUE`).
+3. **Set Source Distance**: The distance from the source node to itself is zero.
+4. **Initialize Queue for BFS**: Use a queue to perform a Breadth-First Search (BFS) starting from the source node.
+5. **Perform BFS**: For each node, update the distances to its neighbors if a shorter path is found.
+6. **Handle Unreachable Nodes**: Replace distances of nodes that remain unreachable (`Integer.MAX_VALUE`) with `-1`.
+7. **Return Result**: Return the array of shortest distances from the source node to all other nodes.
+
+```java
+import java.util.*;
+
+class Solution {
+
+    // Function to find the shortest path from a source node to all other nodes in an undirected graph
+    public int[] shortestPath(int[][] edges, int n, int m, int src) {
+        // Step 1: Create adjacency list from edge list
+        List<List<Integer>> adj = getAdjList(edges, n, m);
+
+        // Step 2: Initialize distance array with infinity
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        
+        // Step 3: Set distance to source node as 0
+        dist[src] = 0;
+
+        // Step 4: Initialize queue for BFS
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(src);
+
+        // Step 5: Perform BFS to find shortest path
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            for (int neighbor : adj.get(node)) {
+                if (dist[node] + 1 < dist[neighbor]) {
+                    dist[neighbor] = dist[node] + 1;
+                    q.add(neighbor);
+                }
+            }
+        }
+
+        // Step 6: Replace distances of unreachable nodes with -1
+        for (int i = 0; i < n; i++) {
+            if (dist[i] == Integer.MAX_VALUE) {
+                dist[i] = -1;
+            }
+        }
+
+        // Step 7: Return the distance array
+        return dist;
+    }
+
+    // Helper function to create an adjacency list from the edge list
+    private List<List<Integer>> getAdjList(int[][] edges, int n, int m) {
+        List<List<Integer>> adj = new ArrayList<>();
+
+        // Initialize adjacency list
+        for (int i = 0; i < n; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Populate adjacency list
+        for (int i = 0; i < m; i++) {
+            adj.get(edges[i][0]).add(edges[i][1]);
+            adj.get(edges[i][1]).add(edges[i][0]);
+        }
+
+        return adj;
+    }
+}
+```
+
+
+
