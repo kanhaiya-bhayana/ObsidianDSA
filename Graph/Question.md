@@ -1807,3 +1807,114 @@ class Solution {
 }
 ```
 
+
+## 21 Shortest path in Directed Acyclic Graph
+[Shortest path in Directed Acyclic Graph | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/0)
+###### Explanation:
+
+1. **Adjacency List Creation (`getAdjList`)**:
+   - Converts the edge list into an adjacency list representation. Each node has a list of pairs representing the connected nodes and the edge weights.
+
+2. **Topological Sort (`getTopoSort` and `topoSortDFS`)**:
+   - Performs a DFS-based topological sort. Nodes are processed and pushed onto a stack in topological order.
+
+3. **Shortest Path Calculation (`shortestPath`)**:
+   - Initializes the distance array with a large value (`Integer.MAX_VALUE`), representing infinity, and sets the distance to the source node (assumed to be 0) as 0.
+   - Processes nodes in topological order, updating the distance to each node's neighbors if a shorter path is found.
+   - Finally, replaces distances that are still `Integer.MAX_VALUE` (unreachable nodes) with -1.
+
+
+```java
+// User function Template for Java
+import java.util.*;
+
+class Solution {
+    // Function to find the shortest path in a DAG using Topological Sort
+    public int[] shortestPath(int N, int M, int[][] edges) {
+        // Step 1: Create adjacency list from edges
+        List<List<Pair>> adj = getAdjList(N, edges);
+
+        // Step 2: Perform topological sort using DFS
+        Stack<Integer> topoStack = getTopoSort(N, adj);
+
+        // Step 3: Initialize distance array with a large value (representing infinity)
+        int[] dist = new int[N];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[0] = 0;  // Assuming 0 is the source node
+
+        // Step 4: Process nodes in topological order
+        while (!topoStack.isEmpty()) {
+            int node = topoStack.pop();
+
+            // Update distances for adjacent nodes
+            for (Pair neighbor : adj.get(node)) {
+                int v = neighbor.vertex;
+                int wt = neighbor.weight;
+
+                if (dist[node] != Integer.MAX_VALUE && dist[node] + wt < dist[v]) {
+                    dist[v] = dist[node] + wt;
+                }
+            }
+        }
+
+        // Step 5: Replace distances that are still infinity with -1
+        for (int i = 0; i < N; i++) {
+            if (dist[i] == Integer.MAX_VALUE) {
+                dist[i] = -1;
+            }
+        }
+
+        return dist;
+    }
+
+    // Function to create an adjacency list from the given edges
+    private List<List<Pair>> getAdjList(int N, int[][] edges) {
+        List<List<Pair>> adj = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int wt = edge[2];
+            adj.get(u).add(new Pair(v, wt));
+        }
+        return adj;
+    }
+
+    // Function to perform topological sort using DFS
+    private Stack<Integer> getTopoSort(int N, List<List<Pair>> adj) {
+        boolean[] visited = new boolean[N];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < N; i++) {
+            if (!visited[i]) {
+                topoSortDFS(i, adj, visited, stack);
+            }
+        }
+        return stack;
+    }
+
+    // DFS helper function for topological sorting
+    private void topoSortDFS(int node, List<List<Pair>> adj, boolean[] visited, Stack<Integer> stack) {
+        visited[node] = true;
+        for (Pair neighbor : adj.get(node)) {
+            if (!visited[neighbor.vertex]) {
+                topoSortDFS(neighbor.vertex, adj, visited, stack);
+            }
+        }
+        stack.push(node);
+    }
+
+    // Pair class to store vertex and weight
+    class Pair {
+        int vertex, weight;
+
+        Pair(int vertex, int weight) {
+            this.vertex = vertex;
+            this.weight = weight;
+        }
+    }
+}
+```
+
