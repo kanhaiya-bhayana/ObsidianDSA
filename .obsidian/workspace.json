@@ -162,6 +162,9 @@
   },
   "active": "5793b613c64e42f6",
   "lastOpenFiles": [
+    "Microservices/brew-aspnetcore-microservices/Backing Services.md",
+    "DSA/DP/Striver/Questions.md",
+    "DSA/DP/Striver",
     "Excalidraw/Drawing 2024-02-15 09.40.26.excalidraw.md",
     "Graph/Question.md",
     "Cheatsheet/Conversions.md",
@@ -203,10 +206,7 @@
     "Authorization-code-grant-type-flow-in-Oauth2-1.png",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/7. Securing Gateway server using Client Credential grant type flow.md",
     "Client-credential-grant-type-flow-3.png",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/6. Client Credentials Grant Type Flow In OAuth2.md",
-    "Microservices/Eazy Bytes/Microservices Security/2. OAuth",
-    "Microservices/Eazy Bytes/Microservices Security"
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth"
   ]
 }

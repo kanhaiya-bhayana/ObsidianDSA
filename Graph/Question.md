@@ -1147,16 +1147,16 @@ class Solution {
 ```
 
 ## 16 Topological Sort Algorithm (DFS)
+<<<<<<< HEAD
 
+=======
+https://www.geeksforgeeks.org/problems/topological-sort/1
+>>>>>>> 9c3975b2dd01ac94b914b640ff07d8b317834891
 - Only exist on DAG (Directed Acyclic Graph)
 - **Definition:** Linear ordering of vertices such that if there is an edge between u and v, u appears before v in that orderring.
 
 ```java
-	
-
 /*Complete the function below*/
-
-
 class Solution
 {
     // Function to return list containing vertices in Topological order.
@@ -1222,6 +1222,7 @@ class Solution
 ```
 
 ## 17 Topological Sort | Khan's Algorithm  (BFS)
+https://www.geeksforgeeks.org/problems/topological-sort/1
 ###### Steps for Topological Sort Algorithm
 
 1. **Initialization**:
@@ -1306,3 +1307,618 @@ class Solution {
     }
 }
 ```
+
+## 18 Detect a cycle in DAG | Topo Sort | Kahn's Algo
+https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1
+###### Explanation:
+1. **Initialization**:
+   - A queue `q` is initialized to store vertices that have no incoming edges.
+   - The `getIndegrees` function is called to calculate the in-degrees of all vertices.
+
+2. **Adding Vertices with Zero In-degree to Queue**:
+   - Vertices with zero in-degrees are added to the queue because they do not depend on any other vertices.
+
+3. **Processing Vertices**:
+   - A counter `cnt` is used to keep track of the number of vertices processed.
+   - While the queue is not empty, vertices are dequeued, and their adjacent vertices' in-degrees are decremented.
+   - If an adjacent vertex's in-degree becomes zero, it is added to the queue.
+
+4. **Cycle Detection**:
+   - If `cnt` is equal to `V` (the number of vertices), it means all vertices were processed, indicating there is no cycle.
+   - If `cnt` is less than `V`, it means some vertices couldn't be processed due to cyclic dependencies, indicating the presence of a cycle.
+
+5. **Helper Function `getIndegrees`**:
+   - This function calculates the in-degree for each vertex by counting the number of incoming edges.
+
+This algorithm is based on Kahn's Algorithm for Topological Sorting, which can also be used to detect cycles in a directed graph. If the topological sort includes all vertices, the graph is acyclic; otherwise, it contains a cycle.
+###### Code
+```java
+class Solution {
+    // Function to detect a cycle in a directed graph.
+    public boolean isCyclic(int V, ArrayList<ArrayList<Integer>> adj) {
+        // Initialize a queue to store vertices with no incoming edges.
+        Queue<Integer> q = new LinkedList<>();
+        
+        // Get the in-degree of each vertex.
+        int[] indegree = getIndegrees(V, adj);
+        
+        // Add vertices with no incoming edges to the queue.
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+        
+        // Counter for the number of vertices processed.
+        int cnt = 0;
+        
+        // Process vertices in the queue.
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            cnt++;
+            
+            // Decrease the in-degree of adjacent vertices.
+            for (int ele : adj.get(node)) {
+                indegree[ele]--;
+                
+                // If in-degree becomes zero, add the vertex to the queue.
+                if (indegree[ele] == 0) {
+                    q.offer(ele);
+                }
+            }
+        }
+        
+        // If the number of processed vertices is equal to the number of vertices,
+        // then the graph does not contain a cycle.
+        if (cnt == V) return false;
+        
+        // If the graph contains a cycle, the number of processed vertices will be less than V.
+        return true;
+    }
+    
+    // Helper function to calculate the in-degree of each vertex.
+    private int[] getIndegrees(int V, ArrayList<ArrayList<Integer>> adj) {
+        // Initialize the in-degree array.
+        int[] indegree = new int[V];
+        
+        // Calculate in-degrees by counting incoming edges for each vertex.
+        for (int i = 0; i < V; i++) {
+            for (int neighbours : adj.get(i)) {
+                indegree[neighbours]++;
+            }
+        }
+        
+        // Return the in-degree array.
+        return indegree;
+    }
+}
+```
+
+
+## 19 Course Schedule I and II | Pre-requisite Tasks | Topological Sort
+https://www.geeksforgeeks.org/problems/prerequisite-tasks/1
+###### Explanation of Steps:
+
+1. **Create Adjacency List:**
+    
+    - The `getAdjacencyList` function creates an adjacency list representation of the graph from the given edge list (prerequisites).
+2. **Compute In-degrees:**
+    
+    - The `getIndegrees` function computes the in-degrees of all vertices. In-degree of a vertex is the number of edges directed towards it.
+3. **Initialize Queue:**
+    
+    - Initialize a queue and enqueue all vertices with in-degree 0. These vertices can be processed first in the topological order.
+4. **Process Vertices in Topological Order:**
+    
+    - Dequeue a vertex from the queue, reduce the in-degrees of its adjacent vertices, and enqueue those vertices whose in-degrees become 0. Keep track of the count of processed vertices.
+5. **Check if All Vertices are Processed:**
+    
+    - If the count of processed vertices is equal to the number of vertices (`V`), it indicates that all vertices were processed successfully, and there are no cycles. Hence, return `true`. Otherwise, return `false`.
+
+```java
+// User function Template for Java
+
+class Solution {
+    public boolean isPossible(int V, int P, int[][] prerequisites) {
+        // Step 1: Create adjacency list representation of the graph from prerequisites
+        List<List<Integer>> adj = getAdjacencyList(prerequisites, V);
+        
+        // Step 2: Compute in-degrees of all vertices
+        int[] indegree = getIndegrees(adj, V);
+        
+        // Step 3: Initialize queue and enqueue all vertices with in-degree 0
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+        
+        // Step 4: Process the vertices in topological order
+        int cnt = 0;
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            cnt++;
+            
+            // Reduce in-degree of adjacent vertices and add to queue if in-degree becomes 0
+            for (int nbh : adj.get(node)) {
+                indegree[nbh]--;
+                if (indegree[nbh] == 0) {
+                    q.offer(nbh);
+                }
+            }
+        }
+        
+        // Step 5: If count of processed vertices is equal to V, return true, else return false
+        return cnt == V;
+    }
+    
+    // Function to compute in-degrees of all vertices
+    int[] getIndegrees(List<List<Integer>> adj, int V) {
+        int[] indegree = new int[V];
+        for (int i = 0; i < V; i++) {
+            for (int neighbour : adj.get(i)) {
+                indegree[neighbour]++;
+            }
+        }
+        return indegree;
+    }
+    
+    // Function to create adjacency list from edge list
+    List<List<Integer>> getAdjacencyList(int[][] arr, int V) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        
+        // Add edges to the adjacency list
+        for (int i = 0; i < arr.length; i++) {
+            adj.get(arr[i][0]).add(arr[i][1]);
+        }
+        return adj;
+    }
+}
+
+```
+
+https://leetcode.com/problems/course-schedule/description/
+
+```java
+class Solution {
+    public boolean canFinish(int V, int[][] prerequisites) {
+    // Step 1: Create adjacency list representation of the graph from prerequisites
+        List<List<Integer>> adj = getAdjacencyList(prerequisites, V);
+        
+        // Step 2: Compute in-degrees of all vertices
+        int[] indegree = getIndegrees(adj, V);
+        
+        // Step 3: Initialize queue and enqueue all vertices with in-degree 0
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+        
+        // Step 4: Process the vertices in topological order
+        int cnt = 0;
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            cnt++;
+            
+            // Reduce in-degree of adjacent vertices and add to queue if in-degree becomes 0
+            for (int nbh : adj.get(node)) {
+                indegree[nbh]--;
+                if (indegree[nbh] == 0) {
+                    q.offer(nbh);
+                }
+            }
+        }
+        
+        // Step 5: If count of processed vertices is equal to V, return true, else return false
+        return cnt == V;
+    }
+    
+    // Function to compute in-degrees of all vertices
+    int[] getIndegrees(List<List<Integer>> adj, int V) {
+        int[] indegree = new int[V];
+        for (int i = 0; i < V; i++) {
+            for (int neighbour : adj.get(i)) {
+                indegree[neighbour]++;
+            }
+        }
+        return indegree;
+    }
+    
+    // Function to create adjacency list from edge list
+    List<List<Integer>> getAdjacencyList(int[][] arr, int V) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        
+        // Add edges to the adjacency list
+        for (int i = 0; i < arr.length; i++) {
+            adj.get(arr[i][0]).add(arr[i][1]);
+        }
+        return adj;
+    }
+}
+```
+
+https://leetcode.com/problems/course-schedule-ii/description/
+
+```java
+class Solution {
+    public int[] findOrder(int V, int[][] prerequisites) {
+     // Step 1: Create adjacency list representation of the graph from prerequisites
+        List<List<Integer>> adj = getAdjacencyList(prerequisites, V);
+        
+        // Step 2: Compute in-degrees of all vertices
+        int[] indegree = getIndegrees(adj, V);
+        
+        // Step 3: Initialize queue and enqueue all vertices with in-degree 0
+        Queue<Integer> q = new LinkedList<>();
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+        
+        // Step 4: Process the vertices in topological order
+        int i = 0;
+        int[] res = new int[V];
+        while (!q.isEmpty()) {
+            int node = q.poll();
+            res[i++] = node;
+            
+            // Reduce in-degree of adjacent vertices and add to queue if in-degree becomes 0
+            for (int nbh : adj.get(node)) {
+                indegree[nbh]--;
+                if (indegree[nbh] == 0) {
+                    q.offer(nbh);
+                }
+            }
+        }
+        
+        // Step 5: If count of processed vertices is equal to V, return true, else return false
+        return (i == V) ? res : new int[]{};
+    }
+    
+    // Function to compute in-degrees of all vertices
+    int[] getIndegrees(List<List<Integer>> adj, int V) {
+        int[] indegree = new int[V];
+        for (int i = 0; i < V; i++) {
+            for (int neighbour : adj.get(i)) {
+                indegree[neighbour]++;
+            }
+        }
+        return indegree;
+    }
+    
+    // Function to create adjacency list from edge list
+    List<List<Integer>> getAdjacencyList(int[][] arr, int V) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        
+        // Add edges to the adjacency list
+        for (int i = 0; i < arr.length; i++) {
+            adj.get(arr[i][1]).add(arr[i][0]);
+        }
+        return adj;
+    }
+}
+```
+
+## 20 [Find Eventual Safe States](https://leetcode.com/problems/find-eventual-safe-states/) | Using Topo Sort (BFS)
+
+###### Explanation:
+
+1. **Reverse the Graph**: The `getAdjMat` function creates a reversed version of the input graph. In the original graph, if there is an edge from `u` to `v`, in the reversed graph, there will be an edge from `v` to `u`.
+
+2. **Compute Indegrees**: The `getIndegrees` function calculates the indegree (the number of incoming edges) for each node in the reversed graph.
+
+3. **Initialize Queue**: All nodes with 0 indegree (i.e., no incoming edges) are added to the queue. These nodes are considered safe because they don't depend on any other nodes.
+
+4. **Topological Sort**: Using a queue, perform a topological sort. For each node removed from the queue, it's added to the list of safe nodes. Then, the indegree of all its neighbors is reduced by 1. If any neighbor's indegree becomes 0, it's added to the queue.
+
+5. **Sort and Return**: Finally, the list of safe nodes is sorted and returned.
+
+By following these steps, the function identifies all nodes that are eventually safe (i.e., nodes that do not participate in any cycles).
+
+```java
+class Solution {
+    public List<Integer> eventualSafeNodes(int[][] graph) {
+        int V = graph.length; // Number of vertices in the graph
+
+        // Step 1: Reverse the edges of the graph
+        List<List<Integer>> adj = getAdjMat(graph);
+
+        // Step 2: Compute the indegree of each node in the reversed graph
+        int[] indegree = getIndegrees(adj);
+
+        Queue<Integer> q = new LinkedList<>();
+        List<Integer> safeState = new ArrayList<>();
+
+        // Step 3: Initialize the queue with all nodes having 0 indegree
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+
+        // Step 4: Perform topological sort
+        while (!q.isEmpty()) {
+            int node = q.poll(); // Remove a node with 0 indegree
+            safeState.add(node); // Add it to the list of safe nodes
+
+            // Reduce the indegree of all its neighbors
+            for (int nbh : adj.get(node)) {
+                indegree[nbh]--;
+                // If indegree of neighbor becomes 0, add it to the queue
+                if (indegree[nbh] == 0) {
+                    q.offer(nbh);
+                }
+            }
+        }
+
+        // Step 5: Sort the list of safe nodes and return
+        Collections.sort(safeState);
+        return safeState;
+    }
+
+    // Function to reverse the edges of the graph
+    private List<List<Integer>> getAdjMat(int[][] graph) {
+        int V = graph.length;
+        List<List<Integer>> adj = new ArrayList<>();
+
+        // Initialize adjacency list
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Reverse the edges
+        for (int i = 0; i < graph.length; i++) {
+            for (int next : graph[i]) {
+                adj.get(next).add(i);
+            }
+        }
+
+        return adj;
+    }
+
+    // Function to compute the indegree of each node
+    private int[] getIndegrees(List<List<Integer>> adj) {
+        int V = adj.size();
+        int[] indegree = new int[V];
+
+        // Compute indegree of each node
+        for (int i = 0; i < V; i++) {
+            for (int nbh : adj.get(i)) {
+                indegree[nbh]++;
+            }
+        }
+
+        return indegree;
+    }
+}
+```
+
+## 21 Alien Dictionary
+https://www.geeksforgeeks.org/problems/alien-dictionary/1
+###### Explanation:
+
+1. **Initialize Adjacency List**: The `solve` function initializes an adjacency list to represent the graph of character dependencies.
+
+2. **Build the Graph**: By comparing each pair of adjacent words in the dictionary, the code determines the order of characters and builds the graph. If the characters at a specific position are different, an edge is added from the character in the first word to the character in the second word.
+
+3. **Topological Sort**: The `topoSort` function performs a topological sort on the graph. Nodes with 0 in-degree (no dependencies) are added to a queue. As each node is processed, its neighbors' in-degrees are decreased, and any neighbor with 0 in-degree is added to the queue.
+
+4. **Convert to String**: The topological order of characters is converted to a string, representing the order of characters in the alien language.
+
+5. **Compute In-Degrees**: The `getIndegrees` function calculates the in-degree for each node in the graph, representing the number of incoming edges for each character.
+
+By following these steps, the code determines the order of characters in the alien language based on the given dictionary.
+
+```java
+// User function template for Java
+
+class Solution {
+    public String findOrder(String[] dict, int N, int K) {
+        // This function finds the order of characters in an alien language
+        return solve(dict, N, K);
+    }
+
+    // Helper function to solve the problem
+    String solve(String[] dict, int N, int K) {
+        // Step 1: Create an adjacency list for the graph
+        List<List<Integer>> adj = new ArrayList<>();
+        for (int i = 0; i < K; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        // Step 2: Build the graph by comparing adjacent words
+        for (int i = 0; i < N - 1; i++) {
+            String s1 = dict[i];
+            String s2 = dict[i + 1];
+            int len = Math.min(s1.length(), s2.length());
+
+            // Compare characters of both words
+            for (int ptr = 0; ptr < len; ptr++) {
+                if (s1.charAt(ptr) != s2.charAt(ptr)) {
+                    // Add an edge from s1[ptr] to s2[ptr]
+                    adj.get(s1.charAt(ptr) - 'a').add(s2.charAt(ptr) - 'a');
+                    break;
+                }
+            }
+        }
+
+        // Step 3: Perform topological sort on the graph
+        List<Integer> topo = topoSort(K, adj);
+
+        // Step 4: Convert the topological order to a string
+        String ans = "";
+        for (int it : topo) {
+            ans += (char) (it + (int) ('a'));
+        }
+        return ans;
+    }
+
+    // Function to perform topological sort on the graph
+    private List<Integer> topoSort(int V, List<List<Integer>> adj) {
+        // Step 1: Compute in-degrees of all vertices
+        int[] indegree = getIndegrees(adj, V);
+        Queue<Integer> q = new LinkedList<>();
+
+        // Step 2: Initialize the queue with all nodes having 0 in-degree
+        for (int i = 0; i < V; i++) {
+            if (indegree[i] == 0) {
+                q.offer(i);
+            }
+        }
+
+        // Step 3: Process nodes in topological order
+        List<Integer> res = new ArrayList<>();
+        while (!q.isEmpty()) {
+            int node = q.poll(); // Remove a node with 0 in-degree
+            res.add(node); // Add it to the topological order
+
+            // Reduce the in-degree of all its neighbors
+            for (int nbh : adj.get(node)) {
+                indegree[nbh]--;
+                // If in-degree of neighbor becomes 0, add it to the queue
+                if (indegree[nbh] == 0) {
+                    q.offer(nbh);
+                }
+            }
+        }
+        return res;
+    }
+
+    // Function to compute in-degrees of all vertices
+    int[] getIndegrees(List<List<Integer>> adj, int V) {
+        int[] indegree = new int[V];
+        // Compute in-degree of each node
+        for (int i = 0; i < V; i++) {
+            for (int neighbour : adj.get(i)) {
+                indegree[neighbour]++;
+            }
+        }
+        return indegree;
+    }
+}
+```
+
+
+## 21 Shortest path in Directed Acyclic Graph
+[Shortest path in Directed Acyclic Graph | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph/0)
+###### Explanation:
+
+1. **Adjacency List Creation (`getAdjList`)**:
+   - Converts the edge list into an adjacency list representation. Each node has a list of pairs representing the connected nodes and the edge weights.
+
+2. **Topological Sort (`getTopoSort` and `topoSortDFS`)**:
+   - Performs a DFS-based topological sort. Nodes are processed and pushed onto a stack in topological order.
+
+3. **Shortest Path Calculation (`shortestPath`)**:
+   - Initializes the distance array with a large value (`Integer.MAX_VALUE`), representing infinity, and sets the distance to the source node (assumed to be 0) as 0.
+   - Processes nodes in topological order, updating the distance to each node's neighbors if a shorter path is found.
+   - Finally, replaces distances that are still `Integer.MAX_VALUE` (unreachable nodes) with -1.
+
+
+```java
+// User function Template for Java
+import java.util.*;
+
+class Solution {
+    // Function to find the shortest path in a DAG using Topological Sort
+    public int[] shortestPath(int N, int M, int[][] edges) {
+        // Step 1: Create adjacency list from edges
+        List<List<Pair>> adj = getAdjList(N, edges);
+
+        // Step 2: Perform topological sort using DFS
+        Stack<Integer> topoStack = getTopoSort(N, adj);
+
+        // Step 3: Initialize distance array with a large value (representing infinity)
+        int[] dist = new int[N];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[0] = 0;  // Assuming 0 is the source node
+
+        // Step 4: Process nodes in topological order
+        while (!topoStack.isEmpty()) {
+            int node = topoStack.pop();
+
+            // Update distances for adjacent nodes
+            for (Pair neighbor : adj.get(node)) {
+                int v = neighbor.vertex;
+                int wt = neighbor.weight;
+
+                if (dist[node] != Integer.MAX_VALUE && dist[node] + wt < dist[v]) {
+                    dist[v] = dist[node] + wt;
+                }
+            }
+        }
+
+        // Step 5: Replace distances that are still infinity with -1
+        for (int i = 0; i < N; i++) {
+            if (dist[i] == Integer.MAX_VALUE) {
+                dist[i] = -1;
+            }
+        }
+
+        return dist;
+    }
+
+    // Function to create an adjacency list from the given edges
+    private List<List<Pair>> getAdjList(int N, int[][] edges) {
+        List<List<Pair>> adj = new ArrayList<>();
+        for (int i = 0; i < N; i++) {
+            adj.add(new ArrayList<>());
+        }
+
+        for (int[] edge : edges) {
+            int u = edge[0];
+            int v = edge[1];
+            int wt = edge[2];
+            adj.get(u).add(new Pair(v, wt));
+        }
+        return adj;
+    }
+
+    // Function to perform topological sort using DFS
+    private Stack<Integer> getTopoSort(int N, List<List<Pair>> adj) {
+        boolean[] visited = new boolean[N];
+        Stack<Integer> stack = new Stack<>();
+        for (int i = 0; i < N; i++) {
+            if (!visited[i]) {
+                topoSortDFS(i, adj, visited, stack);
+            }
+        }
+        return stack;
+    }
+
+    // DFS helper function for topological sorting
+    private void topoSortDFS(int node, List<List<Pair>> adj, boolean[] visited, Stack<Integer> stack) {
+        visited[node] = true;
+        for (Pair neighbor : adj.get(node)) {
+            if (!visited[neighbor.vertex]) {
+                topoSortDFS(neighbor.vertex, adj, visited, stack);
+            }
+        }
+        stack.push(node);
+    }
+
+    // Pair class to store vertex and weight
+    class Pair {
+        int vertex, weight;
+
+        Pair(int vertex, int weight) {
+            this.vertex = vertex;
+            this.weight = weight;
+        }
+    }
+}
+```
+
