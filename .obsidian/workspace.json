@@ -82,7 +82,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 400.5
+    "width": 400.5,
+    "collapsed": true
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -151,26 +152,22 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "github-sync:Sync with Remote": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "github-sync:Sync with Remote": false
+      "command-palette:Open command palette": false
     }
   },
   "active": "5793b613c64e42f6",
   "lastOpenFiles": [
-    "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
-    "Cheatsheet/Graph Java.md",
-    "Graph/Question.md",
     "Microservices/brew-aspnetcore-microservices/Backing Services.md",
-    "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
-    "Recursion & Backtracking/Questions/Combination Sum.md",
     "DSA/DP/Striver/Questions.md",
-    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "DSA/DP/Striver",
+    "Excalidraw/Drawing 2024-02-15 09.40.26.excalidraw.md",
+    "Graph/Question.md",
     "Cheatsheet/Conversions.md",
     "Tree_data_structure_questions.pdf",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
@@ -178,12 +175,14 @@
     "SQL Server/One Liners.md",
     "Microservices/brew-aspnetcore-microservices/Minimal APIs.md",
     "Cheatsheet/int-to-Integer.md",
+    "Cheatsheet/Graph Java.md",
     "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
     "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
     "Microservices/brew-aspnetcore-microservices/Architectures.md",
     "Microservices/brew-aspnetcore-microservices/Database/The Database-per-Service Pattern.md",
     "Microservices/brew-aspnetcore-microservices/Database",
     "Microservices/brew-aspnetcore-microservices/Introduction.md",
+    "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "Microservices/Eazy Bytes/Apache Kafka/1. Introduction.md",
     "Microservices/brew-aspnetcore-microservices",
     "Microservices/Eazy Bytes/Event-driven Microservices/7, Apache Kafka Vs RabbitMQ.md",
@@ -206,6 +205,8 @@
     "Authorization-code-grant-type-flow-in-Oauth2-3.png",
     "Authorization-code-grant-type-flow-in-Oauth2-2.png",
     "Authorization-code-grant-type-flow-in-Oauth2-1.png",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/8. Setup Auth Server using KeyCloak.md",
+    "Microservices/Eazy Bytes/Microservices Security/2. OAuth/1. Introduction.md",
     "Client-credential-grant-type-flow-3.png",
     "Microservices/Eazy Bytes/Microservices Security/2. OAuth"
   ]
