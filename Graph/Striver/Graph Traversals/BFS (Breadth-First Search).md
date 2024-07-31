@@ -70,3 +70,40 @@ public class Graph {
 }
 ```
 
+## layers template
+```java
+public class Graph {
+    static int vertices = 4; // Number of vertices
+    static List<List<Integer>> adj; // Adjacency list
+
+    // Method to perform BFS traversal starting from a given vertex
+    static void BFS(int start,int target) {
+        boolean[] visited = new boolean[vertices]; // Array to mark visited vertices
+        Queue<Integer> queue = new LinkedList<>(); // Queue for BFS
+
+        queue.add(start); // Enqueue the starting vertex
+		int c=0;
+        while (!queue.isEmpty()) {
+			int s=q.size();
+			c++;
+			while(s-->0){
+				int v = queue.poll(); // Dequeue a vertex from the queue
+            
+	            if(visited[v])
+		            continue;
+		        
+		        visited[v]=true;
+	            
+	            if(v==target)
+		            return c;
+				
+				for (int n : adj.get(v)) {
+					queue.add(n); // Enqueue the vertex
+				}
+		        
+			}
+        }
+        return -1;
+    }
+}
+```

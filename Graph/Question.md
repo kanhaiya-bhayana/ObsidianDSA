@@ -1923,7 +1923,7 @@ class Solution {
 ```
 
 
-## 22 Shortest path in Undirected Graph
+## 22 Shortest path in Undirected Graph | BFS
 https://www.geeksforgeeks.org/problems/shortest-path-in-undirected-graph-having-unit-distance/1
 ###### Steps:
 1. **Create Adjacency List**: Convert the edge list to an adjacency list for efficient graph representation.
@@ -1997,5 +1997,99 @@ class Solution {
 }
 ```
 
+## 23 [Word Ladder](https://leetcode.com/problems/word-ladder/)
 
+###### Steps Explained
+
+1. **Class and Method Definition**:
+   - Define the `Solution` class.
+   - The `ladderLength` method is the entry point that calls the private `solve` method.
+
+2. **Initialization**:
+   - Initialize a queue `q` to store pairs of words and their respective transformation steps.
+   - Add the initial `beginWord` with step count 1 to the queue.
+   - Create a set `set` from the `wordList` for quick lookup of words and remove the `beginWord` from it.
+
+3. **Breadth-First Search (BFS)**:
+   - While the queue is not empty:
+     - Dequeue the first element and get the current word and its step count.
+     - If the current word matches the `endWord`, return the step count.
+     - For each character in the current word, try replacing it with every letter from 'a' to 'z' to form new words.
+     - If a newly formed word is in the set, remove it from the set and add it to the queue with incremented step count.
+
+4. **Return Statement**:
+   - If no transformation sequence leads to the `endWord`, return 0.
+
+5. **Helper Class `Pair`**:
+   - A simple class to store pairs of words and their step counts.
+
+This code uses a BFS approach to find the shortest transformation sequence from `beginWord` to `endWord` where each transformed word must be in the `wordList`.
+
+```java
+import java.util.*;
+
+// Main class containing the solution
+class Solution {
+    // Entry point of the solution
+    public int ladderLength(String beginWord, String endWord, List<String> wordList) {
+        return solve(beginWord, endWord, wordList);
+    }
+
+    // Private method to solve the problem
+    private int solve(String beginWord, String endWord, List<String> wordList) {
+        // Queue to hold pairs of (current word, number of transformation steps)
+        Queue<Pair> q = new LinkedList<>();
+        // Start with the beginWord and step count as 1
+        q.offer(new Pair(beginWord, 1));
+
+        // Set to store the wordList for quick lookup and remove the beginWord
+        Set<String> set = new HashSet<>();
+        for (String st : wordList) {
+            set.add(st);
+        }
+        set.remove(beginWord);
+
+        // Perform BFS
+        while (!q.isEmpty()) {
+            // Get the current word and step count
+            String word = q.peek().first;
+            int steps = q.peek().second;
+            q.poll();
+
+            // If the current word matches the endWord, return the step count
+            if (word.equals(endWord)) return steps;
+
+            // Try changing each character in the current word to find new words
+            for (int i = 0; i < word.length(); i++) {
+                for (char ch = 'a'; ch <= 'z'; ch++) {
+                    // Create a new word by changing one character at position i
+                    char[] replacedCharArray = word.toCharArray();
+                    replacedCharArray[i] = ch;
+                    String newWord = new String(replacedCharArray);
+
+                    // If the new word is in the set, add it to the queue with incremented step count
+                    if (set.contains(newWord)) {
+                        set.remove(newWord);
+                        q.offer(new Pair(newWord, steps + 1));
+                    }
+                }
+            }
+        }
+
+        // If no transformation sequence is found, return 0
+        return 0;
+    }
+
+    // Helper class to store pairs of (word, step count)
+    class Pair {
+        String first;
+        int second;
+
+        Pair(String _first, int _second) {
+            this.first = _first;
+            this.second = _second;
+        }
+    }
+}
+```
 
