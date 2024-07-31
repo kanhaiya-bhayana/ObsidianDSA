@@ -160,9 +160,10 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "ce01d6c1c449340f",
+  "active": "5793b613c64e42f6",
   "lastOpenFiles": [
-    "pgsql-container-connection.png",
+    "Docker/Images/pgsql-container-connection.png",
+    "Docker/Images",
     "Docker/Connect to PostgreSQL Container.md",
     "Docker/Using docker-compose files to target multiple environments.md",
     "Docker/PostgreSQL Setup Using Docker Container.md",
@@ -197,7 +198,6 @@
     "Microservices/brew-aspnetcore-microservices/Database",
     "Microservices/brew-aspnetcore-microservices/Introduction.md",
     "Microservices/brew-aspnetcore-microservices",
-    "Microservices/Eazy Bytes/Apache Kafka",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
     "RabbitMQ-2.png",
