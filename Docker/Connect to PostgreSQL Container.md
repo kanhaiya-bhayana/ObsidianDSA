@@ -29,3 +29,10 @@ now you will be connected to the user, and a terminal will be like below will be
 \d
 ```
 
+###### Select
+```sh
+postgres=# SELECT * FROM <table-name>;
+```
+
+
+

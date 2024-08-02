@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Docker/Connect to PostgreSQL Container.md",
+                "file": "TypeScript/Dave Gray/Commands.md",
                 "mode": "source",
                 "source": false
               }
@@ -98,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Docker/Connect to PostgreSQL Container.md",
+                "file": "TypeScript/Dave Gray/Commands.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Docker/Connect to PostgreSQL Container.md",
+                "file": "TypeScript/Dave Gray/Commands.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Docker/Connect to PostgreSQL Container.md"
+                "file": "TypeScript/Dave Gray/Commands.md"
               }
             }
           }
@@ -162,29 +162,34 @@
   },
   "active": "5793b613c64e42f6",
   "lastOpenFiles": [
-    "Docker/Images/pgsql-container-connection.png",
-    "Docker/Images",
-    "Docker/Connect to PostgreSQL Container.md",
-    "Docker/Using docker-compose files to target multiple environments.md",
+    "TypeScript/Dave Gray/02. Setup.md",
+    "TypeScript/Dave Gray/Commands.md",
+    "TypeScript/Dave Gray/01. Introduction.md",
+    "Graph/Question.md",
+    "TypeScript/Dave Gray",
+    "TypeScript",
+    "Cheatsheet/Conversions.md",
+    "Cheatsheet/Graph Java.md",
     "Docker/PostgreSQL Setup Using Docker Container.md",
     "Docker/Docker.md",
+    "Docker/Connect to PostgreSQL Container.md",
+    "Docker/Images/pgsql-container-connection.png",
+    "Docker/Images",
+    "Docker/Using docker-compose files to target multiple environments.md",
     "Docker/Overview.md",
     "Docker/Docker Session AMK.md",
     "Docker/Advanced.md",
-    "Graph/Question.md",
     "Docker",
     "DSA/Resources.md",
     "Graph/WilliamFiset/Overview.md",
     "Graph/Striver/Graph Traversals/BFS (Breadth-First Search).md",
     "Graph/WilliamFiset",
     "Graph/Striver/Graph Traversals/DFS & BFS in 1.md",
-    "Cheatsheet/Graph Java.md",
     "Microservices/brew-aspnetcore-microservices/Backing Services.md",
     "Recursion & Backtracking/Questions/Combination Sum.md",
     "DSA/DP/Striver/Questions.md",
     "DSA/DP/CodeStoryWithMIK/2. Questions.md",
     "DSA/DP/Striver",
-    "Cheatsheet/Conversions.md",
     "Tree_data_structure_questions.pdf",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
     "SQL Server/Overall.md",
@@ -194,10 +199,6 @@
     "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
     "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
     "Microservices/brew-aspnetcore-microservices/Architectures.md",
-    "Microservices/brew-aspnetcore-microservices/Database/The Database-per-Service Pattern.md",
-    "Microservices/brew-aspnetcore-microservices/Database",
-    "Microservices/brew-aspnetcore-microservices/Introduction.md",
-    "Microservices/brew-aspnetcore-microservices",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
     "RabbitMQ-2.png",

@@ -43,7 +43,7 @@ services:
     image: dpage/pgadmin4
     restart: always
     ports:
-      - 8080:8080
+      - 8080:80
     environment:
       - PGADMIN_DEFAULT_EMAIL=user@domain.com
       - PGADMIN_DEFAULT_PASSWORD=localuser

@@ -2093,3 +2093,186 @@ class Solution {
 }
 ```
 
+
+## 24 Dijkstra Algorithm - Using Priority Queue
+
+###### Steps Explained:
+1. **dijkstra Function**:
+    - Calls the utility function `dijkstraUtil` to compute the shortest paths.
+2. **dijkstraUtil Function**:
+    - Initializes a priority queue to keep track of nodes to be processed, prioritizing those with the smallest known distance.
+    - Initializes an array `dist` to store the shortest distance from the source to each node, setting all distances to infinity except for the source node, which is set to 0.
+    - Adds the source node to the priority queue.
+    - Processes nodes from the priority queue until it is empty:
+        - Retrieves the node with the smallest distance.
+        - Updates the distances to its adjacent nodes if a shorter path is found.
+        - Adds the updated adjacent nodes to the priority queue.
+    - Returns the final distances array.
+3. **Pair Class**:
+    
+    - A helper class to store pairs of (distance, node) for use in the priority queue.
+
+```java
+// User function Template for Java
+
+class Solution {
+    // Function to find the shortest distance of all the vertices from the source vertex S.
+    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+        // Call the utility function that implements Dijkstra's algorithm
+        return dijkstraUtil(V, adj, S);
+    }
+
+    private static int[] dijkstraUtil(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+        // Priority queue to store (distance, node) pairs. The priority queue is used to get the node with the smallest distance first.
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.wt - b.wt);
+        
+        // Initialize distance array with infinity. This array will hold the shortest distance from the source to each node.
+        int[] dist = new int[V];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[S] = 0; // Distance to the source itself is 0.
+        
+        // Add the source node to the priority queue with a distance of 0.
+        pq.offer(new Pair(0, S));
+        
+        // Continue processing nodes until the priority queue is empty.
+        while (!pq.isEmpty()) {
+            // Get the node with the smallest distance from the priority queue.
+            Pair current = pq.poll();
+            int dis = current.wt; // Current distance from the source.
+            int node = current.node; // Current node index.
+
+            // Process all adjacent nodes of the current node.
+            for (List<Integer> nb : adj.get(node)) {
+                int adjNode = nb.get(0); // Adjacent node index.
+                int edgeWeight = nb.get(1); // Weight of the edge to the adjacent node.
+                
+                // If the new calculated distance to the adjacent node is smaller than the known distance, update it.
+                if (dis + 
+					
+					< dist[adjNode]) {
+                    dist[adjNode] = dis + edgeWeight; // Update the distance.
+                    pq.offer(new Pair(dist[adjNode], adjNode)); // Add the adjacent node to the priority queue.
+                }
+            }
+        }
+        
+        // Return the final distances array, which contains the shortest distances from the source to all other nodes.
+        return dist;
+    }
+
+    // Pair class to store distance and node. This is used for the priority queue.
+    static class Pair {
+        int wt;   // Distance from source.
+        int node; // Node index.
+        
+        Pair(int d, int n) {
+            wt = d;
+            node = n;
+        }
+    }
+}
+
+```
+
+## 25 [Network Delay Time](https://leetcode.com/problems/network-delay-time/)
+
+###### Explanation:
+
+1. **Adjacency List Construction (`getAdjList` method)**:
+    
+    - This method constructs an adjacency list representation of the graph from the given edges.
+    - The adjacency list is initialized with empty lists for each node.
+    - For each edge in `times`, it adds a `Pair` (containing the weight and destination node) to the corresponding source node's list.
+2. **Dijkstra's Algorithm (`dijkstraUtil` method)**:
+    
+    - This method uses Dijkstra's algorithm to find the shortest paths from the source node `src` to all other nodes.
+    - A priority queue (`pq`) is used to process nodes in order of their current shortest known distance.
+    - The `dist` array is initialized with `Integer.MAX_VALUE` to represent infinity, and the distance to the source node is set to 0.
+    - The algorithm processes each node, updating the distances to its adjacent nodes if a shorter path is found, and adds these adjacent nodes to the priority queue.
+    - After processing all nodes, the method checks if all nodes are reachable. If any node has a distance of `Integer.MAX_VALUE`, it means the node is not reachable, and the method returns -1.
+    - Otherwise, it returns the maximum distance found in the `dist` array, which represents the minimum time for all nodes to receive the signal.
+3. **Pair Class**:
+    
+    - The `Pair` class is a simple data structure used to store the weight (`wt`) and node (`node`) for the priority queue and adjacency list.
+
+###### Additional Notes:
+
+- The `dist` array has a size of `V + 1` to accommodate the 1-based indexing of the nodes.
+- The priority queue ensures that the node with the smallest current known distance is processed first, which is the key feature of Dijkstra's algorithm.
+
+```java
+import java.util.*;
+
+class Solution {
+    public int networkDelayTime(int[][] times, int n, int k) {
+        // Construct the adjacency list from the input times
+        List<List<Pair>> adj = getAdjList(times, n);
+        // Use Dijkstra's algorithm to find the minimum time for all nodes to receive the signal
+        return dijkstraUtil(adj, n, k);
+    }
+
+    private int dijkstraUtil(List<List<Pair>> adj, int V, int src) {
+        // Priority queue to store (distance, node) pairs, ordered by distance
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.wt - b.wt);
+        // Distance array to store the shortest distance from the source to each node
+        int[] dist = new int[V + 1];
+        Arrays.fill(dist, Integer.MAX_VALUE); // Initialize distances to infinity
+
+        dist[src] = 0; // Distance to the source itself is 0
+        pq.offer(new Pair(0, src)); // Add the source node to the priority queue
+
+        while (!pq.isEmpty()) {
+            Pair curr = pq.poll(); // Get the node with the smallest distance
+            int node = curr.node;
+            int dis = curr.wt;
+
+            // Process all adjacent nodes
+            for (Pair nbs : adj.get(node)) {
+                int adjNode = nbs.node;
+                int edgeWt = nbs.wt;
+
+                // Check if the new distance is smaller
+                if (edgeWt + dis < dist[adjNode]) {
+                    dist[adjNode] = edgeWt + dis; // Update the distance
+                    pq.offer(new Pair(dist[adjNode], adjNode)); // Add the adjacent node to the priority queue
+                }
+            }
+        }
+
+        // Find the maximum distance to determine the minimum time for all nodes to receive the signal
+        int mx = Integer.MIN_VALUE;
+        for (int i = 1; i <= V; i++) {
+            if (dist[i] == Integer.MAX_VALUE) return -1; // If any node is unreachable, return -1
+            mx = Math.max(mx, dist[i]); // Track the maximum distance
+        }
+        return mx; // Return the maximum distance as the result
+    }
+
+    private List<List<Pair>> getAdjList(int[][] times, int V) {
+        List<List<Pair>> adj = new ArrayList<>();
+
+        // Initialize the adjacency list with empty lists
+        for (int i = 0; i <= V; i++) {
+            adj.add(new ArrayList<>());
+        }
+        // Fill the adjacency list with the given edges and their weights
+        for (int[] time : times) {
+            int u = time[0];
+            int v = time[1];
+            int wt = time[2];
+            adj.get(u).add(new Pair(wt, v));
+        }
+        return adj; // Return the constructed adjacency list
+    }
+
+    class Pair {
+        int node;
+        int wt;
+        
+        Pair(int w, int n) {
+            node = n;
+            wt = w;
+        }
+    }
+}
+```
