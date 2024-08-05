@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "4d7f15f480e9da7c",
+        "id": "ce4d028198421a03",
         "type": "tabs",
         "children": [
           {
-            "id": "ee7770f24384d466",
+            "id": "85f68a6a34cee193",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Microservices/brew-aspnetcore-microservices/Minimal APIs.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "5793b613c64e42f6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Graph/Question.md",
+                "file": "TypeScript/Dave Gray/02. Setup.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -98,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "TypeScript/Dave Gray/02. Setup.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Graph/Question.md",
+                "file": "TypeScript/Dave Gray/02. Setup.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Graph/Question.md"
+                "file": "TypeScript/Dave Gray/02. Setup.md"
               }
             }
           }
@@ -160,12 +147,12 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "5793b613c64e42f6",
+  "active": "85f68a6a34cee193",
   "lastOpenFiles": [
+    "Graph/Question.md",
     "TypeScript/Dave Gray/Commands.md",
     "TypeScript/Dave Gray/02. Setup.md",
     "TypeScript/Dave Gray/01. Introduction.md",
-    "Graph/Question.md",
     "TypeScript/Dave Gray",
     "TypeScript",
     "Cheatsheet/Conversions.md",
