@@ -2095,6 +2095,7 @@ class Solution {
 
 
 ## 24 Dijkstra Algorithm - Using Priority Queue
+[Dijkstra Algorithm | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
 
 ###### Steps Explained:
 1. **dijkstra Function**:
@@ -2147,8 +2148,7 @@ class Solution {
                 int edgeWeight = nb.get(1); // Weight of the edge to the adjacent node.
                 
                 // If the new calculated distance to the adjacent node is smaller than the known distance, update it.
-                if (dis + 
-					
+                if (dis + edgeWeight					
 					< dist[adjNode]) {
                     dist[adjNode] = dis + edgeWeight; // Update the distance.
                     pq.offer(new Pair(dist[adjNode], adjNode)); // Add the adjacent node to the priority queue.
@@ -2275,4 +2275,79 @@ class Solution {
         }
     }
 }
+```
+
+## 26 Dijkstra Using TreeSet
+[Dijkstra Algorithm | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/implementing-dijkstra-set-1-adjacency-matrix/1)
+
+```java
+
+
+//User function Template for Java
+
+
+
+class Solution {
+    // Function to find the shortest distance of all the vertices
+    // from the source vertex S.
+    static int[] dijkstra(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+        // Call the utility function
+        return dijkstraUtil(V, adj, S);
+    }
+
+    private static int[] dijkstraUtil(int V, ArrayList<ArrayList<ArrayList<Integer>>> adj, int S) {
+        // Priority queue to store (distance, node) pairs
+        // PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.wt - b.wt);
+        TreeSet<Pair> st = new TreeSet<>((a, b) -> {
+            if (a.wt != b.wt) {
+                return Integer.compare(a.wt, b.wt);
+            }
+            return Integer.compare(a.node, b.node);
+        });
+        
+        // Initialize distance array with infinity
+        int[] dist = new int[V];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        dist[S] = 0;
+        
+        // Add source node to priority queue
+        st.add(new Pair(0, S));
+        
+        while (!st.isEmpty()) {
+            // Get the node with the smallest distance
+            Pair current = st.pollFirst();
+            int dis = current.wt;
+            int node = current.node;
+
+            // Process all adjacent nodes
+            for (List<Integer> nb : adj.get(node)) {
+                int adjNode = nb.get(0);
+                int edgeWeight = nb.get(1);
+                
+                // Check if the new distance is smaller
+                if (dis + edgeWeight < dist[adjNode]) {
+                    if (dist[adjNode]!=Integer.MAX_VALUE)
+                        st.remove(new Pair(dist[adjNode], adjNode));
+                    dist[adjNode] = dis + edgeWeight;
+                    st.add(new Pair(dist[adjNode], adjNode));
+                }
+            }
+        }
+        
+        // Return the final distances
+        return dist;
+    }
+
+    // Pair class to store distance and node
+    static class Pair {
+        int wt;   // distance from source
+        int node; // node index
+        
+        Pair(int d, int n) {
+            wt = d;
+            node = n;
+        }
+    }
+}
+
 ```
