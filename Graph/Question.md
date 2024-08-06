@@ -2351,3 +2351,128 @@ class Solution {
 }
 
 ```
+
+
+## 27 Print Shortest Path - Dijkstra's Algorithm
+
+- You need to implement the caching here | keep the track of where am I coming from
+###### Detailed Explanation of Each Step
+
+1. **Wrapper Method (`shortestPath`)**:
+   - This method is a simple wrapper that calls the `solve` method to compute the shortest path.
+
+2. **Solve Method**:
+   - **Adjacency List Generation (`getAdjList`)**: Convert the edge list to an adjacency list representation.
+   - **Priority Queue Initialization**: Use a min-heap priority queue to always process the node with the smallest known distance.
+   - **Distance and Parent Array Initialization**: 
+     - `dist` array stores the shortest distance from the start node to each node.
+     - `parent` array is used to reconstruct the path.
+   - **Starting Node Setup**: Initialize the distance for the starting node (node 0) to `0` and set its parent to itself.
+   - **Processing the Queue**: Use Dijkstra's algorithm to update the shortest paths:
+     - Extract the node with the smallest distance.
+     - For each adjacent node, if a shorter path is found, update the distance and parent, and push the adjacent node into the priority queue.
+   - **Path Reconstruction**: 
+     - If there's no path to the target node, return `-1`.
+     - Otherwise, trace back from the target node using the `parent` array to reconstruct the path, converting indices back to 1-based.
+     - Reverse the path to get it in the correct order from start to end.
+
+3. **Adjacency List Method (`getAdjList`)**:
+   - Initializes the adjacency list with empty lists.
+   - Populates the adjacency list with pairs of (weight, adjacent node) for each edge, converting from 1-based to 0-based indices.
+
+4. **Pair Class**:
+   - A simple class to store a pair of integers representing a node and its associated weight. Used in the adjacency list and priority queue.
+```java
+import java.util.*;
+
+class Solution {
+    public List<Integer> shortestPath(int n, int m, int edges[][]) {
+        // Wrapper method that calls the solve method to get the shortest path
+        return solve(n, m, edges);
+    }
+
+    private List<Integer> solve(int n, int m, int[][] edges) {
+        // Generate adjacency list from the given edges
+        List<List<Pair>> adj = getAdjList(n, m, edges);
+        
+        // Priority queue for Dijkstra's algorithm (min-heap based on weight)
+        PriorityQueue<Pair> q = new PriorityQueue<>((a, b) -> a.wt - b.wt);
+        
+        // Initialize distances to infinity
+        int[] dist = new int[n];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        
+        // Initialize parent array to keep track of the path
+        int[] parent = new int[n];
+        Arrays.fill(parent, -1);  // Use -1 to indicate no parent initially
+        
+        // Start from node 0 (corresponds to node 1 in 1-based indexing)
+        q.offer(new Pair(0, 0)); // Start with node 0 and distance 0
+        dist[0] = 0;
+        parent[0] = 0;  // The parent of the start node is itself
+
+        // Process the priority queue until it's empty
+        while (!q.isEmpty()) {
+            Pair curr = q.poll();
+            int node = curr.node;
+            int dis = curr.wt;
+            
+            // Explore all adjacent nodes
+            for (Pair p : adj.get(node)) {
+                int adjNode = p.node;
+                int wt = p.wt;
+                
+                // If a shorter path is found, update the distance and parent arrays
+                if (dis + wt < dist[adjNode]) {
+                    dist[adjNode] = dis + wt;
+                    q.offer(new Pair(dist[adjNode], adjNode));
+                    parent[adjNode] = node; // Set the parent for path reconstruction
+                }
+            }
+        }
+
+        // Prepare the path
+        List<Integer> path = new ArrayList<>();
+        if (dist[n - 1] == Integer.MAX_VALUE) { // If there's no path to the target node
+            path.add(-1); // Return -1 indicating no path
+            return path;
+        }
+        
+        // Reconstruct the path from the parent array
+        int node = n - 1; // Start from the last node (n - 1)
+        while (parent[node] != node) { // Traverse until the start node
+            path.add(node + 1); // Convert back to 1-based index
+            node = parent[node];
+        }
+        path.add(1); // Add the start node (1-based index)
+        Collections.reverse(path); // Reverse to get the correct order
+        System.out.println(path);
+        return path;
+    }
+
+    private List<List<Pair>> getAdjList(int n, int m, int[][] edges) {
+        // Initialize adjacency list
+        List<List<Pair>> adj = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            adj.add(new ArrayList<>());
+        }
+        // Populate adjacency list from edges
+        for (int[] g : edges) {
+            adj.get(g[0] - 1).add(new Pair(g[2], g[1] - 1)); // Convert to zero-based index
+            adj.get(g[1] - 1).add(new Pair(g[2], g[0] - 1)); // Convert to zero-based index
+        }
+        return adj;
+    }
+
+    class Pair {
+        int node;
+        int wt;
+
+        Pair(int wt, int node) {
+            this.wt = wt;
+            this.node = node;
+        }
+    }
+}
+```
+

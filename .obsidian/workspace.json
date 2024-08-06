@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TypeScript/Dave Gray/02. Setup.md",
+                "file": "Graph/Question.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TypeScript/Dave Gray/02. Setup.md",
+                "file": "Graph/Question.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TypeScript/Dave Gray/02. Setup.md",
+                "file": "Graph/Question.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TypeScript/Dave Gray/02. Setup.md"
+                "file": "Graph/Question.md"
               }
             }
           }
@@ -149,9 +149,9 @@
   },
   "active": "85f68a6a34cee193",
   "lastOpenFiles": [
+    "TypeScript/Dave Gray/02. Setup.md",
     "Graph/Question.md",
     "TypeScript/Dave Gray/Commands.md",
-    "TypeScript/Dave Gray/02. Setup.md",
     "TypeScript/Dave Gray/01. Introduction.md",
     "TypeScript/Dave Gray",
     "TypeScript",
