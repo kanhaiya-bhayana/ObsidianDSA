@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "TypeScript/Docs/Objects.md",
+                "file": "Graph/Question.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "TypeScript/Docs/Objects.md",
+                "file": "Graph/Question.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "TypeScript/Docs/Objects.md",
+                "file": "Graph/Question.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "TypeScript/Docs/Objects.md"
+                "file": "Graph/Question.md"
               }
             }
           }
@@ -149,14 +149,15 @@
   },
   "active": "85f68a6a34cee193",
   "lastOpenFiles": [
-    "TypeScript/HighLevel.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
+    "Graph/Question.md",
     "TypeScript/Docs/Objects.md",
+    "TypeScript/HighLevel.md",
     "TypeScript/Docs",
     "TypeScript/Dave Gray/03. LESSON02/Basics.md",
     "TypeScript/CheatSheet.md",
     "TypeScript/TS_light.jpg",
     "TypeScript/Dave Gray/02. Setup.md",
-    "Graph/Question.md",
     "TypeScript/Dave Gray/03. LESSON02",
     "TypeScript/Dave Gray/Commands.md",
     "TypeScript/Dave Gray/01. Introduction.md",
@@ -186,7 +187,6 @@
     "DSA/DP/Striver",
     "Tree_data_structure_questions.pdf",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
-    "SQL Server/Overall.md",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
     "RabbitMQ-2.png",

@@ -143,50 +143,105 @@ class Solution {
 
 ## 4. [Number of Islands](https://leetcode.com/problems/number-of-islands/)
 
+###### Explanation
+- **Grid Initialization**: The grid is initialized with the input matrix in the `numIslands` method. The number of rows and columns are also stored for later use.
+- **Counting Islands**: The `solve` method iterates through each cell in the grid. If the cell is a part of an island (i.e., contains '1') and hasn't been visited, it increments the island count and performs a BFS to mark all the connected parts of the island as visited.
+
+- **Breadth-First Search (BFS)**: The BFS method is used to explore all connected cells that make up an island. It uses a queue to visit each cell level by level, ensuring that all parts of the island are accounted for.
+
+- **Helper Class (Pair)**: The `Pair` class is a simple helper to store row and column indices together, making it easier to manage the grid cells during BFS.
+
+This algorithm effectively counts the number of distinct islands in the given grid by exploring each island fully and marking it as visited to avoid counting it multiple times.
+
 ```java
 class Solution {
-    int rows;
+    // Grid to store the map of islands and water
+    char[][] grid;
+    // Number of rows and columns in the grid
+    int rows; 
     int cols;
-    public int numIslands(char[][] grid) {
-        
+
+    // Method to calculate the number of islands in the grid
+    public int numIslands(char[][] mat) {
+        // Initialize the grid with the input matrix
+        grid = mat;
+        // Get the number of rows and columns in the grid
         rows = grid.length;
         cols = grid[0].length;
-        return numIslandsUtil(grid);
+
+        // Call the solve method to count the islands
+        return solve(rows, cols);
     }
 
-    private int numIslandsUtil(char [][]grid){
-
-        if (grid == null || grid.length == 0){
-            return 0;
-        }
-        int numIslands = 0;
+    // Method to count the number of islands in the grid
+    private int solve(int n, int m) {
+        // 2D array to keep track of visited cells
+        boolean[][] visited = new boolean[n][m];
         
-        for (int i = 0; i < rows; i++){
-            for (int j = 0; j < cols; j++){
-                if (grid[i][j] == '1'){
-                    numIslands++;
-                    dfs(grid, i, j);
+        // Counter for the number of islands
+        int cnt = 0;
+
+        // Iterate over each cell in the grid
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                // If the cell is part of an island ('1') and hasn't been visited
+                if (!visited[i][j] && grid[i][j] == '1') {
+                    // Increment the island counter
+                    cnt++;
+                    // Perform BFS to visit all connected parts of the island
+                    BFS(i, j, visited);
                 }
             }
         }
-        return numIslands;
+        // Return the total number of islands
+        return cnt;
     }
 
+    // BFS method to explore all parts of an island starting from (row, col)
+    private void BFS(int row, int col, boolean[][] visited) {
+        // Mark the starting cell as visited
+        visited[row][col] = true;
+        // Queue to manage the BFS traversal, initialized with the starting cell
+        Queue<Pair> q = new LinkedList<>();
+        q.offer(new Pair(row, col));
 
-    private void dfs(char [][]grid, int i, int j){
+        // Directions for moving in the grid (up, down, left, right)
+        int[] rowDelta = {-1, 1, 0, 0};
+        int[] colDelta = {0, 0, -1, 1};
 
-        if (i < 0 || i >= rows 
-         || j < 0 || j >= cols
-         || grid[i][j] != '1')
-         {
-            return;
-         }
+        // Process the queue until all connected cells are visited
+        while (!q.isEmpty()) {
+            // Get the current cell from the queue
+            Pair it = q.poll();
+            int r = it.row;
+            int c = it.col;
 
-         grid[i][j] = '0'; // mark as visited ...
-         dfs(grid, i + 1, j); // down ...
-         dfs(grid, i - 1, j); // up ...
-         dfs(grid, i, j + 1); // right ...
-         dfs(grid, i, j - 1); // left ...
+            // Explore all 4 possible directions from the current cell
+            for (int i = 0; i < 4; i++) {
+                int nbr = r + rowDelta[i];
+                int nbc = c + colDelta[i];
+
+                // Check if the neighboring cell is within bounds, part of an island, and not visited
+                if (nbr >= 0 && nbr < rows && nbc >= 0 && nbc < cols && grid[nbr][nbc] == '1' && !visited[nbr][nbc]) {
+                    // Mark the neighboring cell as visited
+                    visited[nbr][nbc] = true;
+                    // Add the neighboring cell to the queue to continue BFS
+                    q.offer(new Pair(nbr, nbc));
+                }
+            }
+        }
+    }
+
+    // Helper class to represent a cell's row and column in the grid
+    class Pair {
+        int row;
+        int col;
+
+        // Constructor to initialize the row and column
+        Pair(int r, int c) {
+            row = r;
+            col = c;
+        }
     }
 }
 ```
@@ -2476,3 +2531,687 @@ class Solution {
 }
 ```
 
+
+## 28 Shortest Distance in a Binary Maze
+[Shortest Distance in a Binary Maze | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/shortest-path-in-a-binary-maze-1655453161/1)
+
+###### Explanation
+
+1. **Initialization**:
+   - The `shortestPath` method initializes the BFS search by calling the `solve` method.
+   - The `solve` method checks if the source is the same as the destination and returns `0` if true.
+   - It initializes a queue for BFS and a 2D array `dist` to store the minimum distance from the source to each cell, initially set to `Integer.MAX_VALUE`.
+
+2. **BFS Implementation**:
+   - The source cell distance is set to `0`, and it is added to the queue.
+   - Possible movements (up, right, down, left) are defined by `dRow` and `dCol`.
+
+3. **Processing the Queue**:
+   - The BFS loop continues until the queue is empty.
+   - For each cell, it explores all 4 possible directions.
+   - If the new cell is within bounds, is a valid cell (`grid[newRow][newCol] == 1`), and offers a shorter path, the distance is updated, and the new cell is added to the queue.
+
+4. **Checking Destination**:
+   - If the destination cell is reached, the method returns the distance.
+   - If no valid path exists, the method returns `-1`.
+
+This code ensures an efficient BFS traversal with clear comments explaining each part.
+
+```java
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+
+    // Main function to find the shortest path in the grid from source to destination
+    int shortestPath(int[][] grid, int[] source, int[] destination) {
+        return solve(grid, source, destination);
+    }
+    
+    // Helper function to solve the shortest path problem using BFS
+    private int solve(int[][] grid, int[] source, int[] destination) {
+        // Base case: if the source is the same as the destination
+        if (source[0] == destination[0] && source[1] == destination[1]) {
+            return 0;
+        }
+
+        // Initialize a queue for BFS
+        Queue<Tuple> queue = new LinkedList<>();
+        
+        int n = grid.length;    // Number of rows
+        int m = grid[0].length; // Number of columns
+        
+        // Initialize the distance array with infinity
+        int[][] dist = new int[n][m];
+        for (int[] row : dist) {
+            Arrays.fill(row, Integer.MAX_VALUE);
+        }
+        
+        // Starting point distance is 0
+        dist[source[0]][source[1]] = 0;
+        queue.offer(new Tuple(0, source[0], source[1]));
+        
+        // Possible movements: up, right, down, left
+        int[] dRow = {-1, 0, 1, 0};
+        int[] dCol = {0, 1, 0, -1};
+        
+        // BFS loop
+        while (!queue.isEmpty()) {
+            Tuple current = queue.poll();
+            int distance = current.distance;
+            int row = current.row;
+            int col = current.col;
+            
+            // Explore all 4 possible directions
+            for (int i = 0; i < 4; i++) {
+                int newRow = row + dRow[i];
+                int newCol = col + dCol[i];
+                
+                // Check if the new position is within bounds and is a valid cell
+                if (newRow >= 0 && newRow < n 
+                    && newCol >= 0 && newCol < m 
+                    && grid[newRow][newCol] == 1 
+                    && distance + 1 < dist[newRow][newCol]) {
+                    
+                    // Update the distance
+                    dist[newRow][newCol] = distance + 1;
+                    
+                    // If the destination is reached, return the distance
+                    if (newRow == destination[0] && newCol == destination[1]) {
+                        return distance + 1;
+                    }
+                    
+                    // Add the new position to the queue
+                    queue.offer(new Tuple(distance + 1, newRow, newCol));
+                }
+            }
+        }
+        
+        // Return -1 if there is no valid path
+        return -1;
+    }
+
+    // Custom tuple class to store the state in the BFS
+    class Tuple {
+        int distance, row, col;
+
+        Tuple(int distance, int row, int col) {
+            this.distance = distance;
+            this.row = row;
+            this.col = col;
+        }
+    }
+}
+```
+
+## 29 Path With Minimum Effort
+
+###### Explanation:
+
+1. **Initialization**:
+   - The `MinimumEffort` method initializes the search by calling the `solve` method.
+   - The `solve` method initializes a priority queue for Dijkstra's algorithm.
+   - The `dist` array stores the minimum effort to reach each cell, initialized to `Integer.MAX_VALUE`.
+
+2. **Starting Point**:
+   - The starting cell (0,0) is initialized with zero effort and added to the priority queue.
+
+3. **Priority Queue**:
+   - The priority queue is used to always process the cell with the minimum current effort first.
+
+4. **Processing the Queue**:
+   - The Dijkstra's algorithm loop continues until the queue is empty.
+   - For each cell, it explores all 4 possible directions (up, right, down, left).
+   - If the new cell is within bounds, the effort to move to the new cell is calculated.
+   - If the new effort is less than the current known effort to reach the new cell, the distance is updated, and the new cell is added to the queue.
+
+5. **Checking Destination**:
+   - If the destination cell is reached, the method returns the effort.
+   - If no valid path exists, the method returns `0` (though this case should not occur if there's a valid path).
+
+This code ensures an efficient Dijkstra's algorithm traversal with clear comments explaining each part.
+
+```java
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
+class Solution {
+    // Main function to find the minimum effort path in the grid
+    public static int MinimumEffort(int rows, int columns, int[][] heights) {
+        return solve(rows, columns, heights);
+    }
+    
+    // Helper function to solve the minimum effort path problem using Dijkstra's algorithm
+    private static int solve(int rows, int columns, int[][] heights) {
+        // Priority queue to store the cells with their current minimum effort required
+        PriorityQueue<Tuple> pq = new PriorityQueue<>((a, b) -> a.distance - b.distance);
+        
+        int n = heights.length;
+        int m = heights[0].length;
+        
+        // Distance array to store the minimum effort to reach each cell, initialized to infinity
+        int[][] dist = new int[n][m];
+        for (int[] row : dist) {
+            Arrays.fill(row, Integer.MAX_VALUE);
+        }
+        
+        // Starting point has zero effort
+        dist[0][0] = 0;
+        pq.offer(new Tuple(0, 0, 0));
+        
+        // Possible movements: up, right, down, left
+        int[] dRow = {-1, 0, 1, 0};
+        int[] dCol = {0, 1, 0, -1};
+        
+        // Dijkstra's algorithm to find the minimum effort path
+        while (!pq.isEmpty()) {
+            Tuple curr = pq.poll();
+            int currentEffort = curr.distance;
+            int row = curr.row;
+            int col = curr.col;
+            
+            // If we reach the bottom-right corner, return the effort
+            if (row == n - 1 && col == m - 1) {
+                return currentEffort;
+            }
+            
+            // Explore all 4 possible directions
+            for (int i = 0; i < 4; i++) {
+                int newRow = row + dRow[i];
+                int newCol = col + dCol[i];
+                
+                // Check if the new position is within bounds
+                if (newRow >= 0 && newRow < n && newCol >= 0 && newCol < m) {
+                    // Calculate the effort required to move to the new cell
+                    int newEffort = Math.max(
+                        Math.abs(heights[row][col] - heights[newRow][newCol]),
+                        currentEffort
+                    );
+                    
+                    // If the new effort is less than the current known effort to reach the new cell
+                    if (newEffort < dist[newRow][newCol]) {
+                        // Update the effort and add the new cell to the priority queue
+                        dist[newRow][newCol] = newEffort;
+                        pq.offer(new Tuple(newEffort, newRow, newCol));
+                    }
+                }
+            }
+        }
+        
+        // Return 0 if there's no valid path (should not reach here if there's a valid path)
+        return 0;
+    }
+    
+    // Custom tuple class to store the state in the priority queue
+    static class Tuple {
+        int distance;
+        int row;
+        int col;
+        
+        Tuple(int distance, int row, int col) {
+            this.distance = distance;
+            this.row = row;
+            this.col = col;
+        }
+    }
+}
+```
+
+
+## 30 [Cheapest Flights Within K Stops](https://leetcode.com/problems/cheapest-flights-within-k-stops/)
+
+###### Explanation:
+
+1. **`findCheapestPrice` Method**:
+    - This method calculates the cheapest price to travel from the `source` city to the `destination` city within a specified maximum number of stops using a BFS approach.
+
+2. **Initialization**:
+    - **Adjacency List**: 
+        - The graph is represented using an adjacency list where each city has a list of `Flight` objects representing the outgoing flights.
+        - The list is populated using the input `flights` array, which contains details of all available flights between cities.
+    - **Queue and Costs Array**:
+        - A `Queue<Tuple>` is used to perform BFS. Each `Tuple` stores the number of stops taken so far, the current city, and the cumulative travel cost.
+        - The `costs` array is used to keep track of the minimum cost required to reach each city. Initially, all cities are set to be unreachable (`Integer.MAX_VALUE`), except for the source city, which has a cost of `0`.
+
+3. **BFS Exploration**:
+    - The BFS loop continues until all possible paths have been explored or the queue is empty.
+    - For each city, it checks all its adjacent cities (cities that can be directly reached from the current city).
+    - If a cheaper path is found to an adjacent city, the path cost is updated, and the adjacent city is added to the queue for further exploration.
+    - The process ensures that the number of stops does not exceed the allowed `maxStops`.
+
+4. **Return Condition**:
+    - After BFS completes, the method checks if the `destination` city was reachable within the allowed number of stops. If not, it returns `-1`; otherwise, it returns the minimum cost to reach the `destination` city.
+
+5. **Helper Classes**:
+    - **`Flight` Class**: Represents a flight with a destination city (`toCity`) and a price (`price`).
+    - **`Tuple` Class**: Represents a state in the BFS with the current city, number of stops taken, and the cumulative travel cost. This helps track the progress during BFS.
+
+```java
+class Solution {
+
+    // Function to find the cheapest price to travel from source to destination within a given number of stops
+    public int findCheapestPrice(int numOfCities, int[][] flights, int source, int destination, int maxStops) {
+
+        // Create an adjacency list to represent the graph of cities and flights
+        ArrayList<ArrayList<Flight>> adjacencyList = new ArrayList<>();
+        for (int i = 0; i < numOfCities; i++) {
+            adjacencyList.add(new ArrayList<>());  // Initialize a list for each city
+        }
+
+        // Populate the adjacency list with flight information
+        for (int[] flight : flights) {
+            int fromCity = flight[0];
+            int toCity = flight[1];
+            int price = flight[2];
+            adjacencyList.get(fromCity).add(new Flight(toCity, price));  // Add flight details to the corresponding city's list
+        }
+
+        // Queue to perform BFS, each tuple contains (stops, current city, current cost)
+        Queue<Tuple> queue = new LinkedList<>();
+        queue.add(new Tuple(0, source, 0));  // Start from the source city with 0 stops and 0 cost
+
+        // Array to store the minimum cost to reach each city
+        int[] costs = new int[numOfCities];
+        for (int i = 0; i < numOfCities; i++) {
+            costs[i] = Integer.MAX_VALUE;  // Initialize all costs to infinity (unreachable)
+        }
+        costs[source] = 0;  // Cost to reach the source city is 0
+
+        // Perform BFS to explore the cheapest path
+        while (!queue.isEmpty()) {
+            Tuple current = queue.poll();
+            int stops = current.stops;
+            int city = current.city;
+            int cost = current.cost;
+
+            // If the number of stops exceeds the allowed maximum, skip further exploration
+            if (stops > maxStops) continue;
+
+            // Explore all adjacent cities from the current city
+            for (Flight flight : adjacencyList.get(city)) {
+                int adjacentCity = flight.toCity;
+                int edgeWeight = flight.price;
+
+                // If a cheaper path to the adjacent city is found, update the cost and add the city to the queue
+                if (cost + edgeWeight < costs[adjacentCity] && stops <= maxStops) {
+                    costs[adjacentCity] = cost + edgeWeight;
+                    queue.add(new Tuple(stops + 1, adjacentCity, cost + edgeWeight));
+                }
+            }
+        }
+
+        // If the destination city is unreachable, return -1, otherwise return the minimum cost
+        return costs[destination] == Integer.MAX_VALUE ? -1 : costs[destination];
+    }
+    
+    // Helper class to represent a flight from one city to another with a specific price
+    class Flight {
+        int toCity;
+        int price;
+
+        Flight(int toCity, int price) {
+            this.toCity = toCity;
+            this.price = price;
+        }
+    }
+
+    // Helper class to represent a tuple of stops, city, and the current travel cost
+    class Tuple {
+        int stops;
+        int city;
+        int cost;
+
+        Tuple(int stops, int city, int cost) {
+            this.stops = stops;
+            this.city = city;
+            this.cost = cost;
+        }
+    }
+}
+```
+
+## 31  Minimum Multiplications to reach End
+[Minimum Multiplications to reach End | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/minimum-multiplications-to-reach-end/0)
+###### Explanation:
+
+1. **`minimumMultiplications` Method**:
+    - This is the main method that initializes the process. It first checks if the `start` and `end` values are the same, in which case it immediately returns `0` because no operations are needed.
+    - If `start` is not equal to `end`, it calls the `solve` method to find the minimum number of multiplications required.
+
+2. **`solve` Method**:
+    - **Initialization**: 
+        - A `Queue<Pair>` is initialized to perform Breadth-First Search (BFS). Each `Pair` object stores a number (`node`) and the number of steps taken to reach that number (`steps`).
+        - An array `dist` of size `100000` is used to keep track of the minimum number of steps required to reach each possible number. It is initialized to `Integer.MAX_VALUE` to represent an initially unreachable state.
+        - The starting number's distance (`dist[start]`) is set to `0`.
+    - **BFS Process**:
+        - The BFS loop runs as long as there are elements in the queue.
+        - For each `node` in the queue, the code tries to multiply it by each element in the array `arr`.
+        - The resulting number (`num`) is computed using modulo `100000` to ensure it stays within bounds.
+        - If the new number can be reached in fewer steps than previously recorded, the distance is updated, and the new `num` is added to the queue for further exploration.
+        - If the `num` equals `end`, the BFS halts, and the number of steps is returned.
+    - **Return Condition**: 
+        - If the queue is exhausted without finding `end`, the function returns `-1`, indicating that it's impossible to reach `end` from `start` using the given multiplications.
+
+3. **`Pair` Class**:
+    - This is a simple helper class used to store a `node` and the number of `steps` taken to reach that node. It allows the BFS to efficiently track the current state and progress.
+
+```java
+class Solution {
+
+    // Function to calculate the minimum number of multiplications needed to reach 'end' from 'start'
+    int minimumMultiplications(int[] arr, int start, int end) {
+
+        // If the start is the same as the end, no multiplication is needed
+        if (start == end) return 0;
+
+        // Call the helper function to perform BFS and find the minimum steps
+        return solve(arr, start, end);
+    }
+    
+    // Helper function to perform BFS and find the minimum multiplications needed
+    private int solve(int[] arr, int start, int end) {
+        // Initialize a queue to perform BFS, storing the current number and the number of steps taken
+        Queue<Pair> q = new LinkedList<>();
+        q.offer(new Pair(start, 0));
+        
+        // Create an array to store the minimum number of steps to reach each number
+        int[] dist = new int[100000];
+        Arrays.fill(dist, Integer.MAX_VALUE);  // Initially, set all distances to infinity
+        
+        dist[start] = 0;  // Distance to reach the start is 0
+        int mod = 100000;  // Use modulo operation to keep numbers within bounds
+        int n = arr.length;  // Number of elements in the array
+        
+        // Perform BFS until the queue is empty
+        while (!q.isEmpty()) {
+            // Get the front element from the queue
+            Pair it = q.poll();
+            int node = it.node;
+            int steps = it.steps;
+            
+            // Try multiplying the current number by each number in the array
+            for (int i = 0; i < n; i++) {
+                int num = (arr[i] * node) % mod;  // Calculate the new number after multiplication
+
+                // If the number of steps to reach this number is less than previously recorded
+                if (steps + 1 < dist[num]) {
+                    dist[num] = steps + 1;  // Update the minimum steps to reach this number
+                    
+                    // If this number is the target, return the number of steps taken
+                    if (num == end) return steps + 1;
+                    
+                    // Otherwise, add the new number and the updated steps to the queue
+                    q.add(new Pair(num, steps + 1));
+                }
+            }
+        }
+        // If the end cannot be reached, return -1
+        return -1;
+    }
+    
+    // Helper class to store pairs of numbers and their corresponding step count
+    class Pair {
+        int node;
+        int steps;
+        Pair(int n, int s) {
+            node = n;
+            steps = s;
+        }
+    }
+}
+```
+
+## 32 [Number of Ways to Arrive at Destination](https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/)
+
+###### Explanation:
+- **countPaths Method**: Handles edge cases and initiates the process by calling the `solve` method.
+- **solve Method**: Implements Dijkstra's algorithm to find the shortest paths from the source to all other nodes while also counting the number of ways to reach each node with the minimum distance.
+- **Priority Queue**: Used to always expand the least costly node first, ensuring the shortest paths are found.
+- **Adjacency List**: Represents the graph, where each node has a list of its neighbors and the weights (distances) of the edges connecting them.
+- **Pair Class**: Represents a graph node and its associated weight for easy comparison in the priority queue.
+
+This code efficiently calculates the number of ways to reach the destination node using the shortest path, handling large numbers and edge cases.
+
+```java
+import java.util.*;
+
+class Solution {
+    public int countPaths(int n, int[][] roads) {
+        // Base case: If there's only one city, there's exactly one way to reach it.
+        if (n == 1) return 1;
+        
+        // Edge case: If there are no cities or no roads, there's no valid path.
+        if (n == 0 || roads.length == 0) return 0;
+        
+        // Call the helper function to solve the problem using Dijkstra's algorithm.
+        return solve(n, roads);
+    }
+
+    private int solve(int n, int[][] roads) {
+        // Create the adjacency list representation of the graph.
+        List<List<Pair>> adj = getAdjList(n, roads);
+        
+        // Priority Queue (Min-Heap) to get the node with the smallest distance at each step.
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> Long.compare(a.wt, b.wt));
+        
+        // Array to store the number of ways to reach each node.
+        long[] ways = new long[n];
+        
+        // Array to store the minimum distance to reach each node.
+        long[] dist = new long[n];
+        
+        // Initialize ways and distances. Initially, no paths are known, so set distances to infinity.
+        Arrays.fill(ways, 0);
+        Arrays.fill(dist, Long.MAX_VALUE);
+        
+        // Start from node 0 with a distance of 0.
+        pq.offer(new Pair(0, 0));
+        
+        // Number of ways to reach the starting node is 1.
+        ways[0] = 1;
+        
+        // Distance to the starting node is 0.
+        dist[0] = 0;
+        
+        // Define the modulus for the final result as per the problem statement.
+        int mod = (int)(1e9 + 7);
+        
+        // Dijkstra's algorithm main loop
+        while (!pq.isEmpty()) {
+            // Extract the node with the smallest distance.
+            Pair it = pq.poll();
+            int node = it.node;
+            long wt = it.wt;
+            
+            // Explore all adjacent nodes.
+            for (Pair p : adj.get(node)) {
+                int adjNode = p.node;
+                long adjWt = p.wt;
+                
+                // If a shorter path to adjNode is found.
+                if (wt + adjWt < dist[adjNode]) {
+                    // Update the shortest distance to adjNode.
+                    dist[adjNode] = wt + adjWt;
+                    
+                    // Update the number of ways to reach adjNode.
+                    ways[adjNode] = ways[node];
+                    
+                    // Push the updated path to the priority queue.
+                    pq.offer(new Pair(adjNode, dist[adjNode]));
+                } 
+                // If an alternative path with the same shortest distance is found.
+                else if (wt + adjWt == dist[adjNode]) {
+                    // Increment the number of ways to reach adjNode by the ways to reach the current node.
+                    ways[adjNode] = (ways[adjNode] + ways[node]) % mod;
+                }
+            }
+        }
+        
+        // Return the number of ways to reach the destination node (n-1), modulo 1e9 + 7.
+        return (int)(ways[n-1] % mod);
+    }
+
+    // Helper function to build the adjacency list from the roads input.
+    private List<List<Pair>> getAdjList(int n, int[][] roads) {
+        List<List<Pair>> adj = new ArrayList<>();
+        
+        // Initialize the adjacency list for each node.
+        for (int i = 0; i < n; i++) {
+            adj.add(new ArrayList<>());
+        }
+        
+        // Populate the adjacency list with the given roads.
+        for (int[] ls : roads) {
+            int u = ls[0];
+            int v = ls[1];
+            int wt = ls[2];
+            
+            // Since the graph is undirected, add edges in both directions.
+            adj.get(u).add(new Pair(v, wt));
+            adj.get(v).add(new Pair(u, wt));
+        }
+        
+        // Return the constructed adjacency list.
+        return adj;
+    }
+
+    // Helper class to represent a node and its associated weight (distance).
+    class Pair {
+        int node;
+        long wt;
+        Pair(int n, long w) {
+            node = n;
+            wt = w;
+        }
+    }
+}
+```
+
+## 33 BellMan-ford-Algorithm
+
+Here is the code with comments and explanations added:
+
+```java
+class Solution {
+    static int[] bellman_ford(int V, ArrayList<ArrayList<Integer>> edges, int S) {
+        // Initialize the distance array with a large value (infinity)
+        int[] dist = new int[V];
+        Arrays.fill(dist, (int)(1e8)); // 1e8 is used as a substitute for infinity
+        
+        // Set the distance to the source vertex S to 0
+        dist[S] = 0;
+
+        // Relax all edges V-1 times
+        for (int i = 0; i < V - 1; i++) {
+            // Traverse through all edges
+            for (List<Integer> g : edges) {
+                int from = g.get(0); // Start vertex of the edge
+                int to = g.get(1);   // End vertex of the edge
+                int wt = g.get(2);   // Weight of the edge
+                
+                // Relax the edge (from, to) if a shorter path is found
+                if (dist[from] != (int)(1e8) && dist[from] + wt < dist[to]) {
+                    dist[to] = dist[from] + wt;
+                }
+            }
+        }
+
+        // Check for negative weight cycles
+        for (List<Integer> g : edges) {
+            int from = g.get(0); // Start vertex of the edge
+            int to = g.get(1);   // End vertex of the edge
+            int wt = g.get(2);   // Weight of the edge
+            
+            // If a shorter path is found after V-1 relaxations, there is a negative cycle
+            if (dist[from] != (int)(1e8) && dist[from] + wt < dist[to]) {
+                return new int[]{-1}; // Return -1 to indicate the presence of a negative cycle
+            }
+        }
+
+        // Return the array of shortest distances from source S to all vertices
+        return dist;
+    }
+}
+```
+
+###### Explanation:
+1. **Initialization**: 
+   - The distance array `dist` is initialized with a large value (infinity) to represent that initially all vertices are unreachable from the source.
+   - The distance to the source vertex `S` is set to 0 because the distance from the source to itself is always zero.
+
+2. **Relaxation**:
+   - The algorithm iteratively relaxes all edges `V-1` times. 
+   - For each edge, it checks if the current distance to the destination vertex can be improved by taking the current edge. If so, it updates the distance.
+
+3. **Negative Cycle Detection**:
+   - After the `V-1` iterations, the algorithm checks for negative weight cycles by trying to relax the edges one more time. 
+   - If a shorter path is still found, it means there is a negative weight cycle, and the algorithm returns `-1`.
+
+4. **Result**:
+   - If no negative weight cycle is detected, the algorithm returns the array `dist`, which contains the shortest distances from the source vertex to all other vertices.
+
+```java
+class Solution {
+    static int[] bellman_ford(int V, ArrayList<ArrayList<Integer>> edges, int S) {
+        // Initialize the distance array with a large value (infinity)
+        int[] dist = new int[V];
+        Arrays.fill(dist, (int)(1e8)); // 1e8 is used as a substitute for infinity
+        
+        // Set the distance to the source vertex S to 0
+        dist[S] = 0;
+
+        // Relax all edges V-1 times
+        for (int i = 0; i < V - 1; i++) {
+            // Traverse through all edges
+            for (List<Integer> g : edges) {
+                int from = g.get(0); // Start vertex of the edge
+                int to = g.get(1);   // End vertex of the edge
+                int wt = g.get(2);   // Weight of the edge
+                
+                // Relax the edge (from, to) if a shorter path is found
+                if (dist[from] != (int)(1e8) && dist[from] + wt < dist[to]) {
+                    dist[to] = dist[from] + wt;
+                }
+            }
+        }
+
+        // Check for negative weight cycles
+        for (List<Integer> g : edges) {
+            int from = g.get(0); // Start vertex of the edge
+            int to = g.get(1);   // End vertex of the edge
+            int wt = g.get(2);   // Weight of the edge
+            
+            // If a shorter path is found after V-1 relaxations, there is a negative cycle
+            if (dist[from] != (int)(1e8) && dist[from] + wt < dist[to]) {
+                return new int[]{-1}; // Return -1 to indicate the presence of a negative cycle
+            }
+        }
+
+        // Return the array of shortest distances from source S to all vertices
+        return dist;
+    }
+}
+```
+
+The **Bellman-Ford algorithm** is an algorithm used to find the shortest paths from a single source vertex to all other vertices in a weighted graph. It is particularly useful for graphs that contain negative weight edges, unlike Dijkstra's algorithm, which cannot handle negative weights.
+
+###### Key Features:
+
+1. **Single Source Shortest Path**: Like Dijkstra's algorithm, Bellman-Ford computes the shortest paths from a single source vertex to all other vertices in the graph.
+    
+2. **Handles Negative Weights**: The Bellman-Ford algorithm can handle graphs with negative weight edges. However, it also detects if there is a negative weight cycle in the graph, which makes the concept of the "shortest path" undefined, as one could keep reducing the path length by looping through the negative cycle.
+    
+3. **Time Complexity**: The time complexity of the Bellman-Ford algorithm is O(V×E)O(V \times E)O(V×E), where VVV is the number of vertices and EEE is the number of edges. This makes it less efficient than Dijkstra's algorithm for graphs without negative weights, but it's more versatile.
+###### How It Works:
+
+1. **Initialization**:
+    
+    - Initialize the distance to the source vertex to 0 and to all other vertices as infinity.
+2. **Relaxation**:
+    
+    - The algorithm performs V−1V-1V−1 iterations over all edges, where VVV is the number of vertices.
+    - In each iteration, it checks if the distance to the destination vertex of an edge can be reduced by going through the source vertex of the edge. If it can, it updates the distance.
+3. **Negative Weight Cycle Detection**:
+    
+    - After V−1V-1V−1 iterations, the algorithm checks all edges one more time. If any distance can still be reduced, it indicates the presence of a negative weight cycle.
