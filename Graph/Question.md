@@ -3215,3 +3215,170 @@ The **Bellman-Ford algorithm** is an algorithm used to find the shortest paths f
 3. **Negative Weight Cycle Detection**:
     
     - After V−1V-1V−1 iterations, the algorithm checks all edges one more time. If any distance can still be reduced, it indicates the presence of a negative weight cycle.
+
+
+
+## Floyd Warshal Algorithm
+
+- Shortest path  algorihtm
+- Multiple source - Multi source shortest path
+- Helps to detect negative cycles as well
+
+
+###### Explanation of the Steps:
+1. **Matrix Initialization**: The matrix is first initialized by setting distances between nodes without a direct path to a large value (representing infinity). Distances from any node to itself are set to 0.
+
+2. **Floyd-Warshall Algorithm**: The algorithm is applied to find the shortest path between all pairs of nodes. It iteratively checks if using an intermediate node (`via`) offers a shorter path between any two nodes (`i` and `j`) than the previously known shortest path.
+
+3. **Post-processing**: After computing the shortest paths, the matrix is checked again, and any distance that remains set to the large value (indicating no path exists) is reset to -1 to signify that no path is possible between those nodes.
+
+```java
+class Solution
+{
+    public void shortest_distance(int[][] matrix)
+    {
+        // Step 1: Initialize the matrix
+        int n = matrix.length;
+
+        // Step 2: Preprocess the matrix
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // If there's no direct path between nodes i and j, set it to a large value (infinity)
+                if (matrix[i][j] == -1)  
+                    matrix[i][j] = (int)(1e9);
+
+                // The distance from a node to itself should be 0
+                if (i == j) 
+                    matrix[i][j] = 0;       
+            }
+        }
+
+        // Step 3: Floyd-Warshall Algorithm
+        // Iterate over each possible intermediate node 'via'
+        for (int via = 0; via < n; via++)
+        {
+            // For each pair of nodes (i, j), update the shortest path considering the intermediate node 'via'
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    // Update the distance between node i and node j
+                    matrix[i][j] = Math.min
+                    (
+                        matrix[i][j], // The current shortest distance between i and j
+                        matrix[i][via] + matrix[via][j] // The distance through the intermediate node 'via'
+                    );
+                }
+            }
+        }
+
+        // Step 4: Post-process the matrix
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // If the distance is still set to infinity, it means there's no path, so reset it to -1
+                if (matrix[i][j] == (int)(1e9))  
+                    matrix[i][j] = -1;
+            }
+        }
+    }
+}
+```
+
+#### If it contains a -ve cycle then small modification in the existing Floyd-Warshall code
+
+To handle negative cycles in the graph when using the Floyd-Warshall algorithm, we need to make a small modification to the code. Specifically, after the main loop of the algorithm (where we update the shortest paths), we should check if any node can reach itself with a negative distance. If such a condition exists, it indicates a negative cycle, and we can mark all nodes involved in that cycle accordingly.
+###### Explanation of the Modifications:
+1. **Checking for Negative Cycles**:
+   - After running the Floyd-Warshall algorithm, we check the diagonal elements of the matrix (`matrix[i][i]` for each node `i`). If any of these elements are negative, it means that node `i` is part of a negative cycle.
+  
+2. **Propagating the Negative Cycle**:
+   - If a negative cycle is detected, we then propagate this information. Any node that is reachable from or can reach a node involved in a negative cycle will have its distance set to `-1` to indicate that it is also affected by the negative cycle.
+
+3. **Handling Nodes Affected by the Negative Cycle**:
+   - By setting distances to `-1` for all nodes affected by a negative cycle, we ensure that the final result properly reflects the presence of these cycles. 
+
+This modification allows the algorithm to detect and handle negative cycles in the graph.
+
+---
+
+Here's the modified version of your code with the handling for negative cycles:
+
+```java
+class Solution
+{
+    public void shortest_distance(int[][] matrix)
+    {
+        // Step 1: Initialize the matrix
+        int n = matrix.length;
+
+        // Step 2: Preprocess the matrix
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // If there's no direct path between nodes i and j, set it to a large value (infinity)
+                if (matrix[i][j] == -1)  
+                    matrix[i][j] = (int)(1e9);
+
+                // The distance from a node to itself should be 0
+                if (i == j) 
+                    matrix[i][j] = 0;       
+            }
+        }
+
+        // Step 3: Floyd-Warshall Algorithm
+        // Iterate over each possible intermediate node 'via'
+        for (int via = 0; via < n; via++)
+        {
+            // For each pair of nodes (i, j), update the shortest path considering the intermediate node 'via'
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    // Update the distance between node i and node j
+                    matrix[i][j] = Math.min
+                    (
+                        matrix[i][j], // The current shortest distance between i and j
+                        matrix[i][via] + matrix[via][j] // The distance through the intermediate node 'via'
+                    );
+                }
+            }
+        }
+
+        // Step 4: Check for negative cycles
+        for (int i = 0; i < n; i++)
+        {
+            // If the distance from a node to itself becomes negative, it indicates a negative cycle
+            if (matrix[i][i] < 0)
+            {
+                // Propagate the negative cycle indication
+                for (int j = 0; j < n; j++)
+                {
+                    for (int k = 0; k < n; k++)
+                    {
+                        // If a node is reachable from any node involved in a negative cycle, set the distance to -1
+                        if (matrix[i][j] != (int)(1e9) && matrix[i][k] != (int)(1e9))
+                            matrix[j][k] = -1;
+                    }
+                }
+            }
+        }
+
+        // Step 5: Post-process the matrix
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                // If the distance is still set to infinity, it means there's no path, so reset it to -1
+                if (matrix[i][j] == (int)(1e9))  
+                    matrix[i][j] = -1;
+            }
+        }
+    }
+}
+```
+
