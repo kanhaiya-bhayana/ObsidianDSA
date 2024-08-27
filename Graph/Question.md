@@ -3218,13 +3218,11 @@ The **Bellman-Ford algorithm** is an algorithm used to find the shortest paths f
 
 
 
-## Floyd Warshal Algorithm
+## 34. Floyd Warshal Algorithm
 
 - Shortest path  algorihtm
 - Multiple source - Multi source shortest path
 - Helps to detect negative cycles as well
-
-
 ###### Explanation of the Steps:
 1. **Matrix Initialization**: The matrix is first initialized by setting distances between nodes without a direct path to a large value (representing infinity). Distances from any node to itself are set to 0.
 
@@ -3378,6 +3376,88 @@ class Solution
                     matrix[i][j] = -1;
             }
         }
+    }
+}
+```
+
+## 35. ### City With the Smallest Number of Neighbors at a Threshold Distance
+[City With the Smallest Number of Neighbors at a Threshold Distance | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/1)
+###### Explanation:
+1. **Initialization**: The `dist` array is initialized with `Integer.MAX_VALUE` to represent that there is no direct path between cities initially. The distance from each city to itself is set to 0.
+
+2. **Populating Edges**: The `edges` array is used to populate direct distances between cities. Since the graph is undirected, the distance is set both ways.
+
+3. **Floyd-Warshall Algorithm**: This algorithm is used to find the shortest paths between all pairs of cities. It considers each city as an intermediate point and updates the shortest path between every pair of cities.
+
+4. **Finding the City with the Fewest Reachable Cities**: The code then counts how many cities each city can reach within the given `distanceThreshold`. It tracks the city with the minimum count. If there's a tie, the city with the larger number is chosen.
+
+5. **Return Value**: Finally, the city with the fewest reachable cities is returned as the answer.
+
+This code effectively solves the problem of finding the city that has the smallest number of neighbors within a certain distance.
+
+```java
+class Solution {
+    int findCity(int n, int m, int[][] edges, int distanceThreshold) {
+        // Initialize a 2D array to store the shortest distances between cities
+        int[][] dist = new int[n][n];
+
+        // Fill the distance array with a large value (infinity) to represent no direct path
+        for (int[] d : dist) {
+            Arrays.fill(d, Integer.MAX_VALUE);
+        }
+
+        // Populate the distance array with the edges given in the input
+        // Each edge has a starting city (from), ending city (to), and a weight (wt)
+        for (int[] g : edges) {
+            int from = g[0];
+            int to = g[1];
+            int wt = g[2];
+            dist[from][to] = wt;
+            dist[to][from] = wt;  // Since it's an undirected graph, set distance both ways
+        }
+
+        // Set the distance from any city to itself as 0
+        for (int i = 0; i < n; i++) {
+            dist[i][i] = 0;
+        }
+
+        // Use the Floyd-Warshall algorithm to find the shortest path between all pairs of cities
+        for (int via = 0; via < n; via++) {  // Consider each city as an intermediate point
+            for (int i = 0; i < n; i++) {    // For each starting city
+                for (int j = 0; j < n; j++) { // For each destination city
+                    // If there's no direct path via the intermediate city, skip the update
+                    if (dist[i][via] == Integer.MAX_VALUE || dist[via][j] == Integer.MAX_VALUE) continue;
+                    
+                    // Update the shortest distance if a shorter path is found via the intermediate city
+                    dist[i][j] = Math.min(dist[i][j], dist[i][via] + dist[via][j]);
+                }
+            }
+        }
+
+        // Variables to keep track of the city with the fewest reachable cities within the distance threshold
+        int cntCity = n;  // Start with the maximum possible number of cities
+        int cityNo = -1;  // Variable to store the city with the minimum reachable cities
+
+        // Loop through each city to determine how many cities can be reached within the distance threshold
+        for (int city = 0; city < n; city++) {
+            int cnt = 0;
+            for (int adjCity = 0; adjCity < n; adjCity++) {
+                // Count the number of cities reachable from the current city within the distance threshold
+                if (dist[city][adjCity] <= distanceThreshold) {
+                    cnt++;
+                }
+            }
+
+            // Update the city with the fewest reachable cities
+            // If there's a tie, choose the city with the larger number
+            if (cnt <= cntCity) {
+                cntCity = cnt;
+                cityNo = city;
+            }
+        }
+
+        // Return the city number with the fewest reachable cities within the distance threshold
+        return cityNo;
     }
 }
 ```
