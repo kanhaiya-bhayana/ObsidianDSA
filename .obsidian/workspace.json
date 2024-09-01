@@ -18,6 +18,18 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "47619c41997810fb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Meet.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
         ]
       }
@@ -149,6 +161,9 @@
   },
   "active": "85f68a6a34cee193",
   "lastOpenFiles": [
+    "Meet.md",
+    "Graph/Question.md",
+    "Unisofttechno",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
     "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png",
     "Microservices/brew-aspnetcore-microservices/Content/Cqrs-mediatr-request-lifecycle.png.~tmp",
@@ -166,7 +181,6 @@
     "Microservices/brew-aspnetcore-microservices/Content",
     "Microservices/brew-aspnetcore-microservices/New folder",
     "Microservices/Untitled.md",
-    "Graph/Question.md",
     "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
     "Microservices/brew-aspnetcore-microservices/Backing Services.md",
     "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
@@ -175,7 +189,6 @@
     "Recursion & Backtracking/Questions/Combination Sum II.md",
     "TypeScript/Docs/Objects.md",
     "TypeScript/HighLevel.md",
-    "TypeScript/Docs",
     "TypeScript/Dave Gray/03. LESSON02/Basics.md",
     "TypeScript/CheatSheet.md",
     "TypeScript/Dave Gray/02. Setup.md",

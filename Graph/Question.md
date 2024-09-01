@@ -3475,7 +3475,7 @@ Definition: A tree in which we have N nodes and N-1 edges and all nodes are reac
 There are couple of algorithms which are used to find the MST of the given graph.
 
 1. Prim's Algorithm
-2. Krushkal's Algorightm - to understand the KA, need to know about "Disjoint Set".
+2. Kruskal's Algorightm - to understand the KA, need to know about "Disjoint Set".
 
 ```
 
@@ -3789,4 +3789,229 @@ public class Main {
     }
 }
 ```
+
+
+## 39. Kruskal's Algorithm
+
+Kruskal's Algorithm is a popular algorithm used to find the Minimum Spanning Tree (MST) of a connected, undirected graph. The MST is a subset of the edges of a graph that connects all vertices together, without any cycles and with the minimum possible total edge weight.
+
+###### Steps of Kruskal's Algorithm:
+
+```
+1. **Sort all edges**: First, sort all the edges of the graph in non-decreasing order of their weights.
+  
+2. **Initialize Disjoint Sets**: Each vertex is initially placed in its own disjoint set. This is typically done using a Disjoint Set data structure (also known as Union-Find).
+
+3. **Pick the smallest edge**: Start with the smallest edge and check if adding it to the spanning tree will form a cycle. This is checked using the Disjoint Set data structure:
+   - If the two vertices connected by the edge belong to different sets (i.e., they have different ultimate parents), adding this edge will not form a cycle, so you include this edge in the MST and merge the two sets.
+   - If they belong to the same set (i.e., they have the same ultimate parent), adding this edge would form a cycle, so you skip it.
+
+4. **Repeat**: Continue selecting the next smallest edge from the sorted list and repeat the process until you have included exactly \(V-1\) edges in the MST (where \(V\) is the number of vertices in the graph).
+
+5. **Completion**: Once you have \(V-1\) edges in the MST, the algorithm terminates, and the selected edges represent the MST of the graph.
+```
+###### Characteristics:
+- **Greedy Algorithm**: Kruskal's algorithm is a greedy algorithm, as it picks the smallest available edge at each step with the hope of building the MST.
+  
+- **Time Complexity**: The time complexity of Kruskal's algorithm is \(O(E \log E)\), where \(E\) is the number of edges. This complexity arises primarily from sorting the edges and performing union-find operations.
+
+###### Applications:
+- **Network Design**: Kruskal's algorithm is often used in network design problems where you want to connect multiple nodes (such as cities, computers, etc.) with the least total cost.
+- **Approximation Algorithms**: It is also used as a basis for more complex approximation algorithms in cases where the exact solution may be hard to compute.
+
+###### Example:
+Consider a graph with the following edges and weights:
+
+```
+A --(1)-- B
+A --(4)-- C
+B --(2)-- C
+C --(3)-- D
+B --(5)-- D
+```
+
+Using Kruskal's Algorithm:
+
+1. Sort the edges by weight: (A-B, 1), (B-C, 2), (C-D, 3), (A-C, 4), (B-D, 5)
+2. Start with the smallest edge, A-B. Add it to the MST.
+3. Next, consider B-C. Add it to the MST.
+4. Next, consider C-D. Add it to the MST.
+5. The next edge, A-C, forms a cycle with the already included edges, so skip it.
+6. Similarly, B-D forms a cycle, so skip it.
+
+The MST formed will include edges (A-B, 1), (B-C, 2), and (C-D, 3) with a total weight of 6.
+
+---
+
+[Minimum Spanning Tree | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1)
+
+###### Explanation:
+
+```
+1. **Disjoint Set Class**:
+   - **rank**: Helps in keeping the tree flat by attaching shorter trees under taller trees during union operations.
+   - **parent**: Tracks the parent of each node. Initially, each node is its own parent.
+   - **size**: Tracks the size of the sets, which is useful in the union by size method.
+
+2. **findUParent**:
+   - Recursively finds the ultimate parent (root) of a node. Implements path compression by making nodes point directly to the root, flattening the structure.
+
+3. **unionByRank**:
+   - Unites two sets based on the rank. The tree with a lower rank is attached under the tree with a higher rank to keep the tree as flat as possible.
+
+4. **unionBySize**:
+   - Unites two sets based on size. The smaller set is always attached under the larger set to maintain a balanced structure.
+
+5. **Edge Class**:
+   - Represents an edge with its weight and the two vertices it connects. Implements `Comparable` to allow sorting edges by their weight.
+
+6. **spanningTree**:
+   - Uses Kruskal’s algorithm to find the Minimum Spanning Tree (MST). It involves sorting edges by weight and then adding them to the MST if they don’t form a cycle.
+
+7. **solve**:
+   - Converts the adjacency list to an edge list, sorts the edges, and iteratively adds them to the MST using the union-find data structure.
+```
+
+```java
+class Solution {
+
+    // Disjoint Set data structure with union by rank and union by size functionalities
+    static class DisjointSet {
+        List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+        List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+        List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+        // Constructor to initialize the Disjoint Set for n elements
+        public DisjointSet(int n) {
+            // Initialize each element as its own parent, rank as 0, and size as 1
+            for (int i = 0; i <= n; i++) {
+                rank.add(0);     // Rank starts at 0 for all elements
+                parent.add(i);   // Each element is its own parent initially
+                size.add(1);     // Initial size of each set is 1
+            }
+        }
+
+        // Function to find the ultimate parent (root) of a node with path compression
+        public int findUParent(int node) {
+            // If the node is its own parent, return the node
+            if (node == parent.get(node)) {
+                return node;
+            }
+            // Otherwise, recursively find the ultimate parent and apply path compression
+            int ulp = findUParent(parent.get(node));
+            parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+            return parent.get(node);
+        }
+
+        // Function to perform union of two sets by rank
+        public void unionByRank(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by rank: attach the tree with lower rank under the tree with higher rank
+            if (rank.get(ulp_u) < rank.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            } else {
+                // If ranks are the same, attach one tree under the other and increase its rank
+                parent.set(ulp_v, ulp_u);
+                rank.set(ulp_u, rank.get(ulp_u) + 1);
+            }
+        }
+
+        // Function to perform union of two sets by size
+        public void unionBySize(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by size: attach the smaller set under the larger set
+            if (size.get(ulp_u) < size.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+                size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+            } else {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+                size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+            }
+        }
+    }
+
+    // Class to represent an edge with its weight and connected vertices
+    static class Edge implements Comparable<Edge> {
+        int weight;  // Weight of the edge
+        int u;       // One vertex of the edge
+        int v;       // The other vertex of the edge
+
+        // Constructor to initialize an edge
+        Edge(int weight, int u, int v) {
+            this.weight = weight;
+            this.u = u;
+            this.v = v;
+        }
+
+        // Comparator function to sort edges based on their weight (ascending order)
+        @Override
+        public int compareTo(Edge other) {
+            return this.weight - other.weight;
+        }
+    }
+
+    // Function to find the weight of the Minimum Spanning Tree (MST) using Kruskal's algorithm
+    static int spanningTree(int V, int E, List<List<int[]>> adj) {
+        return solve(V, E, adj);
+    }
+
+    // Helper function to solve the MST problem
+    private static int solve(int V, int E, List<List<int[]>> adj) {
+        List<Edge> edges = new ArrayList<>();
+
+        // Convert adjacency list representation to edge list representation
+        for (int u = 0; u < V; u++) {
+            for (int[] edge : adj.get(u)) {
+                int v = edge[0];
+                int wt = edge[1];
+                edges.add(new Edge(wt, u, v));  // Add each edge to the edge list
+            }
+        }
+
+        // Initialize Disjoint Set for all vertices
+        DisjointSet ds = new DisjointSet(V);
+
+        // Sort all edges based on their weight (increasing order)
+        Collections.sort(edges);
+
+        int mstWt = 0;  // To store the total weight of the MST
+
+        // Iterate over all sorted edges
+        for (Edge edge : edges) {
+            int u = edge.u;
+            int v = edge.v;
+            int wt = edge.weight;
+
+            // Check if the current edge forms a cycle in the MST
+            if (ds.findUParent(u) != ds.findUParent(v)) {
+                // If not, include this edge in the MST
+                mstWt += wt;
+                ds.unionBySize(u, v);  // Union the sets of the two vertices
+            }
+        }
+
+        // Return the total weight of the MST
+        return mstWt;
+    }
+}
+```
+
 
