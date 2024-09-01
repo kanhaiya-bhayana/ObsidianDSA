@@ -3380,7 +3380,7 @@ class Solution
 }
 ```
 
-## 35. ### City With the Smallest Number of Neighbors at a Threshold Distance
+## 35. City With the Smallest Number of Neighbors at a Threshold Distance
 [City With the Smallest Number of Neighbors at a Threshold Distance | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/city-with-the-smallest-number-of-neighbors-at-a-threshold-distance/1)
 ###### Explanation:
 1. **Initialization**: The `dist` array is initialized with `Integer.MAX_VALUE` to represent that there is no direct path between cities initially. The distance from each city to itself is set to 0.
@@ -3458,6 +3458,309 @@ class Solution {
 
         // Return the city number with the fewest reachable cities within the distance threshold
         return cityNo;
+    }
+}
+```
+
+
+## 36. Minimum Spanning Tree - MST
+
+```
+Definition: A tree in which we have N nodes and N-1 edges and all nodes are reachable from each other. 
+```
+
+###### How to find the MST of the given graph
+
+```
+There are couple of algorithms which are used to find the MST of the given graph.
+
+1. Prim's Algorithm
+2. Krushkal's Algorightm - to understand the KA, need to know about "Disjoint Set".
+
+```
+
+## 37. Prim's Algorithm - MST
+[Minimum Spanning Tree | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/minimum-spanning-tree/1)
+
+Prim's Algorithm is a classic greedy algorithm used to find the Minimum Spanning Tree (MST) of a weighted, undirected graph. The MST is a subset of the graph's edges that connects all the vertices together without any cycles and with the minimum possible total edge weight.
+
+###### Key Concepts:
+- **Spanning Tree**: A subgraph that includes all the vertices of the original graph but only enough edges to form a tree, meaning no cycles and only one path between any two vertices.
+- **Minimum Spanning Tree (MST)**: The spanning tree with the smallest possible total edge weight.
+
+###### How Prim's Algorithm Works:
+1. **Initialization**:
+   - Start with an arbitrary node and add it to the MST.
+   - Initialize a priority queue (or min-heap) to keep track of the edges with the smallest weight that connect to the growing MST.
+
+2. **Growing the MST**:
+   - At each step, select the edge with the minimum weight that connects a vertex in the MST to a vertex outside the MST.
+   - Add this edge and the new vertex to the MST.
+   - Update the priority queue with the new edges connecting the newly added vertex to the vertices not yet in the MST.
+
+3. **Repeat**:
+   - Repeat the process until all vertices are included in the MST.
+
+4. **Termination**:
+   - The algorithm stops when all vertices are part of the MST. At this point, you have the MST for the graph.
+
+###### Example:
+Let's say we have the following graph:
+
+```
+     2      3
+A ------- B ----- C
+ \       / \     /
+  6    8    5  7
+   \ /        X
+    D ------- E
+      9
+```
+
+1. **Starting Point**: Begin with vertex `A`. The adjacent edges are `A-B (2)` and `A-D (6)`. Choose the smallest edge, `A-B (2)`.
+
+2. **Expand**: Now, `B` is in the MST. The available edges are `B-C (3)`, `B-D (8)`, and `A-D (6)`. The smallest is `B-C (3)`, so add `C` and `B-C (3)`.
+
+3. **Continue**: Now, `A`, `B`, and `C` are in the MST. The available edges are `C-E (7)`, `B-D (8)`, and `A-D (6)`. The smallest edge is `A-D (6)`, so add `D` and `A-D (6)`.
+
+4. **Final Step**: The only edge left is `C-E (7)`, which is the smallest edge available. Add `E` and `C-E (7)` to the MST.
+
+The resulting MST connects all vertices with the minimum total weight of `2 + 3 + 6 + 7 = 18`.
+
+###### Time Complexity:
+Prim's Algorithm is efficient, with a time complexity of \(O((V + E) \log V)\) using a priority queue, where \(V\) is the number of vertices and \(E\) is the number of edges.
+
+###### Explanation
+
+```
+
+1. **spanningTree Function**: This is the entry point of the solution. It calls the `solve` function, which implements Prim's algorithm to compute the Minimum Spanning Tree (MST).
+
+2. **Priority Queue (Min-Heap)**: The priority queue is used to always pick the edge with the smallest weight, ensuring that the MST is constructed with the minimum possible total weight.
+
+3. **Visited Array**: The `vis` array is used to keep track of the nodes that have been included in the MST to avoid cycles.
+
+4. **Main Loop**: The loop continues until all nodes are processed. For each node, it adds the edge with the smallest weight to the MST if the node hasn't been visited.
+
+5. **Adjacency List**: The adjacency list `adj` is used to store all the edges for each node, and it's traversed to find the next minimum edge to add to the MST.
+
+6. **Pair Class**: The `Pair` class is used to store the node and the weight of the edge connecting to that node, which is useful when adding nodes to the priority queue.
+
+This implementation of Prim's algorithm efficiently finds the MST with a time complexity of \(O((V + E) \log V)\), where \(V\) is the number of vertices and \(E\) is the number of edges.
+```
+
+```java
+class Solution {
+    // Function to calculate the weight of the minimum spanning tree (MST) using Prim's algorithm
+    static int spanningTree(int V, int E, List<List<int[]>> adj) {
+        // Call the helper function 'solve' to compute the MST and return its total weight
+        return solve(V, E, adj);
+    }
+    
+    // Helper function to implement Prim's algorithm and compute the MST weight
+    private static int solve(int V, int E, List<List<int[]>> adj) {
+        // Priority queue to pick the edge with the minimum weight
+        PriorityQueue<Pair> pq = new PriorityQueue<>((a, b) -> a.wt - b.wt);
+        
+        // Boolean array to track visited nodes
+        boolean[] vis = new boolean[V];
+        
+        // Start the algorithm from node 0 with an initial weight of 0
+        pq.offer(new Pair(0, 0));
+        
+        int sum = 0; // Variable to store the total weight of the MST
+        
+        // Process the nodes until the priority queue is empty
+        while (!pq.isEmpty()) {
+            // Get the node with the minimum weight edge from the priority queue
+            Pair curr = pq.poll();
+            int node = curr.node;
+            int wt = curr.wt;
+            
+            // If the node is already visited, skip it to avoid cycles
+            if (vis[node] == true) continue;
+            
+            // Mark the node as visited
+            vis[node] = true;
+            
+            // Add the edge's weight to the total MST weight
+            sum += wt;
+            
+            // Iterate through the adjacent nodes of the current node
+            for (int[] nbs : adj.get(node)) {
+                int adjNode = nbs[0];
+                int adjWt = nbs[1];
+                
+                // If the adjacent node is not visited, add it to the priority queue
+                if (vis[adjNode] == false) {
+                    pq.offer(new Pair(adjNode, adjWt));
+                }
+            }
+        }
+        // Return the total weight of the MST
+        return sum;
+    }
+    
+    // Class to represent a pair of node and weight
+    static class Pair {
+        int node; // Node number
+        int wt;   // Weight of the edge connecting to this node
+        
+        // Constructor to initialize the Pair
+        Pair(int n, int w) {
+            node = n; 
+            wt = w;
+        }
+    }
+}
+```
+
+
+
+## 38. Disjoint set | Union Find
+```
+## Union(u,v)
+1. Find ultimate parent of u and v - pu, pv
+2. Find rand of pu, pv.
+3. Connect smaller rank to larger rank always - in case of equality connect anyone to anyone.
+```
+
+###### Explanation:
+
+1. **Disjoint Set Data Structure**: This code implements the Disjoint Set (or Union-Find) data structure with optimizations like union by rank and union by size, along with path compression. It efficiently handles dynamic connectivity queries and union operations.
+
+2. **Initialization**:
+   - The `DisjointSet` class constructor initializes three lists: `rank`, `parent`, and `size`.
+   - Each element is initially its own parent, has a rank of 0, and a size of 1.
+
+3. **Path Compression (`findUParent`)**:
+   - This method finds the ultimate parent of a node while flattening the structure, making future queries faster.
+
+4. **Union by Rank**:
+   - This operation merges two sets based on their ranks (depth of trees), ensuring that the tree remains balanced and shallow.
+
+5. **Union by Size**:
+   - This operation merges two sets based on their sizes, attaching the smaller tree under the larger tree, again ensuring efficiency.
+
+6. **Main Function**:
+   - Various union operations are performed using `unionBySize`.
+   - It checks if two elements (3 and 7) belong to the same set using the `findUParent` method.
+   - After performing `unionByRank`, it checks again if the two elements are now in the same set.
+
+This code effectively demonstrates the Disjoint Set operations, showcasing both union by size and union by rank optimizations along with path compression.
+
+```java
+class DisjointSet {
+    // Lists to store rank, parent, and size of each element
+    List<Integer> rank = new ArrayList<>();
+    List<Integer> parent = new ArrayList<>();
+    List<Integer> size = new ArrayList<>();
+
+    // Constructor to initialize the disjoint set with n elements
+    public DisjointSet(int n) {
+        for (int i = 0; i <= n; i++) {
+            rank.add(0);        // Initially, all ranks are 0
+            parent.add(i);      // Each element is initially its own parent
+            size.add(1);        // The initial size of each set is 1
+        }
+    }
+
+    // Method to find the ultimate parent of a node with path compression
+    public int findUParent(int node) {
+        // If the node is its own parent, return the node
+        if (node == parent.get(node)) {
+            return node;
+        }
+        // Recursively find the ultimate parent and apply path compression
+        int ulp = findUParent(parent.get(node));
+        parent.set(node, ulp); // Update the parent of the node to its ultimate parent
+        return parent.get(node); // Return the ultimate parent
+    }
+
+    // Method to perform union by rank
+    public void unionByRank(int u, int v) {
+        // Find the ultimate parents of u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If they are already in the same set, return
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Attach the smaller rank tree under the larger rank tree
+        if (rank.get(ulp_u) < rank.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);
+        } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+            parent.set(ulp_v, ulp_u);
+        } else {
+            // If ranks are the same, make one the parent of the other and increase its rank
+            parent.set(ulp_v, ulp_u);
+            rank.set(ulp_u, rank.get(ulp_u) + 1);
+        }
+    }
+
+    // Method to perform union by size
+    public void unionBySize(int u, int v) {
+        // Find the ultimate parents of u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If they are already in the same set, return
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Attach the smaller size tree under the larger size tree and update the size
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);
+            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));
+        } else {
+            parent.set(ulp_v, ulp_u);
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Print "Hello World" to the console
+        System.out.println("Hello World");
+
+        // Initialize a DisjointSet with 7 elements
+        DisjointSet ds = new DisjointSet(7);
+
+        // Perform union by size on the sets containing elements 1 and 2
+        ds.unionBySize(1, 2);
+
+        // Perform union by size on the sets containing elements 2 and 3
+        ds.unionBySize(2, 3);
+
+        // Perform union by size on the sets containing elements 4 and 5
+        ds.unionBySize(4, 5);
+
+        // Perform union by size on the sets containing elements 6 and 7
+        ds.unionBySize(6, 7);
+
+        // Perform union by size on the sets containing elements 5 and 6
+        ds.unionBySize(5, 6);
+
+        // Check if the ultimate parents of 3 and 7 are the same (i.e., if they belong to the same set)
+        if (ds.findUParent(3) == ds.findUParent(7)) {
+            System.out.println("Same");
+        } else {
+            System.out.println("Not Same");
+        }
+
+        // Perform union by rank on the sets containing elements 3 and 7
+        ds.unionByRank(3, 7);
+
+        // Check again if the ultimate parents of 3 and 7 are the same
+        if (ds.findUParent(3) == ds.findUParent(7)) {
+            System.out.println("Same");
+        } else {
+            System.out.println("Not Same");
+        }
     }
 }
 ```
