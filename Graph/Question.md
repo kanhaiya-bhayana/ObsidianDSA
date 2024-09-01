@@ -3625,7 +3625,32 @@ class Solution {
 3. Connect smaller rank to larger rank always - in case of equality connect anyone to anyone.
 ```
 
-###### Explanation:
+In graph theory and computer science, a "disjoint set" refers to a collection of non-overlapping sets, often used to manage and track elements partitioned into disjoint subsets. This concept is closely related to data structures that efficiently handle union and find operations on these subsets. 
+
+Here’s a breakdown of the key concepts:
+
+1. **Disjoint Set (Union-Find) Data Structure**: This is a data structure that supports two main operations efficiently:
+   - **Find**: Determines which subset a particular element is in. This helps in identifying whether two elements are in the same subset.
+   - **Union**: Merges two subsets into a single subset. 
+
+2. **Applications**: Disjoint set data structures are commonly used in algorithms that deal with connectivity and partitioning, such as:
+   - **Kruskal’s Algorithm**: This algorithm for finding the Minimum Spanning Tree (MST) of a graph uses disjoint sets to manage and merge the subsets of vertices to avoid cycles while constructing the MST.
+   - **Network Connectivity**: Disjoint sets help in determining whether two nodes are in the same connected component of a graph.
+   - **Equivalence Relations**: They are used in scenarios where equivalence classes need to be managed, such as in language parsing or database query optimization.
+
+3. **Optimizations**:
+   - **Path Compression**: This technique optimizes the find operation by making nodes in the path point directly to the root, speeding up future operations.
+   - **Union by Rank/Size**: This optimization keeps the tree flat by attaching the smaller tree under the root of the larger tree, improving the efficiency of union operations.
+
+**Example of Operations**:
+
+- **Find**: If you want to determine the set containing element `x`, you follow parent pointers until you reach the root of the tree containing `x`.
+
+- **Union**: To merge the sets containing elements `x` and `y`, you connect the roots of the trees containing `x` and `y`.
+
+In summary, the disjoint set data structure is essential for efficiently managing and querying subsets in various applications involving partitioning and connectivity.
+
+### Explanation:
 
 1. **Disjoint Set Data Structure**: This code implements the Disjoint Set (or Union-Find) data structure with optimizations like union by rank and union by size, along with path compression. It efficiently handles dynamic connectivity queries and union operations.
 
