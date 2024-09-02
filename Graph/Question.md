@@ -4015,3 +4015,254 @@ class Solution {
 ```
 
 
+
+
+## 40. [Number of Provinces](https://leetcode.com/problems/number-of-provinces/) | Using DisjointSet or Union Find
+
+```java
+class DisjointSet {
+    // Lists to store rank, parent, and size of each element
+    List<Integer> rank = new ArrayList<>();
+    List<Integer> parent = new ArrayList<>();
+    List<Integer> size = new ArrayList<>();
+
+    // Constructor to initialize the disjoint set with n elements
+    public DisjointSet(int n) {
+        for (int i = 0; i <= n; i++) {
+            rank.add(0);        // Initially, all ranks are 0
+            parent.add(i);      // Each element is initially its own parent
+            size.add(1);        // The initial size of each set is 1
+        }
+    }
+
+    // Method to find the ultimate parent of a node with path compression
+    public int findUParent(int node) {
+        // If the node is its own parent, return the node
+        if (node == parent.get(node)) {
+            return node;
+        }
+        // Recursively find the ultimate parent and apply path compression
+        int ulp = findUParent(parent.get(node));
+        parent.set(node, ulp); // Update the parent of the node to its ultimate parent
+        return parent.get(node); // Return the ultimate parent
+    }
+
+    // Method to perform union by rank
+    public void unionByRank(int u, int v) {
+        // Find the ultimate parents of u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If they are already in the same set, return
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Attach the smaller rank tree under the larger rank tree
+        if (rank.get(ulp_u) < rank.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);
+        } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+            parent.set(ulp_v, ulp_u);
+        } else {
+            // If ranks are the same, make one the parent of the other and increase its rank
+            parent.set(ulp_v, ulp_u);
+            rank.set(ulp_u, rank.get(ulp_u) + 1);
+        }
+    }
+
+    // Method to perform union by size
+    public void unionBySize(int u, int v) {
+        // Find the ultimate parents of u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If they are already in the same set, return
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Attach the smaller size tree under the larger size tree and update the size
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);
+            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));
+        } else {
+            parent.set(ulp_v, ulp_u);
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));
+        }
+    }
+}
+class Solution {
+    
+    public int findCircleNum(int[][] isConnected) {
+        return solve(isConnected);
+    }
+
+    private int solve(int[][] graph){
+        int V =  graph.length;
+
+        DisjointSet ds = new DisjointSet(V);
+        for (int i=0; i<V; i++){
+            for (int j=0; j<V; j++){
+                if(graph[i][j] == 1){
+                    ds.unionBySize(i,j);
+                }
+            }
+        }
+        int cnt = 0;
+        for (int i=0; i<V; i++){
+            if (ds.parent.get(i) == i){
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+}
+```
+
+## 41. Connecting the graph
+[Connecting the graph | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/connecting-the-graph/1)
+###### Explanation:
+```
+- **Disjoint Set (Union-Find):**
+  - **Initialization:** Each element is its own parent, with rank 0 and size 1.
+  - **Find with Path Compression:** Ensures that each node points directly to its root, optimizing future queries.
+  - **Union by Rank/Size:** Merges two sets by attaching the smaller tree under the larger one (either by rank or size), keeping the structure balanced.
+
+- **Edge Representation:**
+  - Represents a graph edge with a weight and two connected vertices. The `compareTo` method allows sorting edges by weight, which is useful in algorithms like Kruskal's.
+
+- **Solve Method:**
+  - Iterates through all edges, using union-find to detect and count redundant edges.
+  - Counts connected components and determines the minimum number of edges needed to connect all components. If there are enough extra edges, the components can be connected; otherwise, it's impossible.
+```
+
+```java
+class Solution {
+    class DisjointSet {
+        List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+        List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+        List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+        // Constructor to initialize the Disjoint Set for n elements
+        public DisjointSet(int n) {
+            // Initialize each element as its own parent, rank as 0, and size as 1
+            for (int i = 0; i <= n; i++) {
+                rank.add(0);     // Rank starts at 0 for all elements
+                parent.add(i);   // Each element is its own parent initially
+                size.add(1);     // Initial size of each set is 1
+            }
+        }
+
+        // Function to find the ultimate parent (root) of a node with path compression
+        public int findUParent(int node) {
+            // If the node is its own parent, return the node
+            if (node == parent.get(node)) {
+                return node;
+            }
+            // Otherwise, recursively find the ultimate parent and apply path compression
+            int ulp = findUParent(parent.get(node));
+            parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+            return parent.get(node);
+        }
+
+        // Function to perform union of two sets by rank
+        public void unionByRank(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by rank: attach the tree with lower rank under the tree with higher rank
+            if (rank.get(ulp_u) < rank.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            } else {
+                // If ranks are the same, attach one tree under the other and increase its rank
+                parent.set(ulp_v, ulp_u);
+                rank.set(ulp_u, rank.get(ulp_u) + 1);
+            }
+        }
+
+        // Function to perform union of two sets by size
+        public void unionBySize(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by size: attach the smaller set under the larger set
+            if (size.get(ulp_u) < size.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+                size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+            } else {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+                size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+            }
+        }
+    }
+
+    // Class to represent an edge with its weight and connected vertices
+    class Edge implements Comparable<Edge> {
+        int weight;  // Weight of the edge
+        int u;       // One vertex of the edge
+        int v;       // The other vertex of the edge
+
+        // Constructor to initialize an edge
+        Edge(int weight, int u, int v) {
+            this.weight = weight;
+            this.u = u;
+            this.v = v;
+        }
+
+        // Comparator function to sort edges based on their weight (ascending order)
+        @Override
+        public int compareTo(Edge other) {
+            return this.weight - other.weight;
+        }
+    }
+    
+    // Function to solve the problem using Disjoint Set
+    public int Solve(int n, int[][] edge) {
+        DisjointSet ds = new DisjointSet(n);  // Initialize the Disjoint Set for n nodes
+        
+        int extraEdges = 0;  // To count edges that connect already connected components
+        
+        int m = edge.length;  // Number of edges
+        for (int i = 0; i < m; i++) {
+            int u = edge[i][0];  // Start node of the edge
+            int v = edge[i][1];  // End node of the edge
+            // If u and v have the same ultimate parent, they are in the same set
+            if (ds.findUParent(u) == ds.findUParent(v)) {
+                extraEdges++;  // This edge is redundant (extra)
+            } else {
+                ds.unionBySize(u, v);  // Union the sets containing u and v
+            }
+        }
+        
+        int connectedComponents = 0;  // To count the number of connected components
+        for (int i = 0; i < n; i++) {
+            // If a node is its own parent, it's a root of a component
+            if (ds.parent.get(i) == i) {
+                connectedComponents++;
+            }
+        }
+        
+        int ans = connectedComponents - 1;  // Minimum edges needed to connect all components
+        // If the number of extra edges is greater than or equal to the number of edges needed
+        if (extraEdges >= ans) {
+            return ans;  // Return the number of edges needed
+        }
+        return -1;  // Not enough extra edges to connect all components
+    }
+}
+```
+
