@@ -4266,3 +4266,756 @@ class Solution {
 }
 ```
 
+## 42. [Redundant Connection](https://leetcode.com/problems/redundant-connection/)
+
+```java
+class Solution {
+    class DisjointSet {
+        List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+        List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+        List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+        // Constructor to initialize the Disjoint Set for n elements
+        public DisjointSet(int n) {
+            // Initialize each element as its own parent, rank as 0, and size as 1
+            for (int i = 0; i <= n; i++) {
+                rank.add(0);     // Rank starts at 0 for all elements
+                parent.add(i);   // Each element is its own parent initially
+                size.add(1);     // Initial size of each set is 1
+            }
+        }
+
+        // Function to find the ultimate parent (root) of a node with path compression
+        public int findUParent(int node) {
+            // If the node is its own parent, return the node
+            if (node == parent.get(node)) {
+                return node;
+            }
+            // Otherwise, recursively find the ultimate parent and apply path compression
+            int ulp = findUParent(parent.get(node));
+            parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+            return parent.get(node);
+        }
+
+        // Function to perform union of two sets by rank
+        public void unionByRank(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by rank: attach the tree with lower rank under the tree with higher rank
+            if (rank.get(ulp_u) < rank.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            } else {
+                // If ranks are the same, attach one tree under the other and increase its rank
+                parent.set(ulp_v, ulp_u);
+                rank.set(ulp_u, rank.get(ulp_u) + 1);
+            }
+        }
+
+        // Function to perform union of two sets by size
+        public void unionBySize(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes share the same ultimate parent, they are already in the same set
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by size: attach the smaller set under the larger set
+            if (size.get(ulp_u) < size.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+                size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+            } else {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+                size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+            }
+        }
+    }
+
+    class Edge implements Comparable<Edge> {
+        int weight;  // Weight of the edge
+        int u;       // One vertex of the edge
+        int v;       // The other vertex of the edge
+
+        // Constructor to initialize an edge
+        Edge(int weight, int u, int v) {
+            this.weight = weight;
+            this.u = u;
+            this.v = v;
+        }
+
+        // Comparator function to sort edges based on their weight (ascending order)
+        @Override
+        public int compareTo(Edge other) {
+            return this.weight - other.weight;
+        }
+    }
+    public int[] findRedundantConnection(int[][] edge) {
+        DisjointSet ds = new DisjointSet(edge.length);  // Initialize the Disjoint Set for n nodes
+        
+        int extraEdges = 0;  // To count edges that connect already connected components
+        
+        int m = edge.length;  // Number of edges
+        int[] res = new int[2];
+        for (int i = 0; i < m; i++) {
+            int u = edge[i][0];  // Start node of the edge
+            int v = edge[i][1];  // End node of the edge
+            // If u and v have the same ultimate parent, they are in the same set
+            if (ds.findUParent(u) == ds.findUParent(v)) {
+                res[0]= u;  // This edge is redundant (extra)
+                res[1]= v;  // This edge is redundant (extra)
+            } else {
+                ds.unionBySize(u, v);  // Union the sets containing u and v
+            }
+        }
+        return res;
+    }
+}
+```
+
+## 43. Merging Deatils | Accounts Merge
+###### Explanation:
+1. **DisjointSet Class**:
+   - **Fields**:
+     - `rank`: Keeps track of the depth of each tree for union operations.
+     - `parent`: Stores the parent of each node.
+     - `size`: Keeps track of the size of each set for union operations.
+   - **Methods**:
+     - `findUParent(int node)`: Finds the root parent of `node` and performs path compression to flatten the tree.
+     - `unionByRank(int u, int v)`: Unites two sets by attaching the smaller rank tree to the larger rank tree, or if equal, increase the rank of the new root.
+     - `unionBySize(int u, int v)`: Unites two sets by attaching the smaller set to the larger set, and updates the size of the new root.
+
+2. **accountsMerge Method**:
+   - **Initialization**:
+     - `DisjointSet ds`: Initializes the disjoint set for merging operations.
+     - `mapMailNode`: Maps each email to its associated account index.
+   - **Processing Accounts**:
+     - For each email in an account, if it has already been encountered, perform a union operation to merge the current account with the account that has the same email.
+   - **Merging Emails**:
+     - Uses the `findUParent` method to determine the root parent and collects emails for each set.
+   - **Preparing Final Output**:
+     - Sorts the emails for each account, combines them with the account's name, and adds the result to the final list.
+
+This code efficiently merges accounts that share the same email addresses, producing a list where each entry represents a unified account with sorted emails.
+
+```java
+import java.util.*;
+
+// Class to handle the disjoint set (union-find) operations
+class Solution {
+    // Inner class to represent the Disjoint Set (Union-Find) data structure
+    class DisjointSet {
+        List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+        List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+        List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+        // Constructor to initialize the Disjoint Set for n elements
+        public DisjointSet(int n) {
+            // Initialize each element as its own parent, rank as 0, and size as 1
+            for (int i = 0; i <= n; i++) {
+                rank.add(0);     // Rank starts at 0 for all elements
+                parent.add(i);   // Each element is its own parent initially
+                size.add(1);     // Initial size of each set is 1
+            }
+        }
+
+        // Function to find the ultimate parent (root) of a node with path compression
+        public int findUParent(int node) {
+            // If the node is its own parent, it is the root of its set
+            if (node == parent.get(node)) {
+                return node;
+            }
+            // Otherwise, recursively find the ultimate parent and apply path compression
+            int ulp = findUParent(parent.get(node));
+            parent.set(node, ulp);  // Path compression: make the ultimate parent the direct parent of the node
+            return parent.get(node);
+        }
+
+        // Function to perform union of two sets by rank
+        public void unionByRank(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes are already in the same set, no need to union
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by rank: attach the tree with lower rank under the tree with higher rank
+            if (rank.get(ulp_u) < rank.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            } else {
+                // If ranks are the same, attach one tree under the other and increase the rank of the new root
+                parent.set(ulp_v, ulp_u);
+                rank.set(ulp_u, rank.get(ulp_u) + 1);
+            }
+        }
+
+        // Function to perform union of two sets by size
+        public void unionBySize(int u, int v) {
+            // Find the ultimate parents (roots) of the nodes u and v
+            int ulp_u = findUParent(u);
+            int ulp_v = findUParent(v);
+
+            // If both nodes are already in the same set, no need to union
+            if (ulp_u == ulp_v) {
+                return;
+            }
+
+            // Union by size: attach the smaller set under the larger set
+            if (size.get(ulp_u) < size.get(ulp_v)) {
+                parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+                size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new root
+            } else {
+                parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+                size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new root
+            }
+        }
+    }
+
+    // Main function to merge accounts and return the result
+    public List<List<String>> accountsMerge(List<List<String>> accounts) {
+        int n = accounts.size();  // Number of accounts
+        
+        // Initialize Disjoint Set for each account
+        DisjointSet ds = new DisjointSet(n);
+        
+        // Map to track which email belongs to which account
+        Map<String, Integer> mapMailNode = new HashMap<>();
+        int ii = 0; // Counter for the current account
+        
+        // Process each account
+        for (List<String> acc : accounts) {
+            for (int j = 1; j < acc.size(); j++) {
+                String mail = acc.get(j);  // Email address
+                
+                // If the email is not in the map, add it
+                if (!mapMailNode.containsKey(mail)) {
+                    mapMailNode.put(mail, ii);
+                } else {
+                    // Union the current account with the account that contains the same email
+                    ds.unionBySize(ii, mapMailNode.get(mail));
+                }
+            }
+            ii++;
+        }
+        
+        // List to hold the merged emails for each account
+        List<String>[] mergedMail = new ArrayList[n];
+        for (int i = 0; i < n; i++) {
+            mergedMail[i] = new ArrayList<>();
+        }
+        
+        // Add emails to the corresponding account's list based on their root parent
+        for (Map.Entry<String, Integer> it : mapMailNode.entrySet()) {
+            String mail = it.getKey();
+            int node = ds.findUParent(it.getValue()); // Find the root parent of the account
+            mergedMail[node].add(mail); // Add email to the merged list for that account
+        }
+        
+        // List to store the final result
+        List<List<String>> ans = new ArrayList<>();
+        
+        // Process each account's merged emails and prepare the final output
+        for (int i = 0; i < n; i++) {
+            if (mergedMail[i].size() == 0) {
+                continue; // Skip if no emails are merged for this account
+            }
+            Collections.sort(mergedMail[i]); // Sort emails lexicographically
+            List<String> temp = new ArrayList<>();
+            temp.add(accounts.get(i).get(0)); // Add the account name
+            temp.addAll(mergedMail[i]); // Add the sorted emails
+            ans.add(temp); // Add the result to the final list
+        }
+        
+        return ans; // Return the list of merged accounts
+    }
+}
+```
+
+## 44. Number of Islands II 
+[Number Of Islands | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/number-of-islands/1)
+###### Explanation:
+1. **DisjointSet Class**:
+   - `rank`, `parent`, and `size` lists keep track of the rank (or depth), parent, and size of each set respectively.
+   - **Constructor** initializes each element to be its own parent, with rank 0 and size 1.
+   - `findUParent(int node)` uses path compression to find the root of the set containing the node.
+   - `unionByRank(int u, int v)` merges two sets based on the rank of their roots.
+   - `unionBySize(int u, int v)` merges two sets based on the size of their roots.
+
+2. **Solution Class**:
+   - `numOfIslands(int r, int c, int[][] operators)` initializes grid dimensions and calls the `solve` method.
+   - `solve(int[][] operators)` processes each operation, updating the grid and managing the number of islands using the `DisjointSet` class.
+   - `isValid(int adjr, int adjc)` checks if a cell is within grid bounds.
+
+This code maintains the number of islands dynamically as operations are applied to the grid, effectively using the union-find data structure to manage connectivity.
+
+
+```java
+// DisjointSet class to manage disjoint sets using union-find with path compression
+class DisjointSet {
+    List<Integer> rank = new ArrayList<>();   // To store the rank (or depth) of each set (used in union by rank)
+    List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+    List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+    // Constructor to initialize the Disjoint Set for n elements
+    public DisjointSet(int n) {
+        // Initialize each element as its own parent, rank as 0, and size as 1
+        for (int i = 0; i <= n; i++) {
+            rank.add(0);     // Rank starts at 0 for all elements
+            parent.add(i);   // Each element is its own parent initially
+            size.add(1);     // Initial size of each set is 1
+        }
+    }
+
+    // Function to find the ultimate parent (root) of a node with path compression
+    public int findUParent(int node) {
+        // If the node is its own parent, return the node (it is a root)
+        if (node == parent.get(node)) {
+            return node;
+        }
+        // Otherwise, recursively find the ultimate parent and apply path compression
+        int ulp = findUParent(parent.get(node));
+        parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+        return parent.get(node);
+    }
+
+    // Function to perform union of two sets by rank
+    public void unionByRank(int u, int v) {
+        // Find the ultimate parents (roots) of the nodes u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If both nodes share the same ultimate parent, they are already in the same set
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Union by rank: attach the tree with lower rank under the tree with higher rank
+        if (rank.get(ulp_u) < rank.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+        } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+            parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+        } else {
+            // If ranks are the same, attach one tree under the other and increase its rank
+            parent.set(ulp_v, ulp_u);
+            rank.set(ulp_u, rank.get(ulp_u) + 1);
+        }
+    }
+
+    // Function to perform union of two sets by size
+    public void unionBySize(int u, int v) {
+        // Find the ultimate parents (roots) of the nodes u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If both nodes share the same ultimate parent, they are already in the same set
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Union by size: attach the smaller set under the larger set
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+        } else {
+            parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+        }
+    }
+}
+
+// Solution class to find the number of islands formed after each operation
+class Solution {
+    int rows; // Number of rows in the grid
+    int cols; // Number of columns in the grid
+    
+    // Main function to return the number of islands after each operation
+    public List<Integer> numOfIslands(int r, int c, int[][] operators) {
+        rows = r;
+        cols = c;
+        return solve(operators);
+    }
+    
+    // Function to process each operation and determine the number of islands
+    private List<Integer> solve(int[][] operators) {
+        DisjointSet ds = new DisjointSet(rows * cols); // Initialize Disjoint Set for a grid with rows*cols elements
+        List<Integer> ans = new ArrayList<>(); // List to store the result after each operation
+        int len = operators.length; // Number of operations
+        boolean[][] vis = new boolean[rows][cols]; // Grid to keep track of visited cells
+        int cnt = 0; // Counter for the number of islands
+        
+        // Process each operation
+        for (int i = 0; i < len; i++) {
+            int row = operators[i][0]; // Row index of the operation
+            int col = operators[i][1]; // Column index of the operation
+            
+            // If the cell is already visited, no change in number of islands, just record the count
+            if (vis[row][col]) {
+                ans.add(cnt);
+                continue;
+            }
+            
+            // Mark the cell as visited and increment the island count
+            vis[row][col] = true;
+            cnt++;
+            
+            // Arrays to navigate through the four possible directions (up, right, down, left)
+            int[] rowDiag = {-1, 0, 1, 0};
+            int[] colDiag = {0, 1, 0, -1};
+            
+            // Check adjacent cells
+            for (int ind = 0; ind < 4; ind++) {
+                int adjRow = row + rowDiag[ind]; // Row index of adjacent cell
+                int adjCol = col + colDiag[ind]; // Column index of adjacent cell
+                
+                // Check if the adjacent cell is within the grid bounds
+                if (isValid(adjRow, adjCol)) {
+                    if (vis[adjRow][adjCol]) { // If the adjacent cell is visited
+                        int nodeNo = row * cols + col; // Current cell's unique number
+                        int adjNodeNo = adjRow * cols + adjCol; // Adjacent cell's unique number
+                        
+                        // If current cell and adjacent cell are in different sets, perform union
+                        if (ds.findUParent(nodeNo) != ds.findUParent(adjNodeNo)) {
+                            cnt--; // Decrease island count as two separate islands are now merged
+                            ds.unionBySize(nodeNo, adjNodeNo); // Merge the sets
+                        }
+                    }
+                }
+            }
+            
+            // Record the number of islands after this operation
+            ans.add(cnt);
+        }
+        return ans; // Return the final list of island counts after each operation
+    }
+
+    // Helper function to check if the given cell is within the grid bounds
+    private boolean isValid(int adjr, int adjc) {
+        return adjr >= 0 && adjr < rows && adjc >= 0 && adjc < cols;
+    }
+}
+```
+
+
+## 45. Making a Large Island | [Maximum Connected group | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/maximum-connected-group/1)
+
+###### Explanation:
+
+1. **DisjointSet Class**:
+   - **Fields**:
+     - `rank`: Stores the rank (or depth) of each set. This helps with union by rank, but in this implementation, only union by size is used.
+     - `parent`: Stores the parent of each node. Each node points to itself initially.
+     - `size`: Stores the size of the set that each node belongs to.
+   - **Constructor**:
+     - Initializes each element to be its own parent with a size of 1 and rank of 0.
+   - **Methods**:
+     - `findUParent(int node)`: Finds the root parent of a node with path compression.
+     - `unionBySize(int u, int v)`: Merges the sets containing `u` and `v` by size, ensuring that the smaller set is attached to the larger set.
+
+2. **Solution Class**:
+   - **Fields**:
+     - `rows` and `cols`: Dimensions of the grid.
+   - **Main Function (`MaxConnection`)**:
+     - Initializes the Disjoint Set for all cells in the grid.
+     - **Step 1**: Iterate through each cell. For cells with value `1`, union them with adjacent cells that are also `1`.
+     - **Step 2**: For each cell with value `0`, calculate the potential size of the connected component if that cell were changed to `1`. Use a set to keep track of unique connected components that the cell would connect with.
+     - Also consider the case when no `0` is changed, to ensure the maximum size is captured.
+   - **Helper Function (`isValid`)**:
+     - Checks if a given cell `(r, c)` is within the grid bounds.
+
+This code efficiently finds the size of the largest connected component that can be obtained by changing at most one `0` to `1` in a grid.
+
+```java
+import java.util.*;
+
+// Class to handle the disjoint set (union-find) operations with union by size
+class DisjointSet {
+    List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+    List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+    List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+    // Constructor to initialize the Disjoint Set for n elements
+    public DisjointSet(int n) {
+        // Initialize each element as its own parent, rank as 0, and size as 1
+        for (int i = 0; i < n; i++) {  // Corrected to 'i < n'
+            rank.add(0);     // Rank starts at 0 for all elements
+            parent.add(i);   // Each element is its own parent initially
+            size.add(1);     // Initial size of each set is 1
+        }
+    }
+
+    // Function to find the ultimate parent (root) of a node with path compression
+    public int findUParent(int node) {
+        // If the node is its own parent, return the node
+        if (node == parent.get(node)) {
+            return node;
+        }
+        // Otherwise, recursively find the ultimate parent and apply path compression
+        int ulp = findUParent(parent.get(node));
+        parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+        return ulp;
+    }
+
+    // Function to perform union of two sets by size
+    public void unionBySize(int u, int v) {
+        // Find the ultimate parents (roots) of the nodes u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If both nodes share the same ultimate parent, they are already in the same set
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Union by size: attach the smaller set under the larger set
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+        } else {
+            parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+        }
+    }
+}
+
+// Class to find the maximum connected group in a grid
+class Solution {
+    int rows;  // Number of rows in the grid
+    int cols;  // Number of columns in the grid
+
+    // Main function to find the maximum size of the connected component
+    public int MaxConnection(int grid[][]) {
+        rows = grid.length;
+        cols = grid[0].length;  // Number of columns in the grid
+
+        DisjointSet ds = new DisjointSet(rows * cols);  // Initialize Disjoint Set for all cells in the grid
+
+        // Directions for moving up, down, left, right
+        int[] dr = {-1, 0, 1, 0};
+        int[] dc = {0, -1, 0, 1};
+
+        // Step 1: Union adjacent cells that are `1`
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (grid[row][col] == 1) {
+                    int nodeNo = row * cols + col; // Convert (row, col) to a unique node index
+                    for (int ind = 0; ind < 4; ind++) {
+                        int newR = row + dr[ind];
+                        int newC = col + dc[ind];
+                        // Check if the new position is within bounds and is part of a connected group
+                        if (isValid(newR, newC) && grid[newR][newC] == 1) {
+                            int adjNode = newR * cols + newC; // Convert adjacent cell to a unique node index
+                            ds.unionBySize(nodeNo, adjNode); // Union the current cell with the adjacent cell
+                        }
+                    }
+                }
+            }
+        }
+
+        // Step 2: Calculate the maximum size of a connected component if one `0` is changed to `1`
+        int maxSize = 0;
+
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                if (grid[row][col] == 0) {
+                    Set<Integer> set = new HashSet<>();
+                    // Check all 4 possible directions from the current `0` cell
+                    for (int ind = 0; ind < 4; ind++) {
+                        int newR = row + dr[ind];
+                        int newC = col + dc[ind];
+                        // Check if the new position is within bounds and is part of a connected group
+                        if (isValid(newR, newC) && grid[newR][newC] == 1) {
+                            set.add(ds.findUParent(newR * cols + newC)); // Find the root of the connected component
+                        }
+                    }
+                    int sizeTotal = 1;  // We are considering the `0` we're changing to `1`
+                    // Calculate the total size of the connected component that includes the new `1`
+                    for (int it : set) {
+                        sizeTotal += ds.size.get(it);
+                    }
+                    maxSize = Math.max(maxSize, sizeTotal); // Update the maximum size
+                }
+            }
+        }
+
+        // Also consider the case when no `0` is changed, the largest connected component
+        for (int cellNo = 0; cellNo < rows * cols; cellNo++) {
+            maxSize = Math.max(maxSize, ds.size.get(ds.findUParent(cellNo))); // Update the maximum size
+        }
+
+        return maxSize; // Return the size of the largest connected group
+    }
+
+    // Function to check if the cell (r, c) is within grid bounds
+    private boolean isValid(int r, int c) {
+        return r >= 0 && r < rows && c >= 0 && c < cols;
+    }
+}
+```
+
+## 46. [Maximum Stone Removal | Practice | GeeksforGeeks](https://www.geeksforgeeks.org/problems/maximum-stone-removal-1662179442/1)\
+
+###### Explanation:
+1. **DisjointSet Class**:
+   - **Fields**:
+     - `rank`: Used to store the rank of each set (though rank is not used in the `maxRemove` method, it is initialized).
+     - `parent`: Keeps track of the parent of each node.
+     - `size`: Used to store the size of each set (used in union by size).
+   - **Constructor**:
+     - Initializes each element to be its own parent with a size of 1. The `rank` is initialized to 0, although it is not utilized in the `maxRemove` method.
+   - **Methods**:
+     - `findUParent(int node)`: Finds the root parent of a node with path compression to optimize future queries.
+     - `unionByRank(int u, int v)`: Unions two sets based on their rank. This method is not used in the `maxRemove` function.
+     - `unionBySize(int u, int v)`: Unions two sets based on their size, attaching the smaller set under the larger set to keep the tree shallow.
+
+2. **Solution Class**:
+   - **Function (`maxRemove`)**:
+     - **Purpose**: Calculates the maximum number of stones that can be removed such that the remaining stones are still connected in a grid-like structure.
+     - **Steps**:
+       - **Find Maximum Indices**: Determine the maximum row and column indices to size the disjoint set correctly.
+       - **Initialize Disjoint Set**: Create a Disjoint Set with enough space to handle row and column indices.
+       - **Process Stones**: For each stone, union the row index with the column index (offset by `maxRow + 1` to avoid overlap in the disjoint set).
+       - **Count Unique Connected Components**: Count how many unique components are formed (nodes that are their own parent).
+       - **Calculate Result**: The maximum number of stones that can be removed is the total number of stones minus the number of unique connected components.
+
+This code efficiently finds how many stones can be removed by using the disjoint set data structure to track connectivity between rows and columns in the grid.
+
+
+```java
+import java.util.*;
+
+// Class to handle the disjoint set (union-find) operations with union by rank and union by size
+class DisjointSet {
+    List<Integer> rank = new ArrayList<>();   // To store the rank of each set (used in union by rank)
+    List<Integer> parent = new ArrayList<>(); // To store the parent of each node
+    List<Integer> size = new ArrayList<>();   // To store the size of each set (used in union by size)
+
+    // Constructor to initialize the Disjoint Set for n elements
+    public DisjointSet(int n) {
+        // Initialize each element as its own parent, rank as 0, and size as 1
+        for (int i = 0; i <= n; i++) {
+            rank.add(0);     // Rank starts at 0 for all elements
+            parent.add(i);   // Each element is its own parent initially
+            size.add(1);     // Initial size of each set is 1
+        }
+    }
+
+    // Function to find the ultimate parent (root) of a node with path compression
+    public int findUParent(int node) {
+        // If the node is its own parent, return the node
+        if (node == parent.get(node)) {
+            return node;
+        }
+        // Otherwise, recursively find the ultimate parent and apply path compression
+        int ulp = findUParent(parent.get(node));
+        parent.set(node, ulp);  // Path compression: set the parent to the ultimate parent
+        return parent.get(node);
+    }
+
+    // Function to perform union of two sets by rank
+    public void unionByRank(int u, int v) {
+        // Find the ultimate parents (roots) of the nodes u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If both nodes share the same ultimate parent, they are already in the same set
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Union by rank: attach the tree with lower rank under the tree with higher rank
+        if (rank.get(ulp_u) < rank.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+        } else if (rank.get(ulp_v) < rank.get(ulp_u)) {
+            parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+        } else {
+            // If ranks are the same, attach one tree under the other and increase its rank
+            parent.set(ulp_v, ulp_u);
+            rank.set(ulp_u, rank.get(ulp_u) + 1);
+        }
+    }
+
+    // Function to perform union of two sets by size
+    public void unionBySize(int u, int v) {
+        // Find the ultimate parents (roots) of the nodes u and v
+        int ulp_u = findUParent(u);
+        int ulp_v = findUParent(v);
+
+        // If both nodes share the same ultimate parent, they are already in the same set
+        if (ulp_u == ulp_v) {
+            return;
+        }
+
+        // Union by size: attach the smaller set under the larger set
+        if (size.get(ulp_u) < size.get(ulp_v)) {
+            parent.set(ulp_u, ulp_v);  // Attach u's tree under v's tree
+            size.set(ulp_v, size.get(ulp_v) + size.get(ulp_u));  // Update the size of the new tree
+        } else {
+            parent.set(ulp_v, ulp_u);  // Attach v's tree under u's tree
+            size.set(ulp_u, size.get(ulp_u) + size.get(ulp_v));  // Update the size of the new tree
+        }
+    }
+}
+
+// Class to solve the problem of finding the maximum number of stones that can be removed
+class Solution {
+    // Function to find the maximum number of stones that can be removed
+    int maxRemove(int[][] stones, int n) {
+        // Variables to keep track of the maximum row and column indices
+        int maxRow = 0;
+        int maxCol = 0;
+
+        // Find the maximum row and column indices in the stones array
+        for (int i = 0; i < n; i++) {
+            maxRow = Math.max(maxRow, stones[i][0]);
+            maxCol = Math.max(maxCol, stones[i][1]);
+        }
+
+        // Initialize Disjoint Set for all cells in the grid (with additional space for columns)
+        DisjointSet ds = new DisjointSet(maxRow + maxCol + 1);
+
+        // Map to keep track of nodes that are part of stones
+        HashMap<Integer, Integer> stoneNodes = new HashMap<>();
+
+        // Process each stone and union its row and column
+        for (int i = 0; i < n; i++) {
+            int nodeRow = stones[i][0];
+            int nodeCol = stones[i][1] + maxRow + 1; // Offset column indices to avoid overlap
+
+            // Union the row and column of the current stone
+            ds.unionBySize(nodeRow, nodeCol);
+
+            // Record the presence of these nodes in the stoneNodes map
+            stoneNodes.put(nodeRow, 1);
+            stoneNodes.put(nodeCol, 1);
+        }
+
+        // Count the number of unique connected components
+        int cnt = 0;
+        for (Map.Entry<Integer, Integer> it : stoneNodes.entrySet()) {
+            if (ds.findUParent(it.getKey()) == it.getKey()) {
+                cnt++; // Count each unique root
+            }
+        }
+
+        // Return the number of stones that can be removed, which is total stones minus the number of unique connected components
+        return n - cnt;
+    }
+}
+```
+
+

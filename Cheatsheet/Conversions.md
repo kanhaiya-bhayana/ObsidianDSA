@@ -23,3 +23,10 @@ Integer[] integerArr = Arrays.stream(arr).boxed().toArray(Integer[]::new);
 int[] arr = Arrays.stream(integerArr).mapToInt(Integer::intValue).toArray();
 ```
 
+##### List- Integer to int[]
+
+```java
+List<Integer> list = new ArrayList<>();
+
+int[] arr = list.stream().mapToInt(Integer::intValue).toArray();
+```
