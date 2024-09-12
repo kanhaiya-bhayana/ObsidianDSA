@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Greedy/Questions.md",
+                "file": "Azure/Durable Functions/Cloud Course/Section 1.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Greedy/Questions.md",
+                "file": "Azure/Durable Functions/Cloud Course/Section 1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Greedy/Questions.md",
+                "file": "Azure/Durable Functions/Cloud Course/Section 1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Greedy/Questions.md"
+                "file": "Azure/Durable Functions/Cloud Course/Section 1.md"
               }
             }
           }
@@ -161,8 +161,13 @@
   },
   "active": "85f68a6a34cee193",
   "lastOpenFiles": [
-    "Greedy/CodeStroyWIthMik/1. Overview.md",
+    "Azure/Durable Functions/Course.md",
+    "Azure/Durable Functions/Cloud Course/Section 1.md",
+    "Azure/Durable Functions/Cloud Course",
+    "Azure/Durable Functions/Resources.md",
     "Greedy/Questions.md",
+    "Azure/Durable Functions",
+    "Greedy/CodeStroyWIthMik/1. Overview.md",
     "Graph/Question.md",
     "Greedy/CodeStroyWIthMik",
     "Greedy",
@@ -188,8 +193,6 @@
     "Microservices/brew-aspnetcore-microservices/Content/New folder/Develop-catalop-API.png",
     "Microservices/brew-aspnetcore-microservices/Content/New folder",
     "Microservices/brew-aspnetcore-microservices/Content/ss",
-    "Microservices/brew-aspnetcore-microservices/Content",
-    "Microservices/brew-aspnetcore-microservices/New folder",
     "Microservices/Untitled.md",
     "Microservices/brew-aspnetcore-microservices/Backing Services.md",
     "Graph/Algorithms/Algos.md",
@@ -203,9 +206,6 @@
     "TypeScript/Dave Gray/01. Introduction.md",
     "Cheatsheet/Graph Java.md",
     "Docker/PostgreSQL Setup Using Docker Container.md",
-    "Docker/Docker.md",
-    "Docker/Connect to PostgreSQL Container.md",
-    "Docker/Using docker-compose files to target multiple environments.md",
-    "Docker/Overview.md"
+    "Docker/Docker.md"
   ]
 }

@@ -150,5 +150,40 @@ class Solution {
 
 
 
+## 4. [Broken Calculator](https://leetcode.com/problems/broken-calculator/)
+###### Explanation:
+1. **Base Case**: If `startValue` (denoted as `s`) is greater than or equal to `target` (denoted as `t`), we simply subtract the target from the start value because the only valid operation in this case is decrementing `startValue`.
+  
+2. **Recursive Case (Target is Even)**: If the target is even, the best way to reduce the target is by dividing it by 2, which helps reduce the problem size faster than subtracting 1. The recursion continues from there.
+
+3. **Recursive Case (Target is Odd)**: If the target is odd, we first increment it by 1 to make it even. This allows us to apply the division-by-2 step in the next recursion.
+
+```java
+class Solution {
+    public int brokenCalc(int startValue, int target) {
+        // This method simply calls the solve method to calculate the minimum steps.
+        return solve(startValue, target);
+    }
+
+    private int solve(int s, int t) {
+        // Base case: If the start value is greater than or equal to the target,
+        // the only way to reach the target is by decrementing (subtracting 1).
+        if (s >= t) {
+            return s - t; // Subtract directly since we can only decrement.
+        }
+
+        // If the target is even, the optimal move is to divide it by 2.
+        // This reduces the target more quickly than subtracting 1.
+        if (t % 2 == 0) {
+            return 1 + solve(s, t / 2); // Increment the count by 1 (for this division step) and recurse.
+        }
+
+        // If the target is odd, the optimal move is to increment the target by 1
+        // to make it even, and then divide by 2 in the next recursive call.
+        return 1 + solve(s, t + 1); // Increment the count by 1 (for this increment step) and recurse.
+    }
+}
+```
 
 
+## 5. [Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/)
