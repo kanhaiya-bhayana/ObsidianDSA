@@ -187,3 +187,143 @@ class Solution {
 
 
 ## 5. [Minimum Time to Make Rope Colorful](https://leetcode.com/problems/minimum-time-to-make-rope-colorful/)
+
+### Intuition:
+This problem aims to minimize the cost required to remove consecutive balloons of the same color. For each consecutive group of balloons with the same color, you want to keep the balloon that requires the most time to remove and delete the rest. The total cost to remove the balloons will be the sum of the minimum times needed to remove balloons from each group.
+### Step-by-Step Explanation:
+1. **Initial Setup**: 
+   - We declare two variables: `time` (to accumulate the total removal cost) and `prevMax` (to track the largest removal time for a group of consecutive balloons).
+   
+2. **Loop Through Balloons**:
+   - For each balloon, we check if it's the same color as the previous one.
+   - If it is a different color, we reset `prevMax` to 0 because we are starting a new group.
+
+3. **Cost Calculation**:
+   - For each balloon in a consecutive group, we add the minimum of `prevMax` and the current balloon's removal cost to `time`.
+   - This represents removing the cheaper balloons and keeping the most expensive one.
+   
+4. **Update Maximum Time**:
+   - After deciding which balloon to remove, update `prevMax` to the maximum value between the current and previous balloon's removal costs.
+
+5. **Return Result**:
+   - Once the loop finishes, we return the total `time` as the result. This is the minimum cost needed to remove the consecutive same-colored balloons.
+### Code Explanation:
+
+```java
+class Solution {
+    public int minCost(String colors, int[] neededTime) {
+        return solve(colors, neededTime);  // Call the helper method 'solve' to calculate the minimum time.
+    }
+
+    private int solve(String colors, int[] neededTime) {
+        int time = 0;      // 'time' will store the total cost of removing balloons.
+        int prevMax = 0;   // 'prevMax' stores the maximum time needed to remove the previous balloon in a consecutive sequence.
+        int n = colors.length();  // 'n' is the total number of balloons.
+
+        // Loop through all the balloons
+        for (int i = 0; i < n; i++) {
+            // If the current balloon's color is different from the previous one, reset 'prevMax'.
+            if (i > 0 && colors.charAt(i) != colors.charAt(i - 1)) {
+                prevMax = 0;  // No need to compare with previous balloons since they have different colors.
+            }
+
+            int curr = neededTime[i];  // Current time required to remove the current balloon.
+
+            // Add the smaller time (either the previous max or current time) to the total time.
+            // This ensures that we only add the lower time to remove one of the duplicate colored balloons.
+            time += Math.min(prevMax, curr);
+
+            // Update 'prevMax' to store the larger time between the current and previous max.
+            // This way, we ensure that we are keeping the balloon with the maximum removal cost.
+            prevMax = Math.max(curr, prevMax);
+        }
+
+        return time;  // Return the total cost of removing the balloons.
+    }
+}
+```
+
+## 6. [Earliest Possible Day of Full Bloom](https://leetcode.com/problems/earliest-possible-day-of-full-bloom/)
+### Intuition:
+To minimize the overall time required for all plants to reach full bloom, we should prioritize planting flowers that have longer grow times. By doing so, the plants with the longest grow times start growing earlier, reducing the overall time to bloom all plants. The approach involves sorting the plants based on their `growTime` in descending order and then calculating the bloom time for each plant.
+
+### Step-by-Step Explanation:
+1. **Initial Setup**:
+   - We create a list of pairs that store each plant's `plantTime` and `growTime`.
+   - The idea is to first sort the plants based on their `growTime` in descending order, so that the plants which take the longest to grow are planted as early as possible.
+
+2. **Sorting**:
+   - Using `Collections.sort`, we sort the list by `growTime` in descending order.
+   - By planting flowers with longer `growTime` first, we reduce the waiting time for the final bloom.
+
+3. **Tracking Planting and Bloom Time**:
+   - We maintain two variables:
+     - `prevPlantDays` to accumulate the total time spent planting flowers.
+     - `maxBloomDays` to track the earliest full bloom time of all flowers.
+   
+4. **Loop Through Plants**:
+   - For each plant in the sorted list, we update the `prevPlantDays` by adding the current plant’s `plantTime`.
+   - We then calculate the bloom time of the current plant by adding its `growTime` to `prevPlantDays`.
+
+5. **Updating Maximum Bloom Days**:
+   - We update `maxBloomDays` with the maximum bloom time encountered so far.
+   - This ensures that we capture the latest bloom time, which represents the earliest day on which all plants are fully bloomed.
+
+6. **Return Result**:
+   - After processing all plants, `maxBloomDays` will contain the earliest full bloom time for all plants.
+
+This approach ensures that the flowers with the longest grow time are given priority, reducing the overall time to achieve full bloom for all flowers.
+### Code Explanation:
+
+```java
+class Solution {
+    public int earliestFullBloom(int[] plantTime, int[] growTime) {
+        return solve(plantTime, growTime);  // Call the helper method 'solve' to calculate the earliest full bloom time.
+    }
+
+    private int solve(int[] plantTime, int[] growTime) {
+        List<Pair> list = new ArrayList<>();  // List to store each plant's plantTime and growTime as a Pair.
+        int n = plantTime.length;
+
+        // Create a list of Pairs (plantTime, growTime) for each plant.
+        for (int i = 0; i < n; i++) {
+            list.add(new Pair(plantTime[i], growTime[i]));
+        }
+
+        // Sort the list by growTime in descending order, so plants with longer grow times are planted first.
+        Collections.sort(list, (a, b) -> b.growTime - a.growTime);
+
+        int maxBloomDays = 0;  // This will store the maximum bloom time (earliest full bloom day).
+        int prevPlantDays = 0; // This will accumulate the total planting time as we plant each flower.
+
+        // Loop through the sorted list of pairs (plantTime, growTime)
+        for (int i = 0; i < n; i++) {
+            Pair curr = list.get(i);
+            int currPlantTime = curr.plantTime;  // Time required to plant the current flower.
+            int currGrowTime = curr.growTime;    // Time required for the current flower to fully grow.
+
+            // Add the current plant's planting time to the total planting days.
+            prevPlantDays += currPlantTime;
+
+            // Calculate when the current plant will fully bloom.
+            int currPlantBloomTime = prevPlantDays + currGrowTime;
+
+            // Update the maximum bloom days if the current bloom time exceeds the previous maximum.
+            maxBloomDays = Math.max(currPlantBloomTime, maxBloomDays);
+        }
+
+        return maxBloomDays;  // Return the earliest possible full bloom time.
+    }
+
+    // Helper class to store plantTime and growTime as a pair.
+    class Pair {
+        int plantTime;
+        int growTime;
+        Pair(int p, int g) {
+            plantTime = p;
+            growTime = g;
+        }
+    }
+}
+```
+
