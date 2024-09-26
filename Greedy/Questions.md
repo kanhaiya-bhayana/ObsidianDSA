@@ -327,3 +327,92 @@ class Solution {
 }
 ```
 
+
+## 7. [Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
+
+###### Steps and Explanation:
+1. **`longestPalindrome(String[] words)`**: This is the main method that invokes the `solve` method to compute the longest possible palindrome using the given array of words.   
+2. **`solve(String[] words)`**: This method performs the core logic:
+   - A `HashMap` is used to store the frequency of each word.
+   - The loop goes through each word in the array. For each word, it checks:
+     - If the word is not a palindrome (its reverse is different from the word), it checks if both the word and its reverse are present and uses them to form part of the palindrome.
+     - If the word is a palindrome, it checks if two occurrences can be used as pairs, or, if only one is left, it uses it as the center of the palindrome (if no center has been used yet).   
+3. **`reverseString(String s)`**: This helper method simply reverses the given string. It’s used to check if a word has a corresponding reverse in the array.
+
+```java
+class Solution {
+    // Main function that calls the solve method to find the longest palindrome
+    public int longestPalindrome(String[] words) {
+        return solve(words);
+    }
+
+    // Helper function to calculate the longest palindrome that can be formed
+    private int solve(String[] words) {
+        // Create a HashMap to store the count of each word in the array
+        Map<String, Integer> map = new HashMap<>();
+        
+        // Populate the map with the frequency of each word
+        for (String s : words) {
+            // If the word already exists in the map, increment its count, else set it to 1
+            map.put(s, map.getOrDefault(s, 0) + 1);
+        }
+
+        // Variable to store the total length of the palindrome
+        int res = 0;
+        // Boolean flag to check if a word with two equal letters (like "aa") can be used as the center of the palindrome
+        boolean centerUsed = false;
+
+        // Loop through each word in the original array
+        for (String word : words) {
+            // Get the reversed version of the current word
+            String rev = reverseString(word);
+
+            // If the word is not a palindrome (the reverse is different from the word itself)
+            if (!rev.equals(word)) {
+                // Check if both the word and its reverse are present in the map
+                if (map.get(word) > 0 && map.getOrDefault(rev, 0) > 0) {
+                    // Use one occurrence of both the word and its reverse to form a part of the palindrome
+                    map.put(word, map.get(word) - 1);
+                    map.put(rev, map.get(rev) - 1);
+                    // Since each pair contributes 4 characters (2 from the word and 2 from the reverse)
+                    res += 4;
+                }
+            } 
+            // If the word is a palindrome itself (like "aa", "bb")
+            else {
+                // If there are at least two occurrences of the palindrome word
+                if (map.get(word) >= 2) {
+                    // Use two occurrences of the palindrome word to form a part of the palindrome
+                    map.put(word, map.get(word) - 2);
+                    // Since two identical words contribute 4 characters
+                    res += 4;
+                }
+                // If there is only one occurrence of the palindrome word and no center has been used yet
+                else if (map.get(word) == 1 && !centerUsed) {
+                    // Use this word as the center of the palindrome
+                    map.put(word, map.get(word) - 1);
+                    // This contributes 2 characters (since it's the center, it's counted once)
+                    res += 2;
+                    // Mark the center as used
+                    centerUsed = true;
+                }
+            }
+        }
+        // Return the total length of the longest palindrome that can be formed
+        return res;
+    }
+
+    // Helper function to reverse a string
+    private String reverseString(String s) {
+        // Use a StringBuilder to efficiently reverse the string
+        StringBuilder res = new StringBuilder();
+        // Iterate over the characters in reverse order and append them to the result
+        for (int i = s.length() - 1; i >= 0; i--) {
+            res.append(s.charAt(i));
+        }
+        // Convert the StringBuilder to a string and return it
+        return res.toString();
+    }
+}
+```
+
