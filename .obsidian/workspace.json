@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cheatsheet/Conversions.md",
+                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
                 "mode": "source",
                 "source": false
               }
@@ -97,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cheatsheet/Conversions.md",
+                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cheatsheet/Conversions.md",
+                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cheatsheet/Conversions.md"
+                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md"
               }
             }
           }
@@ -161,14 +161,15 @@
   },
   "active": "85f68a6a34cee193",
   "lastOpenFiles": [
+    "Azure/Durable Functions/Cloud Course/3. Azure Durable Functions.md",
+    "Azure/Durable Functions/Cloud Course/4. Need For Durable Functions.md",
+    "Azure/Durable Functions/Cloud Course/1. Section.md",
+    "Cheatsheet/Conversions.md",
     "Cheatsheet/Graph Java.md",
     "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
     "Greedy/Questions.md",
     "Azure/Durable Functions/Cloud Course/6. Durable Function Types.md",
-    "Azure/Durable Functions/Cloud Course/3. Azure Durable Functions.md",
     "Azure/Durable Functions/Cloud Course/7. Create First Durable Function.md",
-    "Azure/Durable Functions/Cloud Course/1. Section.md",
-    "Azure/Durable Functions/Cloud Course/4. Need For Durable Functions.md",
     "Azure/Durable Functions/Cloud Course/2. Azure Functions.md",
     "Meet.md",
     "Azure/Durable Functions/Resources.md",
@@ -184,7 +185,6 @@
     "Linked List/Linked List Striver/DLL1.png",
     "Linked List/Linked List Striver/Array to LL.md",
     "Linked List/Trees/Questions.md",
-    "Cheatsheet/Conversions.md",
     "Kanhaiya",
     "Unisofttechno",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
