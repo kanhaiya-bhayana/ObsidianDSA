@@ -416,3 +416,179 @@ class Solution {
 }
 ```
 
+
+## 8. [Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/)
+
+###### Step-by-step explanation:
+1. The `maximum69Number` method calls the `solve` helper method to find the solution.
+2. The `solve` method initializes variables: `placeValue` to track the position of each digit and `placeValueSix` to store the place value of the last '6' found.
+3. It iterates over the digits of the number (`temp % 10` gives the last digit), and if the digit is '6', it updates `placeValueSix` with the current place value.
+4. After the loop, if no '6' is found (i.e., `placeValueSix` remains -1), the method returns the original number.
+5. If a '6' is found, the method adds `3 * (10^placeValueSix)` to change the first '6' to '9' at that place value and returns the modified number.
+
+```java
+class Solution {
+    // The main method to find the maximum possible number by changing at most one '6' to '9'.
+    public int maximum69Number(int num) {
+        return solve(num);  // Call the helper function to solve the problem.
+    }
+
+    // Helper function to process the given number and replace the first '6' encountered with '9'.
+    private int solve(int num) {
+        int placeValue = 0;           // Tracks the current place value (ones, tens, hundreds, etc.)
+        int placeValueSix = -1;        // Stores the place value of the last '6' encountered, initialized to -1 to indicate no '6' found yet.
+        int temp = num;                // A temporary variable used to traverse through the digits of the number.
+
+        // Loop through the digits of the number by continuously dividing by 10.
+        while(temp != 0){
+            int rem = temp % 10;       // Get the last digit of the current number.
+            if (rem == 6){
+                // If the current digit is '6', store its place value.
+                placeValueSix = placeValue;
+            }
+            temp = temp / 10;          // Remove the last digit by integer division.
+            placeValue++;              // Move to the next place value.
+        }
+
+        // If no '6' was found, return the original number.
+        if (placeValueSix == -1){
+            return num;
+        }
+
+        // Otherwise, change the '6' at the found place value to '9'.
+        // To do this, add 3 * (10^placeValueSix) to the number (since 9 - 6 = 3).
+        return num + 3 * (int)Math.pow(10, placeValueSix);
+    }
+}
+```
+
+## 9. [Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/)
+
+###### Explanation of the Code:
+
+1. **Input and Initialization**: 
+   - The method takes three inputs: an array `capacity[]` representing the maximum capacity of each bag, an array `rocks[]` representing the current number of rocks in each bag, and an integer `additionalRocks` representing the total number of additional rocks we can distribute.
+   
+2. **Calculate Rocks Needed**:
+   - For each bag, we compute how many more rocks are needed to fill it by subtracting the number of current rocks from the bag’s capacity (`requireRock[i] = capacity[i] - rocks[i]`).
+   
+3. **Sorting the Required Rocks**:
+   - We sort the `requireRock[]` array in ascending order. This allows us to prioritize bags that require fewer rocks to be filled first, maximizing the number of completely filled bags.
+
+4. **Filling Bags**:
+   - We iterate through the sorted array of required rocks. If the number of additional rocks is enough to fill a bag, we fill it and decrease the number of available additional rocks. We continue this process until we run out of rocks or can no longer fill any more bags.
+
+5. **Return the Result**:
+   - The method returns the total number of bags that were completely filled.
+
+```java
+class Solution {
+    public int maximumBags(int[] capacity, int[] rocks, int additionalRocks) {
+        // Step 1: Determine the number of bags
+        int n = rocks.length;
+        
+        // Step 2: Create an array to store the required number of rocks to fill each bag
+        int[] requireRock = new int[n];
+        
+        // Step 3: Calculate the number of rocks required to fill each bag
+        // For each bag, required rocks = capacity of the bag - current rocks in the bag
+        for(int i = 0; i < n; i++) {
+            requireRock[i] = capacity[i] - rocks[i];
+        }
+        
+        // Step 4: Sort the requireRock array in ascending order
+        // This allows us to prioritize filling bags that need fewer rocks first
+        Arrays.sort(requireRock);
+        
+        // Step 5: Initialize a counter to track the number of completely filled bags
+        int count = 0;
+        
+        // Step 6: Iterate through the sorted array of required rocks
+        // Try to fill as many bags as possible with the available additional rocks
+        for(int i = 0; i < n; i++) {
+            // Step 7: Check if we have enough additional rocks to fill the current bag
+            if(additionalRocks >= requireRock[i]) {
+                // Step 8: Deduct the required rocks from the additional rocks
+                additionalRocks -= requireRock[i];
+                
+                // Step 9: Increment the count of completely filled bags
+                count++;
+            } else {
+                // Step 10: If we can't fill the current bag, stop the process
+                break;
+            }
+        }
+        
+        // Step 11: Return the number of completely filled bags
+        return count;
+    }
+}
+```
+
+## 10. [Minimum Rounds to Complete All Tasks](https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/)
+
+###### Explanation:
+1. **Problem Context**:
+   - You are given a list of tasks, where each task has a difficulty level. You can only complete tasks in groups of 2 or 3 in each round.
+   - The goal is to find the minimum number of rounds required to complete all tasks. If it's impossible (e.g., when a task appears only once, as it can't form a valid group), you return `-1`.
+
+2. **Logic Breakdown**:
+   - **Step 1**: First, count how many times each task difficulty appears using a `HashMap`. The key is the difficulty level, and the value is the count of tasks with that difficulty.
+   - **Step 2**: For each task frequency:
+     - If the count is `1`, return `-1` immediately because you can't form a group with just one task.
+     - If the count is divisible by 3, you can complete those tasks using only groups of 3 rounds.
+     - Otherwise, you'll need one additional round to handle the remainder after grouping by 3.
+   - **Step 3**: Return the total number of rounds calculated.
+
+This approach ensures the minimum number of rounds while handling edge cases like when a task appears only once.
+
+
+```java
+class Solution {
+    // Public method that serves as the entry point of the solution.
+    // It calls the helper method 'solve' to compute the minimum number of rounds.
+    public int minimumRounds(int[] tasks) {
+        return solve(tasks);
+    }
+
+    // Private helper method that computes the minimum number of rounds required to complete all tasks.
+    private int solve(int[] tasks) {
+        // Create a HashMap to store the frequency of each unique task.
+        // The key is the task difficulty level, and the value is the count of how many times that task appears.
+        Map<Integer, Integer> map = new HashMap<>();
+
+        // Loop through the array of tasks to populate the frequency map.
+        for (int n : tasks) {
+            // For each task, increase its count in the map by 1.
+            // If the task does not exist in the map yet, it is added with a default count of 1.
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        // Variable to keep track of the minimum number of rounds required.
+        int cnt = 0;
+
+        // Loop through the frequency values in the map (i.e., how many times each task appears).
+        for (int n : map.values()) {
+            // If the count of any task is 1, it is impossible to complete the task,
+            // because you need at least two tasks to form a valid round (either 2 or 3 tasks per round).
+            if (n == 1) {
+                return -1; // Return -1 if a task cannot be completed.
+            }
+
+            // If the count is divisible by 3, we can divide the tasks into groups of 3 rounds.
+            if (n % 3 == 0) {
+                cnt += n / 3; // Add the number of groups of 3.
+            } 
+            // If the count is not divisible by 3, we form as many groups of 3 as possible,
+            // then handle the remainder (which will be either 1 or 2) by adding an extra round.
+            else {
+                cnt += n / 3 + 1; // Add one more round to handle the remainder.
+            }
+        }
+
+        // Return the total count of rounds needed.
+        return cnt;
+    }
+}
+```
+

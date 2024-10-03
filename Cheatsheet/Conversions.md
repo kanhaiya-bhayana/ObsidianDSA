@@ -30,3 +30,18 @@ List<Integer> list = new ArrayList<>();
 
 int[] arr = list.stream().mapToInt(Integer::intValue).toArray();
 ```
+
+
+##### int to String
+
+```java
+int n = 89675;
+StringBuilder s = new StringBuilder(String.valueOf(n));
+```
+
+##### String to int
+
+```java
+String s = "87";
+int n = Integer.parseInt(n);
+```
