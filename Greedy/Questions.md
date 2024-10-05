@@ -592,3 +592,114 @@ class Solution {
 }
 ```
 
+## 11. [Maximum Ice Cream Bars](https://leetcode.com/problems/maximum-ice-cream-bars/)
+
+###### Explanation of Steps:
+1. **Sorting the costs**: Sorting ensures we can start by buying the cheapest ice creams first, maximizing the total number we can afford.
+2. **Loop through sorted costs**: For each ice cream cost, we check if we still have enough coins. If not, we stop, as we can't afford any more ice creams.
+3. **Buying the ice creams**: We subtract the cost from the available coins and increase the count of ice creams bought.
+4. **Return the result**: After the loop, the method returns how many ice creams were bought.
+
+This ensures an efficient solution, leveraging a greedy approach to maximize the number of ice creams bought.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public int maxIceCream(int[] costs, int coins) {
+        // Step 1: Sort the array of ice cream costs in ascending order.
+        // This helps in buying the cheaper ice creams first to maximize the count.
+        Arrays.sort(costs);
+        
+        int cnt = 0; // Counter to keep track of how many ice creams can be bought.
+        
+        // Step 2: Loop through the sorted costs array and try to buy as many ice creams as possible.
+        for (int cost : costs) {
+            // Step 3: If the current cost is greater than the remaining coins, exit the loop.
+            // No more ice creams can be bought.
+            if (cost > coins) {
+                break;
+            }
+            // Step 4: Subtract the cost of the current ice cream from the available coins.
+            coins -= cost;
+            // Step 5: Increment the count of ice creams bought.
+            cnt++;
+        }
+        
+        // Step 6: Return the total number of ice creams bought.
+        return cnt;
+    }
+}
+```
+
+## 12. [Gas Station](https://leetcode.com/problems/gas-station/)
+
+###### Explanation:
+1. **Method Signature:**
+   - `canCompleteCircuit(int[] gas, int[] cost)`: This method aims to find the starting gas station index from which you can complete the circuit around all gas stations or return `-1` if it's not possible.
+
+2. **Check Feasibility:**
+   - `int allGas = sumAll(gas)` and `int allCost = sumAll(cost)` calculate the total gas available and total cost to travel between all stations.
+   - If the total gas is less than the total cost, it’s impossible to complete the circuit, and the method immediately returns `-1`.
+
+3. **Tracking Variables:**
+   - `n = gas.length`: The number of gas stations.
+   - `total`: A variable used to track the running balance of gas. This is adjusted by adding the gas gained and subtracting the cost to travel to the next station.
+   - `res`: Tracks the starting index of the station. It gets updated whenever we encounter a negative balance in the `total`.
+
+4. **Iterating Through Gas Stations:**
+   - For each gas station, the balance `total` is updated by calculating `gas[i] - cost[i]`.
+   - If `total` becomes negative, it means that starting from the previous `res` wouldn't allow completing the circuit, so the starting station (`res`) is updated to the next station (`i + 1`), and `total` is reset to zero.
+
+5. **Helper Method:**
+   - `sumAll(int[] arr)` calculates the total of all elements in an array. This method is used to sum the gas and cost arrays at the beginning of the algorithm.
+
+By the end of the loop, the variable `res` will point to the gas station from which you can complete the circuit, if possible.
+
+```java
+class Solution {
+    
+    // Method to determine the starting gas station from which we can complete the circuit
+    public int canCompleteCircuit(int[] gas, int[] cost) {
+        // Calculate the total amount of gas and cost across all stations
+        int allGas = sumAll(gas);  // Total gas available at all stations
+        int allCost = sumAll(cost);  // Total cost to travel between all stations
+        
+        // If total gas is less than total cost, it's impossible to complete the circuit
+        if (allGas < allCost){
+            return -1;  // Return -1 indicating no valid starting point
+        }
+
+        // Initialize variables for tracking the current total and the starting station
+        int n = gas.length;  // Number of gas stations
+        int total = 0;  // Tracks the running gas balance while iterating through stations
+        int res = 0;  // The index of the gas station to start from
+        
+        // Iterate over each gas station
+        for (int i = 0; i < n; i++) {
+            // Update the current gas balance: gas gained - cost to move to the next station
+            total += gas[i] - cost[i];
+            
+            // If at any point the balance becomes negative, reset and try starting from the next station
+            if (total < 0) {
+                res = i + 1;  // Update the starting station to the next one
+                total = 0;  // Reset the total balance to zero
+            }
+        }
+        
+        // Return the index of the starting station from which the circuit can be completed
+        return res;
+    }
+
+    // Helper method to calculate the sum of all elements in an array
+    private int sumAll(int[] arr) {
+        int sum = 0;  // Initialize sum to zero
+        // Loop through each element and add it to the sum
+        for (int n : arr) {
+            sum += n;
+        }
+        return sum;  // Return the total sum
+    }
+}
+```
+
