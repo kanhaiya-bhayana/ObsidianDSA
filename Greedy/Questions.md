@@ -703,3 +703,56 @@ class Solution {
 }
 ```
 
+## 13. [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/)
+
+###### Explanation:
+
+1. **Initialization**:
+   - The `arr` array keeps track of the last seen index of each character. Since there are 26 lowercase English letters, the size of the array is 26. We initialize all elements to `-1` because initially, none of the characters have been seen.
+   - `count` is used to keep track of how many partitions are made.
+   - `currStart` represents the start index of the current substring (partition).
+
+2. **Iterating through the string**:
+   - For each character in the string, we check whether that character has already appeared in the current partition by comparing its last seen index (`arr[s.charAt(i) - 'a']`) with `currStart`.
+   - If the last occurrence is within the current partition (`>= currStart`), a new partition is started, the count is incremented, and `currStart` is updated to the current position (`i`).
+
+3. **Update the last occurrence**:
+   - After checking, we update the last occurrence of the current character in the `arr` array to the current index `i`.
+
+4. **Final partition**:
+   - Since the loop doesn't count the last partition, we return `count + 1` to include it.
+
+This approach ensures that no character repeats within the same partition, leading to an optimal number of partitions.
+
+```java
+class Solution {
+    public int partitionString(String s) {
+        // Initialize an array to keep track of the last occurrence index of each character in the string
+        // Since there are 26 lowercase English letters, we use an array of size 26
+        // We fill the array with -1 initially to indicate that no character has been encountered yet
+        int[] arr = new int[26];
+        Arrays.fill(arr, -1);  // Fill the array with -1 to mark unvisited characters
+
+        int count = 0;         // Variable to count the number of partitions
+        int currStart = 0;     // Variable to keep track of the start index of the current partition
+
+        // Iterate through the string character by character
+        for (int i = 0; i < s.length(); i++) {
+            // If the character at index 'i' has appeared after the current partition started,
+            // we need to start a new partition
+            if (arr[s.charAt(i) - 'a'] >= currStart) {
+                count++;        // Increment the partition count
+                currStart = i;  // Update the current start index to the new partition's starting point
+            }
+
+            // Update the last seen index of the current character
+            arr[s.charAt(i) - 'a'] = i;
+        }
+
+        // Return the total number of partitions
+        // We add 1 to 'count' since the last partition is not included in the loop count
+        return count + 1;
+    }
+}
+```
+
