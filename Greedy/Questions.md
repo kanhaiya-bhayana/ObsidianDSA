@@ -756,3 +756,889 @@ class Solution {
 }
 ```
 
+## 14. [Dota2 Senate](https://leetcode.com/problems/dota2-senate/)
+
+## 15. [Minimum Deletions to Make Character Frequencies Unique](https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/)
+
+###### 
+Breakdown:
+1. **Frequency Calculation**: The first loop calculates the frequency of each character in the input string.
+2. **Sorting**: Sorting the frequency array helps process the characters with higher frequencies first and ensures the unique frequency requirement is easier to enforce.
+3. **Adjusting Frequencies**: The second loop ensures that each frequency is strictly less than the next frequency by reducing it if needed, counting the number of deletions required.
+4. **Result Calculation**: The `result` variable keeps track of how many deletions are required in total to make all character frequencies unique.
+
+```java
+class Solution {
+    public int minDeletions(String s) {
+        // Step 1: Initialize an array to store the frequency of each character in the string.
+        // The size is 26 to account for each lowercase English letter ('a' to 'z').
+        int[] freq = new int[26];
+
+        // Step 2: Iterate through each character in the string and update the frequency array.
+        // For each character, we calculate its index by subtracting 'a' to get a zero-based index.
+        for (char ch : s.toCharArray()) {
+            freq[ch - 'a']++;
+        }
+
+        // Step 3: Sort the frequency array in ascending order to make it easier to manage
+        // characters with higher frequencies and ensure that we can process larger frequencies first.
+        Arrays.sort(freq);
+
+        // Step 4: Initialize a variable to keep track of the minimum number of deletions needed.
+        int result = 0;
+
+        // Step 5: Loop through the sorted frequency array starting from the second highest value (index 24).
+        // We go backward and compare each frequency with the one after it (to ensure all frequencies are unique).
+        for (int i = 24; i >= 0 && freq[i] > 0; i--) {
+            // Step 6: If the current frequency is greater than or equal to the next frequency,
+            // we need to reduce the current frequency to ensure it's smaller than the next one.
+            if (freq[i] >= freq[i + 1]) {
+                // Store the current frequency before modification for calculation.
+                int prev = freq[i];
+                // Reduce the current frequency to be one less than the next frequency or 0 if needed.
+                freq[i] = Math.max(0, freq[i + 1] - 1);
+                // Increment the result by the difference, which represents the number of deletions made.
+                result += prev - freq[i];
+            }
+        }
+
+        // Step 7: Return the total number of deletions required to ensure all character frequencies are unique.
+        return result;
+    }
+}
+```
+
+## 16. [Candy](https://leetcode.com/problems/candy/)
+###### Breakdown:
+1. **Initialization**: 
+   - The number of children is determined by the length of the `ratings` array.
+   - An array `count` is initialized to store the number of candies for each child, and each child is given at least one candy initially.
+
+2. **First Pass (Left to Right)**:
+   - The code checks from left to right to ensure that if a child has a higher rating than the previous child, they should receive more candies. 
+   - If the current child has a higher rating than the previous child, their candy count is increased by 1 more than the previous child.
+
+3. **Second Pass (Right to Left)**:
+   - The code checks from right to left to ensure that if a child has a higher rating than the next child, they should receive more candies. 
+   - In this step, the result from the first pass is considered to avoid decreasing the number of candies already assigned in the left-to-right pass.
+
+4. **Summing the Results**:
+   - After adjusting the candies in both passes, the total number of candies is calculated by summing the values in the `count` array.
+
+5. **Final Result**:
+   - The total number of candies required is returned as the result.
+
+```java
+class Solution {
+    public int candy(int[] ratings) {
+        // Step 1: Get the number of children.
+        int n = ratings.length;
+
+        // Step 2: Initialize an array to store the number of candies each child gets.
+        // Initially, each child gets 1 candy.
+        int[] count = new int[n];
+        Arrays.fill(count, 1);
+
+        // Step 3: Traverse the ratings from left to right. If the current child's rating
+        // is higher than the previous child's rating, give them one more candy than the previous child.
+        for (int i = 1; i < n; i++) {
+            if (ratings[i] > ratings[i - 1]) {
+                count[i] = Math.max(count[i], count[i - 1] + 1);
+            }
+        }
+
+        // Step 4: Traverse the ratings from right to left. If the current child's rating
+        // is higher than the next child's rating, give them one more candy than the next child.
+        // However, ensure that we don't reduce the candy count from the first traversal.
+        for (int i = n - 2; i >= 0; i--) {
+            if (ratings[i] > ratings[i + 1]) {
+                count[i] = Math.max(count[i], count[i + 1] + 1);
+            }
+        }
+
+        // Step 5: Calculate the total number of candies by summing up the values in the count array.
+        int res = 0;
+        for (int c : count) {
+            res += c;
+        }
+
+        // Step 6: Return the total number of candies needed.
+        return res;
+    }
+}
+```
+
+## 17. [Remove Colored Pieces if Both Neighbors are the Same Color](https://leetcode.com/problems/remove-colored-pieces-if-both-neighbors-are-the-same-color/)
+
+###### Explanation:
+1. **Initialization of Counters**: Two variables `a` and `b` are used to count how many sets of 3 consecutive 'A's and 'B's appear, respectively.
+   
+2. **Two-pointer Traversal**: The code uses two pointers `i` and `j`, where `j` is always 2 positions ahead of `i`, allowing the code to examine 3 consecutive characters in each loop iteration.
+
+3. **Consecutive Check**: For every set of 3 consecutive characters (starting at `i` and ending at `j`), the code checks if all the characters are the same. If so, it increments the respective counter for 'A' or 'B'.
+
+4. **Determining the Winner**: After iterating through the string, the code compares the counts of 'A' and 'B'. If `a` (the number of consecutive 'A's) is greater than `b`, player A is the winner. Otherwise, player B is the winner or the result is a tie.
+
+```java
+class Solution {
+    public boolean winnerOfGame(String c) {
+        // Initialize counters for 'A' and 'B' consecutive moves
+        int a = 0; // Tracks consecutive 'A's
+        int b = 0; // Tracks consecutive 'B's
+
+        // Store the length of the input string
+        int n = c.length();
+        
+        // Initialize two pointers, i for current char, j for the char two positions ahead
+        int i = 0;
+        int j = i + 2; // j is always 2 characters ahead of i to check 3 consecutive chars
+
+        // Iterate through the string while ensuring j is within bounds
+        while (j < n) {
+            // Get the current char and the next one (i+1) in the string
+            char first = c.charAt(i);
+            char second = c.charAt(i + 1);
+
+            // Check if the three consecutive characters are the same
+            if (first == second && first == c.charAt(j)) {
+                // If all 3 are 'A', increment 'a' counter
+                if (first == 'A') {
+                    a++;
+                // If all 3 are 'B', increment 'b' counter
+                } else if (first == 'B') {
+                    b++;
+                }
+            }
+            // Move both pointers one step ahead to check the next set of 3 characters
+            i++;
+            j++;
+        }
+
+        // Return true if player A has more moves than player B, otherwise return false
+        return a > b;
+    }
+}
+```
+
+## 18. [Maximum Score of a Good Subarray](https://leetcode.com/problems/maximum-score-of-a-good-subarray/)
+
+###### Explanation:
+1. **Initial Setup:** The problem requires finding the maximum score of a subarray that includes the element at index `k`. The score of a subarray is defined as the minimum value of the subarray multiplied by its length.
+   
+2. **Two Pointers:** The solution uses two pointers, `i` and `j`, which start at `k` and are expanded outward (left or right) to cover larger subarrays.
+
+3. **Minimum Value Maintenance:** As the pointers expand, the current minimum value (`currMin`) in the subarray is updated by taking the minimum value between the previous `currMin` and the newly added element (either from the left or right).
+
+4. **Score Calculation:** For each expanded subarray, the score is calculated as `currMin * (j - i + 1)` and the result is updated with the maximum score found so far.
+
+5. **Termination Condition:** The expansion continues until both pointers can no longer move (i.e., `i` cannot move left and `j` cannot move right).
+
+```java
+class Solution {
+    public int maximumScore(int[] nums, int k) {
+        
+        // Step 1: Initialize the length of the array.
+        int n = nums.length;
+
+        // Step 2: Set up two pointers 'i' and 'j' to start from the index 'k'. 
+        // These pointers will expand left and right to explore subarrays around 'k'.
+        int i = k;
+        int j = k;
+
+        // Step 3: Initialize 'currMin' to the value at index 'k'.
+        // This keeps track of the minimum value in the current subarray.
+        int currMin = nums[k];
+
+        // Step 4: Initialize the result with the value at 'k', which is the initial subarray of size 1.
+        int result = nums[k];
+
+        // Step 5: Start expanding the subarray by moving the pointers 'i' and 'j' outward.
+        // We keep expanding as long as 'i' can move left or 'j' can move right.
+        while (i > 0 || j < n - 1) {
+            
+            // Step 6: Calculate the potential values from the left and right to decide the direction of expansion.
+            // If 'i' can move left, get 'leftValue', otherwise set it to 0.
+            int leftValue = (i > 0) ? nums[i - 1] : 0;
+
+            // If 'j' can move right, get 'rightValue', otherwise set it to 0.
+            int rightValue = (j < n - 1) ? nums[j + 1] : 0;
+
+            // Step 7: Compare the left and right values. Move the pointer that corresponds to the larger value.
+            // If the right value is greater, expand right by incrementing 'j'.
+            if (leftValue < rightValue) {
+                j++;
+                
+                // Update 'currMin' to the minimum value in the current expanded subarray.
+                currMin = Math.min(currMin, nums[j]);
+            }
+            // Otherwise, expand left by decrementing 'i'.
+            else {
+                i--;
+
+                // Update 'currMin' to the minimum value in the current expanded subarray.
+                currMin = Math.min(currMin, nums[i]);
+            }
+
+            // Step 8: Calculate the score for the current subarray (from index 'i' to 'j').
+            // The score is the minimum value in the subarray multiplied by its length (j - i + 1).
+            result = Math.max(result, currMin * (j - i + 1));
+        }
+
+        // Step 9: Return the maximum score obtained.
+        return result;
+    }
+}
+```
+
+## 19. [Eliminate Maximum Number of Monsters](https://leetcode.com/problems/eliminate-maximum-number-of-monsters/)
+
+###### Explanation:
+1. **Initialization**:
+   - An array `time[]` is created to store the time required for each monster to reach the city.
+   - `count` is initialized to `1` because the first monster can always be eliminated at time 0.
+   
+2. **Calculate time for each monster**:
+   - The loop iterates over each monster to compute the time it takes to reach the city (`dist[i] / speed[i]`), using `Math.ceil` to handle fractional times.
+
+3. **Sort the arrival times**:
+   - After calculating the arrival times, the array is sorted so that we can eliminate the monsters in order of when they arrive.
+
+4. **Loop through the monsters**:
+   - The second loop goes through the sorted `time[]` array. 
+   - If at any point, a monster reaches the city before the current time (`time[i] - timePassed <= 0`), we return the current `count` as we can no longer eliminate it in time.
+   - Otherwise, the monster is eliminated, and we increment both the `count` of eliminated monsters and the `timePassed`.
+
+5. **Return the result**:
+   - If all monsters are eliminated successfully before any reach the city, the total `count` is returned.
+
+```java
+class Solution {
+    public int eliminateMaximum(int[] dist, int[] speed) {
+        // Create an array 'time' to store the time taken for each monster to reach the city
+        int[] time = new int[dist.length];
+
+        // Get the number of monsters
+        int n = dist.length;
+        
+        // Initialize count to 1 because the first monster is always eliminated at time 0
+        int count = 1;
+
+        // Calculate the time each monster takes to reach the city using dist[i] / speed[i]
+        // We use Math.ceil to round up to the nearest integer since even partial progress counts
+        for (int i = 0; i < n; i++) {
+            time[i] = (int) Math.ceil((double) dist[i] / speed[i]);
+        }
+
+        // Sort the time array in ascending order
+        // This allows us to deal with the monsters in the order they arrive at the city
+        Arrays.sort(time);
+
+        // Variable to keep track of how much time has passed (starts at 1 as the first action happens at time 1)
+        int timePassed = 1;
+
+        // Loop through the remaining monsters (starting from the second one)
+        for (int i = 1; i < n; i++) {
+            // If the current monster arrives before or at the same time as the time passed, return the count
+            // This means the monster arrives before you can eliminate it
+            if (time[i] - timePassed <= 0) {
+                return count;
+            }
+
+            // Increment count for the number of monsters successfully eliminated
+            count++;
+
+            // Increment the time passed since each elimination takes 1 unit of time
+            timePassed += 1;
+        }
+
+        // Return the total number of monsters eliminated if all were handled before reaching the city
+        return count;
+    }
+}
+```
+
+## 20. [Maximum Element After Decreasing and Rearranging](https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/)
+
+###### Explanation Steps:
+1. **Sorting the Array**: Sorting ensures that all elements are processed in ascending order, which makes it easier to achieve the requirement that values are consecutive from `1` upwards.
+  
+2. **Initializing `ans` to 1**: We start `ans` at 1, as this is the minimum value we aim to reach after arranging the elements to maintain the order constraint.
+
+3. **Looping Through the Array**:
+   - Starting from the second element (`i = 1`), check if the current element `arr[i]` can support incrementing `ans` to maintain consecutive values.
+   - If `arr[i]` is greater than or equal to `ans + 1`, increment `ans`.
+   - If `arr[i]` is less than `ans + 1`, skip incrementing to preserve the consecutive sequence without forcing a decrement.
+
+4. **Returning the Result**: After the loop, `ans` will hold the maximum element achievable while maintaining the consecutive order starting from `1`.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public int maximumElementAfterDecrementingAndRearranging(int[] arr) {
+        // Sort the array in ascending order to ensure we start with the smallest element first
+        Arrays.sort(arr);
+
+        // Initialize `ans` to 1 because the smallest possible value we can get is 1
+        int ans = 1;
+
+        // Traverse the sorted array starting from the second element
+        for (int i = 1; i < arr.length; i++) {
+            // Check if the current element `arr[i]` is at least `ans + 1`
+            // This ensures that we can increment `ans` to maintain consecutive values
+            if (arr[i] >= ans + 1) {
+                ans++; // Increment `ans` to get the next maximum possible value
+            }
+            // If arr[i] < ans + 1, we leave `ans` as is to maintain consecutive order
+        }
+
+        // Return the maximum element we can achieve after rearrangement and decrementing
+        return ans;
+    }
+}
+```
+
+## 21. [Maximum Number of Coins You Can Get](https://leetcode.com/problems/maximum-number-of-coins-you-can-get/)
+
+###### Explanation Steps:
+
+1. **Sorting the Array**: Sorting ensures that the piles are in ascending order, which helps in efficiently selecting piles based on size.
+
+2. **Setting Up Pointers**:
+   - `i` starts from the beginning (smallest pile) and will advance one step each iteration to skip the smallest pile.
+   - `j` starts from the end (largest pile) and will decrement by 2 each iteration to skip both the largest pile and include the middle pile (the optimal pile we can collect).
+   - `m` is initialized to accumulate the sum of coins from the selected middle pile in each turn.
+
+3. **Looping Through the Piles**:
+   - In each iteration, `i++` skips the smallest pile from the current selection of three piles.
+   - `m += piles[j - 1]` adds the middle pile’s coins to the total.
+   - `j -= 2` skips the largest pile and moves to the next set of three piles.
+   
+4. **Returning the Result**: After the loop completes, `m` holds the maximum coins that can be collected based on this strategy.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public int maxCoins(int[] piles) {
+        // Sort the array in ascending order to easily pick the largest values
+        Arrays.sort(piles);
+
+        // Initialize two pointers: `i` starts from the beginning, `j` from the end
+        int i = 0; // This will represent the lowest pile in each turn
+        int j = piles.length - 1; // This will represent the highest pile in each turn
+        int m = 0; // This will hold the sum of coins we collect
+
+        // Continue until `i` meets `j` (we've processed all piles)
+        while (i < j) {
+            i++; // Move `i` one step forward (skip the smallest pile)
+            m += piles[j - 1]; // Add the middle pile (the maximum coins we can pick)
+            j -= 2; // Move `j` two steps back to exclude the current largest and middle piles
+        }
+
+        // Return the total maximum coins collected
+        return m;
+    }
+}
+```
+
+## 22. [Minimum Number of Operations to Make Array Empty](https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/)
+
+###### Explanation Steps:
+
+1. **Initialize Frequency Map**:
+   - Use a `HashMap` to count how often each number appears in the `nums` array. This allows you to quickly determine how many operations are needed for each unique number.
+
+2. **Populate the Frequency Map**:
+   - For each number `n` in `nums`, increment its count in the map using `map.put(n, map.getOrDefault(n, 0) + 1)`, which initializes to 0 if `n` is not already in the map.
+
+3. **Initialize Result Variable**:
+   - `res` is initialized to hold the total minimum operations needed.
+
+4. **Iterate Through the Map Entries**:
+   - For each unique number and its frequency (`ele.getValue()`):
+     - If the frequency is `1`, it's impossible to group it into pairs or triples, so return `-1`.
+     - Otherwise, calculate the minimum number of operations needed by dividing the frequency by `3` and rounding up with `Math.ceil`. This is done to either form groups of 3, or handle leftover pairs.
+
+5. **Return the Result**:
+   - After processing all unique numbers, `res` will contain the minimum number of operations needed to satisfy the grouping requirement.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+class Solution {
+    public int minOperations(int[] nums) {
+        // Create a map to count the frequency of each number in the array
+        Map<Integer, Integer> map = new HashMap<>();
+
+        // Populate the map with counts of each number in nums
+        for (int n : nums) {
+            map.put(n, map.getOrDefault(n, 0) + 1);
+        }
+
+        int res = 0; // This will store the total minimum operations needed
+
+        // Iterate through each unique number and its count in the map
+        for (Map.Entry<Integer, Integer> ele : map.entrySet()) {
+            // If the frequency of a number is 1, it's impossible to form groups of 2 or more
+            // So, return -1 to indicate it's not possible to achieve the target
+            if (ele.getValue() == 1) {
+                return -1;
+            }
+
+            // Calculate the minimum operations to reduce the count of this number to groups of 2 or 3
+            // Math.ceil(ele.getValue() / 3) gives the required groups of 3, or adjusts for leftover count 2
+            res += Math.ceil((double) ele.getValue() / 3.0);
+        }
+
+        // Return the total operations required to make all numbers into groups of 2 or 3
+        return res;
+    }
+}
+```
+
+## 23. [Find Polygon With the Largest Perimeter](https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/)
+
+###### Explanation Steps:
+
+1. **Sorting the Array**:
+   - Sorting the array helps to access the largest elements easily, as larger sides are more likely to form a valid triangle perimeter with neighboring elements.
+
+2. **Initializing Variables**:
+   - `res` is initialized to `-1` to indicate no valid triangle has been found initially.
+   - `total` is initialized to `0` and will store the sum of two largest side lengths as we iterate.
+
+3. **Iterating Through the Array**:
+   - For each element `e` in `nums`, we check if the current `total` can form a valid triangle with `e`. In a valid triangle, the sum of any two sides must be greater than the third side.
+   - If `total > e`, then `res` is updated to `total + e`, representing the perimeter of a valid triangle.
+   - Regardless of validity, `e` is added to `total` to track the sum of sides for potential future checks.
+
+4. **Returning the Result**:
+   - After the loop, `res` contains the largest valid perimeter found. If no valid triangle was formed, `res` remains `-1`.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public long largestPerimeter(int[] nums) {
+        // Sort the array in ascending order to try forming the largest perimeter with the largest elements
+        Arrays.sort(nums);
+
+        long res = -1; // Initialize `res` with -1 to represent no valid perimeter initially
+        long total = 0; // `total` will store the sum of the two largest side lengths as we iterate
+
+        // Iterate through each element in the sorted array
+        for (int e : nums) {
+            // Check if the current value of `total` can form a valid triangle with `e`
+            // For a valid triangle, the sum of two sides must be greater than the third side
+            if (total > e) {
+                res = total + e; // Update `res` with the current perimeter if it’s valid
+            }
+            // Add the current element `e` to `total` to keep track of the largest sides as we iterate
+            total += e;
+        }
+
+        // Return the largest valid perimeter found, or -1 if no valid triangle can be formed
+        return res;
+    }
+}
+```
+
+## 24. [Least Number of Unique Integers after K Removals](https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/)
+###### Explanation Steps:
+
+1. **Building the Frequency Map**:
+   - A `HashMap` is used to store the frequency of each integer in `arr`, with each integer as a key and its count as the value.
+
+2. **Initializing the Priority Queue**:
+   - A `PriorityQueue` (min-heap) is created to store the frequencies in ascending order. This allows easy access to the least frequent elements, which are removed first to minimize the number of unique integers.
+
+3. **Adding Frequencies to the Priority Queue**:
+   - All frequencies from the map are added to the priority queue. This queue will prioritize smaller frequencies, making it efficient to target the least frequent elements first for removal.
+
+4. **Reducing Elements by Frequency**:
+   - The loop removes elements from the queue based on the frequency counts until `k` elements are removed:
+     - `q.poll()` retrieves the smallest frequency element.
+     - If the frequency is greater than `1`, it’s decremented and reinserted, as there are still occurrences left.
+     - `k` is decremented with each removal.
+
+5. **Calculating the Result**:
+   - After the loop, the queue’s size represents the remaining unique integers that couldn’t be removed, so `q.size()` is returned.
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+class Solution {
+
+    public int findLeastNumOfUniqueInts(int[] arr, int k) {
+        // Create a map to store the frequency of each integer in the array
+        Map<Integer, Integer> map = new HashMap<>();
+        int res = 0; // `res` will hold the count of unique integers left after removing `k` elements
+
+        // Populate the frequency map
+        for (int a : arr) {
+            map.put(a, map.getOrDefault(a, 0) + 1);
+        }
+
+        // Priority queue to store frequencies in ascending order (to remove least frequent elements first)
+        Queue<Integer> q = new PriorityQueue<>();
+
+        // Add all frequencies from the map into the priority queue
+        for (Map.Entry<Integer, Integer> mp : map.entrySet()) {
+            int ele = mp.getValue();
+            if (ele >= 1) { // Only consider elements that appear at least once
+                q.offer(ele);
+            }
+        }
+
+        // Remove elements from the queue until `k` elements are removed or the queue is empty
+        while (k != 0 && !q.isEmpty()) {
+            int val = q.poll(); // Poll the least frequent element
+            if (val >= 2) {
+                q.offer(--val); // Decrement its count and reinsert if it's still present
+            }
+            k--; // Decrement `k` with each removal
+        }
+
+        // The remaining size of the queue represents the unique integers left
+        return q.size();
+    }
+}
+```
+
+## 25. [Furthest Building You Can Reach](https://leetcode.com/problems/furthest-building-you-can-reach/)
+###### Explanation Steps:
+
+1. **Initialize a Max-Heap**:
+   - A `PriorityQueue` (`q`) with a custom comparator `(a, b) -> b - a` is used as a max-heap to keep track of the largest jumps made using bricks, allowing us to reclaim the largest brick usage if we need a ladder later.
+
+2. **Loop Through Each Building**:
+   - For each building at index `i`, check if a jump is needed to reach `heights[i + 1]`.
+     - If `heights[i] >= heights[i + 1]`, no jump is needed, so continue to the next building.
+     - If `heights[i + 1]` is higher, calculate `bricksUsed` as the difference in height.
+
+3. **Deduct Bricks and Record Usage**:
+   - Subtract `bricksUsed` from `bricks`.
+   - Add `bricksUsed` to the max-heap `q` to track it in case we need to reclaim it with a ladder.
+
+4. **Check for Insufficient Bricks**:
+   - If `bricks` becomes negative (insufficient bricks for the current jump):
+     - Use the largest bricks-used value by polling `q` to reclaim bricks.
+     - If ladders are available, decrement `ladders` and continue; otherwise, return the current building index `i` as the farthest reachable.
+
+5. **Return the Result**:
+   - If all buildings are reachable, return `heights.length - 1`, indicating that we successfully reached the last building.
+
+```java
+import java.util.PriorityQueue;
+import java.util.Queue;
+
+class Solution {
+    public int furthestBuilding(int[] heights, int bricks, int ladders) {
+        // Max-heap to store the bricks used for the largest jumps
+        Queue<Integer> q = new PriorityQueue<>((a, b) -> b - a);
+
+        // Loop through each building from the start to the second last building
+        for (int i = 0; i < heights.length - 1; i++) {
+            // Check if the next building is higher
+            if (heights[i] >= heights[i + 1]) {
+                continue; // Move to the next building if no jump is needed
+            }
+
+            // Calculate the number of bricks required to reach the next building
+            int bricksUsed = heights[i + 1] - heights[i];
+            bricks -= bricksUsed; // Deduct the used bricks from the total count
+            q.offer(bricksUsed); // Add the bricks used to the max-heap
+
+            // Check if bricks are insufficient (negative balance)
+            if (bricks < 0) {
+                // Reclaim the largest bricksUsed by adding back the largest jump stored in the max-heap
+                bricks += q.poll();
+
+                // Use a ladder if available, otherwise return the current building index
+                if (ladders > 0) {
+                    ladders--;
+                } else {
+                    return i; // Return the farthest reachable building index
+                }
+            }
+        }
+        // If all buildings are reachable, return the last building index
+        return heights.length - 1;
+    }
+}
+```
+
+## 26. [Earliest Second to Mark Indices I](https://leetcode.com/problems/earliest-second-to-mark-indices-i/)
+###### Explanation Steps:
+
+1. **Adjust `changeIndices` to Zero-Based**:
+   - The `changeIndices` array is modified to be zero-based for easier access within array indexing.
+
+2. **Helper Method (`helper`)**:
+   - **Purpose**: Check if all indices in `nums` can be marked by a given time `idx`.
+   - **Logic**: 
+     - Uses a `boolean` array `vis` to keep track of visited indices, and `visCnt` to count the unique marked indices.
+     - As it iterates from `idx` backward:
+       - If an index (`validx`) is already visited, it decrements `des` if needed.
+       - If not, it marks the index as visited, increments `visCnt`, and adjusts `des` using the `nums` array.
+     - Returns true if all indices are marked and `des` reaches zero.
+
+3. **Binary Search to Find Earliest Valid Second**:
+   - Checks if all indices can be marked by the last second in `changeIndices` using `helper`.
+   - If possible, performs a binary search over `changeIndices`:
+     - Uses `helper` to check each midpoint (`mid`) and adjusts `low` and `high` until the earliest valid time is found.
+   - Returns `high + 1` (second index) as the earliest time where marking is feasible.
+
+```java
+class Solution {
+    // Helper method to check if all indices can be marked by a specific time `idx`
+    private boolean helper(int[] nums, int[] changeIndices, int idx) {
+        boolean[] vis = new boolean[nums.length]; // Track visited indices
+        int visCnt = 0; // Count of unique indices visited
+        int des = 0; // Track the current desired state value
+
+        // Loop through indices up to `idx` to simulate the marking process
+        for (int i = idx; i >= 0; i--) {
+            int validx = changeIndices[i]; // Get the index to be marked at this step
+            
+            // Check if this index has already been marked
+            if (vis[validx]) {
+                if (des > 0) {
+                    des--; // Decrement desired count if this index was marked before
+                }
+            } else {
+                vis[validx] = true; // Mark this index as visited
+                visCnt++; // Increment unique visited count
+                des += nums[validx]; // Adjust desired state based on nums value at this index
+            }
+        }
+        
+        // Check if all indices have been marked (`visCnt == nums.length`) and `des` is zero
+        return des == 0 && visCnt == nums.length;
+    }
+
+    // Main method to find the earliest second where all indices can be marked as required
+    public int earliestSecondToMarkIndices(int[] nums, int[] changeIndices) {
+        // Decrement each element in `changeIndices` to make them zero-based for array indexing
+        for (int i = 0; i < changeIndices.length; i++) {
+            changeIndices[i]--;
+        }
+
+        // Check if it's possible to mark all indices up to the last time in `changeIndices`
+        if (!helper(nums, changeIndices, changeIndices.length - 1)) {
+            return -1; // Return -1 if it’s not possible to mark all indices
+        }
+
+        // Binary search to find the minimum `idx` where marking all indices is feasible
+        int low = 0, high = changeIndices.length - 1;
+        while (low < high) {
+            int mid = (high - low) / 2 + low; // Calculate midpoint
+            
+            // If `helper` returns true for `mid`, reduce the range to find an earlier valid index
+            if (helper(nums, changeIndices, mid)) {
+                high = mid;
+            } else {
+                low = mid + 1; // Otherwise, adjust range to search later indices
+            }
+        }
+        
+        // Return `high + 1` as the earliest second (convert index to second)
+        return high + 1;
+    }
+}
+```
+
+## 27. [Minimum Deletions to Make String K-Special](https://leetcode.com/problems/minimum-deletions-to-make-string-k-special/)
+###### Explanation Steps:
+
+1. **Calculate Character Frequencies**:
+   - The code counts the frequency of each character in the input string `word` and stores them in the `freq` array, where each index represents a character ('a' to 'z').
+
+2. **Sort Frequency Array**:
+   - Sorting the `freq` array allows the algorithm to manage deletions in increasing order of frequency, making it easier to minimize deletions.
+
+3. **Outer Loop for Minimum Frequency**:
+   - Iterates over each possible minimum frequency `minFreq` in the sorted array.
+   - `temp` tracks the deletions required if `minFreq` is considered the minimum allowed frequency for characters.
+
+4. **Inner Loop to Adjust Higher Frequencies**:
+   - For each `minFreq`, the inner loop iterates from the highest frequencies (end of the array) down to the current index `i`.
+   - If the difference between `freq[j]` and `minFreq` exceeds `k`, additional deletions are needed to reduce `freq[j]` to a manageable level.
+   - These deletions are accumulated in `temp`.
+
+5. **Update Minimum Deletions**:
+   - `result` is updated to the minimum deletions found across all possible values of `minFreq`.
+
+6. **Accumulate Deletions for Next Iteration**:
+   - `deletedTillNow` keeps track of total deletions up to the current frequency level, contributing to the deletion count in subsequent iterations.
+
+7. **Return Result**:
+   - Finally, the minimum number of deletions needed to satisfy the frequency condition for the entire string is returned.
+
+```java
+class Solution {
+    public int minimumDeletions(String word, int k) {
+        int[] freq = new int[26]; // Array to store frequency of each character ('a' to 'z')
+
+        // Count frequency of each character in the given string
+        for(char ch : word.toCharArray()) {
+            freq[ch - 'a']++; // Increment frequency based on ASCII offset for 'a'
+        }
+
+        // Sort frequencies in ascending order to manage deletions starting from least to most frequent
+        Arrays.sort(freq);
+
+        int result = Integer.MAX_VALUE; // Initialize result with maximum possible value
+        int deletedTillNow = 0; // Track total deletions performed so far
+
+        // Iterate through each frequency to evaluate minimum deletions needed
+        for(int i = 0; i < 26; i++) {
+            int minFreq = freq[i]; // Current minimum frequency in sorted list
+            int temp = deletedTillNow; // Temporary variable to track deletions for this iteration
+
+            // Iterate from the end of frequency array down to the current index
+            for(int j = 25; j > i; j--) {
+                // If difference between current max frequency and minFreq is within allowed range, stop
+                if(freq[j] - freq[i] <= k) 
+                    break;
+                
+                // Otherwise, add deletions needed to bring `freq[j]` down to the acceptable difference `k`
+                temp += freq[j] - minFreq - k;
+            }
+
+            // Update result to reflect the minimum deletions required so far
+            result = Math.min(result, temp);
+
+            // Accumulate total deletions till current position
+            deletedTillNow += minFreq;
+        }
+
+        // Return the minimum deletions needed to satisfy the conditions
+        return result;
+    }
+}
+```
+
+## 28. [Task Scheduler](https://leetcode.com/problems/task-scheduler/)
+###### Explanation Steps:
+
+1. **Check for No Cooldown**:
+   - If `n == 0`, there’s no cooldown period between tasks, so the minimum time required is simply the length of the `tasks` array.
+
+2. **Calculate Task Frequencies**:
+   - Count the frequency of each task using an array `taskFreq` where each index represents a letter from 'A' to 'Z'.
+
+3. **Sort Task Frequencies**:
+   - Sorting `taskFreq` helps in identifying the task with the highest frequency, located at `taskFreq[25]` after sorting.
+
+4. **Calculate Idle Slots**:
+   - `batch` holds the frequency of the most frequent task.
+   - `idleSlots` is calculated based on `(batch - 1) * n`, which represents the spaces between `batch - 1` occurrences of the most frequent task, where each space can accommodate `n` idle slots.
+
+5. **Reduce Idle Slots with Other Tasks**:
+   - The `for` loop iterates over the other task frequencies to reduce idle slots.
+   - `Math.min(taskFreq[i], batch - 1)` ensures we don’t overfill slots with tasks that have lower frequencies.
+
+6. **Return Total Interval**:
+   - If there are idle slots remaining after filling with other tasks, return `idleSlots + tasks.length` (total tasks plus idle time).
+   - If no idle slots are left, return only the length of `tasks` since no additional idle time is needed.
+
+```java
+class Solution {
+    public int leastInterval(char[] tasks, int n) {
+        // If there is no cooldown time (n = 0), just return the total number of tasks
+        if (n == 0) {
+            return tasks.length;
+        }
+
+        // Array to store frequency of each task (assuming tasks are represented by uppercase letters A-Z)
+        int[] taskFreq = new int[26];
+        for (char c : tasks) {
+            taskFreq[c - 'A']++; // Count each task's occurrences
+        }
+
+        // Sort task frequencies in ascending order to easily access the most frequent task
+        Arrays.sort(taskFreq);
+        
+        // Identify the frequency of the most frequent task
+        int batch = taskFreq[25];
+
+        // Calculate initial idle slots based on the most frequent task frequency
+        // We use batch - 1 as we don't need idle time after the last instance of the most frequent task
+        int idleSlots = (batch - 1) * n;
+
+        // Try to fill the idle slots with other tasks' occurrences
+        for (int i = 0; i < 25; i++) {
+            // Deduct the minimum of taskFreq[i] or batch - 1 to avoid overfilling
+            idleSlots -= Math.min(taskFreq[i], batch - 1);
+        }
+
+        // If there are still idle slots left, add them to the total task count
+        // This is because we need to "wait" with idle time between task executions
+        if (idleSlots > 0) {
+            return idleSlots + tasks.length;
+        }
+
+        // If no idle slots are left, return only the total task count
+        return tasks.length;
+    }
+}
+```
+
+## 29. [Maximize Happiness of Selected Children](https://leetcode.com/problems/maximize-happiness-of-selected-children/)
+###### Explanation Steps:
+
+1. **Initialize Result Variable**:
+   - A variable `res` is initialized to zero to accumulate the maximum happiness sum.
+
+2. **Sort the Happiness Array**:
+   - The `happiness` array is sorted in ascending order. This allows us to access the highest happiness values easily by starting from the end of the array.
+
+3. **Set Up Counters**:
+   - The variable `n` stores the length of the `happiness` array.
+   - The `count` variable tracks how many elements have been processed.
+
+4. **Iterate Backwards**:
+   - A `for` loop iterates from the last element of the sorted `happiness` array (highest value) to the first element. The loop continues until either all elements have been processed or we have processed `k` elements.
+
+5. **Calculate Effective Happiness**:
+   - For each happiness value, we calculate the effective happiness as `happiness[i] - count`. 
+   - We use `Math.max(happiness[i] - count, 0)` to ensure that we don’t add negative happiness values to `res`.
+
+6. **Increment Processed Count**:
+   - After calculating the happiness for the current element, we increment the `count`.
+
+7. **Return Result**:
+   - Finally, the method returns the total accumulated maximum happiness sum (`res`).
+
+```java
+class Solution {
+    public long maximumHappinessSum(int[] happiness, int k) {
+        long res = 0; // Variable to store the total maximum happiness sum
+        
+        // Sort the happiness array in ascending order
+        Arrays.sort(happiness);
+        
+        int n = happiness.length; // Length of the happiness array
+        int count = 0; // Counter to track how many elements we have processed
+        
+        // Iterate from the end of the sorted happiness array to the beginning
+        for (int i = n - 1; i >= 0 && count < k; i--) {
+            // Calculate the effective happiness by subtracting the count from the current happiness value
+            // Ensure we don't go below zero with Math.max
+            res += Math.max(happiness[i] - count, 0);
+            
+            count++; // Increment the count of processed elements
+        }
+        
+        return res; // Return the total maximum happiness sum
+    }
+}
+```
+
+

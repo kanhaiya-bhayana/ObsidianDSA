@@ -13,10 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "5. Durable Functions Common Workflows"
+            }
+          },
+          {
+            "id": "b1b3276128d1093d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "Greedy/Questions.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Questions"
             }
           },
           {
@@ -28,10 +44,13 @@
                 "file": "Meet.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Meet"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -51,7 +70,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -66,7 +87,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -74,7 +97,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -97,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Greedy/Questions.md",
+                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +130,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 5. Replay Behavior"
             }
           },
           {
@@ -114,10 +141,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Greedy/Questions.md",
+                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 5. Replay Behavior"
             }
           },
           {
@@ -128,7 +157,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -137,8 +168,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Greedy/Questions.md"
-              }
+                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 5. Replay Behavior"
             }
           }
         ]
@@ -159,20 +192,24 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "85f68a6a34cee193",
+  "active": "b1b3276128d1093d",
   "lastOpenFiles": [
-    "Cheatsheet/Conversions.md",
+    "Azure/Durable Functions/YT/6. Human Interaction Workflow.md",
+    "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
+    "Azure/Durable Functions/YT/5. Replay Behavior.md",
+    "Azure/Durable Functions/YT",
+    "Untitled",
+    "Azure/Durable Functions/Cloud Course/6. Durable Function Types.md",
     "Greedy/Questions.md",
+    "Azure/Durable Functions/Cloud Course/4. Need For Durable Functions.md",
+    "Azure/Durable Functions/Cloud Course/3. Azure Durable Functions.md",
+    "Azure/Durable Functions/Cloud Course/1. Section.md",
+    "Azure/Durable Functions/Cloud Course/2. Azure Functions.md",
+    "Cheatsheet/Conversions.md",
     "Cheatsheet/Time Interval Questions.md",
     "Cheatsheet/Circular.md",
-    "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
-    "Azure/Durable Functions/Cloud Course/3. Azure Durable Functions.md",
-    "Azure/Durable Functions/Cloud Course/4. Need For Durable Functions.md",
-    "Azure/Durable Functions/Cloud Course/1. Section.md",
     "Cheatsheet/Graph Java.md",
-    "Azure/Durable Functions/Cloud Course/6. Durable Function Types.md",
     "Azure/Durable Functions/Cloud Course/7. Create First Durable Function.md",
-    "Azure/Durable Functions/Cloud Course/2. Azure Functions.md",
     "Meet.md",
     "Azure/Durable Functions/Resources.md",
     "Azure/Durable Functions/Course.md",
@@ -200,12 +237,8 @@
     "Microservices/brew-aspnetcore-microservices/Content/Developing-catalog-api.png",
     "Microservices/brew-aspnetcore-microservices/Content/Deployment-strategy.png",
     "Microservices/brew-aspnetcore-microservices/Content/New folder/Develop-catalop-API.png",
-    "Microservices/brew-aspnetcore-microservices/Content/New folder",
-    "Microservices/brew-aspnetcore-microservices/Content/ss",
     "Microservices/Untitled.md",
     "Microservices/brew-aspnetcore-microservices/Backing Services.md",
-    "Graph/Algorithms/Algos.md",
-    "Recursion & Backtracking/Questions/Combination Sum II.md",
-    "TypeScript/Docs/Objects.md"
+    "Graph/Algorithms/Algos.md"
   ]
 }
