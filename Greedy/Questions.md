@@ -1641,4 +1641,308 @@ class Solution {
 }
 ```
 
+## 30. [Find the Maximum Sum of Node Values](https://leetcode.com/problems/find-the-maximum-sum-of-node-values/)
+###### Explanation of Key Parts
+1. **Result Calculation**:
+   - `res` accumulates the final sum based on either the original number or its XOR with `k`, depending on which gives a higher result.
+
+2. **Counting Condition Matches**:
+   - `count` keeps track of how many times `(num ^ k) > num`, which helps in determining whether `minDiff` needs to be subtracted at the end.
+   - When `count` is even, we can use the sum `res` directly. If odd, to meet specific conditions, we reduce the sum slightly by subtracting `minDiff`.
+
+3. **Minimum Difference Tracking**:
+   - `minDiff` captures the smallest difference between `num` and `(num ^ k)`. This is useful for minimizing the impact on `res` if an adjustment is necessary to achieve the desired parity for `count`.
+
+This setup provides a solution that maximizes the sum of modified values, taking into account XOR conditions for each `num` in the `nums` array.
+
+```java
+class Solution {
+    public long maximumValueSum(int[] nums, int k, int[][] edges) {
+        // Initialize the result variable to store the maximum possible sum
+        long res = 0;
+        
+        // Count keeps track of how many times (num ^ k) is greater than num
+        int count = 0;
+        
+        // minDiff will store the minimum difference between num and (num ^ k)
+        int minDiff = Integer.MAX_VALUE;
+
+        // Iterate through each element in the nums array
+        for (int num : nums) {
+            // Check if XOR with k gives a larger result than the original num
+            if ((num ^ k) > num) {
+                // If so, increment the count and add the XOR result to the sum
+                count++;
+                res += (num ^ k);
+            } else {
+                // Otherwise, add the original number to the sum
+                res += num;
+            }
+            
+            // Update the minimum difference between num and its XOR result with k
+            minDiff = Math.min(minDiff, Math.abs(num - (num ^ k)));
+        }
+
+        // If count is even, return the result as-is
+        // Otherwise, subtract minDiff to make the sum as large as possible while meeting conditions
+        if (count % 2 == 0) {
+            return res;
+        }
+        return res - minDiff;
+    }
+}
+```
+
+
+## 31. [Minimum Increment to Make Array Unique](https://leetcode.com/problems/minimum-increment-to-make-array-unique/)
+###### Explanation of Key Steps
+
+1. **Initialize and Populate Frequency Array**: We use `count` as a frequency array where each index represents a possible number in `nums`. Each `count[i]` stores how many times `i` appears in `nums`. The size of `count` is set to `max + n` to account for possible increments pushing values beyond the initial maximum value of `nums`.
+
+2. **Adjust Values to Ensure Uniqueness**: We loop through each index of the `count` array. If the count at a position `i` is greater than 1 (indicating duplicates), we increment values at `i` to make them unique:
+   - We calculate the `extra` occurrences (count[i] - 1) that need to be incremented.
+   - We add these `extra` occurrences to the next index `count[i + 1]`, effectively "moving" duplicate numbers to higher values.
+   - The number of moves required to make values unique increases by the `extra` amount since each increment counts as one move.
+
+3. **Return Result**: The final count of `moves` represents the minimum number of increments required to make all elements in `nums` unique.
+```java
+class Solution {
+    public int minIncrementForUnique(int[] nums) {
+        int n = nums.length; // Store the length of the array for easy access
+        int max = getMax(nums); // Find the maximum value in the array
+        
+        // Create a frequency array 'count' to store occurrences of each number.
+        // The size is set to max + n to accommodate any incremented values that may go beyond the max.
+        int[] count = new int[max + n];
+        
+        // Populate the count array with the frequency of each number in the input array
+        for (int num : nums) {
+            count[num]++;
+        }
+        
+        int moves = 0; // Initialize moves counter to track the total increments made
+
+        // Traverse the count array to adjust values and ensure uniqueness
+        for (int i = 0; i < count.length - 1; i++) {
+            if (count[i] <= 1) {
+                // If the count at index i is 0 or 1, no adjustments are needed
+                continue;
+            }
+            
+            int extra = count[i] - 1; // Calculate the excess occurrences for value 'i'
+            count[i + 1] += extra; // Move excess occurrences to the next value
+            moves += extra; // Increase moves by the number of excess occurrences
+            
+            // This effectively increments values at 'i' to make them unique, 
+            // and shifts the extra counts to the next available slots
+        }
+
+        // Return the total moves needed to make the array unique
+        return moves;
+    }
+
+    // Helper method to find the maximum value in the input array
+    private int getMax(int[] nums) {
+        int mxm = 0; // Initialize maximum with 0 (assuming non-negative numbers in the input)
+        for (int x : nums) {
+            mxm = Math.max(mxm, x); // Update max if current number x is greater than current max
+        }
+        return mxm; // Return the maximum value found
+    }
+}
+```
+
+## 32. [Patching Array](https://leetcode.com/problems/patching-array/)
+###### Explanation of Key Steps
+
+1. **Initialize Variables**:
+   - `maxReach` keeps track of the maximum sum that can be covered with the current numbers in `nums` and any patches added.
+   - `i` is the index pointer for iterating through `nums`.
+   - `patch` counts the total patches (numbers) added to ensure coverage up to `n`.
+
+2. **Loop Until `maxReach` Covers the Target Range `n`**:
+   - The loop continues as long as `maxReach` is less than `n`, meaning we need to keep expanding our coverage.
+
+3. **Expand Coverage Using Elements in `nums` or Adding a Patch**:
+   - **Condition 1**: If the current number `nums[i]` is within the next reachable range (`nums[i] <= maxReach + 1`), we add it to `maxReach` and move to the next number (`i++`). This incrementally expands the range we can reach.
+   - **Condition 2**: If `nums[i]` is too large to fill the next gap or we've exhausted `nums`, we add a patch with the smallest missing number, `maxReach + 1`, to fill the gap. This effectively increases `maxReach` and expands the range we can cover.
+
+4. **Return Result**:
+   - Once `maxReach` covers the range `[1, n]`, the loop exits, and the `patch` counter (total patches added) is returned. This count represents the minimum number of additional numbers required to cover all numbers from `1` to `n`.
+
+```java
+class Solution {
+    public int minPatches(int[] nums, int n) {
+        long maxReach = 0; // Represents the maximum sum that can be reached with current numbers and patches
+        int i = 0; // Pointer for iterating through the nums array
+        int patch = 0; // Counter for the number of patches (numbers added) required
+        
+        // Continue until we can cover the entire range from 1 to n
+        while (maxReach < n) {
+            // If the current number in nums is within the range we can reach (maxReach + 1)
+            if (i < nums.length && nums[i] <= maxReach + 1) {
+                maxReach += nums[i]; // Extend maxReach by adding the current number
+                i++; // Move to the next number in nums
+            } else {
+                // If nums[i] is too large or we've used all elements in nums,
+                // add a new patch (maxReach + 1) to extend the reachable range
+                maxReach += (maxReach + 1); // Add the smallest missing number to reach the next gap
+                patch++; // Increment patch count since we added a new number
+            }
+        }
+        
+        // Return the total number of patches needed to cover range 1 to n
+        return patch;
+    }
+}
+```
+
+## 33. [Minimum Cost for Cutting Cake I](https://leetcode.com/problems/minimum-cost-for-cutting-cake-i/)
+###### Explanation of Key Steps
+
+1. **Initialize and Sort Cuts**:
+   - The `horizontalCut` and `verticalCut` arrays are sorted in ascending order so that we can process them from largest to smallest by iterating from the end of the arrays.
+
+2. **Tracking Pieces**:
+   - `horPieces` and `verPieces` start at 1, representing the initial full piece. As cuts are applied, these counts are increased to track how many sections have been created in each direction.
+
+3. **Calculate the Total Cost with Maximum Cuts First**:
+   - By prioritizing larger cuts first (using a descending order traversal), we ensure that larger cuts are applied to the largest number of pieces, maximizing cost efficiency.
+   - **Choosing Cuts**: In each iteration, compare the largest remaining `horizontalCut` and `verticalCut`.
+     - If the current `horizontalCut` is larger, apply it to all vertical sections, update `totalCost`, increase `horPieces`, and move to the next horizontal cut.
+     - If the current `verticalCut` is larger, apply it to all horizontal sections, update `totalCost`, increase `verPieces`, and move to the next vertical cut.
+
+4. **Process Remaining Cuts**:
+   - After either `horizontalCut` or `verticalCut` has been exhausted, any remaining cuts in the other array are applied to all current pieces in the opposite direction.
+
+5. **Return Result**:
+   - The result, `totalCost`, is returned as an integer after casting. This represents the minimum cost needed to split the grid with the provided cuts.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public int minimumCost(int m, int n, int[] horizontalCut, int[] verticalCut) {
+        // Sort the horizontal and vertical cuts in descending order to maximize the cost at each step
+        Arrays.sort(horizontalCut);
+        Arrays.sort(verticalCut);
+
+        int horPieces = 1; // Start with one horizontal piece
+        int verPieces = 1; // Start with one vertical piece
+
+        long totalCost = 0; // Initialize total cost to accumulate the minimum cost
+
+        int i = horizontalCut.length - 1; // Pointer for horizontal cuts, starting from the largest cut
+        int j = verticalCut.length - 1;   // Pointer for vertical cuts, starting from the largest cut
+
+        // Process both arrays of cuts until all cuts are added to maximize cost at each step
+        while (i >= 0 && j >= 0) {
+            if (horizontalCut[i] >= verticalCut[j]) {
+                // If the horizontal cut is larger, use it to make `verPieces` vertical sections
+                totalCost += (long) horizontalCut[i] * verPieces;
+                horPieces++; // Increase horizontal pieces count as this cut is used
+                i--; // Move to the next largest horizontal cut
+            } else {
+                // If the vertical cut is larger, use it to make `horPieces` horizontal sections
+                totalCost += (long) verticalCut[j] * horPieces;
+                verPieces++; // Increase vertical pieces count as this cut is used
+                j--; // Move to the next largest vertical cut
+            }
+        }
+
+        // If there are any remaining vertical cuts after finishing horizontal cuts
+        while (j >= 0) {
+            totalCost += (long) verticalCut[j] * horPieces;
+            verPieces++;
+            j--;
+        }
+
+        // If there are any remaining horizontal cuts after finishing vertical cuts
+        while (i >= 0) {
+            totalCost += (long) horizontalCut[i] * verPieces;
+            horPieces++;
+            i--;
+        }
+
+        // Convert the result to an integer and return it, as required
+        return (int) totalCost;
+    }
+}
+```
+
+## 34. [Minimum Cost for Cutting Cake II](https://leetcode.com/problems/minimum-cost-for-cutting-cake-ii/)
+###### Explanation of Key Steps
+
+1. **Sorting Cuts**:
+   - `horizontalCut` and `verticalCut` arrays are sorted in ascending order, so we can iterate from the largest cuts by starting at the end of the arrays.
+
+2. **Tracking Number of Pieces**:
+   - `horPieces` and `verPieces` start at 1, representing a single, uncut piece in each dimension. As cuts are applied, these counts are incremented to reflect how many sections exist in each direction.
+
+3. **Calculate Total Cost by Prioritizing Largest Cuts**:
+   - By using a greedy approach, we process the largest remaining cuts first. This ensures that the largest cuts are applied to the maximum number of sections, optimizing the total cost.
+   - In each iteration:
+     - **If the largest horizontal cut is greater than or equal to the largest vertical cut**, apply it to all vertical pieces, add the corresponding cost to `totalCost`, increment `horPieces`, and move to the next horizontal cut.
+     - **Otherwise**, apply the largest vertical cut to all horizontal pieces, add the cost, increment `verPieces`, and move to the next vertical cut.
+
+4. **Handling Remaining Cuts**:
+   - If there are remaining cuts in `verticalCut` after `horizontalCut` is exhausted, or vice versa, each remaining cut is applied to all current pieces in the other direction.
+
+5. **Return the Result**:
+   - The final `totalCost` is returned, representing the minimum cost to split the grid according to the given cuts.
+
+```java
+import java.util.Arrays;
+
+class Solution {
+    public long minimumCost(int m, int n, int[] horizontalCut, int[] verticalCut) {
+        // Sort horizontal and vertical cuts in ascending order
+        Arrays.sort(horizontalCut);
+        Arrays.sort(verticalCut);
+
+        int horPieces = 1; // Initial number of horizontal pieces
+        int verPieces = 1; // Initial number of vertical pieces
+
+        long totalCost = 0; // Variable to store the total cost
+
+        int i = horizontalCut.length - 1; // Start from the largest horizontal cut
+        int j = verticalCut.length - 1;   // Start from the largest vertical cut
+
+        // Process both cuts arrays until all cuts are accounted for
+        while (i >= 0 && j >= 0) {
+            // If the largest remaining horizontal cut is greater than or equal to the largest vertical cut
+            if (horizontalCut[i] >= verticalCut[j]) {
+                // Use the horizontal cut and apply it across all current vertical pieces
+                totalCost += (long) horizontalCut[i] * verPieces;
+                horPieces++; // Increase the count of horizontal pieces
+                i--; // Move to the next horizontal cut
+            } else {
+                // Use the vertical cut and apply it across all current horizontal pieces
+                totalCost += (long) verticalCut[j] * horPieces;
+                verPieces++; // Increase the count of vertical pieces
+                j--; // Move to the next vertical cut
+            }
+        }
+
+        // Process any remaining vertical cuts
+        while (j >= 0) {
+            // Apply remaining vertical cuts across all horizontal pieces
+            totalCost += (long) verticalCut[j] * horPieces;
+            verPieces++;
+            j--;
+        }
+
+        // Process any remaining horizontal cuts
+        while (i >= 0) {
+            // Apply remaining horizontal cuts across all vertical pieces
+            totalCost += (long) horizontalCut[i] * verPieces;
+            horPieces++;
+            i--;
+        }
+
+        // Return the total calculated cost
+        return totalCost;
+    }
+}
+```
 
