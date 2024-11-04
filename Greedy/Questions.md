@@ -1946,3 +1946,50 @@ class Solution {
 }
 ```
 
+## 35. [Maximum Distance in Arrays](https://leetcode.com/problems/maximum-distance-in-arrays/)
+###### Explanation
+1. **Initialize Variables**:
+   - `res` is initialized to 0. It will store the maximum distance found.
+   - `min` is set to the first element of the first list in `arrays`, representing the minimum element so far.
+   - `max` is set to the last element of the first list in `arrays`, representing the maximum element so far.
+
+2. **Iterate Through the Remaining Lists**:
+   - A loop starts from the second list (`i = 1`) and iterates through each list in `arrays`.
+   - For each list (`cur`), `curMin` is set to the first element (smallest in the list) and `curMax` to the last element (largest in the list).
+
+3. **Calculate Maximum Distance**:
+   - The code calculates two possible distances for each list:
+     - The distance between `curMax` (largest element of the current list) and `min` (smallest element encountered so far).
+     - The distance between `curMin` (smallest element of the current list) and `max` (largest element encountered so far).
+   - `res` is updated with the larger of its current value or the maximum of these two distances.
+
+4. **Update Global Min and Max**:
+   - `max` is updated to the maximum of its current value and `curMax`, tracking the largest element encountered so far.
+   - `min` is updated to the minimum of its current value and `curMin`, tracking the smallest element encountered so far.
+
+5. **Return the Result**:
+   - After all lists have been processed, `res` contains the maximum distance, and this value is returned as the result. 
+
+This approach ensures that we consider only the first and last elements in each list, which are the smallest and largest for that list. By comparing each list’s boundaries (min and max) with previously recorded global boundaries, we efficiently calculate the maximum possible distance without needing to check each element in each list.
+
+```java
+class Solution {
+    public int maxDistance(List<List<Integer>> arrays) {
+        int res = 0;
+        int min = arrays.get(0).get(0);
+        int max = arrays.get(0).get(arrays.get(0).size()-1);
+
+        for (int i=1; i<arrays.size(); i++){
+            List<Integer> cur = arrays.get(i);
+            int curMin = cur.get(0);
+            int curMax = cur.get(cur.size()-1);
+            
+            res = Math.max(res, Math.max(Math.abs(curMax-min),Math.abs(curMin-max)));
+
+            max = Math.max(max,curMax);
+            min = Math.min(min,curMin);
+        }
+        return res;
+    }
+}
+```
