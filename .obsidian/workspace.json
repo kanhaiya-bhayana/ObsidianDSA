@@ -4,53 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "ce4d028198421a03",
+        "id": "ffbf0a1cc38c5958",
         "type": "tabs",
         "children": [
           {
-            "id": "85f68a6a34cee193",
+            "id": "a18063e651db38a7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
+                "file": "Helper/Dotnet Core.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "5. Durable Functions Common Workflows"
-            }
-          },
-          {
-            "id": "b1b3276128d1093d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Greedy/Questions.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Questions"
-            }
-          },
-          {
-            "id": "47619c41997810fb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Meet.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Meet"
+              "title": "Dotnet Core"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -106,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 400.5
+    "width": 400.5,
+    "collapsed": true
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -122,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md",
+                "file": "Sessions/AssetMark/BAT 3.0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -132,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 5. Replay Behavior"
+              "title": "Backlinks for BAT 3.0"
             }
           },
           {
@@ -178,7 +150,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -192,15 +164,40 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "b1b3276128d1093d",
+  "active": "a18063e651db38a7",
   "lastOpenFiles": [
-    "Azure/Durable Functions/YT/6. Human Interaction Workflow.md",
+    "Dev/Primitive Obsession.md",
+    "Helper/Dotnet Core.md",
+    "Helper",
+    "Dev/gRPC.md",
+    "Recursion & Backtracking/Questions/Combination Sum II.md",
+    "Graph/Question.md",
+    "Graph/Algorithms/Algos.md",
+    "Sessions/UIT Dehradun WordPress.md",
     "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
+    "Sessions/AssetMark/BAT 3.0.md",
+    "Kanhaiya/YT/gRPC Thank you Script.md",
+    "Kanhaiya/YT",
+    "Sessions/AssetMark",
+    "Untitled 1",
+    "Sessions",
+    "Dev",
+    "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
+    "Tree_data_structure_questions.pdf",
+    "Spring-cloud-functions.png",
+    "Spring Cloud Stream.png",
+    "RabbitMQ-2.png",
+    "RabbitMQ-1.png",
+    "pub-sub-model.png",
+    "Pasted image 20240215101152.png",
+    "Pasted image 20240215101119.png",
+    "Greedy/CodeStroyWIthMik/1. Overview.md",
+    "Greedy/Questions.md",
+    "Azure/Durable Functions/YT/6. Human Interaction Workflow.md",
     "Azure/Durable Functions/YT/5. Replay Behavior.md",
     "Azure/Durable Functions/YT",
     "Untitled",
     "Azure/Durable Functions/Cloud Course/6. Durable Function Types.md",
-    "Greedy/Questions.md",
     "Azure/Durable Functions/Cloud Course/4. Need For Durable Functions.md",
     "Azure/Durable Functions/Cloud Course/3. Azure Durable Functions.md",
     "Azure/Durable Functions/Cloud Course/1. Section.md",
@@ -212,33 +209,8 @@
     "Azure/Durable Functions/Cloud Course/7. Create First Durable Function.md",
     "Meet.md",
     "Azure/Durable Functions/Resources.md",
-    "Azure/Durable Functions/Course.md",
     "Azure/Durable Functions/Cloud Course",
-    "Azure/Durable Functions",
-    "Greedy/CodeStroyWIthMik/1. Overview.md",
-    "Graph/Question.md",
-    "Greedy/CodeStroyWIthMik",
-    "Greedy",
-    "Linked List/Linked List Striver/Introduction.md",
-    "Linked List/Linked List Striver/Convert Stack to LL.md",
     "Linked List/Linked List Striver/DLL1.png",
-    "Linked List/Linked List Striver/Array to LL.md",
-    "Linked List/Trees/Questions.md",
-    "Kanhaiya",
-    "Unisofttechno",
-    "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
-    "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Cqrs-mediatr-request-lifecycle.png.~tmp",
-    "Microservices/brew-aspnetcore-microservices/Content/Logging-middleware.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
-    "Microservices/brew-aspnetcore-microservices/Content/MediatR-pipeline-behavior.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Cqrs-mediatr-request-lifecycle.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Big-picture-course-project.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Developing-catalog-api.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Deployment-strategy.png",
-    "Microservices/brew-aspnetcore-microservices/Content/New folder/Develop-catalop-API.png",
-    "Microservices/Untitled.md",
-    "Microservices/brew-aspnetcore-microservices/Backing Services.md",
-    "Graph/Algorithms/Algos.md"
+    "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png"
   ]
 }
