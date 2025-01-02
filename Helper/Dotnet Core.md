@@ -11,3 +11,39 @@
 	- Install-Package Microsoft.EntityFrameworkCore.Tools
 	- Add-Migration InitialCreate
 	- Update-Database
+
+
+
+
+#### Update Database command on startup using code | Auto Migrate EF Entities
+
+Inside Infrastructure
+
+```cs
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Ordering.Infrastructure.Extensions;
+public static class DatabaseExtensions
+{
+    public static async Task InitialiseDatabaseAsync(this WebApplication app)
+    {
+        using var scope = app.Services.CreateScope();
+
+        var context = scope.ServiceProvider.GetService<ApplicationDbContext>();
+
+        context.Database.MigrateAsync().GetAwaiter().GetResult();
+    }
+}
+```
+
+
+Program.cs
+
+```cs
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    await app.InitialiseDatabaseAsync();
+}
+```
