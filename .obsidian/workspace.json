@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Design Patterns/1. SOLID/Single Responsibility Principle.md",
+                "file": "Design Patterns/Factory Pattern.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Single Responsibility Principle"
+              "title": "Factory Pattern"
             }
           }
         ],
@@ -67,7 +67,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Factory",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -178,15 +178,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "2b420e1ea63aef07",
+  "active": "ce01d6c1c449340f",
   "lastOpenFiles": [
+    "Design Patterns/2. Builder/Overview.md",
+    "Design Patterns/Overview.md",
+    "Design Patterns/Factory Pattern.md",
+    "Design Patterns/1. SOLID/Single Responsibility Principle.md",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
     "Design Patterns/1. SOLID/Interface Segregation.md",
     "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
-    "Design Patterns/Overview.md",
-    "Factory Pattern.md",
-    "Design Patterns/2. Builder/Overview.md",
     "Dev/Keyed Services.md",
     "Dev/Dependency Injection.md",
     "Keyed.md",
@@ -206,7 +207,6 @@
     "Sessions/UIT Dehradun WordPress.md",
     "Azure/Durable Functions/Cloud Course/5. Durable Functions Common Workflows.md",
     "Sessions/AssetMark/BAT 3.0.md",
-    "Kanhaiya/YT/gRPC Thank you Script.md",
     "Kanhaiya/YT",
     "Sessions/AssetMark",
     "Untitled 1",
