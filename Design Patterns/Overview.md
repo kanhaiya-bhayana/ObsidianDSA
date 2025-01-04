@@ -1,17 +1,10 @@
-
-Design Patterns are common architectural approaches.
-
-
-##### Design Patterns are typically split into three categories and that is called Gamma Categorization
+### Design Patterns are common architectural approaches.
+ 
+ ###### Design Patterns are typically split into three categories and that is called Gamma Categorization
 
 1. Creational
 2. Structural
 3. Behavioral 
-
-
-
-
-
 ## Creational
 
 - Builder

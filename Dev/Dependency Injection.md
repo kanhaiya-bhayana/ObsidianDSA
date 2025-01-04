@@ -170,3 +170,6 @@ builder.Services.AddScoped<IMyService, MyService>();
 ---
 
 This understanding helps in designing services with appropriate lifecycles based on their role and usage in the application.
+
+
+#### [Keyed Services](/Keyed Services)
