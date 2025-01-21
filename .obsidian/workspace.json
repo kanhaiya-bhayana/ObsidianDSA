@@ -39,12 +39,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sessions/AssetMark/Docker 2.0.md",
+                "file": "Recursion & Backtracking/Striver/Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Docker 2.0"
+              "title": "Questions"
             }
           }
         ],
@@ -192,7 +192,14 @@
   },
   "active": "3f925cd038d1b529",
   "lastOpenFiles": [
+    "Recursion & Backtracking/Subsequence/Structure.md",
+    "Recursion & Backtracking/All Kind of Patterns in Recursion.md",
+    "Recursion & Backtracking/Striver/Questions.md",
     "J/Issues.md",
+    "Recursion & Backtracking/Striver",
+    "J/Sergey Kargopolov.md",
+    "J/Testing.md",
+    "Graph/Question.md",
     "Sessions/AssetMark/Docker 2.0.md",
     "J/Sheet.md",
     "Dev/YouTube/Redis Script for Video Upload.md",
@@ -217,17 +224,10 @@
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/1. SOLID/Liskov Substitution Principle.md",
     "Design Patterns/1. SOLID/Interface Segregation.md",
-    "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
-    "Dev/Dependency Injection.md",
-    "Keyed.md",
-    "Linked List/Trees/Questions.md",
-    "Helper/EF Core.md",
-    "Helper/Dotnet Core.md",
     "Helper",
     "Kanhaiya/YT",
     "Sessions/AssetMark",
     "Untitled 1",
-    "Sessions",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
