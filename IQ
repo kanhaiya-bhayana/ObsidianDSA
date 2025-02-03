@@ -1,4 +1,4 @@
-In C#, the principles for designing a system to handle real-time streaming data with scalability and fault tolerance are quite similar to those in Java, but the tools and libraries may differ. Here's how you can design a real-time streaming system in C#:
+### In C#, the principles for designing a system to handle real-time streaming data with scalability and fault tolerance are quite similar to those in Java, but the tools and libraries may differ. Here's how you can design a real-time streaming system in C#:
 
 ### 1. **Stream Ingestion**
 To handle stream ingestion, you can use message queuing and event streaming systems.
