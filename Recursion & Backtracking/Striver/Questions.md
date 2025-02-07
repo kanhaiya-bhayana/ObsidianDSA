@@ -132,3 +132,94 @@ public class SubsequenceWithSum {
     }
 }
 ```
+
+
+#### Merge Sort Algorithm
+Link: https://www.geeksforgeeks.org/problems/merge-sort/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+```java
+class Solution {
+
+    void mergeSort(int arr[], int l, int r) {
+        // code here
+        f(arr,l,r);
+    }
+    
+    private void f(int[] arr, int low, int high){
+        if ( low >= high){
+            return;
+        }
+        
+        int mid = low+(high-low)/2;
+        f(arr,low,mid);
+        f(arr,mid+1,high);
+        merge(arr,low,mid,high);
+    }
+    
+    private void merge(int[] arr,int low, int mid, int high){
+        int left=low;
+        int right = mid+1;
+        List<Integer> temp = new ArrayList<>();
+        
+        while (left <= mid && right <= high){
+            if (arr[left] <= arr[right]){
+                temp.add(arr[left]);
+                left++;
+            }
+            else{
+                temp.add(arr[right]);
+                right++;
+            }
+        }
+        
+        while (left <= mid){
+            temp.add(arr[left++]);
+        }
+        while (right <= high){
+            temp.add(arr[right++]);
+        }
+        
+        for (int i=low; i <= high; i++){
+            arr[i] = temp.get(i-low);
+        }
+    }
+}
+```
+The reason for using `arr[i] = temp.get(i - low);` is to correctly map the indices of the `temp` list back to the original array `arr`. Here's a detailed explanation:
+
+### Understanding the Problem
+1. **Temp List (`temp`)**
+   - `temp` is used to temporarily store the merged elements during the merge step.
+   - Its indices start from `0` because it's a newly created list.
+
+2. **Original Array (`arr`)**
+   - `arr` spans from `low` to `high` for the current segment being merged.
+   - This means the indices of `temp` need to be adjusted to match the corresponding indices in `arr`.
+
+### Why Use `(i - low)`?
+The loop in the merge method iterates over the range `[low, high]` for `arr`. If you directly use `i` as the index for `temp`, it will attempt to access an out-of-bounds index because `temp` starts at `0`.
+
+- The mapping between `arr` and `temp` works as follows:
+  - `arr[low]` corresponds to `temp[0]`.
+  - `arr[low + 1]` corresponds to `temp[1]`.
+  - `arr[high]` corresponds to `temp[high - low]`.
+
+Hence, to correctly map the indices, you subtract `low` from `i` when accessing `temp`:
+```java
+arr[i] = temp.get(i - low);
+```
+
+### Without the Adjustment:
+If you used `temp.get(i)` directly, you'd get an `IndexOutOfBoundsException` because `temp` is smaller (it only contains the merged elements for the range `[low, high]`).
+
+### Visualization
+Let's say:
+- `arr = [8, 3, 6, 2]`
+- Current range to merge: `low = 1`, `high = 3`
+- Merged result: `temp = [2, 3, 6]`
+
+When copying `temp` back to `arr`:
+- `arr[1]` gets `temp[0]` → `i - low = 1 - 1 = 0`.
+- `arr[2]` gets `temp[1]` → `i - low = 2 - 1 = 1`.
+- `arr[3]` gets `temp[2]` → `i - low = 3 - 1 = 2`.
+
+Using `arr[i] = temp.get(i - low);` ensures the correct element is placed at the correct index in `arr`.
