@@ -223,3 +223,72 @@ When copying `temp` back to `arr`:
 - `arr[3]` gets `temp[2]` → `i - low = 3 - 1 = 2`.
 
 Using `arr[i] = temp.get(i - low);` ensures the correct element is placed at the correct index in `arr`.
+
+
+
+
+
+
+#### Quick Sort
+https://leetcode.com/problems/sort-an-array/description/
+Steps: 
+1. Find the pivot, and place it on their correct position
+2. Find the first element which is greater than pivot (----->)
+3. Find the first element which is smaller than the pivot (<-------)
+4. If i and j have not crossed each other, then do a swap
+
+###### TC & SC
+```
+TC: O(n log n)
+SC: O(1)
+```
+
+Code:
+```java
+class Solution {
+    public int[] sortArray(int[] nums) {
+        qs(nums,0,nums.length-1);
+        return nums;
+    }
+
+    private void qs(int[] arr, int low, int high){
+        if (low < high){
+            int partitionInd = f(arr,low,high);
+            qs(arr,low,partitionInd-1);
+            qs(arr,partitionInd+1,high);
+        }
+    }
+
+
+    private int f(int[] arr, int low, int high){
+        int pivotIndex = low + (int) (Math.random() * (high - low + 1));
+        swap(arr, low, pivotIndex); // Swap random pivot to the start
+        int pivot = arr[low];
+        int i = low;
+        int j = high;
+
+        while (i < j){
+            // find the first largest
+            while (arr[i] <= pivot && i <= high-1){
+                i++;
+            }
+            while (arr[j] > pivot && j >= low+1){
+                j--;
+            }
+
+            // check If i haven't crossed j
+            if ( i < j)
+                swap(arr,i,j);
+
+        }
+        swap(arr,low,j);
+        return j;
+    }
+
+    private void swap(int[] arr, int i, int j){
+        int t = arr[i];
+        arr[i] = arr[j];
+        arr[j] = t;
+    }
+}
+```
