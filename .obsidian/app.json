@@ -1,7 +1,7 @@
 {
-  "readableLineLength": false,
+  "readableLineLength": true,
   "strictLineBreaks": false,
-  "showLineNumber": true,
+  "showLineNumber": false,
   "alwaysUpdateLinks": true,
   "pdfExportSettings": {
     "includeName": true,

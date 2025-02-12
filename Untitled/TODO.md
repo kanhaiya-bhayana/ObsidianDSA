@@ -1,0 +1,3 @@
+- [ ]  Optum [Associate Software Engineer II .net in Gurgaon, Haryana, IN](https://careers.unitedhealthgroup.com/job/21177877/associate-software-engineer-ii-gurgaon-in/?src=JB-22455&utm_source=linkedin.com&utm_medium=job_posting)
+- [ ] S&P [.Net Developer in Multiple Locations | S&P Global](https://careers.spglobal.com/jobs/311759?lang=en-us&utm_source=linkedin)
+- [ ] 

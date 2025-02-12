@@ -23,7 +23,7 @@ Optimization Solution is DP
 
 
 
-## Subsequences
+#### Subsequences
 A contagious or non-contagious sequences, which follows the order. 
 ###### Example
 ```java
@@ -71,7 +71,7 @@ public class Subsequence
 ```
 
 
-## All SubSequences where sum = k
+#### All SubSequences where sum = k
 ```java
 import java.util.*;
 
@@ -132,8 +132,6 @@ public class SubsequenceWithSum {
     }
 }
 ```
-
-
 #### Merge Sort Algorithm
 Link: https://www.geeksforgeeks.org/problems/merge-sort/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
 ```java
@@ -186,7 +184,7 @@ class Solution {
 ```
 The reason for using `arr[i] = temp.get(i - low);` is to correctly map the indices of the `temp` list back to the original array `arr`. Here's a detailed explanation:
 
-### Understanding the Problem
+###### Understanding the Problem
 1. **Temp List (`temp`)**
    - `temp` is used to temporarily store the merged elements during the merge step.
    - Its indices start from `0` because it's a newly created list.
@@ -195,7 +193,7 @@ The reason for using `arr[i] = temp.get(i - low);` is to correctly map the indic
    - `arr` spans from `low` to `high` for the current segment being merged.
    - This means the indices of `temp` need to be adjusted to match the corresponding indices in `arr`.
 
-### Why Use `(i - low)`?
+###### Why Use `(i - low)`?
 The loop in the merge method iterates over the range `[low, high]` for `arr`. If you directly use `i` as the index for `temp`, it will attempt to access an out-of-bounds index because `temp` starts at `0`.
 
 - The mapping between `arr` and `temp` works as follows:
@@ -208,10 +206,10 @@ Hence, to correctly map the indices, you subtract `low` from `i` when accessing 
 arr[i] = temp.get(i - low);
 ```
 
-### Without the Adjustment:
+###### Without the Adjustment:
 If you used `temp.get(i)` directly, you'd get an `IndexOutOfBoundsException` because `temp` is smaller (it only contains the merged elements for the range `[low, high]`).
 
-### Visualization
+###### Visualization
 Let's say:
 - `arr = [8, 3, 6, 2]`
 - Current range to merge: `low = 1`, `high = 3`
@@ -223,10 +221,6 @@ When copying `temp` back to `arr`:
 - `arr[3]` gets `temp[2]` → `i - low = 3 - 1 = 2`.
 
 Using `arr[i] = temp.get(i - low);` ensures the correct element is placed at the correct index in `arr`.
-
-
-
-
 
 
 #### Quick Sort
