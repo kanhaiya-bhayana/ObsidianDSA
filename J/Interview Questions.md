@@ -1,5 +1,5 @@
 ## Top 50
-##### 1. What all does JVM Comprise of?
+# 1. What all does JVM Comprise of?
 1. **Classloader:** A JVM subsystem responsible for loading class files into memory when program starts.
 2. **Heap:** Memory area used for dynamic memory allocation, where objects and their data are stored during runtime.
 3. Method Area: Stores class-level information like static variables, constant pools, and method code. It holds per-class structure.
@@ -7,7 +7,7 @@
 5. Execute Engine: Reads and execute bytecode. It can interpret bytecode or use the JIT compiler to covert it into machine code for faster execution.
 6. JNI (Java Native Interface): Allows Java to interact with native applications or libraries in other languages like C or C++ for platform-specific features.
 
-##### 2. What is Object-oriented programming? Is Java an object-oriented language?
+# 2. What is Object-oriented programming? Is Java an object-oriented language?
 **What is Object-Oriented Programming?**  
 Object-Oriented Programming (OOP) is a programming paradigm based on the concept of "objects," which can contain data in the form of fields (attributes) and code in the form of methods (functions). OOP principles include:
 
@@ -20,7 +20,7 @@ Object-Oriented Programming (OOP) is a programming paradigm based on the concept
 Yes, Java is primarily an object-oriented language. It supports OOP principles through its class-based structure and features like inheritance, encapsulation, polymorphism, and abstraction. However, Java also includes some non-object-oriented features like primitive data types, making it not purely object-oriented.
 
 
-##### 3. What do you understand by Aggregation in context of Java?
+# 3. What do you understand by Aggregation in context of Java?
 **Aggregation in Java**
 
 Aggregation is a relationship between two classes where one class contains a reference to another class. It represents a "has-a" relationship, meaning one object (the whole) contains another object (the part), but the lifecycle of the part object is independent of the whole object.
@@ -76,7 +76,7 @@ public class Main {
 In this example, the `Department` class aggregates `Employee` objects, and the `Employee` objects exist independently of the `Department`.
 
 
-##### 4. Name the superclass in Java
+# 4. Name the superclass in Java
 In Java, the **`Object` class** is the superclass of all classes.
 
 **Key Points about the `Object` Class**:
@@ -105,7 +105,7 @@ public class Main {
 }
 ```
 
-##### 5. Explain the difference between 'finally' and 'finalize' in Java
+# 5. Explain the difference between 'finally' and 'finalize' in Java
 The **`finally`** block and the **`finalize()`** method in Java serve entirely different purposes:
 
 ###### **`finally`**
@@ -179,7 +179,7 @@ The **`finally`** block and the **`finalize()`** method in Java serve entirely d
 |**Scope**|Part of exception handling.|Part of garbage collection.|
 |**Usage**|Explicitly written by the programmer.|Implicitly called by the JVM.|
 
-##### 6. What is an anonymous inner class? How is it different from an inner class?
+# 6. What is an anonymous inner class? How is it different from an inner class?
  ###### **Anonymous Inner Class**
 
 An **anonymous inner class** in Java is a type of inner class that does not have a name and is declared and instantiated all in one step. It is often used when you need to override a method of a class or implement an interface without creating a separate named class.
@@ -255,7 +255,7 @@ A class without a name, declared and instantiated in one step. It is used for pr
 - **Outer Class**: Named, reusable, and represents broader functionalities.
 
 
-##### 7. What is system class?
+# 7. What is system class?
 The **`System` class** in Java is a final class from the `java.lang` package that provides utility methods and fields for system-level operations. It cannot be instantiated because its constructor is private, and all its methods and fields are static.
 
 ###### **Key Features of the `System` Class**:
@@ -271,7 +271,7 @@ Example:
 System.out.println("Hello, World!");  // Prints to the console
 ```
 
-##### 8. What is daemon thread and How to create in Java?
+# 8. What is daemon thread and How to create in Java?
 ###### **Daemon Thread in Java**
 
 A **daemon thread** in Java is a background thread that runs in the JVM to provide services to user threads. It is low-priority and is terminated automatically when all user threads in the application have finished execution.
@@ -344,10 +344,10 @@ In this example, the daemon thread stops automatically after the main thread (us
 - Daemon threads are typically used for tasks like logging, background monitoring, or cleanup.
 
 
-##### 9. Does java support global variables?
+# 9. Does java support global variables?
 No, Java doesn't support global variables to avoid namespace collisions and maintain referential transparency.
 Instead, variables are scoped within classes, methods, or blocks, providing better control and reducing unintended side effects, ensuring easier debugging and maintenance.
-##### 10. How is a RMI object is developed?
+# 10. How is a RMI object is developed?
 Remote Method Invocation (**RMI**) in Java allows an object to invoke methods on an object running in another JVM, even if it's on a different machine. RMI is used for distributed systems, enabling communication between different parts of an application.
 
 1. Define the interface for remote methods.
