@@ -1,4 +1,4 @@
-## Top 50
+## Top 50 - Java
 # 1. What all does JVM Comprise of?
 1. **Classloader:** A JVM subsystem responsible for loading class files into memory when program starts.
 2. **Heap:** Memory area used for dynamic memory allocation, where objects and their data are stored during runtime.
@@ -357,7 +357,7 @@ Remote Method Invocation (**RMI**) in Java allows an object to invoke methods on
 5. Start the RMI registry.
 6. Run the server and client applications to enable remote calls.
 
-# 11 Explain the difference between time slicing and preemptive scheduling?
+# 11. Explain the difference between time slicing and preemptive scheduling?
 
 **Time Slicing** and **Preemptive Scheduling** are two mechanisms used in multitasking operating systems to manage CPU allocation among multiple processes or threads. While they share similarities, they have distinct characteristics.
 
