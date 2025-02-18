@@ -16,6 +16,8 @@
 7. Spring Boot Starter for Spring Cloud
 8. spring boot starter thymeleaf
 
+https://spring.io/projects/spring-data
+
 
 # 3. How will you run your Spring Boot Application?
 This is a mvn plugin, once you will run the command, it will build the applicaation and create a JAR file which is placed under the "target" folder 
