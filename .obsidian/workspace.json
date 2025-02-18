@@ -167,8 +167,9 @@
   },
   "active": "c3b1f07deb3a9ad4",
   "lastOpenFiles": [
-    "Dev/YouTube/WebSocket.md",
+    "J/TODO.md",
     "J/Interview Questions.md",
+    "Dev/YouTube/WebSocket.md",
     "Dev/YouTube/Redis Script for Video Upload.md",
     "Design Patterns/Overview.md",
     "Microservices/brew-aspnetcore-microservices/dotnet+8+slides.pdf",
@@ -200,7 +201,6 @@
     "Java Cheatsheet/Graph Java.md",
     "Java Cheatsheet/Time Interval Questions.md",
     "Design Patterns/Factory Pattern.md",
-    "Design Patterns/2. Builder/Overview.md",
     "Helper",
     "Kanhaiya/YT",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
