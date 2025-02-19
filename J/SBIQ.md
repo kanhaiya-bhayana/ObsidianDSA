@@ -1,4 +1,4 @@
-# 1. WHy will you choose Spring Boot over Spring framework?
+# 1. Why will you choose Spring Boot over Spring framework?
 
 1. Dependency Resolution/Avoid Version conflict
 2. Avoid additional configuration
@@ -20,7 +20,17 @@ https://spring.io/projects/spring-data
 
 
 # 3. How will you run your Spring Boot Application?
-This is a mvn plugin, once you will run the command, it will build the applicaation and create a JAR file which is placed under the "target" folder 
+
+### **Key Differences at a Glance**:
+
+|Aspect|Run Button in IDE|`mvn spring-boot:run`|
+|---|---|---|
+|**Execution**|Direct invocation of `main()` method.|Maven plugin executes the application.|
+|**Dependency Management**|IDE's classpath configuration.|Maven resolves dependencies.|
+|**Build Updates**|May not reflect recent `pom.xml` changes.|Reflects recent `pom.xml` changes.|
+|**Speed**|Typically faster for development.|Slower due to build and dependency checks.|
+|**Debugging**|Easy to attach a debugger automatically.|Requires manual debugging configuration.|
+|**Environment Consistency**|Depends on IDE configuration.|Consistent with Maven build lifecycle.|
 ```sh
 mvn spring=boot:run
 ```

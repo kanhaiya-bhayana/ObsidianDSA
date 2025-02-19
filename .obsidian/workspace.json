@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Interview Questions.md",
+                "file": "J/SBIQ.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Interview Questions"
+              "title": "SBIQ"
             }
           }
         ]
@@ -95,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sessions/AssetMark/BAT 3.0.md",
+                "file": "J/SBIQ.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for BAT 3.0"
+              "title": "Backlinks for SBIQ"
             }
           },
           {
@@ -151,8 +151,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -167,8 +166,10 @@
   },
   "active": "c3b1f07deb3a9ad4",
   "lastOpenFiles": [
-    "J/TODO.md",
     "J/Interview Questions.md",
+    "J/SBIQ.md",
+    "J/DI.md",
+    "J/TODO.md",
     "Dev/YouTube/WebSocket.md",
     "Dev/YouTube/Redis Script for Video Upload.md",
     "Design Patterns/Overview.md",
@@ -199,8 +200,6 @@
     "Microservices/brew-aspnetcore-microservices/Architectures.md",
     "Java Cheatsheet/Circular.md",
     "Java Cheatsheet/Graph Java.md",
-    "Java Cheatsheet/Time Interval Questions.md",
-    "Design Patterns/Factory Pattern.md",
     "Helper",
     "Kanhaiya/YT",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
