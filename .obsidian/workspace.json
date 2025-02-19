@@ -11,12 +11,14 @@
             "id": "fb8691d583f065d1",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf"
+                "file": "J/Madan Reddy/Spring Boot/Notebook.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1)"
+              "icon": "lucide-file",
+              "title": "Notebook"
             }
           }
         ]
@@ -92,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
+                "file": "J/Madan Reddy/Spring Boot/Notebook.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1)"
+              "title": "Backlinks for Notebook"
             }
           },
           {
@@ -164,13 +166,15 @@
   },
   "active": "fb8691d583f065d1",
   "lastOpenFiles": [
-    "J/Madan Reddy/Spring Boot/Resources.md",
-    "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
+    "Dev/Udemy/Courses.md",
     "J/Madan Reddy/Spring Boot/Notebook.md",
+    "J/Madan Reddy/Spring Boot/Books/Create a Bean.md",
+    "J/Madan Reddy/Spring Boot/Books",
+    "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
+    "J/Madan Reddy/Spring Boot/Resources.md",
     "J/SBIQ.md",
     "J/Madan Reddy/Spring Boot",
     "J/Madan Reddy",
-    "Dev/Udemy/Courses.md",
     "Dev/Udemy",
     "J/Interview Questions.md",
     "J/DI.md",
@@ -196,7 +200,6 @@
     "Dev/Redis Cache.md",
     "Dev/YouTube",
     "Untitled.md",
-    "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
     "Java Cheatsheet/Conversions.md",
     "Dev/Keyed Services.md",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
