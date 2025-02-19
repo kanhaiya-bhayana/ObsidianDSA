@@ -8,17 +8,15 @@
         "type": "tabs",
         "children": [
           {
-            "id": "c3b1f07deb3a9ad4",
+            "id": "fb8691d583f065d1",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "J/Interview Questions.md",
-                "mode": "source",
-                "source": false
+                "file": "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf"
               },
-              "icon": "lucide-file",
-              "title": "Interview Questions"
+              "icon": "lucide-file-text",
+              "title": "Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1)"
             }
           }
         ]
@@ -78,8 +76,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 400.5,
-    "collapsed": true
+    "width": 400.5
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -95,7 +92,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "J/Interview Questions.md",
+                "file": "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +102,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Interview Questions"
+              "title": "Backlinks for Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1)"
             }
           },
           {
@@ -151,7 +148,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 200,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -164,9 +162,16 @@
       "github-sync:Sync with Remote": false
     }
   },
-  "active": "c3b1f07deb3a9ad4",
+  "active": "fb8691d583f065d1",
   "lastOpenFiles": [
+    "J/Madan Reddy/Spring Boot/Resources.md",
+    "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
+    "J/Madan Reddy/Spring Boot/Notebook.md",
     "J/SBIQ.md",
+    "J/Madan Reddy/Spring Boot",
+    "J/Madan Reddy",
+    "Dev/Udemy/Courses.md",
+    "Dev/Udemy",
     "J/Interview Questions.md",
     "J/DI.md",
     "J/TODO.md",
@@ -192,16 +197,8 @@
     "Dev/YouTube",
     "Untitled.md",
     "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
-    "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
     "Java Cheatsheet/Conversions.md",
     "Dev/Keyed Services.md",
-    "J",
-    "Design Patterns/CQRS.md",
-    "Microservices/brew-aspnetcore-microservices/Architectures.md",
-    "Java Cheatsheet/Circular.md",
-    "Java Cheatsheet/Graph Java.md",
-    "Helper",
-    "Kanhaiya/YT",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
