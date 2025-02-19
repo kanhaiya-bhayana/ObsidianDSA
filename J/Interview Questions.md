@@ -1480,3 +1480,855 @@ public class Main {
 ### **Summary**:
 
 An **abstract class** in Java is a class that cannot be instantiated and is used to define common behaviors and characteristics for subclasses. It can contain both abstract methods (without implementation) and concrete methods (with implementation). Abstract classes provide a foundation for other classes to build upon, enabling inheritance and polymorphism.
+
+# 31. Explain the difference between Abstraction and Encapsulation in Java?
+
+**Abstraction** and **Encapsulation** are two fundamental Object-Oriented Programming (OOP) concepts in Java. While they are closely related, they serve different purposes and are implemented differently. Here's a comparison:
+
+---
+
+|**Aspect**|**Abstraction**|**Encapsulation**|
+|---|---|---|
+|**Definition**|Abstraction focuses on **hiding implementation details** and showing only essential features or functionality to the user.|Encapsulation focuses on **hiding internal details/data** and ensuring controlled access to them through access modifiers.|
+|**Purpose**|To reduce complexity and increase code usability by exposing only relevant parts of an object.|To achieve data protection, security, and controlled access to class members.|
+|**Implementation**|Implemented using **abstract classes**, **interfaces**, or methods.|Implemented by declaring variables as `private` and providing `public` getter and setter methods.|
+|**Focus**|Focuses on **what an object does** (behavior).|Focuses on **how an object maintains its state** (data).|
+|**Example**|A car's interface shows the user how to drive it but hides the inner mechanics of how the engine works.|A car's internal state (like fuel level or engine health) is hidden and can only be accessed via specific methods.|
+|**Concept**|Concerned with **designing the architecture** of a system.|Concerned with **implementation** and **data protection**.|
+|**Visibility**|Deals with **method implementation visibility**.|Deals with **class data visibility and access control**.|
+|**Real-world Example**|Remote control: Users know which button performs which operation (abstract details), but they don’t know the internal circuitry.|Bank account: The balance is private and accessed via methods like `getBalance()` or `deposit()` to ensure security.|
+
+---
+
+### ### **Summary**
+
+- **Abstraction**: Hides the implementation details and focuses on what an object can do.
+- **Encapsulation**: Hides the internal data and provides controlled access to it.
+
+Both abstraction and encapsulation complement each other to create robust, secure, and maintainable Java applications.
+
+
+# 32. WAP to print fibonacci series using recursion?
+
+```java
+public class FibonacciRecursion {
+
+    // Method to calculate Fibonacci number using recursion
+    public static int fibonacci(int n) {
+        if (n <= 1) {
+            return n; // Base cases: fibonacci(0) = 0, fibonacci(1) = 1
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2); // Recursive case
+    }
+
+    public static void main(String[] args) {
+        int n = 10; // Number of terms in the Fibonacci series
+
+        System.out.println("Fibonacci series up to " + n + " terms:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " "); // Print each term in the series
+        }
+    }
+}
+```
+
+### **Output**:
+
+For `n = 10`, the output will be:
+```
+`Fibonacci series up to 10 terms: 0 1 1 2 3 5 8 13 21 34`
+```
+
+---
+
+### **How It Works**:
+
+1. **Base Case**:
+    - If `n == 0`, return `0`.
+    - If `n == 1`, return `1`.
+
+
+### **Drawbacks of This Approach**:
+
+1. **Inefficient**:
+    - The recursion recalculates Fibonacci numbers multiple times, leading to exponential time complexity (**O(2^n)**).
+2. **Better Alternative**:
+    - Use **memoization** or **iteration** for better performance.
+
+
+
+
+Here's a Java program to calculate the Fibonacci series using **recursion with memoization**, which optimizes the recursive approach by storing previously computed results in an array to avoid redundant calculations.
+
+```java
+import java.util.Arrays;
+
+public class FibonacciMemoization {
+
+    // Array to store the results of Fibonacci calculations
+    private static int[] memo;
+
+    // Method to calculate Fibonacci number using recursion with memoization
+    public static int fibonacci(int n) {
+        // Check if the result is already calculated
+        if (memo[n] != -1) {
+            return memo[n];
+        }
+
+        // Base cases
+        if (n <= 1) {
+            return n;
+        }
+
+        // Store the calculated result in the memo array
+        memo[n] = fibonacci(n - 1) + fibonacci(n - 2);
+        return memo[n];
+    }
+
+    public static void main(String[] args) {
+        int n = 10; // Number of terms in the Fibonacci series
+
+        // Initialize the memo array with -1 (indicating uncomputed values)
+        memo = new int[n + 1];
+        Arrays.fill(memo, -1);
+
+        System.out.println("Fibonacci series up to " + n + " terms:");
+        for (int i = 0; i < n; i++) {
+            System.out.print(fibonacci(i) + " ");
+        }
+    }
+}
+```
+
+### **Output**:
+
+For `n = 10`, the output will be:
+
+```
+Fibonacci series up to 10 terms:
+0 1 1 2 3 5 8 13 21 34
+```
+
+---
+
+### **How It Works**:
+
+1. **Memoization Array**:
+    
+    - An array `memo` is used to store the Fibonacci values as they are calculated.
+    - Initially, all values are set to `-1` to indicate that they are uncomputed.
+2. **Recursive Check**:
+    
+    - Before calculating `fibonacci(n)`, the method checks if the value is already stored in the `memo` array.
+    - If it exists, the method returns the stored value to avoid redundant calculations.
+3. **Base Cases**:
+    
+    - The first two Fibonacci numbers (0 and 1) are directly returned.
+4. **Recursive Case**:
+    
+    - If the value is not in the memo array, it is calculated and stored for future use.
+
+---
+
+### **Advantages of Memoization**:
+
+- **Improved Performance**:
+    - Reduces the time complexity from **O(2^n)** (plain recursion) to **O(n)** because each Fibonacci number is calculated only once.
+- **Efficient Use of Space**:
+    - Uses an additional array of size `n`, which is acceptable for most scenarios.
+
+Would you like an example using iteration instead?
+
+
+
+# 33. What is Garbage Collection in Java?
+
+**Garbage Collection** in Java automatically deallocates memory for unreferenced objects, improving memory efficiency and optimizing resource use. 
+
+It eliminates the need for manual memory management, ensuring only active objects consume memory, thus enhancing program performance.
+
+# 34. Why is Java Considered platform-independent?
+
+Java is considered **platform-independent** because it follows the principle of "Write Once, Run Anywhere" (WORA). This means that Java code, once written and compiled, can run on any device or operating system that has a **Java Virtual Machine (JVM)**.
+
+Here’s a detailed explanation:
+
+---
+
+### **Key Reasons Java Is Platform-Independent**
+
+#### 1. **Bytecode and JVM**
+
+- When Java source code (`.java`) is compiled, it is converted into an intermediate, machine-independent code called **bytecode** (`.class` file).
+- Bytecode is not tied to any specific machine architecture or operating system.
+- The **JVM** (Java Virtual Machine) interprets or executes the bytecode, making it platform-independent.
+
+#### 2. **JVM Implementation on Different Platforms**
+
+- The JVM is platform-specific; there are separate implementations for Windows, macOS, Linux, and other operating systems.
+- However, all JVMs understand the same bytecode format, allowing the same Java program to run on different platforms without modification.
+
+#### 3. **Standardized Runtime Environment**
+
+- Java provides a **runtime environment (JRE)** that is consistent across all platforms.
+- This ensures that Java applications behave the same way regardless of the underlying operating system.
+
+#### 4. **Absence of Platform-Specific Compiled Code**
+
+- Unlike languages like C or C++, where the compiled output is machine-specific, Java compiles into bytecode that is independent of hardware or OS.
+
+---
+
+### **Execution Flow in Java**
+
+1. **Source Code (`.java` file)**:
+    
+    - You write Java code.
+2. **Compilation**:
+    
+    - The **Java Compiler** (`javac`) converts the code into bytecode (`.class` file).
+3. **Execution**:
+    
+    - The **JVM** on the target platform reads and executes the bytecode.
+    
+    Example:
+    
+    - A `.class` file generated on Windows can be copied and executed on Linux or macOS without recompilation.
+
+---
+
+### **Example**
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+- Compile: `javac HelloWorld.java` → Produces `HelloWorld.class` (bytecode).
+- Run on any OS with a JVM: `java HelloWorld`.
+
+---
+
+### **Is Java Completely Platform-Independent?**
+
+While Java programs are platform-independent at the **bytecode level**, the JVM itself is platform-dependent because it needs to interact with the underlying hardware and operating system.
+
+---
+
+### **Conclusion**
+
+Java's platform independence is primarily due to its use of **bytecode** and the **Java Virtual Machine (JVM)**, which acts as an intermediary between the compiled code and the hardware/OS. This architecture allows Java programs to run on any platform with a compatible JVM.
+
+# 35. WAP to reverse a string?
+
+
+Here is a simple Java program to reverse a string:
+
+```java
+public class ReverseString {
+
+    // Method to reverse a string
+    public static String reverse(String str) {
+        StringBuilder reversed = new StringBuilder();
+
+        // Iterate through the string from the end to the start
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i)); // Append each character to the result
+        }
+
+        return reversed.toString();
+    }
+
+    public static void main(String[] args) {
+        String original = "Hello, World!";
+        String reversed = reverse(original);
+
+        System.out.println("Original String: " + original);
+        System.out.println("Reversed String: " + reversed);
+    }
+}
+```
+
+### **Output**
+
+```
+Original String: Hello, World!
+Reversed String: !dlroW ,olleH
+```
+
+---
+
+### **Explanation**
+
+1. **Iterate from the End**:
+    - Start iterating from the last character of the string and work your way to the first character.
+2. **StringBuilder**:
+    - Use `StringBuilder` to efficiently append characters while constructing the reversed string.
+
+---
+
+### **Alternative Using Built-in Methods**
+
+Java provides a built-in method to reverse a string using the `StringBuilder` or `StringBuffer` class:
+
+```java
+public class ReverseStringBuiltIn {
+    public static void main(String[] args) {
+        String original = "Hello, World!";
+        
+        // Using StringBuilder's reverse method
+        String reversed = new StringBuilder(original).reverse().toString();
+
+        System.out.println("Original String: " + original);
+        System.out.println("Reversed String: " + reversed);
+    }
+}
+```
+
+This approach is more concise and leverages Java's built-in `reverse()` method. The output will be the same.
+
+
+# 36. Explain the use of "this" keyword in Java?
+
+In Java, the **`this`** keyword is a reference to the current instance of the class. It is used in various contexts to avoid ambiguity, access instance variables and methods, or invoke constructors within the same class.
+
+---
+
+### **Common Uses of the `this` Keyword**
+
+#### 1. **Referencing Current Class Instance Variables**
+
+- The `this` keyword is used to differentiate between instance variables and local variables when they have the same name.
+
+```java
+public class Example {
+    private int number;
+
+    public Example(int number) {
+        this.number = number; // 'this.number' refers to the instance variable
+    }
+}
+```
+
+Without `this`, the assignment `number = number` would assign the parameter `number` to itself, causing ambiguity.
+
+---
+
+#### 2. **Calling Another Constructor in the Same Class**
+
+- The `this` keyword can be used to call another constructor of the same class, enabling **constructor chaining**.
+
+```java
+public class Person {
+    private String name;
+    private int age;
+
+    // Constructor 1
+    public Person(String name) {
+        this(name, 0); // Calls Constructor 2
+    }
+
+    // Constructor 2
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+}
+```
+
+This avoids duplicating initialization logic across multiple constructors.
+
+---
+
+#### 3. **Accessing Current Instance Methods**
+
+- The `this` keyword can be used to call another method of the current object explicitly.
+
+```java
+public class Calculator {
+    public void calculate() {
+        System.out.println("Performing calculation...");
+        this.display(); // Calls the 'display' method
+    }
+
+    public void display() {
+        System.out.println("Calculation complete.");
+    }
+}
+```
+
+Although not strictly required in most cases, it can improve code readability or resolve ambiguity.
+
+---
+
+#### 4. **Returning the Current Class Instance**
+
+- The `this` keyword can be used to return the current instance of the class, useful in method chaining.
+
+```java
+public class Builder {
+    private String part;
+
+    public Builder setPart(String part) {
+        this.part = part;
+        return this; // Returns the current instance
+    }
+
+    public void build() {
+        System.out.println("Building with: " + part);
+    }
+}
+
+public static void main(String[] args) {
+    new Builder().setPart("Engine").build();
+}
+```
+
+This enables fluent APIs and method chaining.
+
+---
+
+#### 5. **Passing Current Object as an Argument**
+
+- The `this` keyword can pass the current instance as an argument to another method or constructor.
+
+```java
+public class Example {
+    public void display(Example obj) {
+        System.out.println("Object passed: " + obj);
+    }
+
+    public void show() {
+        display(this); // Passes the current instance
+    }
+}
+```
+
+---
+
+#### 6. **Avoiding Shadowing of Instance Variables**
+
+- The `this` keyword resolves naming conflicts when a local variable name or a method parameter matches an instance variable name.
+
+```java
+public class ShadowingExample {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name; // 'this.name' refers to the instance variable
+    }
+}
+```
+
+---
+
+### **Key Points About `this` Keyword**
+
+- **Cannot Be Used in Static Context**:
+    
+    - The `this` keyword refers to an instance of the class. It cannot be used in static methods because they belong to the class, not any specific instance.
+    
+    ```java
+    public static void staticMethod() {
+        // this.someMethod(); // Compilation error
+    }
+    ```
+    
+- **Must Be the First Statement When Calling a Constructor**:
+    
+    - If used to call another constructor, the `this` call must be the first statement in the constructor.
+
+---
+
+### **Conclusion**
+
+The **`this`** keyword is a powerful tool in Java that improves code readability, avoids ambiguity, and facilitates clean design patterns like constructor chaining and fluent APIs. It is a fundamental concept that helps in effectively managing instance-specific behavior in object-oriented programming.
+
+
+# 37. Explain the meaning of Inheritance in Java?
+
+**Inheritance** in Java is a fundamental concept in object-oriented programming that allows a class (called the **child class** or **subclass**) to acquire the properties and behaviors (fields and methods) of another class (called the **parent class** or **superclass**). This promotes code reusability and establishes a hierarchical relationship between classes.
+
+---
+
+### **Key Features of Inheritance**
+
+1. **Code Reusability**:
+    
+    - Inheritance enables a subclass to reuse the code from the superclass, reducing redundancy.
+2. **Method Overriding**:
+    
+    - A subclass can provide its own implementation of a method already defined in the superclass.
+3. **Polymorphism**:
+    
+    - Inheritance facilitates runtime polymorphism, allowing objects to behave differently based on their actual type.
+
+---
+
+### **Syntax of Inheritance**
+
+In Java, inheritance is achieved using the `extends` keyword.
+
+```java
+class Parent {
+    // Parent class fields and methods
+}
+
+class Child extends Parent {
+    // Child class inherits fields and methods from Parent
+}
+```
+
+---
+
+### **Example of Inheritance**
+
+```java
+// Superclass (Parent)
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+// Subclass (Child)
+class Dog extends Animal {
+    void bark() {
+        System.out.println("This dog barks.");
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();  // Inherited method from Animal class
+        dog.bark(); // Method specific to Dog class
+    }
+}
+```
+
+**Output**:
+
+```
+This animal eats food.
+This dog barks.
+```
+
+---
+
+### **Types of Inheritance in Java**
+
+4. **Single Inheritance**:
+    
+    - A subclass inherits from a single superclass.
+    - Example: `class A extends B`.
+5. **Multilevel Inheritance**:
+    
+    - A class inherits from another class, and a third class inherits from the second class.
+    - Example: `class A extends B`, `class B extends C`.
+6. **Hierarchical Inheritance**:
+    
+    - Multiple classes inherit from a single parent class.
+    - Example: `class A extends B`, `class C extends B`.
+
+---
+
+### **Java Does Not Support Multiple Inheritance**
+
+Java does not allow a class to inherit from multiple classes using the `extends` keyword to avoid ambiguity caused by the **Diamond Problem**. However, multiple inheritance is achieved through **interfaces**.
+
+```java
+interface A {
+    void methodA();
+}
+
+interface B {
+    void methodB();
+}
+
+class C implements A, B {
+    public void methodA() {
+        System.out.println("Method A");
+    }
+
+    public void methodB() {
+        System.out.println("Method B");
+    }
+}
+```
+
+---
+
+### **Advantages of Inheritance**
+
+7. **Code Reusability**:
+    - Common functionality can be defined in the superclass and reused by subclasses.
+8. **Modularity**:
+    - Changes to the superclass automatically affect all subclasses.
+9. **Polymorphism**:
+    - Inheritance supports method overriding, enabling runtime polymorphism.
+
+---
+
+### **Disadvantages of Inheritance**
+
+10. **Tight Coupling**:
+    - Changes in the superclass can affect subclasses, potentially introducing bugs.
+11. **Complexity**:
+    - Improper use of inheritance can make code harder to maintain and understand.
+
+---
+
+### **When to Use Inheritance**
+
+- Use inheritance when classes share a logical relationship (is-a relationship). For example:
+    - A `Car` is a `Vehicle` → Use inheritance.
+    - A `Car` has an `Engine` → Use composition instead.
+
+---
+
+### **Conclusion**
+
+Inheritance is a powerful mechanism in Java that allows code reuse, reduces redundancy, and supports polymorphism. However, it should be used judiciously to maintain a clear and maintainable code structure.
+
+# 38. Explain the meaning of Interface in Java?
+
+In Java, an **interface** is a blueprint for a class. It defines a contract that the implementing classes must fulfill by providing the method definitions declared in the interface. Interfaces specify **what a class must do**, but not **how to do it** (i.e., they contain only abstract methods until Java 8, after which they can include default and static methods).
+
+---
+
+### **Key Features of Interfaces**
+
+1. **Defines a Contract**:
+    
+    - An interface specifies methods that a class must implement, ensuring consistent behavior across multiple classes.
+2. **Multiple Inheritance**:
+    
+    - A class can implement multiple interfaces, allowing Java to support multiple inheritance in a controlled way.
+3. **Abstract by Default**:
+    
+    - Before Java 8, all methods in an interface were abstract and public by default.
+4. **Fields Are Constants**:
+    
+    - All fields in an interface are implicitly `public`, `static`, and `final`.
+
+---
+
+### **Syntax**
+
+An interface is declared using the `interface` keyword.
+
+```java
+interface InterfaceName {
+    // Abstract method
+    void methodName();
+}
+```
+
+A class implements an interface using the `implements` keyword.
+
+```java
+class ClassName implements InterfaceName {
+    public void methodName() {
+        // Implementation of the method
+    }
+}
+```
+
+---
+
+### **Example of an Interface**
+
+```java
+// Defining an interface
+interface Animal {
+    void eat(); // Abstract method
+    void sleep();
+}
+
+// Implementing the interface
+class Dog implements Animal {
+    public void eat() {
+        System.out.println("Dog eats bones.");
+    }
+
+    public void sleep() {
+        System.out.println("Dog sleeps in the kennel.");
+    }
+}
+
+public class InterfaceExample {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.eat();
+        dog.sleep();
+    }
+}
+```
+
+**Output**:
+
+```
+Dog eats bones.
+Dog sleeps in the kennel.
+```
+
+---
+
+### **Default and Static Methods in Interfaces (Java 8 and Later)**
+
+1. **Default Methods**:
+    
+    - Interfaces can provide a default implementation for methods.
+    - This allows backward compatibility when adding new methods to interfaces.
+    
+    ```java
+    interface Animal {
+        void eat();
+    
+        default void sleep() {
+            System.out.println("Sleeping...");
+        }
+    }
+    
+    class Cat implements Animal {
+        public void eat() {
+            System.out.println("Cat eats fish.");
+        }
+    }
+    
+    public class DefaultMethodExample {
+        public static void main(String[] args) {
+            Cat cat = new Cat();
+            cat.eat();
+            cat.sleep(); // Uses default implementation
+        }
+    }
+    ```
+    
+2. **Static Methods**:
+    
+    - Interfaces can have static methods that can be called directly using the interface name.
+    
+    ```java
+    interface Utility {
+        static void printMessage() {
+            System.out.println("This is a static method in an interface.");
+        }
+    }
+    
+    public class StaticMethodExample {
+        public static void main(String[] args) {
+            Utility.printMessage();
+        }
+    }
+    ```
+    
+
+---
+
+### **Multiple Inheritance Using Interfaces**
+
+A class can implement multiple interfaces, enabling Java to achieve multiple inheritance without ambiguity.
+
+```java
+interface InterfaceA {
+    void methodA();
+}
+
+interface InterfaceB {
+    void methodB();
+}
+
+class ImplementingClass implements InterfaceA, InterfaceB {
+    public void methodA() {
+        System.out.println("Method A");
+    }
+
+    public void methodB() {
+        System.out.println("Method B");
+    }
+}
+
+public class MultipleInheritanceExample {
+    public static void main(String[] args) {
+        ImplementingClass obj = new ImplementingClass();
+        obj.methodA();
+        obj.methodB();
+    }
+}
+```
+
+---
+
+### **Key Points About Interfaces**
+
+1. **Access Modifiers**:
+    
+    - All methods in an interface are `public` by default.
+    - All fields are `public`, `static`, and `final`.
+2. **Cannot Instantiate**:
+    
+    - You cannot create an object of an interface, but you can use it as a reference type.
+    
+    ```java
+    Animal animal = new Dog(); // Polymorphism
+    ```
+    
+3. **No Constructors**:
+    
+    - Interfaces do not have constructors because they cannot be instantiated.
+
+---
+
+### **When to Use Interfaces**
+
+4. **Multiple Inheritance**:
+    
+    - Use interfaces to allow a class to inherit from multiple types.
+5. **Contract Definition**:
+    
+    - Use interfaces when you want to enforce consistent behavior across unrelated classes.
+6. **Decoupling**:
+    
+    - Interfaces enable loose coupling by allowing classes to interact through the interface instead of concrete implementations.
+
+---
+
+### **Difference Between Abstract Class and Interface**
+
+|Feature|Abstract Class|Interface|
+|---|---|---|
+|**Nature**|Can have both abstract and concrete methods.|Only abstract methods (until Java 8).|
+|**Fields**|Can have instance variables.|Only `public static final` fields.|
+|**Constructors**|Can have constructors.|Cannot have constructors.|
+|**Inheritance**|Supports single inheritance.|Supports multiple inheritance.|
+|**Default/Static Methods**|Not allowed before Java 8.|Allowed since Java 8.|
+
+---
+
+### **Conclusion**
+
+An interface in Java is a powerful tool for defining contracts that classes must follow, enabling polymorphism, multiple inheritance, and loose coupling. It is a cornerstone of Java’s object-oriented programming model.
+
+
+# 39. Explain the meaning of local variable and instance variable?
+
+A **Local Variable** is defined within a method, constructor, or block, and its scope is restricted to that specific method or block.
+
+An **instance variable**, variable  on the other hand, is declared inside a class but outside of any method. Its scope extends across the entire class and is associated with an instance of the class.
+
+
+# 40. What is servlet?
+
+**Servlets** are Java components that extend web server capabilities, handling complex web requests. 
+
+**Servlet process:**
+1. User sends a request via a browser.
+2. The web server forwards the request to the servlet. 
+3. The servlet processes it and generates a response.
+4. The response goes back to the server.
+5. The server delivers the response to the user's browser.
