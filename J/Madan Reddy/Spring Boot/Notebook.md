@@ -30,3 +30,16 @@ In Spring Boot, the @Configuration annotation indicates that a class is a source
 ## What is difference between @component and @ComponetScan in java spring boot?
 
 The `@Component` annotation is used to declare a class as a Spring-managed component, while `@ComponentScan` is used to define the scope of the component scanning process. In Spring Boot, `@ComponentScan` is implicitly included in `@SpringBootApplication`, scanning the package of the main class and its sub-packages by default.
+
+
+## Difference between @Bean and @Component?
+
+### **Key Differences**
+
+|Aspect|`@Bean`|`@Component`|
+|---|---|---|
+|**Where Used**|Inside a method of a configuration class (`@Configuration`).|Directly on a class.|
+|**Discovery Mechanism**|Explicitly declared and returned by a method.|Automatically discovered via component scanning.|
+|**Use Case**|Used when you need fine-grained control over bean instantiation (e.g., third-party classes).|Used for application classes you write yourself that Spring can manage.|
+|**Customization**|Full control over how the bean is created, including parameters, initialization, etc.|Follows default instantiation via the class constructor.|
+|**Dependencies**|Can pass custom parameters during instantiation.|Dependencies are usually injected via `@Autowired`.|

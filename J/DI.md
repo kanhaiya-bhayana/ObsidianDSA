@@ -1,6 +1,10 @@
 ## DI
 
+Dependency Injection is a specific implementation of IoC, where dependencies are injected into objects rather than the objects creating their own dependencies. Highlight that IoC promotes loose coupling and enhances modularity by decoupling the execution of tasks from their implementation.
 
+## IOC
+
+Inversion of Control (IoC) in Spring is `a design principle that manages the creation and configuration of objects, and their dependencies`. It's a core part of the Spring Framework.
 ### @Component
 
 The @Component annotation in Spring Boot is a core part of the Spring Framework and is used to mark a Java class as a Spring-managed component. This means that Spring will automatically detect and register the class as a bean in the application context during component scanning.

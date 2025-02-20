@@ -1,11 +1,6 @@
 ## Top 50 - Java
 # 1. What all does JVM Comprise of?
-1. **Classloader:** A JVM subsystem responsible for loading class files into memory when program starts.
-2. **Heap:** Memory area used for dynamic memory allocation, where objects and their data are stored during runtime.
-3. Method Area: Stores class-level information like static variables, constant pools, and method code. It holds per-class structure.
-4. Stack: Used to store method calls and local variables. Each method call creates a new frame on the stack, which is removed when the method finished.
-5. Execute Engine: Reads and execute bytecode. It can interpret bytecode or use the JIT compiler to covert it into machine code for faster execution.
-6. JNI (Java Native Interface): Allows Java to interact with native applications or libraries in other languages like C or C++ for platform-specific features.
+The Java Virtual Machine (JVM) enables Java programs to run on different platforms and operating systems. It's a virtual machine that acts as an interpreter between the Java programming language and the underlying hardware.
 
 # 2. What is Object-oriented programming? Is Java an object-oriented language?
 **What is Object-Oriented Programming?**  
@@ -1639,8 +1634,6 @@ Fibonacci series up to 10 terms:
 
 Would you like an example using iteration instead?
 
-
-
 # 33. What is Garbage Collection in Java?
 
 **Garbage Collection** in Java automatically deallocates memory for unreferenced objects, improving memory efficiency and optimizing resource use. 
@@ -1794,6 +1787,8 @@ This approach is more concise and leverages Java's built-in `reverse()` method. 
 # 36. Explain the use of "this" keyword in Java?
 
 In Java, the **`this`** keyword is a reference to the current instance of the class. It is used in various contexts to avoid ambiguity, access instance variables and methods, or invoke constructors within the same class.
+
+The this keyword in Java is used to refer to the current object in a method or constructor. It's a reserved keyword that helps avoid confusion between class attributes and parameters with the same name
 
 ---
 

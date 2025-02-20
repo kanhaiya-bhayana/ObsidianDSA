@@ -166,5 +166,3 @@ Spring Boot auto-configuration is a feature that automatically configures a Spr
 
 
 
-
-# 6. 
