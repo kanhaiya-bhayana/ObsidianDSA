@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD/Shrayansh/Observer.md",
+                "file": "J/LLD/Shrayansh/0.0 Overview.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Observer"
+              "title": "0.0 Overview"
             }
           }
         ],
@@ -181,16 +181,17 @@
   },
   "active": "50b61f974ef27af5",
   "lastOpenFiles": [
-    "J/LLD/Shrayansh/Strategy Design Pattern.md",
-    "J/LLD/Shrayansh/Observer.md",
+    "J/LLD/Shrayansh/0.4 Decorator.md",
+    "J/LLD/Shrayansh/0.3 Observer.md",
+    "J/LLD/Shrayansh/0.2 Strategy Design Pattern.md",
+    "J/LLD/Shrayansh/0.1 SOLID.md",
     "J/LLD/Shrayansh/Strategy-excalidraw.png",
-    "J/LLD/Shrayansh/SOLID.md",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
     "Design Patterns/1. SOLID/Interface Segregation.md",
     "Design Patterns/1. SOLID/Single Responsibility Principle.md",
     "Design Patterns/1. SOLID/SOLID.md",
-    "J/LLD/Shrayansh/Overview.md",
+    "J/LLD/Shrayansh/0.0 Overview.md",
     "J/TODO.md",
     "J/LLD/Shrayansh",
     "J/LLD",
@@ -217,7 +218,6 @@
     "Office",
     "Recursion & Backtracking/Striver/Questions.md",
     "J/Issues.md",
-    "J/Sergey Kargopolov.md",
     "What-is-Circuit-Breaker-Pattern-in-Microservices.webp",
     "Spring-cloud-functions.png",
     "Spring Cloud Stream.png",
