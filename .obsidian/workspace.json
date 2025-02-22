@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD/Shrayansh/Strategy Design Pattern.md",
+                "file": "J/LLD/Shrayansh/Observer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Strategy Design Pattern"
+              "title": "Observer"
             }
           }
         ],
@@ -181,8 +181,9 @@
   },
   "active": "50b61f974ef27af5",
   "lastOpenFiles": [
-    "J/LLD/Shrayansh/Strategy-excalidraw.png",
     "J/LLD/Shrayansh/Strategy Design Pattern.md",
+    "J/LLD/Shrayansh/Observer.md",
+    "J/LLD/Shrayansh/Strategy-excalidraw.png",
     "J/LLD/Shrayansh/SOLID.md",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
