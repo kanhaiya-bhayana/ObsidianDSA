@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Shrayansh/Load Balancer.md",
+                "file": "J/LLD-HLD/Shrayansh/Handle Distributed Transactions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Load Balancer"
+              "title": "Handle Distributed Transactions"
             }
           }
         ],
@@ -181,13 +181,14 @@
   },
   "active": "50b61f974ef27af5",
   "lastOpenFiles": [
-    "J/LLD-HLD/Shrayansh/Caching in Depth.md",
+    "J/LLD-HLD/Shrayansh/Distributed Messaging Queue - Kafka.md",
     "J/LLD-HLD/Shrayansh/Load Balancer.md",
+    "J/LLD-HLD/Shrayansh/Handle Distributed Transactions.md",
+    "J/LLD-HLD/Shrayansh/Caching in Depth.md",
     "J/LLD-HLD/Shrayansh/Fault Tolerance.md",
     "J/LLD-HLD/Shrayansh/0.5 Proxy Design Pattern.md",
     "J/LLD-HLD/Shrayansh/0.9 Prototype.md",
     "J/LLD-HLD/Shrayansh/Poxy - Reverse Proxy.md",
-    "J/LLD-HLD/Shrayansh/Distributed Messaging Queue - Kafka.md",
     "J/LLD-HLD/Shrayansh/Kafka architecture.png",
     "J/LLD-HLD/Shrayansh/Rate Limiter.md",
     "J/LLD-HLD/Shrayansh/Monolithic Vs Microservices.md",
@@ -209,7 +210,6 @@
     "J/LLD/Shrayansh/Strategy-excalidraw.png",
     "Design Patterns/1. SOLID/Open for Extension Closed for Modification.md",
     "Design Patterns/1. SOLID/Dependency Inversion Principle.md",
-    "Design Patterns/1. SOLID/Interface Segregation.md",
     "J/LLD-HLD/Shrayansh",
     "J/LLD-HLD",
     "Untitled 2",
