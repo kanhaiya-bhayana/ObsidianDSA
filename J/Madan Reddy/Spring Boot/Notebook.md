@@ -92,3 +92,41 @@ The  **@PreDestroy** annotation is used on a method as a callback notification t
 
 - This is the root interface for accessing a Spring bean container.
 - It is the actual container that instantiates, configures, and manages a number of beans.
+
+## Application Context
+ApplicationContext is a central interface to the Spring Framework that provides the following key functionalities:
+1. Bean Management
+2. Dependency Injection
+3. BeanFactory Extension
+
+ApplicationContext represents the Spring IoC container that holds all the beans created by the application. It is responsible for instantiating, configuring, and creating the beans. Additionally, it gets the beans’ information from configuration metadata provided in XML or Java.
+ApplicationContext represents the sub-interface of BeanFactory. In addition to the functionalities of BeanFactory.
+
+Each bean is instantiated after the container has been started since it uses eager loading.
+
+## What are the different modules in spring?
+Spring has seven core modules:
+1. The Core container module
+2. Application context module
+3. AOP (Aspect Oriented Programming)
+4. JDBC abstraction and DAO module
+5. ORM module (Object/Relational)
+6. Web Module
+7. Test
+
+## @Autowired vs @Inject 
+
+You can annotate fields and constructor using @Autowired to tell Spring framework to find dependencies for you. The @Inject annotation also serves the same purpose, but the main difference between them is that @Inject is a standard annotation for dependency injection and @Autowired is spring specific.
+
+## @Bean vs @Component
+**@Bean annotation** returns an object that sring should register as bean in application context. The body of the method bears the logic responsible for creating the instance.
+**@Component** preferable for component scanning and automatic wiring.
+
+## What are the different bean scopes in spring?
+1. **Singleton**: The bean instance will be only once and same instance will be returned by the IOC container. It is the default scope.
+2. **Prototype**: The bean instance will be created each time when requested.
+3. **Request**: The bean instance will be created per HTTP request.
+4. **Session**: The bean instance will be created per HTTP session.
+
+
+
