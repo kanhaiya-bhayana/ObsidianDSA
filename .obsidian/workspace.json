@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort Prac/Longest Subarray with Sum K.md",
+                "file": "Cohort Prac/PrefixSum/Easy.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Longest Subarray with Sum K"
+              "title": "Easy"
             }
           }
         ]
@@ -166,8 +166,8 @@
   },
   "active": "af99fc1f4a6460c2",
   "lastOpenFiles": [
-    "Cohort Prac/Count Subarrays Whose Sum Equals K.md",
     "Cohort Prac/Longest Subarray with Sum K.md",
+    "Cohort Prac/Count Subarrays Whose Sum Equals K.md",
     "Cohort Prac/PrefixSum/Easy.md",
     "Cohort/Module 1/0.6 Sliding Window & Contribution Technique/Questions.md",
     "Cohort/Module 1/0.5 Prefix_Sum___Carry_Forward.pdf",
