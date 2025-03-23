@@ -75,5 +75,33 @@ class Solution {
 ## [560. Subarray Sum Equals K](https://leetcode.com/problems/subarray-sum-equals-k/)
 
 ```java
-
+    public int longestSubarray(int[] arr, int k) {
+        // code here
+		Map<Integer,Integer> map = new HashMap<>();
+    
+        int n = arr.length;
+        int curSum = 0;
+		int maxL = 0;
+		
+		for (int i=0; i<arr.length; i++){
+			
+			curSum += arr[i];
+			
+			if (curSum == k){
+			    maxL = i+1;
+			}
+			
+			int diff = curSum - k;
+			
+			if (map.containsKey(diff)){
+				maxL = Math.max (maxL, i - map.get(diff));
+			}
+			
+			if (!map.containsKey(curSum)){
+				map.put(curSum, i);
+			}
+		}
+		
+		return maxL;
+    }
 ```
