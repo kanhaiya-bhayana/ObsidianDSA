@@ -208,3 +208,33 @@ public class Main {
 // Time Complexity: O(n)
 // Space Complexity: O(n)
 ```
+
+### Find max consecutive 1s obtained by swapping at most with one 0
+
+```
+L = consecutives 1s to the left
+R = consecutives 1s to the right
+
+if (L + R == no.of 1s) return l + r;
+
+else return l + r + 1;
+```
+
+### Given a string as "Hello World" then o/p should be "World Hello" | String reverse words
+
+```java
+public String reverseWords(String s){
+	s = s.trim();
+	String[] words = s.split("\\s+");
+	StringBuilder sb = new StringBuilder();
+	
+	for (int i=words.length-1; i>=0; i--){
+		sb.append(words[i]);
+		
+		if (i > 0)
+			sb.append(" ");
+	}
+	
+	return sb.toString();
+}
+```
