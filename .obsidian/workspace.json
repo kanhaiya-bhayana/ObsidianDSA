@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module 1/1.10 Strings/Notes.md",
+                "file": "Cohort/Module 1/0.11 2 D Matrices and Strings Lab/Notes.md",
                 "mode": "source",
                 "source": false
               },
@@ -166,13 +166,18 @@
   },
   "active": "af99fc1f4a6460c2",
   "lastOpenFiles": [
+    "Cohort/Module 1/0.10 Strings/Notes.md",
+    "Cohort/Module 1/0.11 2 D Matrices and Strings Lab/Notes.md",
+    "J/SBIQ.md",
+    "Cohort/Module 1/0.11 2 D Matrices and Strings Lab",
+    "Cohort/Module 1/0.10 Strings/String Builder Methods.pdf",
+    "Cohort/Module 1/1.10 Strings/String Builder Methods.md",
+    "Cohort/Module 1/0.10 Strings/s2.png",
     "Cohort/Module 1/0.8 Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
     "Cohort/Module 1/0.8 Bit_Manipulation_Basics/Scaler Companion.pdf",
-    "Cohort/Module 1/1.10 Strings/Notes.md",
-    "Cohort/Module 1/1.10 Strings/s2.png",
-    "Cohort/Module 1/1.10 Strings/s1.png",
+    "Cohort/Module 1/0.10 Strings/s1.png",
     "Cohort/Module 1/0.9 Tow D Matrices/Notes.md",
-    "Cohort/Module 1/1.10 Strings",
+    "Cohort/Module 1/0.10 Strings",
     "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
     "Cohort/Module 1/0.7 Lab Session on Memory Management & Sorting Basics/Notes.md",
     "Cohort Prac/PrefixSum/Easy.md",
@@ -193,8 +198,6 @@
     "Microservices/brew-aspnetcore-microservices/Content/Cqrs-mediatr-request-lifecycle.png",
     "Microservices/brew-aspnetcore-microservices/Content/Big-picture-course-project.png",
     "Microservices/brew-aspnetcore-microservices/Decomposition-of-e-commerce-ms.pdf",
-    "Microservices/brew-aspnetcore-microservices/What's-new-in-dotnet8-and-C#-12-features.pdf",
-    "Cohort/Module 1/0.8 Bit_Manipulation_Basics",
     "Dev/YouTube/LeetCode’s Top 50 questions.md",
     "Dev/Udemy/Courses.md",
     "J/Issues.md",
@@ -208,8 +211,6 @@
     "Dev/YouTube/Redis Script for Video Upload.md",
     "DSA/Array/Questions.md",
     "Cohort/Module 1/0.0 Intermediate DSA-Introduction to Problem Solving.md",
-    "J/Madan Reddy/Spring Boot/Notebook.md",
-    "J/DI.md",
-    "J/Madan Reddy/Spring Boot/Books/Create a Bean.md"
+    "J/Madan Reddy/Spring Boot/Notebook.md"
   ]
 }
