@@ -1,4 +1,4 @@
-### Transpose a matrix
+ ### Transpose a matrix
 
 ##### Observation
 

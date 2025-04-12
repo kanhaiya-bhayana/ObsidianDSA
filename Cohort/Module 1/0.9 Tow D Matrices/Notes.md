@@ -268,3 +268,30 @@ public int solve(final List<ArrayList<Integer>> A){
 // Time Complexity: O(n)
 // Space Complexity: O(1)
 ```
+
+
+### Transpose a rectangle matrix
+
+```java
+public ArrayList<ArrayList<Integer>> solve(ArrayList<ArrayList<Integer>> A) {
+	int rows = A.size();
+	int cols = A.get(0).size();
+	
+	ArrayList<ArrayList<Integer>> res = new ArrayList<>();
+	for (int i=0; i<cols; i++){
+		res.add(new ArrayList<>());
+	}
+
+	for (int j=0; j<cols; j++){
+		for (int i=0; i<rows; i++){
+			res.get(j).add(A.get(i).get(j));
+		}
+	}
+
+	return res;
+}
+// Time Complexity: O(m*n)
+// Space Complexity: O(n*m)    
+
+```
+
