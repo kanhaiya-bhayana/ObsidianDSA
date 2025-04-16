@@ -8,31 +8,17 @@
         "type": "tabs",
         "children": [
           {
-            "id": "af99fc1f4a6460c2",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cohort/Module 2/Dday 1/Performing multiple queries on an Array.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Performing multiple queries on an Array"
-            }
-          },
-          {
             "id": "898a54a9556dfc79",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module 2/Dday 1/Performing multiple queries on an Array.md",
+                "file": "Cohort/Module_02/D4-BitManipulation/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Performing multiple queries on an Array"
+              "title": "Notes"
             }
           }
         ]
@@ -92,7 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 330.51103591918945
+    "width": 467.5110321044922
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -108,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cohort/Intermediate DSA-Introduction to Problem Solving.md",
+                "file": "Cohort/Module 2/Day 3/Notes.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Intermediate DSA-Introduction to Problem Solving"
+              "title": "Backlinks for Notes"
             }
           },
           {
@@ -127,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md",
+                "file": "Cohort/Module 2/Day 3/Notes.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 5. Replay Behavior"
+              "title": "Outgoing links from Notes"
             }
           },
           {
@@ -142,7 +128,9 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-tags",
               "title": "Tags"
@@ -154,18 +142,31 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Azure/Durable Functions/YT/5. Replay Behavior.md"
+                "file": "Cohort/Module 2/Day 3/Notes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 5. Replay Behavior"
+              "title": "Outline of Notes"
+            }
+          },
+          {
+            "id": "b1e0fb739489b7af",
+            "type": "leaf",
+            "state": {
+              "type": "timer-view",
+              "state": {},
+              "icon": "timer",
+              "title": "Timer"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 200,
-    "collapsed": true
+    "width": 290.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -175,56 +176,58 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "github-sync:Sync with Remote": false
+      "github-sync:Sync with Remote": false,
+      "soundscapes:Soundscapes: My Music": false,
+      "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "af99fc1f4a6460c2",
+  "active": "898a54a9556dfc79",
   "lastOpenFiles": [
-    "Cohort/Module 2/Dday 1/Merge Intervals.md",
-    "Cohort/Module 2/Dday 1/Performing multiple queries on an Array.md",
-    "Cohort/Module 2/Dday 1/Maximum Subarray Sum.md",
+    "Cohort/Module_02/Trapping Rain Water.md",
+    "Cohort/Module_01/Topic_11-2_D_Matrices_and_Strings_Lab/Notes.md",
+    "Cohort/Module_01/Topic_09-Tow_D_Matrices/Notes.md",
+    "Cohort/Module_01/Topic_10-Strings/String Builder Methods.pdf",
+    "Cohort/Module_01/Topic_10-Strings/s2.png",
+    "Cohort/Module_01/Topic_10-Strings/s1.png",
+    "Cohort/Module_01/Topic_10-Strings/Notes.md",
+    "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
+    "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Scaler Companion.pdf",
+    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
+    "Cohort/Module_01/Topic_07-Lab_Session_on_Memory_Management_and_Sorting_Basics/Notes.md",
+    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
+    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/Scaler Companion.pdf",
+    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/night-island-scenery-macos-4k-wallpaper-uhdpaper.com-107@0@h.jpg",
+    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png",
+    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/0.5 Prefix_Sum___Carry_Forward.pdf",
+    "Cohort/Module_01/Topic_01-Introduction/0.0 Intro_to_Problem_Solving_2.pdf",
+    "Cohort/Module_01/Topic_04-TC_and_Debugging/0.4.1 TC_and_Debugging.pdf",
+    "Cohort/Module_01/Topic_04-TC_and_Debugging/0.4 TC_and_Debugging.pdf",
+    "Cohort/Module_01/Topic_03-Introduction_to_Arrays_2/Scaler Companion.pdf",
+    "Cohort/Module_01/Questions.md",
+    "Cohort/Module_02/Kadane's Algorithm.md",
+    "Cohort/Module 1/Questions.md",
+    "Cohort/Module_02/D4-BitManipulation/Notes.md",
+    "Office/Newsletter.md",
+    "Kanhaiya/YT/gRPC Thank you Script.md",
+    "Cohort/Module_02/Day 3/Notes.md",
+    "Cohort/Module 1/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
+    "Cohort/Module_02/Day 2/Notes.md",
+    "Cohort/Module_02/Dday 1/Performing multiple queries on an Array.md",
+    "2025-04-13.md",
+    "Cohort/Module_02/Dday 1/Maximum Subarray Sum.md",
+    "Cohort/Module_02/Dday 1/Merge Intervals.md",
     "Cohort/HLD.md",
-    "Cohort/Module 1/0.6 Sliding Window & Contribution Technique/Notes.md",
-    "Cohort/Module 2/Day 2/Notes.md",
-    "Cohort/Module 2/Dday 1",
-    "Cohort/Module 1/0.11 2 D Matrices and Strings Lab/Notes.md",
-    "Cohort/Module 1/0.6 Sliding Window & Contribution Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
+    "Cohort/Module 1/Topic_11-2_D_Matrices_and_Strings_Lab/Notes.md",
     "Dev/YouTube/LeetCode’s Top 50 questions.md",
-    "Cohort/Module 2/Day 2",
-    "Cohort/Module 2",
     "J/LLD-HLD/Shrayansh/Distributed Messaging Queue - Kafka.md",
     "Dev/AzuEventHubKafka/Notes.md",
-    "Dev/AzuEventHubKafka",
-    "Cohort/Module 1/0.5 Prefix_Sum___Carry_Forward/Scaler Companion.pdf",
-    "Cohort/Module 1/0.5 Prefix_Sum___Carry_Forward",
-    "Cohort/Module 1/New folder",
-    "Cohort/Module 1/0.4 TC_and_Debugging/0.4.1 TC_and_Debugging.pdf",
-    "Cohort/Module 1/0.4 TC_and_Debugging/0.4 TC_and_Debugging.pdf",
-    "Cohort/Module 1/0.9 Tow D Matrices/Notes.md",
-    "Cohort/Module 1/0.10 Strings/Notes.md",
-    "J/SBIQ.md",
-    "Cohort/Module 1/1.10 Strings/String Builder Methods.md",
-    "Cohort/Module 1/0.10 Strings/s2.png",
-    "Cohort/Module 1/0.10 Strings/s1.png",
-    "SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
-    "Cohort/Module 1/0.7 Lab Session on Memory Management & Sorting Basics/Notes.md",
-    "Cohort Prac/PrefixSum/Easy.md",
-    "Cohort Prac/Longest Subarray with Sum K.md",
-    "Cohort Prac/Count Subarrays Whose Sum Equals K.md",
-    "Cohort/Module 1/Questions.md",
+    "Cohort/Module 1/Topic_09-Tow_D_Matrices/Notes.md",
+    "Cohort/Module 1/Topic_10-Strings/Notes.md",
+    "Cohort/Module 1/Topic_10-Strings/s2.png",
+    "Cohort/Module 1/Topic_10-Strings/s1.png",
     "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
     "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png",
     "Microservices/brew-aspnetcore-microservices/Content/MediatR-pipeline-behavior.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Logging-middleware.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Developing-catalog-api.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Deployment-strategy.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Cqrs-mediatr-request-lifecycle.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Big-picture-course-project.png",
-    "Dev/Udemy/Courses.md",
-    "J/Issues.md",
-    "Dev/YouTube/ConfigDemo.md",
-    "Dev/Redis Cache.md",
-    "Dev/Primitive Obsession.md",
-    "Dev/Keyed Services.md"
+    "Microservices/brew-aspnetcore-microservices/Content/Logging-middleware.png"
   ]
 }
