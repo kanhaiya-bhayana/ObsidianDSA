@@ -90,3 +90,41 @@ func(int[] arr){
 ### 1. Left Shift
 > A << x => Shift all bits of A, x positions to the left.
 
+As long as no overflow happens
+	(A<<x) = Ax2^x
+	(1<<i) = 2^i
+	2^i = (1<<i)
+### Q. Given an integer N and an integer i. Set the ith bit in N
+> OR opearator
+		N = N|(1<<i) 
+
+
+### Q. Given an integer N and an integer i. Toggle the ith bit in N
+> XOR operator
+		N = N^(1<<i)
+
+
+### Q. Given an integer N and an integer i. Check if the ith bit is set or not
+```java
+boolean isCheck(int N, int i){
+	if ((N&(1<<i))){
+		return false;
+	}
+	else{
+		return true;
+	}
+}
+```
+
+### Q. Given an integer N, Count the number of set bits in an integer.
+```java
+func(int N){
+	int cnt = 0;
+	for (int i=0; i<32; i++){
+		if (isCheck(N,i)){
+			count++;
+		}
+	}
+}
+
+```
