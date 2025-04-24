@@ -10,6 +10,7 @@
           {
             "id": "898a54a9556dfc79",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
@@ -17,26 +18,56 @@
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
               "title": "Notes23042025"
             }
           },
           {
+            "id": "5f69d6da29d8f5fd",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.8.10"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.8.10"
+            }
+          },
+          {
             "id": "21934b8beba61418",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+                "file": "Cohort/Module_02/D5_Recursion/Notes21042025.md",
                 "mode": "source",
                 "source": false
               },
+              "pinned": true,
               "icon": "lucide-file",
-              "title": "Notes23042025"
+              "title": "Notes21042025"
+            }
+          },
+          {
+            "id": "912ee464ea2f791c",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Announcements.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Announcements"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -181,7 +212,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 290.5
+    "width": 290.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -196,11 +228,12 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "21934b8beba61418",
+  "active": "898a54a9556dfc79",
   "lastOpenFiles": [
-    "Cohort/Module_02/D5_Recursion/Notes21042025.md",
+    "Recursion Simulation.png",
     "Announcements.md",
     "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+    "Cohort/Module_02/D5_Recursion/Notes21042025.md",
     "Cohort/Module_02/D6_LabSessionRecursion",
     "Cohort/Module_02/D4-BitManipulation2/Notes.md",
     "Cohort/Module_02/D5_Recursion",
@@ -237,7 +270,6 @@
     "Cohort/Module_02/Dday 1/Merge Intervals.md",
     "Cohort/HLD.md",
     "Cohort/Module 1/Topic_11-2_D_Matrices_and_Strings_Lab/Notes.md",
-    "Dev/YouTube/LeetCode’s Top 50 questions.md",
     "Cohort/Module 1/Topic_10-Strings/s2.png",
     "Cohort/Module 1/Topic_10-Strings/s1.png",
     "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
