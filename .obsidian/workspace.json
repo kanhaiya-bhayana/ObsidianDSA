@@ -66,8 +66,23 @@
               "icon": "lucide-file",
               "title": "Announcements"
             }
+          },
+          {
+            "id": "2fc02f55d24cb512",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "J/LLD-HLD/Shrayansh/0.1 SOLID.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "0.1 SOLID"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -212,8 +227,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 290.5,
-    "collapsed": true
+    "width": 290.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -228,11 +242,15 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "898a54a9556dfc79",
+  "active": "2fc02f55d24cb512",
   "lastOpenFiles": [
-    "Recursion Simulation.png",
+    "J/LLD-HLD/Mrunmai Dahare/Basics of system design.pdf",
+    "J/LLD-HLD/Mrunmai Dahare",
+    "J/LLD-HLD/New folder",
+    "J/LLD-HLD/Shrayansh/0.0 Overview.md",
     "Announcements.md",
     "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+    "Recursion Simulation.png",
     "Cohort/Module_02/D5_Recursion/Notes21042025.md",
     "Cohort/Module_02/D6_LabSessionRecursion",
     "Cohort/Module_02/D4-BitManipulation2/Notes.md",
@@ -256,8 +274,6 @@
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/Scaler Companion.pdf",
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/night-island-scenery-macos-4k-wallpaper-uhdpaper.com-107@0@h.jpg",
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png",
-    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/0.5 Prefix_Sum___Carry_Forward.pdf",
-    "Cohort/Module_01/Topic_01-Introduction/0.0 Intro_to_Problem_Solving_2.pdf",
     "Cohort/Module_02/Kadane's Algorithm.md",
     "Cohort/Module 1/Questions.md",
     "Office/Newsletter.md",
@@ -269,12 +285,10 @@
     "Cohort/Module_02/Dday 1/Maximum Subarray Sum.md",
     "Cohort/Module_02/Dday 1/Merge Intervals.md",
     "Cohort/HLD.md",
-    "Cohort/Module 1/Topic_11-2_D_Matrices_and_Strings_Lab/Notes.md",
     "Cohort/Module 1/Topic_10-Strings/s2.png",
     "Cohort/Module 1/Topic_10-Strings/s1.png",
     "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
     "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png",
-    "Microservices/brew-aspnetcore-microservices/Content/MediatR-pipeline-behavior.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Logging-middleware.png"
+    "Microservices/brew-aspnetcore-microservices/Content/MediatR-pipeline-behavior.png"
   ]
 }
