@@ -107,6 +107,10 @@ Query (5,6,-1)
 
 #### Approach 2
 
+Everything is same as the above question, you only need to take care of the following formula: 
+
+> Query(i, j, x) = Query (i, x) + Query(j + 1, -x)
+
 ```
 TC: O(Q+N)
 SC: O(1)
@@ -146,4 +150,4 @@ public static void main(String[] args) {
 
 ## Follow up question
 
-### Everything is same as the above question but the array A[] is non-zero
+### Everything is same as the above question but the array Array elements are non-zero

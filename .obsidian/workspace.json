@@ -8,50 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "898a54a9556dfc79",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Notes23042025"
-            }
-          },
-          {
-            "id": "5f69d6da29d8f5fd",
-            "type": "leaf",
-            "state": {
-              "type": "release-notes",
-              "state": {
-                "currentVersion": "1.8.10"
-              },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.8.10"
-            }
-          },
-          {
-            "id": "21934b8beba61418",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Cohort/Module_02/D5_Recursion/Notes21042025.md",
-                "mode": "source",
-                "source": false
-              },
-              "pinned": true,
-              "icon": "lucide-file",
-              "title": "Notes21042025"
-            }
-          },
-          {
             "id": "912ee464ea2f791c",
             "type": "leaf",
             "pinned": true,
@@ -68,21 +24,77 @@
             }
           },
           {
-            "id": "2fc02f55d24cb512",
+            "id": "f2fa1a4e651c27d7",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Shrayansh/0.1 SOLID.md",
+                "file": "Cohort/Module_03/01_Maths/1-Modular_Arithmetic_GCD_Lecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.1 SOLID"
+              "title": "1-Modular_Arithmetic_GCD_Lecture"
+            }
+          },
+          {
+            "id": "2222756c3aad305f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes23042025"
+            }
+          },
+          {
+            "id": "9c3d7f52f68f5f18",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_02/Day 2/Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes"
+            }
+          },
+          {
+            "id": "5bfaf0f8c2589b02",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_02/Dday 1/Performing multiple queries on an Array.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Performing multiple queries on an Array"
+            }
+          },
+          {
+            "id": "1022f2f7b8a5bf98",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_03/04_Searching_1_Binary_Search/Notes.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes"
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -114,7 +126,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#TrappingRainWater",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -242,49 +254,49 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "2fc02f55d24cb512",
+  "active": "1022f2f7b8a5bf98",
   "lastOpenFiles": [
-    "J/LLD-HLD/Mrunmai Dahare/Basics of system design.pdf",
-    "J/LLD-HLD/Mrunmai Dahare",
-    "J/LLD-HLD/New folder",
-    "J/LLD-HLD/Shrayansh/0.0 Overview.md",
+    "Make It Happen.md",
+    "Cohort/Module_03/04_Searching_1_Binary_Search/Notes.md",
+    "Cohort/Module_03/04_Searching_1_Binary_Search",
+    "Cohort/Module_02/Dday 1/Performing multiple queries on an Array.md",
+    "Cohort/Module_02/Day 2/Notes.md",
+    "Cohort/Module_02/Kadane's Algorithm.md",
+    "Cohort/Module_02/Trapping Rain Water.md",
+    "Cohort/Module_03/01_Maths/1-Modular_Arithmetic_GCD_Lecture.md",
+    "Cohort/Module_03/Questions.md",
+    "Cohort/Module_02/Dday 1/Maximum Subarray Sum.md",
     "Announcements.md",
     "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
-    "Recursion Simulation.png",
+    "Cohort/Module_02/Dday 1/Merge Intervals.md",
+    "Sorting Algorithms/Count Sort.md",
+    "Greedy/Questions.md",
+    "Sorting Algorithms/Merge Sort.md",
+    "Cohort/Module_03/03_Sorting_1/Notes.md",
+    "Dev/System_Design/Hello_Interview/API Gateway.md",
+    "Office/Newsletter.md",
+    "Ong/what is record in c#.md",
+    "Ong/Use Case_Complex behavior, identity_Data-centric,.md",
+    "Cohort/Module_03/02_Hashing/Notes.md",
     "Cohort/Module_02/D5_Recursion/Notes21042025.md",
-    "Cohort/Module_02/D6_LabSessionRecursion",
-    "Cohort/Module_02/D4-BitManipulation2/Notes.md",
-    "Cohort/Module_02/D5_Recursion",
-    "Cohort/Module_02/Day 2/Notes.md",
-    "Cohort/Module_02/D4-BitManipulation2",
-    "Cohort/Module_01/Questions.md",
+    "J/LLD-HLD/Shrayansh/0.1 SOLID.md",
+    "Dev/Udemy/Courses.md",
+    "Cohort/Module_03/03_Sorting_1",
+    "J/SBIQ.md",
+    "Cohort/Module_03/02_Hashing",
+    "J/Madan Reddy/Spring Boot/Notebook.md",
+    "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Scaler Companion.pdf",
-    "Cohort/Module_02/D4-BitManipulation/Notes.md",
-    "Cohort/Module_02/Trapping Rain Water.md",
-    "Cohort/Module_01/Topic_11-2_D_Matrices_and_Strings_Lab/Notes.md",
-    "Cohort/Module_01/Topic_09-Tow_D_Matrices/Notes.md",
-    "Cohort/Module_01/Topic_10-Strings/String Builder Methods.pdf",
+    "Cohort/Module_03/01_Maths",
+    "Cohort/Module_03",
+    "Dev/System_Design/Hello_Interview",
+    "Dev/System_Design",
+    "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
-    "Cohort/Module_01/Topic_10-Strings/Notes.md",
-    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
-    "Cohort/Module_01/Topic_07-Lab_Session_on_Memory_Management_and_Sorting_Basics/Notes.md",
-    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
-    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/Scaler Companion.pdf",
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/night-island-scenery-macos-4k-wallpaper-uhdpaper.com-107@0@h.jpg",
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png",
-    "Cohort/Module_02/Kadane's Algorithm.md",
-    "Cohort/Module 1/Questions.md",
-    "Office/Newsletter.md",
-    "Kanhaiya/YT/gRPC Thank you Script.md",
-    "Cohort/Module_02/Day 3/Notes.md",
-    "Cohort/Module 1/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
-    "Cohort/Module_02/Dday 1/Performing multiple queries on an Array.md",
-    "2025-04-13.md",
-    "Cohort/Module_02/Dday 1/Maximum Subarray Sum.md",
-    "Cohort/Module_02/Dday 1/Merge Intervals.md",
-    "Cohort/HLD.md",
     "Cohort/Module 1/Topic_10-Strings/s2.png",
     "Cohort/Module 1/Topic_10-Strings/s1.png",
     "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",

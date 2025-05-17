@@ -1,4 +1,4 @@
-### DSA Contest 1 => 11th May 2025
+### DSA Contest 1 => 15th May 2025 | Arrays, Bit Manipulation, Recursion, Math & Hashing
 ##### Topics
 > Arrays, Bit Manipulation, Recursion, Math and Hashing
 ### Quick Revision Notes
@@ -6,4 +6,18 @@
 
 ---
 
-### Record Azure Event Hub  - 26th April, 2025
+### ~~Record Azure Event Hub  - 26th April, 2025~~
+
+### ~~Akamai Technologies Test - 27th April, 2025~~
+
+### ~~Credit Card Bill - 26th April, 2025~~
+
+---
+
+## Today
+
+- [ ]  Code by Shreyansh - 2 videos
+- [x] Pahwa Studio Payment
+- [x] Test the proctoring setup once 
+- [ ] ICICI Credit card bill
+
