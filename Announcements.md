@@ -6,18 +6,10 @@
 
 ---
 
-### ~~Record Azure Event Hub  - 26th April, 2025~~
-
-### ~~Akamai Technologies Test - 27th April, 2025~~
-
-### ~~Credit Card Bill - 26th April, 2025~~
-
----
-
 ## Today
 
 - [ ]  Code by Shreyansh - 2 videos
 - [x] Pahwa Studio Payment
 - [x] Test the proctoring setup once 
-- [ ] ICICI Credit card bill
+- [ ] ICICI Credit card bill 
 
