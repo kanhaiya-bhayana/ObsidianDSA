@@ -12,4 +12,5 @@
 - [x] Pahwa Studio Payment
 - [x] Test the proctoring setup once 
 - [ ] ICICI Credit card bill 
-
+- [x] Visa Apply
+- [ ] Inter Service Communication

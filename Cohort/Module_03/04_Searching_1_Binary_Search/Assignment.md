@@ -143,7 +143,7 @@ public class Solution {
         }
 
         long low = 1;
-        long high = A;
+        long high = A/2;
         int res = 0;
 
         while (low <= high) {
@@ -165,6 +165,28 @@ public class Solution {
 }
 ```
 
+>TC: (Log A) ---- Base 2
+
+#### Why A/2A/2A/2 is appropriate:
+
+- For a number A>1A > 1A>1, the square root of AAA is always less than or equal to A/2A / 2A/2 (this follows from basic mathematical properties).
+    
+- For example:
+    
+    - If A=4A = 4A=4, 4=2\sqrt{4} = 24​=2, and 2≤4/22 \leq 4/22≤4/2.
+        
+    - If A=9A = 9A=9, 9=3\sqrt{9} = 39​=3, and 3≤9/23 \leq 9/23≤9/2.
+        
+
+This helps reduce the search space for the binary search, improving efficiency.
+
+#### Edge case for A=0A = 0A=0 or A=1A = 1A=1:
+
+You’ve handled these explicitly, which is correct because:
+
+- 0=0\sqrt{0} = 00​=0
+    
+- 1=1\sqrt{1} = 11​=1
 ## Q3. Sorted Insert Position
 **Problem Description**
 
