@@ -58,3 +58,12 @@ public int lowerBound(int[] arr, int n, int x){
 
 > TC: 2 * O(Log n) base 2,
 > Sc: O(1)
+
+
+
+## Find the number of occurrence of x in a sorted array
+> Make sure to add the check if first occurrence is coming as -1, then return 0; else
+
+> Last occurrence - First occurrence + 1
+
+
