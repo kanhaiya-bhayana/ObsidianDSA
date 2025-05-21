@@ -54,3 +54,8 @@ public int lowerBound(int[] arr, int n, int x){
 	return res;
 }
 ```
+
+
+
+> TC: 2 * O(Log n) base 2,
+> Sc: O(1)
