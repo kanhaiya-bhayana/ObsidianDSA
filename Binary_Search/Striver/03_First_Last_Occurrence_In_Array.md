@@ -3,7 +3,7 @@
 > First --> lower bound
 > Last --> upper bound 
 
-! but make sure we have to handle the edge cases, like if lb == n or lb != x then return -1, i.e., ele does not exists.
+! but make sure we have to handle the edge cases, like if lb == n or arr[lb] != x then return -1, i.e., ele does not exists.
 
 ```java
 
