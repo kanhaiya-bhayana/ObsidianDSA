@@ -9,13 +9,12 @@
 
 public int[] findFirstAndLast(int[] arr, int n, int x) {
     int lb = lowerBound(arr, n, x);
-    int ub = upperBound(arr, n, x) - 1; // Convert upper bound to an inclusive index
     
     // Check if x is not found
     if (lb == n || arr[lb] != x) {
         return new int[]{-1, -1};
     }
-    return new int[]{lb, ub};
+    return new int[]{lb, upperBound(arr, n, x) - 1};
 }
 
 public int lowerBound(int[] arr, int n, int x){
