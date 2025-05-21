@@ -11,6 +11,6 @@
 - [ ]  Code by Shreyansh - 2 videos
 - [x] Pahwa Studio Payment
 - [x] Test the proctoring setup once 
-- [ ] ICICI Credit card bill 
+- [ ] ICICI Credit card bill | Call customer care
 - [x] Visa Apply
 - [ ] Inter Service Communication

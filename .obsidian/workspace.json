@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
+                "file": "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.7 Singleton"
+              "title": "02_Lower_Bound_Upper_Bound"
             }
           }
         ],
@@ -200,11 +200,16 @@
   },
   "active": "b5b3cd3a8b8fe9bd",
   "lastOpenFiles": [
-    "J/LLD-HLD/Shrayansh/0.6 Builder.md",
-    "J/LLD-HLD/Shrayansh/0.4 Decorator.md",
+    "Binary_Search/Striver/Notes21052025.md",
+    "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
     "Cohort/Module_03/05_Binary_Search_on_Answer/Notes19052025.md",
-    "Cohort/Module_03/04_Searching_1_Binary_Search/Assignment.md",
+    "Binary_Search/Striver",
+    "Binary_Search",
     "Announcements.md",
+    "J/LLD-HLD/Shrayansh/0.6 Builder.md",
+    "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
+    "J/LLD-HLD/Shrayansh/0.4 Decorator.md",
+    "Cohort/Module_03/04_Searching_1_Binary_Search/Assignment.md",
     "Cohort/Module_02/Day 2/Notes.md",
     "Cohort/Module_03/05_Binary_Search_on_Answer",
     "Dev/Udemy/Courses.md",
@@ -225,17 +230,12 @@
     "Cohort/Module_03/03_Sorting_1/Notes.md",
     "Dev/System_Design/Hello_Interview/API Gateway.md",
     "Office/Newsletter.md",
-    "Ong/what is record in c#.md",
-    "Ong/Use Case_Complex behavior, identity_Data-centric,.md",
-    "Cohort/Module_03/02_Hashing/Notes.md",
     "Cohort/Module_03/03_Sorting_1",
     "Cohort/Module_03/02_Hashing",
     "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Scaler Companion.pdf",
     "Cohort/Module_03/01_Maths",
-    "Cohort/Module_03",
-    "Dev/System_Design/Hello_Interview",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
