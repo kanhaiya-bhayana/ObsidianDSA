@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
+                "file": "Cohort/Module_03/05_Binary_Search_on_Answer/Assignment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_Lower_Bound_Upper_Bound"
+              "title": "Assignment"
             }
           }
         ],
@@ -200,9 +200,14 @@
   },
   "active": "b5b3cd3a8b8fe9bd",
   "lastOpenFiles": [
-    "Binary_Search/Striver/Notes21052025.md",
-    "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
+    "Binary_Search/Aditya_Verma/Allocate_Minimum_Pages.md",
+    "Cohort/Module_03/05_Binary_Search_on_Answer/Assignment.md",
     "Cohort/Module_03/05_Binary_Search_on_Answer/Notes19052025.md",
+    "Binary_Search/Aditya_Verma",
+    "Binary_Search/Striver/03_First_Last_Occurrence_In_Array.md",
+    "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
+    "Binary_Search/Striver/04_Search_in_Rotated_Sorted_Array.md",
+    "Binary_Search/Striver/Notes21052025.md",
     "Binary_Search/Striver",
     "Binary_Search",
     "Announcements.md",
@@ -226,16 +231,11 @@
     "Cohort/Module_02/Dday 1/Merge Intervals.md",
     "Sorting Algorithms/Count Sort.md",
     "Greedy/Questions.md",
-    "Sorting Algorithms/Merge Sort.md",
-    "Cohort/Module_03/03_Sorting_1/Notes.md",
-    "Dev/System_Design/Hello_Interview/API Gateway.md",
-    "Office/Newsletter.md",
     "Cohort/Module_03/03_Sorting_1",
     "Cohort/Module_03/02_Hashing",
     "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
     "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Scaler Companion.pdf",
-    "Cohort/Module_03/01_Maths",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
