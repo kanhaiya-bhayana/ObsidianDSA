@@ -24,17 +24,17 @@
             }
           },
           {
-            "id": "b5b3cd3a8b8fe9bd",
+            "id": "ddb804d6e9df5c86",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_03/05_Binary_Search_on_Answer/Assignment.md",
+                "file": "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Assignment"
+              "title": "Notes23052025"
             }
           }
         ],
@@ -70,7 +70,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#LocalMinima",
+                "query": "tag:#BinarySearch",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -198,23 +198,38 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "b5b3cd3a8b8fe9bd",
+  "active": "ddb804d6e9df5c86",
   "lastOpenFiles": [
-    "Binary_Search/Aditya_Verma/Allocate_Minimum_Pages.md",
+    "Cohort/Module_03/Questions.md",
+    "Linked List/Linked List Striver/Introduction.md",
+    "Linked List/Linked List Striver/Array to LL.md",
+    "Linked List/Linked List Striver/Convert Stack to LL.md",
+    "Linked List/Linked List Striver/DLL1.png",
+    "J/Java/Java Memory Management.md",
+    "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
+    "J/Java",
+    "J/java-memory-architecture.html",
+    "J/Unconfirmed 304703.crdownload",
+    "Cohort/Module_03/04_Searching_1_Binary_Search/Assignment.md",
     "Cohort/Module_03/05_Binary_Search_on_Answer/Assignment.md",
+    "Cohort/Module_03/06_Lab_Session_On_Searching/Assignment.md",
+    "Announcements.md",
+    "Cohort/Module_03/06_Lab_Session_On_Searching/Notes21052025.md",
+    "Binary_Search/Striver/04_Search_in_Rotated_Sorted_Array.md",
+    "Linked List/Trees/Questions.md",
+    "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction",
     "Cohort/Module_03/05_Binary_Search_on_Answer/Notes19052025.md",
+    "Cohort/Module_03/06_Lab_Session_On_Searching",
+    "Binary_Search/Aditya_Verma/Allocate_Minimum_Pages.md",
     "Binary_Search/Aditya_Verma",
     "Binary_Search/Striver/03_First_Last_Occurrence_In_Array.md",
     "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
-    "Binary_Search/Striver/04_Search_in_Rotated_Sorted_Array.md",
     "Binary_Search/Striver/Notes21052025.md",
     "Binary_Search/Striver",
     "Binary_Search",
-    "Announcements.md",
     "J/LLD-HLD/Shrayansh/0.6 Builder.md",
     "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
     "J/LLD-HLD/Shrayansh/0.4 Decorator.md",
-    "Cohort/Module_03/04_Searching_1_Binary_Search/Assignment.md",
     "Cohort/Module_02/Day 2/Notes.md",
     "Cohort/Module_03/05_Binary_Search_on_Answer",
     "Dev/Udemy/Courses.md",
@@ -222,20 +237,6 @@
     "Make It Happen.md",
     "Cohort/Module_03/04_Searching_1_Binary_Search",
     "Cohort/Module_02/Dday 1/Performing multiple queries on an Array.md",
-    "Cohort/Module_02/Kadane's Algorithm.md",
-    "Cohort/Module_02/Trapping Rain Water.md",
-    "Cohort/Module_03/01_Maths/1-Modular_Arithmetic_GCD_Lecture.md",
-    "Cohort/Module_03/Questions.md",
-    "Cohort/Module_02/Dday 1/Maximum Subarray Sum.md",
-    "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
-    "Cohort/Module_02/Dday 1/Merge Intervals.md",
-    "Sorting Algorithms/Count Sort.md",
-    "Greedy/Questions.md",
-    "Cohort/Module_03/03_Sorting_1",
-    "Cohort/Module_03/02_Hashing",
-    "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
-    "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Intermediate_DSA___Bit_Manipulation_Basics_2.pdf",
-    "Cohort/Module_01/Topic_08-Bit_Manipulation_Basics/Scaler Companion.pdf",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
@@ -244,7 +245,6 @@
     "Cohort/Module 1/Topic_10-Strings/s2.png",
     "Cohort/Module 1/Topic_10-Strings/s1.png",
     "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
-    "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png",
-    "Microservices/brew-aspnetcore-microservices/Content/MediatR-pipeline-behavior.png"
+    "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png"
   ]
 }

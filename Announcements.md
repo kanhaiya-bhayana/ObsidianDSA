@@ -9,8 +9,6 @@
 ## Today
 
 - [ ]  Code by Shreyansh - 2 videos
-- [x] Pahwa Studio Payment
-- [x] Test the proctoring setup once 
-- [ ] ICICI Credit card bill | Call customer care
+- [ ] ICICI Credit card bill 
 - [x] Visa Apply
 - [ ] Inter Service Communication

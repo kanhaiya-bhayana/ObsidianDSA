@@ -25,6 +25,30 @@ class Node{
 - Search an element in LL - O(n)
 - Delete a node in LL - O(n)
 - Insert a node in a LL - O(n)
+#### Function to Find k-th Node
+
+```java
+public class LinkedListUtils {
+
+    public static Node getKthNode(Node head, int k) {
+        int count = 0;
+        Node current = head;
+
+        while (current != null && count < k) {
+            current = current.next;
+            count++;
+        }
+
+        // If k is out of bounds
+        if (current == null) {
+            return null;
+        }
+
+        return current;
+    }
+}
+
+```
 #### Convert an Array to Linked List
 ```java
 import org.w3c.dom.Node;

@@ -210,5 +210,7 @@ public class Solution {
 }
 ```
 
+> TC: O(log (range) * M)
+> Range = (Arr[M-1] - Arr[0])
 ---
 
