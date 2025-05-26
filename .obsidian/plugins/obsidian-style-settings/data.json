@@ -3,5 +3,17 @@
   "Appearance-dark@@theme-dark-style-select": "theme-dark-background-darker",
   "Appearance-light@@card-layout-open-light": true,
   "id@@colorblind_protan-deutan": false,
-  "id@@colorblind_tritan": false
+  "id@@colorblind_tritan": false,
+  "mado-miniflow@@theme-color": "theme-tea-teal",
+  "mado-miniflow@@toggle-wave-background": false,
+  "mado-miniflow@@toggle-tab-design": false,
+  "mado-miniflow@@toggle-note-radius": true,
+  "mado-miniflow@@toggle-tab-height": false,
+  "mado-miniflow@@toggle-tab-height-stacked": false,
+  "mado-miniflow@@toggle-tab-section": false,
+  "mado-miniflow@@toggle-note-header": false,
+  "mado-miniflow@@toggle-sync-button": false,
+  "mado-miniflow@@toggle-sidebar-fixed-left-auto": true,
+  "mado-miniflow@@toggle-sidebar-fixed-right-auto": true,
+  "mado-miniflow@@toggle-sidebar-left-top": false
 }
