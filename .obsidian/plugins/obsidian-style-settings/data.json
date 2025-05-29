@@ -15,5 +15,17 @@
   "mado-miniflow@@toggle-sync-button": false,
   "mado-miniflow@@toggle-sidebar-fixed-left-auto": true,
   "mado-miniflow@@toggle-sidebar-fixed-right-auto": true,
-  "mado-miniflow@@toggle-sidebar-left-top": false
+  "mado-miniflow@@toggle-sidebar-left-top": false,
+  "mado-miniflow@@toggle-explorer-buttons": false,
+  "mado-miniflow@@toggle-vault-title": true,
+  "mado-miniflow@@toggle-explorer-indent": false,
+  "mado-miniflow@@toggle-explorer-collapse": false,
+  "mado-miniflow@@toggle-status-bar": false,
+  "mado-miniflow@@toggle-scrollbar": false,
+  "mado-miniflow@@toggle-sidebar-right-top": false,
+  "mado-miniflow@@toggle-sidebar-fixed-left": true,
+  "mado-miniflow@@toggle-sidebar-fixed-right": true,
+  "mado-miniflow@@toggle-titlebar-buttons": true,
+  "mado-miniflow@@toggle-side-ribbons": false,
+  "mado-miniflow@@toggle-sidebar-toggle-left": true
 }

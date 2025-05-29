@@ -55,5 +55,13 @@
       ],
       "key": "E"
     }
+  ],
+  "smart-connections:open-smart-chat-view": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "M"
+    }
   ]
 }

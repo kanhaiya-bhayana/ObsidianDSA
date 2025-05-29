@@ -1,4 +1,5 @@
 ### DSA Contest 1 => 15th May 2025 | Arrays, Bit Manipulation, Recursion, Math & Hashing
+### DSA Contest 2 => 18th June 2025 | Sorting, Searching, LinkedList, Stacks, Queues & Trees.
 ##### Topics
 > Arrays, Bit Manipulation, Recursion, Math and Hashing
 ### Quick Revision Notes
@@ -12,3 +13,5 @@
 - [ ] ICICI Credit card bill 
 - [x] Visa Apply
 - [ ] Inter Service Communication
+
+
