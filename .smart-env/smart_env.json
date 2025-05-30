@@ -17613,9 +17613,7 @@
               ]
             }
           }
-        },
-        "model_key": "openai/o4-mini",
-        "api_key": "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"
+        }
       }
     },
     "system_prompt": "",
