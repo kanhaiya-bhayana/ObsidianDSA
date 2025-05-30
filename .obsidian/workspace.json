@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_03/09_Stacks/Notes28052025.md",
+                "file": "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes28052025"
+              "title": "Notes30052025"
             }
           },
           {
@@ -229,11 +229,16 @@
   },
   "active": "12b0f9246f6085a6",
   "lastOpenFiles": [
-    "Cohort/Module_03/02_Hashing/Notes.md",
+    "Cohort/Module_03/Stack.md",
+    "Linked List/Linked List Striver/Introduction.md",
+    "Linked List/Linked List Striver/Convert Stack to LL.md",
+    "Linked List/Linked List Striver/Array to LL.md",
+    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
     "Cohort/Module_03/09_Stacks/Notes28052025.md",
+    "Cohort/Module_03/10_Lab_Session_On_Stacks",
+    "Cohort/Module_03/02_Hashing/Notes.md",
     "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
     "Announcements.md",
-    "Linked List/Linked List Striver/Introduction.md",
     "Cohort/Module_03/09_Stacks",
     "J/Java/Interfaces/Java8_Interface_Features.md",
     "J/Java/Interfaces/Interface_in_Java.md",
@@ -244,8 +249,6 @@
     "Linked List/Linked List Striver/DLL1.png",
     "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
     "Cohort/Module_03/Questions.md",
-    "Linked List/Linked List Striver/Array to LL.md",
-    "Linked List/Linked List Striver/Convert Stack to LL.md",
     "J/Java",
     "J/java-memory-architecture.html",
     "J/Unconfirmed 304703.crdownload",
@@ -262,10 +265,7 @@
     "Binary_Search/Striver/03_First_Last_Occurrence_In_Array.md",
     "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
     "Binary_Search/Striver/Notes21052025.md",
-    "Binary_Search/Striver",
     "J/LLD-HLD/Shrayansh/0.6 Builder.md",
-    "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
-    "J/LLD-HLD/Shrayansh/0.4 Decorator.md",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
