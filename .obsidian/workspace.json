@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Java/Exception Handling.md",
+                "file": "J/Java/Exception_Handling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Exception Handling"
+              "title": "Exception_Handling"
             }
           },
           {
@@ -229,8 +229,9 @@
   },
   "active": "12b0f9246f6085a6",
   "lastOpenFiles": [
-    "J/Java/Annotations.md",
     "J/Java/Exception Handling.md",
+    "J/Java/Exception_Handling.md",
+    "J/Java/Annotations.md",
     "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
     "J/Java/Reflection/Notes.md",
     "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
@@ -264,7 +265,6 @@
     "Binary_Search/Striver/04_Search_in_Rotated_Sorted_Array.md",
     "Linked List/Trees/Questions.md",
     "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction",
-    "Cohort/Module_03/05_Binary_Search_on_Answer/Notes19052025.md",
     "Cohort/Module_03/06_Lab_Session_On_Searching",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
