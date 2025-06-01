@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
+                "file": "J/Java/Exception Handling.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes30052025"
+              "title": "Exception Handling"
             }
           },
           {
@@ -125,7 +125,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 390.0124969482422
+    "width": 475.0124969482422
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -229,15 +229,22 @@
   },
   "active": "12b0f9246f6085a6",
   "lastOpenFiles": [
+    "J/Java/Annotations.md",
+    "J/Java/Exception Handling.md",
+    "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
+    "J/Java/Reflection/Notes.md",
+    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
+    "J/Java/Reflection",
+    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
+    "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
+    "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
+    "Cohort/Module_03/09_Stacks/Notes28052025.md",
     "Cohort/Module_03/Stack.md",
     "Linked List/Linked List Striver/Introduction.md",
     "Linked List/Linked List Striver/Convert Stack to LL.md",
     "Linked List/Linked List Striver/Array to LL.md",
-    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
-    "Cohort/Module_03/09_Stacks/Notes28052025.md",
     "Cohort/Module_03/10_Lab_Session_On_Stacks",
     "Cohort/Module_03/02_Hashing/Notes.md",
-    "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
     "Announcements.md",
     "Cohort/Module_03/09_Stacks",
     "J/Java/Interfaces/Java8_Interface_Features.md",
@@ -247,7 +254,6 @@
     "Cohort/Module_03/06_Lab_Session_On_Searching/Notes21052025.md",
     "Cohort/Module_03/08_Linked_List_Basic_Problems",
     "Linked List/Linked List Striver/DLL1.png",
-    "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
     "Cohort/Module_03/Questions.md",
     "J/Java",
     "J/java-memory-architecture.html",
@@ -260,12 +266,6 @@
     "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction",
     "Cohort/Module_03/05_Binary_Search_on_Answer/Notes19052025.md",
     "Cohort/Module_03/06_Lab_Session_On_Searching",
-    "Binary_Search/Aditya_Verma/Allocate_Minimum_Pages.md",
-    "Binary_Search/Aditya_Verma",
-    "Binary_Search/Striver/03_First_Last_Occurrence_In_Array.md",
-    "Binary_Search/Striver/02_Lower_Bound_Upper_Bound.md",
-    "Binary_Search/Striver/Notes21052025.md",
-    "J/LLD-HLD/Shrayansh/0.6 Builder.md",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
