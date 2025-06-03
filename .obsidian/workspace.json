@@ -24,20 +24,6 @@
             }
           },
           {
-            "id": "12b0f9246f6085a6",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "J/Java/Exception_Handling.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Exception_Handling"
-            }
-          },
-          {
             "id": "ddb804d6e9df5c86",
             "type": "leaf",
             "pinned": true,
@@ -59,16 +45,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
+                "file": "Cohort Prac/Stack/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes26052025"
+              "title": "Notes"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -100,8 +86,8 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#BinarySearch",
-                "matchingCase": false,
+                "query": "",
+                "matchingCase": true,
                 "explainSearch": false,
                 "collapseAll": false,
                 "extraContext": false,
@@ -227,26 +213,33 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "12b0f9246f6085a6",
+  "active": "037dbedcd72fdcd3",
   "lastOpenFiles": [
-    "J/Java/Exception Handling.md",
+    "DSA/Array/Questions.md",
+    "Cohort Prac/Stack/Notes.md",
+    "Cohort Prac/Stack",
+    "Cohort/Module_02/Trapping Rain Water.md",
+    "Cohort/Module_03/11_Problem_Solving/Notes02062025.md",
+    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
+    "Cohort/Module_03/09_Stacks/Notes28052025.md",
+    "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
+    "Linked List/Linked List Striver/Introduction.md",
+    "Announcements.md",
+    "Cohort/Module_03/Questions.md",
+    "Cohort/Module_03/11_Problem_Solving",
     "J/Java/Exception_Handling.md",
+    "J/Java/Exception Handling.md",
     "J/Java/Annotations.md",
     "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
     "J/Java/Reflection/Notes.md",
-    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
     "J/Java/Reflection",
     "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
     "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction/Notes23052025.md",
-    "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
-    "Cohort/Module_03/09_Stacks/Notes28052025.md",
     "Cohort/Module_03/Stack.md",
-    "Linked List/Linked List Striver/Introduction.md",
     "Linked List/Linked List Striver/Convert Stack to LL.md",
     "Linked List/Linked List Striver/Array to LL.md",
     "Cohort/Module_03/10_Lab_Session_On_Stacks",
     "Cohort/Module_03/02_Hashing/Notes.md",
-    "Announcements.md",
     "Cohort/Module_03/09_Stacks",
     "J/Java/Interfaces/Java8_Interface_Features.md",
     "J/Java/Interfaces/Interface_in_Java.md",
@@ -255,17 +248,10 @@
     "Cohort/Module_03/06_Lab_Session_On_Searching/Notes21052025.md",
     "Cohort/Module_03/08_Linked_List_Basic_Problems",
     "Linked List/Linked List Striver/DLL1.png",
-    "Cohort/Module_03/Questions.md",
     "J/Java",
     "J/java-memory-architecture.html",
     "J/Unconfirmed 304703.crdownload",
     "Cohort/Module_03/04_Searching_1_Binary_Search/Assignment.md",
-    "Cohort/Module_03/05_Binary_Search_on_Answer/Assignment.md",
-    "Cohort/Module_03/06_Lab_Session_On_Searching/Assignment.md",
-    "Binary_Search/Striver/04_Search_in_Rotated_Sorted_Array.md",
-    "Linked List/Trees/Questions.md",
-    "Cohort/Module_03/07_Classes_Objects_and_Linked_List_Introduction",
-    "Cohort/Module_03/06_Lab_Session_On_Searching",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
