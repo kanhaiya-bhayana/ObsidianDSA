@@ -22,10 +22,10 @@ class StockSpanner {
             return span+1;
         }
         else{
-            int res = st.peek()[0];
+            int topInd = st.peek()[0];
             st.push(new int[]{span, price});
 
-            return span - res;
+            return span - topInd;
         }
     }
 }
