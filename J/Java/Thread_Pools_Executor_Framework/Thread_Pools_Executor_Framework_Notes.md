@@ -251,11 +251,13 @@ class CustomThreadFactory implements ThreadFactory {
         thread.setPriority(Thread.NORM_PRIORITY);  
         thread.setDaemon(false);  
         return thread;  
-    }}  
+    }
+}  
   
 class CustomRejectHandler implements RejectedExecutionHandler {  
     @Override  
     public void rejectedExecution(Runnable r, ThreadPoolExecutor executor) {  
         System.out.println("Task Rejected: " + r.toString());  
-    }}
+    }
+}
 ```
