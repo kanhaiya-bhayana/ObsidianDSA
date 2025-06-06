@@ -12,6 +12,6 @@
 - [ ]  Code by Shreyansh - 2 videos
 - [ ] ICICI Credit card bill 
 - [x] Visa Apply
-- [ ] Inter Service Communication
+- [x] Inter Service Communication
 
 

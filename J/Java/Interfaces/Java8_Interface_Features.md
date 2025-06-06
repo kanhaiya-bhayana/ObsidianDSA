@@ -577,3 +577,10 @@ names.stream()
 ```
 
 ---
+
+## Runnable ()->{}
+## callable = runnable + return ()->{return T;}
+## Function<T,K> (T)->return K;
+
+Function.identity()
+x->x
