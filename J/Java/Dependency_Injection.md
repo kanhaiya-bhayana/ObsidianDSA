@@ -2,7 +2,7 @@
 
 1. Remember the example of `User` and `Order` Class, direct dependencies.
 2. It breaks `Dependency Inversion` rule of SOLID principle.
-	1. Here `D` says that DO NOT depend on the concrete implementation, rather depends on abstraction.
+	1. Here `DI` says that DO NOT depend on the concrete implementation, rather depends on abstraction.
 3. We can achieve `Dependency Inversion Principle` Through Dependency Injection.
 ### What is DI?
 
