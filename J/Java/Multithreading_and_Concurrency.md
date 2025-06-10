@@ -1,3 +1,16 @@
+#### Definition
+- Allows a program to perform multiple task at the same time.
+- Multiple threads share the same resource such as memory space but still can perform task independently.
+
+#### Benefits and Challenges of Multithreading
+- Improved performance by task parallelism
+- Responsiveness
+- Resource Sharing
+
+#### Challenges
+- Concurrency issue like deadlock, data inconsistency etc.
+- Synchronized overhead.
+- Testing and debugging is difficult.
 ### Process
 > Process is an instance of a program that is getting executed.
 > It has its own resource like memory, thread etc. OS allocate these resources to process when its created.
