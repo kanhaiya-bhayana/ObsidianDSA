@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
+                "file": "J/Java/Multithreading_and_Concurrency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "0.7 Singleton"
+              "title": "Multithreading_and_Concurrency"
             }
           }
         ],
@@ -200,9 +200,24 @@
   "active": "571260c96e7ace50",
   "lastOpenFiles": [
     "Cohort/Module_03/12_Queues/Notes04062025.md",
+    "J/Java/Multithreading_and_Concurrency.md",
+    "J/Java/Dependency_Injection.md",
+    "J/Java/Interfaces/Java8_Interface_Features.md",
+    "J/LLD-HLD/Mrunmai Dahare/Basics of system design.pdf",
+    "J/LLD-HLD/Shrayansh/0.9 Prototype.md",
+    "J/LLD-HLD/Shrayansh/0.8 Factory Pattern.md",
+    "J/LLD-HLD/Shrayansh/0.5 Proxy Design Pattern.md",
+    "J/LLD-HLD/Shrayansh/Rate Limiter.md",
+    "J/LLD-HLD/Shrayansh/Monolithic Vs Microservices.md",
+    "J/Interview Questions.md",
+    "J/Sergey Kargopolov.md",
+    "J/LLD-HLD/Shrayansh/Handle Distributed Transactions.md",
+    "J/LLD-HLD/Shrayansh/Fault Tolerance.md",
+    "J/LLD-HLD/Shrayansh/CAP Theorem.md",
+    "J/LLD-HLD/Shrayansh/api-gateway-architecture-revised.svg",
+    "J/LLD-HLD/Shrayansh/0.6 Builder.md",
     "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
     "J/Java/AOP_Aspect_Oriented_Programming.md",
-    "J/Java/Dependency_Injection.md",
     "J/Java/Exception_Handling.md",
     "J/Java/Java Memory Management.md",
     "J/Java/Bean_and_Its_Lifecycle.md",
@@ -213,28 +228,14 @@
     "Announcements.md",
     "J/Java/Thread_Pools_Executor_Framework",
     "Linked List/Trees/Questions.md",
-    "J/Java/Interfaces/Java8_Interface_Features.md",
     "J/Java/Element_Collection.md",
     "Cohort/Module_03/12_Queues",
-    "Cohort Prac/Stack/Prefix_Infix_Postfix.md",
-    "Cohort Prac/Stack/Questions.md",
-    "Linked List/Linked List Striver/Introduction.md",
-    "Cohort/Module_03/10_Lab_Session_On_Stacks/Assignment.md",
-    "Cohort/Module_03/09_Stacks/Assignment.md",
-    "Cohort/Module_03/10_Lab_Session_On_Stacks/Notes30052025.md",
-    "System_Design/Design_A_URL_Shortner_(Bitly).md",
     "System_Design",
-    "DSA/Array/Questions.md",
     "Cohort Prac/Stack",
-    "Cohort/Module_02/Trapping Rain Water.md",
-    "Cohort/Module_03/11_Problem_Solving/Notes02062025.md",
-    "Cohort/Module_03/09_Stacks/Notes28052025.md",
-    "Cohort/Module_03/08_Linked_List_Basic_Problems/Notes26052025.md",
     "Cohort/Module_03/11_Problem_Solving",
     "J/Java/Reflection",
     "Cohort/Module_03/10_Lab_Session_On_Stacks",
     "Cohort/Module_03/09_Stacks",
-    "J/Java/Interfaces",
     "Linked List/Linked List Striver/DLL1.png",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
@@ -243,7 +244,6 @@
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png",
     "Cohort/Module 1/Topic_10-Strings/s2.png",
     "Cohort/Module 1/Topic_10-Strings/s1.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png",
-    "Microservices/brew-aspnetcore-microservices/Content/rest-api-and-cross-cutting-concerns.png"
+    "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png"
   ]
 }

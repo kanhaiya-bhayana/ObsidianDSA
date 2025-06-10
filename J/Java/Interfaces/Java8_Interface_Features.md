@@ -1,4 +1,3 @@
-
 ## Default Method
 ## Static Method
 ## Functional Interface and lambda Expression
