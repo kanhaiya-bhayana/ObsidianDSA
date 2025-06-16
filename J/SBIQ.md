@@ -32,7 +32,7 @@ https://spring.io/projects/spring-data
 |**Debugging**|Easy to attach a debugger automatically.|Requires manual debugging configuration.|
 |**Environment Consistency**|Depends on IDE configuration.|Consistent with Maven build lifecycle.|
 ```sh
-mvn spring=boot:run
+mvn spring-boot:run
 ```
 
 

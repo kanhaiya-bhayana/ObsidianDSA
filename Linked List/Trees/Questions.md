@@ -17,7 +17,7 @@
  * }
  */
 class Solution {
-       public List<Integer> res = new ArrayList<>();
+    public List<Integer> res = new ArrayList<>();
     public List<Integer> inorderTraversal(TreeNode root) {
 
         // recursiveInorderTraversalUtil(root);
@@ -168,49 +168,50 @@ class Solution {
     }
 }
 ```
-#### Binary Tree Level Order Traversal 
+#### Binary Tree Level Order Traversal | Breadth First Search (BFS)
 https://leetcode.com/problems/binary-tree-level-order-traversal/description/
 
 ```java
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode() {}
- *     TreeNode(int val) { this.val = val; }
- *     TreeNode(int val, TreeNode left, TreeNode right) {
- *         this.val = val;
- *         this.left = left;
- *         this.right = right;
- *     }
- * }
- */
-class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
-        
-        Queue<TreeNode> queue = new LinkedList<>();
-        List<List<Integer>> wrapList = new ArrayList<>();
+import java.util.*;
 
-        if (root == null) return wrapList;
+class TreeNode {
+    int val;
+    TreeNode left, right;
 
-        queue.offer(root);
-
-        while (!queue.isEmpty()){
-            int levelNum = queue.size();
-            List<Integer> subList = new ArrayList<>();
-            for (int i = 0; i < levelNum; i++){
-                if (queue.peek().left != null) queue.offer(queue.peek().left);
-                if (queue.peek().right != null) queue.offer(queue.peek().right);
-                subList.add(queue.poll().val);
-            }
-            wrapList.add(subList);
-        }
-
-        return wrapList;
+    TreeNode(int val) {
+        this.val = val;
     }
 }
+
+public class LevelOrderTraversal {
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+
+        if (root == null)
+            return result;
+
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        while (!queue.isEmpty()) {
+            int levelSize = queue.size();
+            List<Integer> currentLevel = new ArrayList<>();
+
+            for (int i = 0; i < levelSize; i++) {
+                TreeNode curr = queue.poll();
+                currentLevel.add(curr.val);
+
+                if (curr.left != null) queue.offer(curr.left);
+                if (curr.right != null) queue.offer(curr.right);
+            }
+
+            result.add(currentLevel);
+        }
+
+        return result;
+    }
+}
+
 ```
 #### Maximum Depth of Binary Tree 
 https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
@@ -643,7 +644,7 @@ class Solution
     //Function to return a list of nodes visible from the top view 
     //from left to right in Binary Tree.
     static ArrayList<Integer> topView(Node root)
-    {
+	    {
         // add your code
         ArrayList<Integer> ans = new ArrayList<>();
         if (root == null) return ans;
@@ -725,7 +726,6 @@ class Solution
 ```
 
 #### Right/Left View of a Binary Tree
-
 ###### Right Side View
 https://leetcode.com/problems/binary-tree-right-side-view/description/
 ```java
@@ -1859,6 +1859,69 @@ class Solution {
         return findLastRightUtil(root.right);
     }
 }
+
+
+
+// OR
+
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+
+class Solution {
+    public TreeNode deleteNode(TreeNode root, int key) {
+        if (root == null) return null;
+
+        if (key < root.val) {
+            // Search in the left subtree
+            root.left = deleteNode(root.left, key);
+        } else if (key > root.val) {
+            // Search in the right subtree
+            root.right = deleteNode(root.right, key);
+        } else {
+            // Node to delete is found
+
+            // Case 1: No left child
+            if (root.left == null) return root.right;
+
+            // Case 2: No right child
+            if (root.right == null) return root.left;
+
+            // Case 3: Node has both children
+            // Find the maximum node in the left subtree (in-order predecessor)
+            TreeNode maxNode = findMax(root.left);
+
+            // Copy the in-order predecessor’s value to the current node
+            root.val = maxNode.val;
+
+            // Recursively delete the in-order predecessor
+            root.left = deleteNode(root.left, maxNode.val);
+        }
+
+        return root;
+    }
+
+    // Helper function to find the maximum value node in a BST (rightmost node)
+    private TreeNode findMax(TreeNode node) {
+        while (node.right != null) {
+            node = node.right;
+        }
+        return node;
+    }
+}
+
 ```
 
 #### Kth Smallest Element in BST

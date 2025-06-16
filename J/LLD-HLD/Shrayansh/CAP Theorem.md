@@ -1,16 +1,11 @@
 
 >Desirable property of distributed system with replicated data.
 
-
 #### C - Consistency
-
 #### A - Availability
 #### P - Partition Tolerance
 
 We can't achieve CAP 3s at a time
-
-
-
 ### **CAP Theorem (Brewer's Theorem)**
 
 The **CAP Theorem** is a fundamental concept in distributed systems introduced by Eric Brewer in 2000. It states that a distributed system can provide at most **two out of three** of the following guarantees simultaneously:
@@ -66,11 +61,9 @@ In a distributed system, network partitions can occur, where nodes cannot commun
 ### **Real-World Scenarios**
 
 1. **Banking Systems (CP)**:
-    
     - Consistency is critical to avoid inconsistent account balances.
     - Sacrifice availability during network partitions.
 2. **Social Media (AP)**:
-    
     - Availability is prioritized over consistency to allow users to post and interact even during network partitions.
     - Eventual consistency is used.
 

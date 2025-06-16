@@ -26,19 +26,77 @@
           {
             "id": "571260c96e7ace50",
             "type": "leaf",
+            "pinned": true,
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Java/Multithreading_and_Concurrency.md",
+                "file": "Linked List/Trees/Questions.md",
+                "mode": "source",
+                "source": false
+              },
+              "pinned": true,
+              "icon": "lucide-file",
+              "title": "Questions"
+            }
+          },
+          {
+            "id": "a3fd03bdf30d8828",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linked List/Trees/Introduction.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Multithreading_and_Concurrency"
+              "title": "Introduction"
+            }
+          },
+          {
+            "id": "33be15a5b9a51530",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Linked List/Trees/Questions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Questions"
+            }
+          },
+          {
+            "id": "797030819e44b0a7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_03/14_Trees_2_BST/Notes09062025.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes09062025"
+            }
+          },
+          {
+            "id": "c763839b864092fa",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Cohort/Module_03/14_Trees_2_BST/Notes09062025.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Notes09062025"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -197,10 +255,33 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "571260c96e7ace50",
+  "active": "c763839b864092fa",
   "lastOpenFiles": [
-    "Cohort/Module_03/12_Queues/Notes04062025.md",
+    "Announcements.md",
+    "Linked List/Trees/Questions.md",
+    "Cohort/Module_03/14_Trees_2_BST/Notes09062025.md",
+    "J/LLD-HLD/Shrayansh/Interview/0.0 Concurrency Control in Distributed System.md",
     "J/Java/Multithreading_and_Concurrency.md",
+    "J/Java/Java Memory Management.md",
+    "Cohort/Module_03/12_Queues/Notes04062025.md",
+    "Cohort/Module_03/14_Trees_2_BST",
+    "Cohort/Module_03/13_Trees_1_Structure_&_Traversal/Notes06062025.md",
+    "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
+    "Linked List/Trees/Introduction.md",
+    "J/Java/Introduction.md",
+    "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
+    "Cohort/Module_03/13_Trees_1_Structure_&_Traversal",
+    "J/Java/Bean_and_Its_Lifecycle.md",
+    "J/Java/AOP_Aspect_Oriented_Programming.md",
+    "J/Java/Annotations.md",
+    "J/Java/Element_Collection.md",
+    "J/Java/Exception_Handling.md",
+    "Linked List/Treedatastructure.png",
+    "J/SBIQ.md",
+    "J/LLD-HLD/Shrayansh/CAP Theorem.md",
+    "Cohort/Module_03/15._Lab_Session_on_Binary_Trees/Notes11062025.md",
+    "Pasted image 20250611084023.png",
+    "Cohort/Module_03/15._Lab_Session_on_Binary_Trees",
     "J/Java/Dependency_Injection.md",
     "J/Java/Interfaces/Java8_Interface_Features.md",
     "J/LLD-HLD/Mrunmai Dahare/Basics of system design.pdf",
@@ -209,41 +290,18 @@
     "J/LLD-HLD/Shrayansh/0.5 Proxy Design Pattern.md",
     "J/LLD-HLD/Shrayansh/Rate Limiter.md",
     "J/LLD-HLD/Shrayansh/Monolithic Vs Microservices.md",
-    "J/Interview Questions.md",
-    "J/Sergey Kargopolov.md",
-    "J/LLD-HLD/Shrayansh/Handle Distributed Transactions.md",
-    "J/LLD-HLD/Shrayansh/Fault Tolerance.md",
-    "J/LLD-HLD/Shrayansh/CAP Theorem.md",
     "J/LLD-HLD/Shrayansh/api-gateway-architecture-revised.svg",
-    "J/LLD-HLD/Shrayansh/0.6 Builder.md",
-    "J/LLD-HLD/Shrayansh/0.7 Singleton.md",
-    "J/Java/AOP_Aspect_Oriented_Programming.md",
-    "J/Java/Exception_Handling.md",
-    "J/Java/Java Memory Management.md",
-    "J/Java/Bean_and_Its_Lifecycle.md",
-    "J/Java/Thread_Pools_Executor_Framework/Future_Callable_CompletableFuture.md",
-    "J/Java/Thread_Pools_Executor_Framework/Thread_Pools_Executor_Framework_Notes.md",
-    "J/Java/Thread_Pools_Executor_Framework/Interview_Question.md",
     "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
-    "Announcements.md",
     "J/Java/Thread_Pools_Executor_Framework",
-    "Linked List/Trees/Questions.md",
-    "J/Java/Element_Collection.md",
     "Cohort/Module_03/12_Queues",
     "System_Design",
     "Cohort Prac/Stack",
     "Cohort/Module_03/11_Problem_Solving",
-    "J/Java/Reflection",
-    "Cohort/Module_03/10_Lab_Session_On_Stacks",
-    "Cohort/Module_03/09_Stacks",
     "Linked List/Linked List Striver/DLL1.png",
     "Recursion Simulation.png",
     "Cohort/Module_01/Topic_10-Strings/s2.png",
     "Cohort/Module_01/Topic_10-Strings/s1.png",
     "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/night-island-scenery-macos-4k-wallpaper-uhdpaper.com-107@0@h.jpg",
-    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png",
-    "Cohort/Module 1/Topic_10-Strings/s2.png",
-    "Cohort/Module 1/Topic_10-Strings/s1.png",
-    "Microservices/brew-aspnetcore-microservices/Content/Validation-middleware.png"
+    "Cohort/Module_01/Topic_05-Prefix_Sum___Carry_Forward/ff6955d1-f173-43e4-bc7e-84c4176a9c25.png"
   ]
 }
