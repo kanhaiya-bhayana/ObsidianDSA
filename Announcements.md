@@ -1,5 +1,5 @@
 ### DSA Contest 1 => 15th May 2025 | Arrays, Bit Manipulation, Recursion, Math & Hashing
-### DSA Contest 2 => 18th June 2025 | Sorting, Searching, LinkedList, Stacks, Queues & Trees.
+### DSA Contest 2 => 18th June 2025 | Sorting, Searching, LinkedList, Stacks, Queues & Trees. ✅
 https://hackmd.io/@scaler-topics-main/HJHF8AEiR#Trees
 ##### Topics
 > Arrays, Bit Manipulation, Recursion, Math and Hashing
