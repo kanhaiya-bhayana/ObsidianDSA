@@ -29,16 +29,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Java/Multithreading_and_Concurrency/ThreadCreation_Lifecycle_&_Inter_Thread_Comm.md",
+                "file": "J/Java/Multithreading_and_Concurrency/02_ThreadJoining_DaemonThread_ThreadPriority.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "ThreadCreation_Lifecycle_&_Inter_Thread_Comm"
+              "title": "02_ThreadJoining_DaemonThread_ThreadPriority"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -159,13 +158,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cohort/Module 2/Day 3/Notes.md",
+                "file": "Announcements.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Notes"
+              "title": "Outline of Announcements"
             }
           },
           {
@@ -179,7 +178,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -197,8 +196,14 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "e729d230f3eb0c6e",
+  "active": "c0c3601966a71817",
   "lastOpenFiles": [
+    "J/Java/Multithreading_and_Concurrency/02_ThreadJoining_DaemonThread_ThreadPriority.md",
+    "J/Java/Multithreading_and_Concurrency/01_ThreadCreation_Lifecycle_&_Inter_Thread_Comm.md",
+    "J/Java/Multithreading_and_Concurrency/00_Multithreading_and_Concurrency.md",
+    "J_Dev/AWS/Be_A_Better_Dev/Most_Imp_Services_to_Learn.md",
+    "J_Dev/AWS/Be_A_Better_Dev/AWS_Services_HLD.png",
+    "J_Dev/AWS/Be_A_Better_Dev/Services_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Notes.md",
     "J/Spring_Security/EmbarkX_Learn_Programming",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
@@ -218,8 +223,6 @@
     "Dev/Udemy/Courses.md",
     "Dev/AzuEventHubKafka/Notes.md",
     "Dev/System_Design/Hello_Interview/API Gateway.md",
-    "J/Java/Multithreading_and_Concurrency/ThreadCreation_Lifecycle_&_Inter_Thread_Comm.md",
-    "J/Java/Multithreading_and_Concurrency/Multithreading_and_Concurrency.md",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
     "J/Java/Interfaces/Java8_Interface_Features.md",
     "J/Java/Multithreading_and_Concurrency",
@@ -229,7 +232,6 @@
     "Cohort/Module_03/14_Trees_2_BST/Notes09062025.md",
     "Linked List/Trees/Questions.md",
     "J/LLD-HLD/Shrayansh/Interview/0.0 Concurrency Control in Distributed System.md",
-    "J/Java/Java Memory Management.md",
     "Cohort/Module_03/14_Trees_2_BST",
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
     "Cohort/Module_03/13_Trees_1_Structure_&_Traversal",
@@ -241,8 +243,6 @@
     "J/Madan Reddy/Spring Boot/Master+Spring+framework,+Spring+Boot,+REST,+JPA,+Hibernate_eazybytes (1).pdf",
     "J/Java/Thread_Pools_Executor_Framework",
     "Linked List/Linked List Striver/DLL1.png",
-    "Recursion Simulation.png",
-    "Cohort/Module_01/Topic_10-Strings/s2.png",
-    "Cohort/Module_01/Topic_10-Strings/s1.png"
+    "Recursion Simulation.png"
   ]
 }
