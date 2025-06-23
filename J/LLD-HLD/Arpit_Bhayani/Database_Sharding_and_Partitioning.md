@@ -1,108 +1,138 @@
-## Sharding
-> Method of distributing data across multiple machines.
+# 📦 Database Scaling: Sharding & Partitioning
 
-## Partitioning
-> Splitting a subset of data within the same instance.
+---
+## 🧩 Sharding vs Partitioning
+### Sharding
 
+> **Sharding** is a method of distributing data across multiple **independent database servers** (called _shards_), where each shard holds a portion of the dataset.
+### Partitioning
 
-## How a database is scaled?
-> A db server is just a db process (mysql, mongod) running on an EC2 machine.
+> **Partitioning** is the process of dividing a dataset into smaller **logical segments** (partitions), which may be stored on the same or different servers.
 
-```
-You put your db in production, serving real traffic
-```
+> 🔹 **Sharding = Horizontal scaling** using partitioning  
+> 🔹 **Partitioning** = Logical data split, can exist without sharding
 
-### API Server Architecture Diagram
+---
+## 🧱 How is a Database Scaled?
+
+A database server is just a process (e.g., `mysqld`, `mongod`) running on a machine (e.g., EC2 instance).
+You start with a single database instance:
 
 ```
 O ---> API Server ---> [ Database ] ---> 100 WPS
 ```
 
-* **O**: Represents the user.
-* **API Server**: The main server handling the requests.
-* **Database**: The database where data is stored.
-* **100 WPS**: Indicates a capacity of 100 writes per second (WPS).
+- **O**: End-user sending a request
+- **API Server**: Application layer
+- **Database**: Central DB handling all reads/writes
+- **100 WPS**: Database can handle 100 Writes Per Second
 
-> You are getting more users, that your DB is unable to manage.
+---
+### 🔼 Vertical Scaling (Scale-Up)
 
-> You scale up your DB... give it more CPU, RAM, and Disk.
-
-### API Server Architecture Diagram
+As demand increases, you scale **vertically** by giving the DB more resources: CPU, RAM, disk.
 
 ```
-O ---> API Server ---> [ Write Database ] ---> 200 WPS
+O ---> API Server ---> [ Write DB ] ---> 200 WPS
                  \
-                  ---> [ Read Database ]
+                  ---> [ Read DB ]
 ```
 
-* **O**: Represents the user.
-* **API Server**: The main server handling the requests.
-* **Write Database**: Handles write operations, optimized for updates and inserts.
-* **200 WPS**: Indicates a capacity of 200 writes per second (WPS).
-* **Read Database**: Handles read operations, optimized for queries and data retrieval.
+- **Write DB**: Handles updates/inserts/deletes
+- **Read DB**: Read replicas to serve read-heavy traffic
+- **200 WPS**: Improved write throughput after scaling
 
-> This is vertical scaling.
+> ✅ Easier to implement  
+> ❌ Has hardware and cost limitations
 
-## Consider a scenario, your product went viral and your bulky database is unable to handl ethe laod, so you scale up again.
+---
+## 🚨 When Vertical Scaling Hits Its Limit
 
-### API Server Architecture Diagram
+Eventually, vertical scaling is not enough.
+
+**Scenario**:  
+Your product goes viral.  
+Database can handle max 1000 WPS, but traffic hits 1500 WPS.
+
+You now scale **horizontally**.
+
+---
+### ⚖️ Horizontal Scaling with Sharding
+
+You split data across multiple DB instances (shards):
 
 ```
-O ---> API Server ---> [ Database ] ---> 1000 WPS
-```
-
-But, after a certain stage you know you would no tbe able to scale up your db because Vertical scaling has limit. So you will have to resort to Horzontal scaling.
-
-Say, one DB Server was handling 1000 WPS and we cannot scale up beyond that but we are getting 1500 WPS, we scale Horizontally and split the data.
-
-
-```
-O ---> API Server ---> [ Database ] ---> 50% data | 750 WPS
+O ---> API Server ---> [ DB Shard A ] ---> 50% data | 750 WPS
                  \
-                  ---> [ Database ] ---> 50% data | 750 WPS
+                  ---> [ DB Shard B ] ---> 50% data | 750 WPS
 ```
 
-By adding one more database server, we reduced the load to 750 WPS on each node and thus handled higher throughput.
+- Traffic and data split across shards
+- Application or routing layer decides which shard to talk to
 
-Each database server is thus a shard and we say that the data is partitioned.
-Overall, a databse is sharded while that data is partitioned.
+> ✅ Linearly increases throughput  
+> ✅ Enables massive scaling  
+> ❌ Introduces operational complexity
 
+---
+## 🧮 Example: Partitioning a 100 GB Dataset
 
-Over simplification, most people use the terms interchangably.
-
-
-Suppose you partitioned the 100GB of data into 5 mutually exlusive partitions. Each of thse partitions can either live or one database server or a couple of them can share one server. And this depends on the #shards you have.
+Let's split a 100 GB DB into 5 partitions:
 
 ```
-100 GB Database
+100 GB Total Data
        |
-   ┌───┴───┬───┬───┬───┐
-   │       │   │   │   │
-  30GB    10GB 30GB 20GB 10GB
-   A       B    C    D    E
-   │       │    │    │    │
-   └───┬───┘    │    └─┬──┘
-       │        │      │
-   Shard 2   Shard 1  Shard 2
-   (40GB)    (60GB)
+   ┌───┴───┬─────┬─────┬─────┐
+   │       │     │     │     │
+  30GB    10GB  30GB  20GB  10GB
+   A       B     C     D     E
+   │       │     │     │     │
+   └───┬───┘     │     └──┬──┘
+       │         │        │
+   Shard 2     Shard 1   Shard 2
+   (40GB)      (60GB)
 ```
 
-5 Partitions of our 100GB dataset is distributed across.
+- **Partitions**: A–E (logical data splits)
+- **Shards**: DB servers hosting one or more partitions
+- **Load Distribution**: Partitions grouped onto shards for balance
 
-## How to partition the data?
-There are two categories of partitioning
-1. Horizontal Partitioning
-2. Vertical Partitioning
+---
+## 📂 Types of Partitioning
+### 1. Horizontal Partitioning
 
-When we split the 100 GB data, we could have use either of the ways but deciding which one to pick depends on Load, Usecase, and access pattern.
+> Split by **rows** — each partition has the same schema, different data subsets  
+> _e.g.,_ Users 1–1000 in Partition A, 1001–2000 in Partition B
+### 2. Vertical Partitioning
 
+> Split by **columns** — each partition has a subset of the schema  
+> _e.g.,_ User profile data in one table, settings in another
 
-## Advantages of sharding
-- Handle large Reads and Writes.
-- Increase overall storage capacity.
-- Higher availability
+> 🧠 Choose based on access patterns, query types, and data distribution
 
+---
+## ✅ Advantages of Sharding
 
-## Disadvantages of Sharding
-- Operationally complex
-- Cross-shard queries expensive.
+- 🚀 **Scalability**: Supports higher throughput and storage needs
+- ⚡ **Performance**: Reduced latency and load per DB
+- 💾 **Storage**: Easily scale out by adding shards
+- ⚙️ **Parallelism**: Concurrent operations on multiple DBs
+- 🛡️ **Isolation**: Failures in one shard won’t affect others
+
+---
+## ⚠️ Disadvantages of Sharding
+
+- 🔧 **Operational Overhead**: More infrastructure to manage
+- 🔁 **Rebalancing**: Adding/removing shards requires redistributing data
+- 🔍 **Cross-Shard Queries**: Hard to join data across shards efficiently
+- 🧩 **Complexity**: App logic or middleware must handle routing logic
+
+---
+## 📝 Summary
+
+|Concept|Description|
+|---|---|
+|**Sharding**|Distributing data across DB servers (horizontal scaling)|
+|**Partitioning**|Dividing data into logical segments (used in sharding or standalone)|
+|**Vertical Scaling**|Adding more power to one server (limited by hardware)|
+|**Horizontal Scaling**|Adding more servers and distributing data across them|
