@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Arpit_Bhayani/Database_Sharding_and_Partitioning.md",
+                "file": "Cohort/Module_03/16_DSA_Trees_Followup/Notes23062025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Database_Sharding_and_Partitioning"
+              "title": "Notes23062025"
             }
           },
           {
@@ -173,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "J/LLD-HLD/Arpit_Bhayani/Database_Sharding_and_Partitioning.md",
+                "file": "Cohort/Module_03/16_DSA_Trees_Followup/Notes23062025.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Database_Sharding_and_Partitioning"
+              "title": "Outline of Notes23062025"
             }
           },
           {
@@ -213,6 +213,7 @@
   },
   "active": "e729d230f3eb0c6e",
   "lastOpenFiles": [
+    "J/LLD-HLD/Arpit_Bhayani/Database_Sharding_and_Partitioning.md",
     "J_Dev/AWS/Be_A_Better_Dev/Most_Imp_Services_to_Learn.md",
     "Cohort/Module_03/16_DSA_Trees_Followup/Notes23062025.md",
     "Linked List/Trees/Questions.md",
@@ -247,7 +248,6 @@
     "J/Leadership/Notes.md",
     "J/DI.md",
     "J/Leadership",
-    "Cohort/Module_03/14_Trees_2_BST/Notes09062025.md",
     "Cohort/Module_03/14_Trees_2_BST",
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
     "Cohort/Module_03/13_Trees_1_Structure_&_Traversal",
