@@ -311,3 +311,18 @@ public class LoginSystem {
 - Encourages **secure coding practices** by design.
 ---
 ## 3. Inheritance 
+
+- Capability of a  class to inherit the property from their parent class.
+- It can inherit both functions and variables, so we do not have to write them again in the child classes.
+- Can be achieved using extends keyword or through interface.
+- Types of Inheritance:
+	- Single
+	- Multilevel
+	- Hierarchical
+	- Multiple - through interface we can resolve the diamond problem
+
+### Advantages of Inheritance
+- Code reusability 
+- We can achieve Polymorphism using Inheritance.
+
+
