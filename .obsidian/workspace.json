@@ -29,12 +29,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/LLD-HLD/Redis_Cache/Wiki.md",
+                "file": "J/Java/Pillar_of_OOPs/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Wiki"
+              "title": "Notes"
             }
           },
           {
@@ -173,13 +173,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "J/LLD-HLD/Redis_Cache/Wiki.md",
+                "file": "J/Java/Pillar_of_OOPs/Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Wiki"
+              "title": "Outline of Notes"
             }
           },
           {
@@ -213,8 +213,15 @@
   },
   "active": "e729d230f3eb0c6e",
   "lastOpenFiles": [
-    "Cohort/Module_03/16_DSA_Trees_Followup/Notes23062025.md",
+    "J/Java/Memory_Management/Java_Memory_Management.md",
+    "J/Java/Memory_Management",
+    "J/Leadership/Notes.md",
+    "J/Java/Pillar_of_OOPs/Notes.md",
+    "J/Java/Pillar_of_OOPs",
+    "J/Java/Inter_Service_Communication/Wiki-20250625.md",
     "J/LLD-HLD/Redis_Cache/Wiki.md",
+    "J/Java/Inter_Service_Communication",
+    "Cohort/Module_03/16_DSA_Trees_Followup/Notes23062025.md",
     "J/LLD-HLD/Redis_Cache",
     "J/LLD-HLD/Circuit_Breaker/Notes.md",
     "Linked List/Trees/Questions.md",
@@ -244,19 +251,12 @@
     "Dev/Dependency Injection.md",
     "Dev/Redis Cache.md",
     "Dev/Primitive Obsession.md",
-    "Dev/gRPC.md",
-    "Dev/Udemy/Courses.md",
-    "Dev/AzuEventHubKafka/Notes.md",
-    "Dev/System_Design/Hello_Interview/API Gateway.md",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
     "J/Java/Multithreading_and_Concurrency",
     "J/Leadership",
-    "Cohort/Module_03/14_Trees_2_BST",
     "Linked List/1 fh2By4u-SxTlt6u2xHqnCg.webp",
-    "Cohort/Module_03/13_Trees_1_Structure_&_Traversal",
     "Linked List/Treedatastructure.png",
     "Pasted image 20250611084023.png",
-    "Cohort/Module_03/15._Lab_Session_on_Binary_Trees",
     "J/LLD-HLD/Shrayansh/api-gateway-architecture-revised.svg",
     "Linked List/Linked List Striver/DLL1.png"
   ]
