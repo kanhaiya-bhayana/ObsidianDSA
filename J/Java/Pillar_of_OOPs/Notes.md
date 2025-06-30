@@ -310,19 +310,238 @@ public class LoginSystem {
 - Demonstrates how to **expose only what's necessary**, a key benefit of encapsulation.
 - Encourages **secure coding practices** by design.
 ---
-## 3. Inheritance 
 
-- Capability of a  class to inherit the property from their parent class.
-- It can inherit both functions and variables, so we do not have to write them again in the child classes.
-- Can be achieved using extends keyword or through interface.
-- Types of Inheritance:
-	- Single
-	- Multilevel
-	- Hierarchical
-	- Multiple - through interface we can resolve the diamond problem
+
+## 3. Inheritance
+
+- **Definition:** The capability of a class to inherit properties and behaviors (methods and variables) from another class.
+- **Purpose:** Avoid code duplication by reusing code in child classes, allowing more efficient and structured programming.
+- **Achieved Using:**
+  - The `extends` keyword for class inheritance.
+  - Interfaces for multiple inheritance scenarios to resolve issues like the diamond problem.
+
+### Types of Inheritance
+- **Single Inheritance:** A class inherits from one parent class.
+- **Multilevel Inheritance:** A class inherits from a class, which in turn inherits from another class.
+- **Hierarchical Inheritance:** Multiple classes inherit from a single parent class.
+- **Multiple Inheritance (via Interfaces):** Achieved by implementing multiple interfaces in Java to address ambiguity (diamond problem). | Same with c#.
 
 ### Advantages of Inheritance
-- Code reusability 
-- We can achieve Polymorphism using Inheritance.
+- **Code Reusability:** Reduces redundancy by allowing classes to reuse existing functionality.
+- **Polymorphism Support:** Enables dynamic method dispatch and other polymorphic behaviors.
+- **Ease of Maintenance:** Centralized code modification in parent classes reflects in child classes.
 
+### Examples of Inheritance in Java
 
+#### **1. Single Inheritance**
+```java
+class BankAccount {
+    String accountHolder;
+    double balance;
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + ", New Balance: " + balance);
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    public void addInterest() {
+        balance += balance * (interestRate / 100);
+        System.out.println("Interest added. New Balance: " + balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount account = new SavingsAccount();
+        account.accountHolder = "John Doe";
+        account.balance = 1000.0;
+        account.interestRate = 5.0;
+
+        account.deposit(500);
+        account.addInterest();
+    }
+}
+```
+
+#### **2. Multilevel Inheritance**
+```java
+class BankAccount {
+    String accountNumber;
+    double balance;
+
+    public void deposit(double amount) {
+        balance += amount;
+        System.out.println("Deposited: " + amount + ", New Balance: " + balance);
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    public void addInterest() {
+        balance += balance * (interestRate / 100);
+        System.out.println("Interest added. New Balance: " + balance);
+    }
+}
+
+class PremiumSavingsAccount extends SavingsAccount {
+    double cashbackRate;
+
+    public void addCashback(double amount) {
+        double cashback = amount * (cashbackRate / 100);
+        balance += cashback;
+        System.out.println("Cashback of " + cashback + " added. New Balance: " + balance);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        PremiumSavingsAccount premiumAccount = new PremiumSavingsAccount();
+        premiumAccount.accountNumber = "1234567890";
+        premiumAccount.balance = 2000.0;
+        premiumAccount.interestRate = 4.0;
+        premiumAccount.cashbackRate = 1.5;
+
+        premiumAccount.deposit(1000);
+        premiumAccount.addInterest();
+        premiumAccount.addCashback(500);
+    }
+}
+```
+
+#### **3. Hierarchical Inheritance**
+```java
+class BankAccount {
+    String accountHolder;
+    double balance;
+
+    public void displayBalance() {
+        System.out.println("Account Holder: " + accountHolder + ", Balance: " + balance);
+    }
+}
+
+class SavingsAccount extends BankAccount {
+    double interestRate;
+
+    public void addInterest() {
+        balance += balance * (interestRate / 100);
+        System.out.println("Interest added. New Balance: " + balance);
+    }
+}
+
+class CurrentAccount extends BankAccount {
+    double overdraftLimit;
+
+    public void withdraw(double amount) {
+        if (balance - amount >= -overdraftLimit) {
+            balance -= amount;
+            System.out.println("Withdrawn: " + amount + ", New Balance: " + balance);
+        } else {
+            System.out.println("Withdrawal exceeds overdraft limit!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount savings = new SavingsAccount();
+        savings.accountHolder = "Alice";
+        savings.balance = 1500;
+        savings.interestRate = 3.0;
+        savings.addInterest();
+
+        CurrentAccount current = new CurrentAccount();
+        current.accountHolder = "Bob";
+        current.balance = 1000;
+        current.overdraftLimit = 500;
+        current.withdraw(1200);
+        current.withdraw(400);
+    }
+}
+```
+
+---
+
+## 4. Polymorphism
+
+**Polymorphism** in Java is the ability of an object to take on many forms. It enables a single interface to represent different underlying types or behaviors.
+
+### Types of Polymorphism
+1. **Compile-time Polymorphism (Method Overloading):**
+   - Same method name with different parameters in the same class.
+   - Resolved at compile time.
+
+   **Example:**
+   ```java
+   class Calculator {
+       int add(int a, int b) {
+           return a + b;
+       }
+
+       int add(int a, int b, int c) {
+           return a + b + c;
+       }
+
+       double add(double a, double b) {
+           return a + b;
+       }
+   }
+
+   public class Main {
+       public static void main(String[] args) {
+           Calculator calc = new Calculator();
+           System.out.println(calc.add(10, 20));          // Calls int add(int, int)
+           System.out.println(calc.add(10, 20, 30));      // Calls int add(int, int, int)
+           System.out.println(calc.add(5.5, 4.5));        // Calls double add(double, double)
+       }
+   }
+   ```
+
+2. **Runtime Polymorphism (Method Overriding):**
+   - A subclass provides a specific implementation of a method already defined in its parent class.
+   - Resolved at runtime.
+
+   **Example:**
+```java
+abstract class Payment {
+    abstract void pay(double amount);
+}
+
+class CreditCardPayment extends Payment {
+    @Override
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using Credit Card");
+    }
+}
+
+class PayPalPayment extends Payment {
+    @Override
+    void pay(double amount) {
+        System.out.println("Paid " + amount + " using PayPal");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Payment payment;
+
+        payment = new CreditCardPayment();
+        payment.pay(100.0);  // Outputs: Paid 100.0 using Credit Card
+
+        payment = new PayPalPayment();
+        payment.pay(200.0);  // Outputs: Paid 200.0 using PayPal
+    }
+}
+
+```
+
+---
+
+### Key Features of Polymorphism
+- **Extensibility:** Add new behaviors without altering existing code.
+- **Dynamic Binding:** Resolves method calls at runtime.
+- **Reusability:** Enables writing generic code that works with different object types.
