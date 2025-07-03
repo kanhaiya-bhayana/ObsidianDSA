@@ -33,12 +33,46 @@ The safest way to deploy for critical applications.
 
 † Time may vary  
 †† Time varies depending on evaluation time option setting
-```
 
-Improvements include:
+##### Improvements include:
 
 * Consistent column widths.
 * Clear ✅/🔴/🟢 symbols for Yes/No for quick scanning.
 * Added a *Legend* section at the bottom for symbols.
 * Replaced some wordiness with clearer phrases.
 
+
+## EB - In-Place vs Blue/Green Deployment
+> Elastic Beanstalk by default performs in-place updates.
+
+> In-Place and Blue/Green Deployment are not definitive in definition and the context can change the scope of what they mean.
+
+```
+In-Place could mean within **the scope of Elastic Beanstalk Env**
+
+All the `deployment policies provided by EB could be considered In-Place since they are within the scope of a single EB environment.
+
+- All at once
+- Rolling
+- Rolling with additional batch
+- Immutable
+```
+
+
+```
+In-Place could mean within **the scope of the same server** (not replacing the server)
+
+Deployment policies which do not involve the server being replaced
+
+- All at once
+- Rolling
+```
+
+
+```
+In-Place could mean wihin **the scope of an uninterrupted server**
+
+Traffic is never routed away from the server (taken-of-service). Implements **Zero-downtime** deploys where Blue/Greens occurs on the server.
+
+EB can't do this. Capistrano + Ruby on Rails + Unicorn is famous case fo this method of deployment.
+```
