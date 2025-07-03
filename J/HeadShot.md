@@ -1,8 +1,3 @@
-Sure! Here's the full list of programming terms in **Markdown (MD) format**, perfect for study notes, GitHub READMEs, or interview prep.
-
----
-
-```md
 # 🔑 Key Programming Terms (Beginner to Advanced)
 
 ## 🧠 Basic Execution Concepts
@@ -75,7 +70,3 @@ Sure! Here's the full list of programming terms in **Markdown (MD) format**, per
 - Use real code examples if asked — especially for **promises, closures, hoisting**, etc.
 ```
 
----
-
-Would you like this in a downloadable `.md` file or as a PDF? I can prepare either!
- 
