@@ -1,5 +1,4 @@
 # 🔑 Key Programming Terms (Beginner to Advanced)
-
 ## 🧠 Basic Execution Concepts
 
 | Term            | Meaning                                                                 | Example / Analogy                                                                 |
@@ -12,7 +11,6 @@
 | **Non-blocking**| Program **keeps running** while waiting for something to finish.        | You send a message and continue doing other tasks.                                |
 
 ---
-
 ## ⚙️ Async/Promise Concepts
 
 | Term              | Meaning                                                                 | Example / Analogy                                                                 |
@@ -25,7 +23,6 @@
 | **Settled (Promise)** | A promise that is either **fulfilled** or **rejected**.              | It's done — can’t change again.                                                   |
 
 ---
-
 ## 🧪 Threading & Execution
 
 | Term           | Meaning                                                                 | Example / Analogy                                                                   |
@@ -36,7 +33,6 @@
 | **Deadlock**     | Two tasks waiting on each other, and neither can proceed.              | Two people both waiting for each other to speak first.                             |
 
 ---
-
 ## ⚡ JavaScript Essentials
 
 | Term              | Meaning                                                                | Example / Analogy                                                                 |
@@ -48,7 +44,6 @@
 | **Prototype**      | Inheritance mechanism in JS.                                          | Objects inheriting behavior from other objects.                                   |
 
 ---
-
 ## 🧰 Performance & Patterns
 
 | Term           | Meaning                                                                 | Example / Analogy                                                                 |
@@ -62,7 +57,6 @@
 | **Immutability** | Data that can't be changed after it's created.                        | Like constants in math or frozen objects.                                         |
 
 ---
-
 ## 📌 Bonus Interview Tips
 
 - Be clear about **concurrency vs parallelism**.
