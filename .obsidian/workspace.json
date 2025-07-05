@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_04/Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
+                "file": "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes02072025"
+              "title": "Notes04072025"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cohort/Module_04/Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
+                "file": "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Notes02072025"
+              "title": "Outline of Notes04072025"
             }
           },
           {
@@ -180,11 +180,13 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "3e062b2aa76c69ed",
+  "active": "ce01d6c1c449340f",
   "lastOpenFiles": [
-    "Cohort/Module_04/Combinatorics_Basics_and_Prime_Numbers/Notes30062025.md",
-    "Cohort/Module_04/Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
-    "Cohort/Module_04/Lab_Sessions_on_Prime_Numbers",
+    "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
+    "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
+    "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers",
+    "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers/Notes30062025.md",
+    "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/PaaS_Elastic_Beanstalk.md",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/temp.md",
     "J_Dev/AWS/Be_A_Better_Dev/Most_Imp_Services_to_Learn.md",
@@ -196,7 +198,7 @@
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/Elastic_BeanStalk.md",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/Notes.md",
     "J/Java/Pillar_of_OOPs/Notes.md",
-    "Cohort/Module_04/Combinatorics_Basics_and_Prime_Numbers",
+    "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers",
     "Cohort/Module_04",
     "SQL/SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
     "SQL/SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
@@ -215,11 +217,9 @@
     "SQL/SQL Server/Kudvenket/4. Identity Column.md",
     "SQL/SQL Server/Kudvenket/3. Cascading referential integrity.md",
     "SQL/SQL Server/Kudvenket/2. Creating and working with tables.md",
-    "SQL/SQL Server/Kudvenket/10. Stored Procedure.md",
     "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "SQL/SQL Questions/LeetCode/6. Subqueries",
     "SQL/SQL Questions/LeetCode/5. Advanced Select and Joins",
-    "SQL/SQL Questions/LeetCode/4. Sorting and Grouping",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
