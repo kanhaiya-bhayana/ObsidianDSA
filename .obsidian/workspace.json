@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
+                "file": "J/Java/Least_Recently_Used_Cache.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes04072025"
+              "title": "Least_Recently_Used_Cache"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
+                "file": "J/Java/Least_Recently_Used_Cache.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Notes04072025"
+              "title": "Outline of Least_Recently_Used_Cache"
             }
           },
           {
@@ -180,10 +180,13 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "ce01d6c1c449340f",
+  "active": "3e062b2aa76c69ed",
   "lastOpenFiles": [
-    "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
     "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
+    "J/Java/Least_Recently_Used_Cache.md",
+    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
+    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
+    "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
     "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers",
     "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers/Notes30062025.md",
     "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers",
@@ -215,11 +218,8 @@
     "SQL/SQL Server/Kudvenket/6. Group by in SQL Server.md",
     "SQL/SQL Server/Kudvenket/5. Select Statement.md",
     "SQL/SQL Server/Kudvenket/4. Identity Column.md",
-    "SQL/SQL Server/Kudvenket/3. Cascading referential integrity.md",
-    "SQL/SQL Server/Kudvenket/2. Creating and working with tables.md",
     "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
     "SQL/SQL Questions/LeetCode/6. Subqueries",
-    "SQL/SQL Questions/LeetCode/5. Advanced Select and Joins",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
