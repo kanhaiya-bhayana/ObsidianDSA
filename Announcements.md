@@ -5,3 +5,9 @@ https://hackmd.io/@scaler-topics-main/HJHF8AEiR#Trees
 > Arrays, Bit Manipulation, Recursion, Math and Hashing
 ### Quick Revision Notes
 [Arrays, Bit Manipulation, Recursion, Math & Hashing - HackMD](https://hackmd.io/Kh_c6edrTdWHVL7kTLS0CQ?view)
+
+
+## Backlog
+- [ ] Fri, 4th July, Ass-4, | Sorted Permutation Rank
+- [ ] 7th July - Lec + Ass
+- [ ] 9th July - Lec + Ass

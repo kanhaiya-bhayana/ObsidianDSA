@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "e46ec97b04884e84",
+        "id": "ea883ee854b46842",
         "type": "tabs",
         "children": [
           {
-            "id": "3e062b2aa76c69ed",
+            "id": "b0a4b09eaa6d6598",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Java/Least_Recently_Used_Cache.md",
+                "file": "J/Leadership/Notes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Least_Recently_Used_Cache"
+              "title": "Notes"
             }
           }
         ]
@@ -142,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "J/Java/Least_Recently_Used_Cache.md",
+                "file": "J/Leadership/Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Least_Recently_Used_Cache"
+              "title": "Outline of Notes"
             }
           },
           {
@@ -180,10 +180,16 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "3e062b2aa76c69ed",
+  "active": "b0a4b09eaa6d6598",
   "lastOpenFiles": [
-    "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
+    "Cohort/Module_04/04_Lab_Session_Backtracking/Notes09072025.md",
+    "Dev/Udemy/Courses.md",
+    "Cohort/Module_04/03_Backtracking/Notes07072025.md",
+    "Cohort/Module_04/04_Lab_Session_Backtracking",
+    "Announcements.md",
     "J/Java/Least_Recently_Used_Cache.md",
+    "Cohort/Module_04/03_Backtracking",
+    "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
     "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
     "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
     "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
@@ -214,12 +220,6 @@
     "SQL/SQL Questions/LeetCode/1. Select/Questions.md",
     "SQL/SQL Server/Kudvenket/9. Union and Union All.md",
     "SQL/SQL Server/Kudvenket/7. Joins",
-    "SQL/SQL Server/Kudvenket/8. Replace NULL Values in Sql Server.md",
-    "SQL/SQL Server/Kudvenket/6. Group by in SQL Server.md",
-    "SQL/SQL Server/Kudvenket/5. Select Statement.md",
-    "SQL/SQL Server/Kudvenket/4. Identity Column.md",
-    "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause",
-    "SQL/SQL Questions/LeetCode/6. Subqueries",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
