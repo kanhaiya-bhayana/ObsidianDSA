@@ -110,4 +110,44 @@ By adding `PurgeCacheAsync` to the shared library, we eliminated duplicate code 
 
 ---
 
+## JWT
+
+**STAR version**
+
+---
+
+### ⭐ **Situation**
+
+In one of my projects, we needed to implement JWT signing and verification using the RS256 algorithm. One of our services was built on .NET Framework 4.8, which has limitations when working with RS256 — specifically, it doesn’t natively support importing X.509 or SPKI keys required for RS256 signing and verification. While possible, the usual options were to either use a third-party library like BouncyCastle or build our own cryptographic wrapper.
+
+---
+
+### 🔷 **Task**
+
+I was tasked with finding an efficient and maintainable way to support RS256 JWT creation and verification, without adding unnecessary complexity or introducing external dependencies that could be hard to maintain.
+
+---
+
+### 🛠️ **Action**
+
+I analyzed the available options and identified that we already had another service in our ecosystem, written in .NET 8, which has much better native support for RS256 and key handling. I proposed that instead of integrating a third-party library into the .NET Framework service or building our own cryptography layer, we could implement the JWT creation logic inside the .NET 8-based user service. This approach leveraged modern platform capabilities, reduced technical debt, and avoided introducing additional dependencies.
+
+---
+
+### 📈 **Result**
+
+This solution simplified our architecture, minimized maintenance overhead, and took advantage of the capabilities already available in our existing .NET 8 service. It avoided unnecessary complexity in the legacy .NET Framework codebase while still meeting our functional and security requirements efficiently.
+
+
+---
+
+### 🎤 **Spoken Version (for interviews, \~45–60 seconds):**
+
+> In one of my projects, we needed to implement JWT signing and verification using RS256. One of the services was built on .NET Framework 4.8, which has limitations with RS256 because it doesn’t natively support importing X.509 or SPKI keys. The typical options were either to use a third-party library like BouncyCastle or write our own cryptography wrapper, but both would have added unnecessary complexity and maintenance overhead.
+>
+> I noticed that we already had another service in our system written in .NET 8, which has native support for RS256 and key handling. I proposed we implement the JWT creation logic in that service instead, and have the .NET Framework service consume the tokens from there. This way we leveraged our existing infrastructure, avoided adding new dependencies, and kept the legacy codebase clean.
+>
+> As a result, we delivered the required functionality efficiently while minimizing technical debt and ensuring the solution was maintainable and secure.
+
+---
 
