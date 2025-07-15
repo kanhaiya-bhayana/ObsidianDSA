@@ -16,7 +16,7 @@
 
 ### ⭐ **Situation**
 
-In my previous project, I was working alongside the data engineering team, who were responsible for running nightly jobs and maintaining data pipelines. These pipelines required significant manual intervention, and there was no centralized system to track the status of jobs. The team had no easy way to monitor which jobs failed or succeeded, or to identify which team owned a particular job, which often led to inefficiencies and delays in resolving failures.
+In my previous project, I worked closely with the data engineering team, who were running nightly jobs and pipelines that required a lot of manual intervention. There was no centralized way to monitor which jobs succeeded or failed, or which team owned them, which often caused delays and inefficiencies. On top of that, the information security team didn’t allow the operations team direct access to cloud resources like Azure, which made it even harder for them to investigate or monitor issues on their own.
 
 ---
 
