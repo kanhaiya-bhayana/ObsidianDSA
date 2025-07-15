@@ -90,7 +90,7 @@ By adding `PurgeCacheAsync` to the shared library, we eliminated duplicate code 
 
 ---
 
-### 🎤 **Spoken Version (for interviews):**
+### 🎤 **Spoken Version**
 
 > In one of my projects, the onshore team had developed a shared Redis cache library that provided methods like `GetAsync`, `GetOrPutAsync`, `PutAsync`, and `IsAlive`. While integrating this library into our module, I noticed a gap: there was no generic way to invalidate or remove a cache entry by key. As a result, every team consuming the library was writing their own custom invalidation logic, which led to duplication and inconsistencies.
 >
