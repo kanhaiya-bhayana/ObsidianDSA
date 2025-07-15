@@ -58,3 +58,52 @@ This solution significantly reduced manual intervention and saved the team a lot
 > As a result, we eliminated much of the manual work, improved visibility and control over pipelines, and helped the team resolve issues faster, saving a lot of operational time and effort.
 
 ---
+
+
+## Redis Cache
+
+**STAR format**
+
+---
+
+### ⭐ **Situation**
+
+In one of my projects, the onshore team had developed a shared Redis cache library for all modules. The library exposed methods like `GetAsync`, `GetOrPutAsync`, `PutAsync`, and `IsAlive`.
+
+---
+
+### 🔷 **Task**
+
+While integrating this library into our module, we encountered a common use case: we needed to invalidate or remove a specific cache entry by its key. However, the library did not provide a generic method for this, so each consumer team was forced to implement their own cache invalidation logic repeatedly.
+
+---
+
+### 🛠️ **Action**
+
+I identified this gap and proposed to the onshore team that we enhance the shared library by adding a reusable method called `PurgeCacheAsync`, which would accept a key and remove the corresponding cache entry. After getting their approval, I implemented the method directly in the library, ensuring it was thoroughly tested and followed the same design patterns as the existing methods.
+
+---
+
+### 📈 **Result**
+
+By adding `PurgeCacheAsync` to the shared library, we eliminated duplicate code across modules, improved maintainability, and ensured consistent behavior for cache invalidation. This change saved developer time, reduced the risk of errors, and made the library more complete and user-friendly for all teams.
+
+---
+
+### 🎤 **Spoken Version (for interviews):**
+
+> In one of my projects, the onshore team had developed a shared Redis cache library that provided methods like `GetAsync`, `GetOrPutAsync`, `PutAsync`, and `IsAlive`. While integrating this library into our module, I noticed a gap: there was no generic way to invalidate or remove a cache entry by key. As a result, every team consuming the library was writing their own custom invalidation logic, which led to duplication and inconsistencies.
+>
+> I proposed to the onshore team that we enhance the library by adding a reusable method called `PurgeCacheAsync` to handle key-based invalidation. After getting their approval, I implemented the method in the library, aligned with its existing design patterns, and ensured it was thoroughly tested.
+>
+> This improvement made the library more robust and user-friendly, eliminated redundant code across modules, and saved developer time while ensuring consistent cache invalidation logic.
+
+---
+
+### 📄 **Resume Bullet Point:**
+
+✅ *Enhanced a shared Redis caching library by identifying and implementing a reusable `PurgeCacheAsync` method for key-based invalidation, eliminating code duplication across modules, improving maintainability, and streamlining developer workflows.*
+
+---
+
+
