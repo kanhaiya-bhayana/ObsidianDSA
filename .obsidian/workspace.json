@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Leadership/Notes.md",
+                "file": "J/Leadership/Questions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Notes"
+              "title": "Questions"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 475.0124969482422
+    "width": 475.0124969482422,
+    "collapsed": true
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -142,13 +143,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "J/Leadership/Notes.md",
+                "file": "J/Leadership/Questions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Notes"
+              "title": "Outline of Questions"
             }
           },
           {
@@ -182,6 +183,12 @@
   },
   "active": "b0a4b09eaa6d6598",
   "lastOpenFiles": [
+    "J/Leadership/PS.md",
+    "J/Leadership/Questions.md",
+    "J/Leadership/Notes.md",
+    "J_Dev/Java-AWS-config/Spring Boot - Managing Environment Variables & AWS Secrets Manager Integration.md",
+    "J_Dev/Java-AWS-config",
+    "J_Dev/Java-AWS-config/Spring Boot-Managing Environment Variables & AWS Secrets Manager Integration.md",
     "Cohort/Module_04/04_Lab_Session_Backtracking/Notes09072025.md",
     "Dev/Udemy/Courses.md",
     "Cohort/Module_04/03_Backtracking/Notes07072025.md",
@@ -214,12 +221,6 @@
     "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
     "SQL/SQL Questions/LeetCode/6. Subqueries/Questions.md",
     "SQL/SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
-    "SQL/SQL Questions/LeetCode/4. Sorting and Grouping/Questions.md",
-    "SQL/SQL Questions/LeetCode/3. Basic Aggregate Functions/Questions.md",
-    "SQL/SQL Questions/LeetCode/2. Basic Joins/Questions.md",
-    "SQL/SQL Questions/LeetCode/1. Select/Questions.md",
-    "SQL/SQL Server/Kudvenket/9. Union and Union All.md",
-    "SQL/SQL Server/Kudvenket/7. Joins",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
