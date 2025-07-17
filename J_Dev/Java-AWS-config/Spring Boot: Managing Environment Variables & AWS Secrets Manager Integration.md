@@ -1,4 +1,4 @@
-# 📘 Spring Boot: Managing Environment Variables & AWS Secrets Manager Integration
+# 📘 Spring Boot - Managing Environment Variables & AWS Secrets Manager Integration
 
 This document explains best practices for managing configuration and secrets in a Spring Boot application, and how to securely integrate with **AWS Secrets Manager**.
 
