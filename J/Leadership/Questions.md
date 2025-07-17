@@ -6,7 +6,7 @@
 >
 >I offered to pair-program and walked them through some Kafka integration best practices I had learned earlier while building a similar pipeline. Together, we resolved the issues, and I also created internal documentation for the team to reference in the future.
 >
->As a result, not only did we meet our sprint goals on time, but the team dynamic also improved significantly. Later, that same teammate contributed to optimizing our Redis-based caching system with solid input. This experience taught me the value of empathy, proactive communication, and how important psychological safety is in a high-performing team.
+>As a result, not only did we meet our sprint goals on time, but the team dynamic also improved significantly.
 
 ---
 ## ✅ Q2. Describe a time when you had to learn a new technology or tool quickly to complete a project. How did you approach the learning curve, and what was the result?
@@ -18,12 +18,6 @@
 > Within a few days, I was able to confidently integrate Kafka with our service and ensure seamless publishing of user preferences to **Azure Event Hub**. I also documented the configuration and common pitfalls, which later helped a teammate avoid the same learning curve.
 > 
 > The feature was delivered on time, and the successful integration enabled us to automate user-based workflows — improving system responsiveness and reducing manual effort. This experience reinforced my confidence in learning fast and contributing under tight timelines.
-
----
-Thanks, Kanhaiya! That background is very helpful — it adds valuable context and strengthens the impact of your experience.
-
-Here’s an **updated, refined draft** of your behavioral answer to:
-
 ---
 ## ✅ Q3. Tell me about a time when a project didn’t go as planned. How did you respond, and what did you learn from the experience?
 
@@ -33,7 +27,7 @@ Here’s an **updated, refined draft** of your behavioral answer to:
 > 
 > Recognizing the urgency, I led a focused debugging session and coordinated with the legacy system owner to understand the contract mismatches. I created test payloads, enhanced logging, and implemented a retry mechanism to ensure reliability. Additionally, we aligned the event schema across systems and updated the documentation for future developers.
 > 
-> The fix was deployed in the next sprint, and we saw a clear improvement in system behavior. This issue taught me two key lessons: the importance of **early contract validation in cross-system communication**, and the need for **collaborative problem-solving** when working across both modern and legacy stacks.
+> The fix was deployed in the next sprint, and we saw a clear improvement in system behavior. This issue taught me two key lessons: the importance of **communication**, and the need for **collaborative problem-solving** when working across both modern and legacy stacks.
 > 
 > Most importantly, it reinforced that even in a fast-paced Agile environment, **taking ownership** and **staying calm under pressure** makes a huge difference in delivering value.
 
@@ -54,24 +48,54 @@ Here’s an **updated, refined draft** of your behavioral answer to:
 ---
 ## ✅ Q4. Describe a time when you took ownership of a project or task beyond your usual responsibilities. What motivated you, and what was the result?
 
-> During my time at Incedo, while working on the **Client Section module** for the EWM (e-Wealth Manager) platform at AssetMark, I noticed that some key business requirements—particularly related to organizing client preferences into custom groups—were not clearly defined in the product documentation. This ambiguity was causing delays and misalignment during development.
-> 
-> Although I was primarily responsible for backend service implementation, I proactively stepped in to bridge the gap. I reached out to the product owner and business analysts, gathered detailed expectations, and created a **functional breakdown** that clarified edge cases and user interactions. I then shared this with both our frontend and QA teams to ensure alignment.
-> 
-> As a result, not only did our sprint velocity improve, but it also prevented future rework. This proactive clarification helped us deliver the feature more confidently and meet the advisor-centric use cases accurately.
-> 
-> Separately, during my trainee period, I volunteered to lead the **final project demo presentation** to our Chief Delivery Officer (CDO), even though I was one of the newer team members. I ensured the team's work was well-represented, which boosted team morale and helped us stand out.
-> 
-> These experiences taught me that real ownership isn’t about job titles — it's about **filling the gaps**, enabling your team, and always thinking in terms of **end-user value**.
+### Redis Cache
+
+**STAR format**
 
 ---
-Got it, Kanhaiya — that’s a great context adjustment. Let's revise the **Q5 response** using your **chatbot integration with JWT authentication** as the scenario.
+
+### ⭐ **Situation**
+
+In one of my projects, the onshore team had developed a shared Redis cache library for all modules. The library exposed methods like `GetAsync`, `GetOrPutAsync`, `PutAsync`, and `IsAlive`.
+
+While integrating this library into our module, we encountered a common use case: we needed to invalidate or remove a specific cache entry by its key. However, the library did not provide a generic method for this, so each consumer team was forced to implement their own cache invalidation logic repeatedly.
+
+
+---
+
+### 🔷 **Task**
+
+We needed to invalidate or remove a specific cache entry by its key. However, the library did not provide a generic method for this, so each consumer team was forced to implement their own cache invalidation logic repeatedly.
+
+
+---
+
+### 🛠️ **Action**
+
+I identified this gap and proposed to the onshore team that we enhance the shared library by adding a reusable method called `PurgeCacheAsync`, which would accept a key and remove the corresponding cache entry. After getting their approval, I implemented the method directly in the library, ensuring it was thoroughly tested and followed the same design patterns as the existing methods.
+
+---
+
+### 📈 **Result**
+
+By adding `PurgeCacheAsync` to the shared library, we eliminated duplicate code across modules, improved maintainability, and ensured consistent behavior for cache invalidation. This change saved developer time, reduced the risk of errors, and made the library more complete and user-friendly for all teams.
+
+---
+
+### 🎤 **Spoken Version**
+
+> In one of my projects, the onshore team had developed a shared Redis cache library that provided methods like `GetAsync`, `GetOrPutAsync`, `PutAsync`, and `IsAlive`. While integrating this library into our module, I noticed a gap: there was no generic way to invalidate or remove a cache entry by key. As a result, every team consuming the library was writing their own custom invalidation logic, which led to duplication and inconsistencies.
+>
+> I proposed to the onshore team that we enhance the library by adding a reusable method called `PurgeCacheAsync` to handle key-based invalidation. After getting their approval, I implemented the method in the library, aligned with its existing design patterns, and ensured it was thoroughly tested.
+>
+> This improvement made the library more robust and user-friendly, eliminated redundant code across modules, and saved developer time while ensuring consistent cache invalidation logic.
+
 
 ---
 ## ✅ Q5. Tell me about a time when you had to communicate complex technical information to a non-technical stakeholder. How did you ensure they understood, and what was the outcome?
 
 > While working on the **e-Wealth Manager (EWM)** platform at AssetMark, we were tasked with integrating a **chatbot** to enhance advisor support and client interaction. To secure the communication between the chatbot and our microservices, I implemented **JWT-based authentication** using the **RSA256 signature algorithm** along with **Key ID (KID)** support.
-> 
+
 > While this was a technically critical feature, it wasn't easy for our product stakeholders to understand why we couldn’t just use simpler session tokens or API keys. Instead of diving deep into encryption or security layers, I took the approach of **explaining the "why" in business terms**.
 > 
 > I described how JWT with RSA256 would:
