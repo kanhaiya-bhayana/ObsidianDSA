@@ -7,6 +7,21 @@
 ## Innovation
 1. Redis
 2. FMS
+
+## Engaging with Openness
+- Knowledge Sharing Sessions
+## Learning Mindset
+- Azure Durable Functions
+- Azure Event Hub
+
+## Inclusive Collaboration
+-- Redis collab with multiple teams
+
+## Partnering for Client Impact
+- FMS
+
+## Embracing the Future
+- AI
 ## FMS
 
 ### ⭐ **Situation**
