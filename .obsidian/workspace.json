@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "J/Leadership/Questions.md",
+                "file": "Books/Ikigai/00_Intro_and_Chapter-1.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Questions"
+              "title": "00_Intro_and_Chapter-1"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 475.0124969482422,
-    "collapsed": true
+    "width": 475.0124969482422
   },
   "right": {
     "id": "ef1c67bb5b04dc0e",
@@ -143,13 +142,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "J/Leadership/Questions.md",
+                "file": "Books/Ikigai/00_Intro_and_Chapter-1.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Questions"
+              "title": "Outline of 00_Intro_and_Chapter-1"
             }
           },
           {
@@ -183,8 +182,11 @@
   },
   "active": "b0a4b09eaa6d6598",
   "lastOpenFiles": [
-    "J/Leadership/PS.md",
     "J/Leadership/Questions.md",
+    "Books/Ikigai/00_Intro_and_Chapter-1.md",
+    "Books/Ikigai",
+    "Books",
+    "J/Leadership/PS.md",
     "J/Leadership/Notes.md",
     "J_Dev/Java-AWS-config/Spring Boot - Managing Environment Variables & AWS Secrets Manager Integration.md",
     "J_Dev/Java-AWS-config",
@@ -214,13 +216,10 @@
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/Elastic_BeanStalk.md",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/Notes.md",
     "J/Java/Pillar_of_OOPs/Notes.md",
-    "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers",
-    "Cohort/Module_04",
     "SQL/SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
     "SQL/SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
     "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
     "SQL/SQL Questions/LeetCode/6. Subqueries/Questions.md",
-    "SQL/SQL Questions/LeetCode/5. Advanced Select and Joins/Questions.md",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
