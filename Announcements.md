@@ -11,3 +11,18 @@ https://hackmd.io/@scaler-topics-main/HJHF8AEiR#Trees
 - [ ] Fri, 4th July, Ass-4, | Sorted Permutation Rank
 - [ ] 7th July - Lec + Ass
 - [ ] 9th July - Lec + Ass
+
+
+
+## Questions
+- [ ] Cab facility
+- [ ] Office timings
+- [ ] Welcome Kit | Goodies | Headphones
+- [x] Hybrid model
+
+
+## Other Questions
+- [ ] Bank for Salary
+- [ ] Date of Salary
+- [ ] When will I get the Joining bonus
+- [ ] 

@@ -1,0 +1,43 @@
+{
+  "palette": {
+    "seed": 0,
+    "selected": "adaptive-soft",
+    "custom": "e12729-f37324-f8cc1b-72b043-007f4e"
+  },
+  "mixColors": true,
+  "transition": true,
+  "accessibility": {
+    "highTextContrast": false
+  },
+  "knownTags": {
+    "LowerBound": 1,
+    "UpperBound": 2,
+    "BitManipulation": 3,
+    "Fibonacci": 4,
+    "Powerfunction": 5,
+    "recursion": 6,
+    "Goolge": 7,
+    "Facebook": 8,
+    "Submatrix": 9,
+    "SpiralMatrix": 10,
+    "NextPermutation": 11,
+    "KadanesAlgorithm": 12,
+    "Approach1": 13,
+    "LeetCode": 14,
+    "TrappingRainWater": 15,
+    "Sorting": 16,
+    "BinarySearch": 17,
+    "LocalMinima": 18,
+    "LinkedList": 19,
+    "PairSum": 20,
+    "LongestSubString": 21,
+    "SlidingWindow": 22,
+    "excalidraw": 23,
+    "ThreadPoolExecutorFramework": 24,
+    "Solidprinciples": 25,
+    "MultifunctionRobot": 26,
+    "RobotTasks": 27,
+    "Axios": 28
+  },
+  "_version": 3
+}

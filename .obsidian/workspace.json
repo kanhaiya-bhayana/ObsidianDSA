@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ea883ee854b46842",
+        "id": "a558fb597f85e3a0",
         "type": "tabs",
         "children": [
           {
-            "id": "b0a4b09eaa6d6598",
+            "id": "0ac19ba7f8521095",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books/Ikigai/00_Intro_and_Chapter-1.md",
+                "file": "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "00_Intro_and_Chapter-1"
+              "title": "Generic Singleton Factory in C"
             }
           }
         ]
@@ -33,6 +33,7 @@
       {
         "id": "d0760b9dc6776a3c",
         "type": "tabs",
+        "dimension": 60.86956521739131,
         "children": [
           {
             "id": "ce01d6c1c449340f",
@@ -75,6 +76,23 @@
             }
           }
         ]
+      },
+      {
+        "id": "88f57ef667191bc5",
+        "type": "tabs",
+        "dimension": 39.130434782608695,
+        "children": [
+          {
+            "id": "79b4b9547b7dfceb",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -87,6 +105,7 @@
       {
         "id": "e212ebace3e00c38",
         "type": "tabs",
+        "dimension": 67.20516962843296,
         "children": [
           {
             "id": "7ae2cfd60dda9913",
@@ -94,7 +113,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Cohort/Module 2/Day 3/Notes.md",
+                "file": "Dev/React/Udemy_Course/Axios_Request_Structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +123,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Notes"
+              "title": "Backlinks for Axios_Request_Structure"
             }
           },
           {
@@ -113,12 +132,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Cohort/Module 2/Day 3/Notes.md",
+                "file": "Dev/React/Udemy_Course/Axios_Request_Structure.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Notes"
+              "title": "Outgoing links from Axios_Request_Structure"
             }
           },
           {
@@ -142,13 +161,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books/Ikigai/00_Intro_and_Chapter-1.md",
+                "file": "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 00_Intro_and_Chapter-1"
+              "title": "Outline of Generic Singleton Factory in C"
             }
           },
           {
@@ -163,6 +182,39 @@
           }
         ],
         "currentTab": 3
+      },
+      {
+        "id": "99d4b9606d5727c8",
+        "type": "tabs",
+        "dimension": 32.794830371567045,
+        "children": [
+          {
+            "id": "14a66654cee37191",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Notes23042025"
+            }
+          },
+          {
+            "id": "4ec2610fb6e769b0",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -170,6 +222,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "omnisearch:Omnisearch": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -180,10 +233,25 @@
       "pomodoro-timer:Toggle timer panel": false
     }
   },
-  "active": "b0a4b09eaa6d6598",
+  "active": "0ac19ba7f8521095",
   "lastOpenFiles": [
-    "J/Leadership/Questions.md",
+    "Dev/CSharp/Singleton/Singleton Pattern.md",
+    "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
+    "Dev/React/Udemy_Course/Axios_Request_Structure.md",
+    "Dev/CSharp/Singleton",
+    "Dev/CSharp",
+    "Announcements.md",
+    "Cohort/Module_02/D6_LabSessionRecursion/Notes23042025.md",
+    "Cohort/Module_02/D5_Recursion/Notes21042025.md",
+    "2025-08-01.md",
+    "J/Java/Interfaces/Java8_Interface_Features.md",
+    "Dev/React/Udemy_Course",
+    "Dev/React",
+    "J/Development/API.md",
+    "Dev/fireside-chats.md",
+    "J/Development",
     "Books/Ikigai/00_Intro_and_Chapter-1.md",
+    "J/Leadership/Questions.md",
     "Books/Ikigai",
     "Books",
     "J/Leadership/PS.md",
@@ -195,31 +263,16 @@
     "Dev/Udemy/Courses.md",
     "Cohort/Module_04/03_Backtracking/Notes07072025.md",
     "Cohort/Module_04/04_Lab_Session_Backtracking",
-    "Announcements.md",
     "J/Java/Least_Recently_Used_Cache.md",
     "Cohort/Module_04/03_Backtracking",
     "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers/Notes04072025.md",
-    "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Intermediate___Sliding_Window___Contribution_Technique_2.pdf",
     "Cohort/Module_01/Topic_06-Sliding_Window_and_Contribution_Technique/Notes.md",
     "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
-    "Cohort/Module_04/02_Lab_Session_Maths_2_Pointers",
     "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers/Notes30062025.md",
-    "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/PaaS_Elastic_Beanstalk.md",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/temp.md",
-    "J_Dev/AWS/Be_A_Better_Dev/Most_Imp_Services_to_Learn.md",
     "J_Dev/AWS/Be_A_Better_Dev/Services_HLD.png",
     "J_Dev/AWS/Be_A_Better_Dev/AWS_Services_HLD.png",
-    "J/HeadShot.md",
-    "J_Dev/AWS/Be_A_Better_Dev/Andrew_Brown_ExamPRO_DVA-C02/PaaS",
-    "J_Dev/AWS/Be_A_Better_Dev/Andrew_Brown_ExamPRO_DVA-C02",
-    "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/Elastic_BeanStalk.md",
-    "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/Notes.md",
-    "J/Java/Pillar_of_OOPs/Notes.md",
-    "SQL/SQL Server/Kudvenket/7. Joins/Advanced or intelligent Joins.md",
-    "SQL/SQL Server/Kudvenket/7. Joins/7.1 Introduction.md",
-    "SQL/SQL Questions/LeetCode/7. Advanced String Functions-Regex-Clause/Question.md",
-    "SQL/SQL Questions/LeetCode/6. Subqueries/Questions.md",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
     "J/Spring_Security/EmbarkX_Learn_Programming/Spring_Security_HLD.png",
     "J/Java/Multithreading_and_Concurrency/thread_life_cycle.png",
