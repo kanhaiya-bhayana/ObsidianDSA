@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
+                "file": "Dev/CSharp/Singleton/Example.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Generic Singleton Factory in C"
+              "title": "Example"
             }
           }
         ]
@@ -161,13 +161,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
+                "file": "Dev/CSharp/Singleton/Example.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Generic Singleton Factory in C"
+              "title": "Outline of Example"
             }
           },
           {
@@ -235,8 +235,9 @@
   },
   "active": "0ac19ba7f8521095",
   "lastOpenFiles": [
-    "Dev/CSharp/Singleton/Singleton Pattern.md",
     "Dev/CSharp/Singleton/Generic Singleton Factory in C.md",
+    "Dev/CSharp/Singleton/Example.md",
+    "Dev/CSharp/Singleton/Singleton Pattern.md",
     "Dev/React/Udemy_Course/Axios_Request_Structure.md",
     "Dev/CSharp/Singleton",
     "Dev/CSharp",
@@ -270,7 +271,6 @@
     "Cohort/Module_04/01_Lab_Sessions_on_Prime_Numbers/Notes02072025.md",
     "Cohort/Module_04/00_Combinatorics_Basics_and_Prime_Numbers/Notes30062025.md",
     "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/PaaS_Elastic_Beanstalk.md",
-    "J_Dev/AWS/Andrew_Brown_ExamPRO_DVA-C02/PaaS/temp.md",
     "J_Dev/AWS/Be_A_Better_Dev/Services_HLD.png",
     "J_Dev/AWS/Be_A_Better_Dev/AWS_Services_HLD.png",
     "J/LLD-HLD/Circuit_Breaker/Circuit_breaker_HLD.png",
